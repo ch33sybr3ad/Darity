@@ -15,12 +15,12 @@ end
 
 a, b, c, d, e = users
 
-dare = Dare.new(
+dare = Dare.create(
   title: Faker::Lorem.sentence,
   description: Faker::Lorem.paragraph,
 )
 
-charity = Charity.new(
+charity = Charity.create(
   name: 'Ping Pong 4 Kids',
   url: 'http://pingpong.com',
   description: 'provides ping pong to poor and rich kids',
