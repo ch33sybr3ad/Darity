@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20150528220625) do
     t.string   "description"
     t.integer  "daree_id"
     t.integer  "proposer_id"
+    t.integer  "charity_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

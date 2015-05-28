@@ -5,6 +5,7 @@ class CreateDares < ActiveRecord::Migration
       t.string :description
       t.integer :daree_id
       t.integer :proposer_id
+      t.integer :charity_id
 
       t.timestamps null: false
     end
