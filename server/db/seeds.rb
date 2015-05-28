@@ -13,7 +13,7 @@ users = Array.new(5) do
   )
 end
 
-'a', 'b', 'c', 'd', 'e' = users
+a, b, c, d, e = users
 
 dare = Dare.new(
   title: Faker::Lorem.sentence,
@@ -28,6 +28,6 @@ dare.pledgers << e
 
 p dare.proposer == a
 p dare.daree == b
-p c.pledged_dares == dare
-p d.pledged_dares == dare
-p e.pledged_dares == dare
+p c.pledged_dares.first == dare
+p d.pledged_dares.first == dare
+p e.pledged_dares.first == dare

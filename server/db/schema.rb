@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150528203128) do
+ActiveRecord::Schema.define(version: 20150528213024) do
 
   create_table "charities", force: :cascade do |t|
     t.string   "name"
@@ -28,13 +28,14 @@ ActiveRecord::Schema.define(version: 20150528203128) do
     t.integer  "proposer_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "daree_id"
   end
 
   create_table "relationships", force: :cascade do |t|
     t.integer  "pledger_id"
-    t.integer  "dare_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "pledged_dare_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "users", force: :cascade do |t|

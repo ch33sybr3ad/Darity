@@ -1,6 +1,6 @@
 class Relationship < ActiveRecord::Base
 
-  belongs_to :pledger, foreign_key: "pledger_id", class_name: "User"
-  belongs_to :dare
+  belongs_to :user, foreign_key: "pledger_id"
+  belongs_to :dare, foreign_key: "pledged_dare_id"
 
 end
