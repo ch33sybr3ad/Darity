@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pledger_id: 1
+  pledged_dare_id: 1
+
+two:
+  pledger_id: 1
+  pledged_dare_id: 1
