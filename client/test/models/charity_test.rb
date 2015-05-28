@@ -14,6 +14,4 @@ class CharityTest < ActiveSupport::TestCase
     assert @charity.valid?
   end
 
-
-
 end
