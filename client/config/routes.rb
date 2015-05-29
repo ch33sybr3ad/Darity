@@ -4,13 +4,14 @@ Rails.application.routes.draw do
     resources :dares
   end
 
+  get '/home' => 'users#home'
   match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
   get "/signout" => "sessions#destroy", as: :signout
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'dares#index'
+  root 'users#home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

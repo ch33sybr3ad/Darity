@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+
   def create
     auth = request.env["omniauth.auth"]
     user = User.where(uid: auth["uid"], provider: auth["provider"]).first || User.create_with_omniauth(auth)
