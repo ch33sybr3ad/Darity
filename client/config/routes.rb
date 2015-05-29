@@ -2,12 +2,9 @@ Rails.application.routes.draw do
 
   resources :charities
   resources :users do
-    resources :dares
+    resources :dares do 
+    end
   end
-
-
-
-  resources :donations, only: [:new, :create]
 
   get '/home' => 'users#home'
   post '/login' => 'users#login'
@@ -22,6 +19,9 @@ Rails.application.routes.draw do
 
   get '/dares/:dare_id/video/new' => 'videos#new', as: :new_video
   post '/dares/:dare_id/video' => 'videos#create', as: :dare_videos
+
+  get '/dares/:dare_id/donations/new' => 'donations#new', as: :new_donation
+  post '/dares/:dare_id/donations' => 'donations#create', as: :donations
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
