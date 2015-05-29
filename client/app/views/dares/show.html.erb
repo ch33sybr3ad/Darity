@@ -1,5 +1,6 @@
 <h1><%= @dare.title %></h1>
 
+
 <% if current_user == @proposer %>
   <%= link_to "edit", edit_user_dare_path(@proposer, @dare) %>
   <%= link_to "delete", user_dare_path(@proposer, @dare), method: :delete %>
@@ -11,7 +12,6 @@
 
 <p><%= @dare.description %></p>
 
-<p>proposed by: <%= @proposer.username.capitalize %></p>
-<p>proposed to: <%= @dare.daree.username.capitalize %></p>
+<p>proposed by: <%= link_to @proposer.username.capitalize, @proposer %></p>
+<p>proposed to: <%= link_to @dare.daree.username.capitalize, @dare.daree %></p>
 
-<p><%= link_to "home",  user_dares_path(@daree) %></p>
