@@ -4,7 +4,7 @@
 <% if current_user == @proposer %>
   <%= link_to "edit", edit_user_dare_path(@proposer, @dare) %>
   <%= link_to "delete", user_dare_path(@proposer, @dare), method: :delete %>
-  <%= link_to "contribute", '#' %>
+  <%= link_to "contribute", new_donation_path(@dare) %>
 <% elsif current_user == @daree %>
   <%= link_to "delete", user_dare_path(@proposer, @dare), method: :delete %>
   <% if @dare.price %>
@@ -13,7 +13,7 @@
     <%= link_to "accept", set_price_path(@proposer, @dare) %>
   <% end %>
 <% else %>
-  <%= link_to "contribute", '#' %>
+  <%= link_to "contribute", new_donation_path(@dare) %>
 <% end %>
 
 
