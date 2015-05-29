@@ -31,8 +31,9 @@ ActiveRecord::Schema.define(version: 20150528220625) do
     t.integer  "daree_id"
     t.integer  "proposer_id"
     t.integer  "charity_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "done",        default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "donations", force: :cascade do |t|
@@ -48,6 +49,7 @@ ActiveRecord::Schema.define(version: 20150528220625) do
     t.string   "email"
     t.string   "provider"
     t.string   "uid"
+    t.string   "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

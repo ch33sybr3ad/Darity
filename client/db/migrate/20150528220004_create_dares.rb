@@ -6,6 +6,7 @@ class CreateDares < ActiveRecord::Migration
       t.integer :daree_id
       t.integer :proposer_id
       t.integer :charity_id
+      t.boolean :done, default: false
 
       t.timestamps null: false
     end

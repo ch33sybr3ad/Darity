@@ -20,7 +20,7 @@ dare = Dare.create(
   description: Faker::Lorem.paragraph,
 )
 
-charity = Charity.create(
+charity = Charity.create!(
   name: 'Ping Pong 4 Kids',
   url: 'http://pingpong.com',
   description: 'provides ping pong to poor and rich kids',
