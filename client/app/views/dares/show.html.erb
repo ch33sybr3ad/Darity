@@ -4,7 +4,7 @@
   <%= link_to "edit", edit_user_dare_path(@proposer, @dare) %>
   <%= link_to "delete", user_dare_path(@proposer, @dare), method: :delete %>
 <% elsif current_user == @daree %>
-  <%= link_to "delete", user_date_path(@proposer, @dare), method: :delete %>
+  <%= link_to "delete", user_dare_path(@proposer, @dare), method: :delete %>
   <%= link_to "accept", set_price_path(@proposer, @dare) %>
 <% end %>
 

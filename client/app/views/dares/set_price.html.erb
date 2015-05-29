@@ -2,8 +2,12 @@
 
 <p><%= @dare.description %></p>
 
-<%= form_for @dare put_price_path(@dare.proposer, @dare), method: :put do |f| %>
-<%= f.number_field :price  %>
+<%= form_for @dare, url: put_price_path(@dare.proposer, @dare) do |f| %>
+  <%= f.label :price %>
+  <%= f.number_field :price  %>
+  <%= f.label :charity %>
+  <%= f.text_field :charity, value: "" %>
+  <%= f.submit :submit %>
 <% end %>
 
 <p>proposed by: <%= @dare.proposer.username.capitalize %></p>
