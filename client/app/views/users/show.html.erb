@@ -23,7 +23,7 @@
 <hr>
 
 <p>Pledged Dares: (dares you pay for)</p>
-<% @pledged_dares.each do |dare| %>
+<% @pledged_dares.each do |dare | %>
   <p><%= link_to dare.title, user_dares_path(dare.proposer, dare) %></p>
   <p><%= dare.description %></p>
 <% end %>
