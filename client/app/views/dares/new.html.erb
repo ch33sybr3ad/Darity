@@ -1,0 +1,9 @@
+<h1>new dare </h1>
+<%= form_for [@user, @dare] do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<%= f.label :description %>
+<%= f.text_area :description %>
+<%= f.submit :submit %>
+<%= f.hidden_field :daree_id, value: params[:daree] %>
+<% end %>
