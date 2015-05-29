@@ -7,7 +7,6 @@
 <% @users.each do |user| %>
   <p>
     <%= user.username %>
-    <%= link_to 'Dare', '#' %>
-    <!-- controller: "dares", action: "" -->
+    <%= link_to 'Dare', user %>
   </p>
 <% end %>
