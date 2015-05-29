@@ -5,4 +5,19 @@ class VideosController < ApplicationController
     @video = Video.new
   end
 
+  #File methods: :size, :readlines
+  def create
+    @file = vid_params['file'].tempfile
+    type = vid_params['file'].content_type
+    client = YouTubeIt::Client.new(:username => ENV['GMAIL'], :password => ENV['GMAIL_PASSWORD'], :dev_key => ENV["YOUTUBE_API_KEY"])
+    res = client.video_upload(@file, title: vid_params['title'], description: vid_params['description'], category: 'People', :keywords => ['darity', 'dare', 'charity'])
+    binding.pry
+  end
+
+  private
+
+  def vid_params
+    params.require(:video).permit(:title, :description, :file)
+  end
+
 end
