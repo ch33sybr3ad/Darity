@@ -6,7 +6,11 @@
   <%= link_to "delete", user_dare_path(@proposer, @dare), method: :delete %>
 <% elsif current_user == @daree %>
   <%= link_to "delete", user_dare_path(@proposer, @dare), method: :delete %>
-  <%= link_to "accept", set_price_path(@proposer, @dare) %>
+  <% if @dare.price %>
+    <%= link_to "upload video", new_video_path(@dare) %>
+  <% else %>
+    <%= link_to "accept", set_price_path(@proposer, @dare) %>
+  <% end %>
 <% end %>
 
 
