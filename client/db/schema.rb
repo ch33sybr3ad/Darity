@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20150529173243) do
     t.integer  "proposer_id"
     t.integer  "charity_id"
     t.boolean  "done",        default: false
+    t.float    "price"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end
