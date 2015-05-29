@@ -12,6 +12,23 @@ class DaresController < ApplicationController
     @daree = @dare.daree
   end
 
+  def new
+    @user = User.find(params[:user_id])
+    @dare = Dare.new
+  end
+
+  def create
+    @dare = Dare.new(dare_params)
+    @dare.proposer_id = params[:user_id]
+    if @dare.save
+      @daree = @dare.daree
+      binding.pry
+      redirect_to @daree
+    else
+      render html: "<h1>ERROR</h1>"
+    end
+  end
+
   def edit
     @dare = Dare.find(params[:id])
   end
@@ -43,7 +60,7 @@ class DaresController < ApplicationController
   private
 
   def dare_params
-    params.require(:dare).permit(:price, :charity, :title, :description)
+    params.require(:dare).permit(:price, :charity, :title, :description, :daree_id)
   end
 
 
