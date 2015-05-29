@@ -2,7 +2,7 @@
 
 <p><%= @dare.description %></p>
 
-<%= form_for @dare set_price_path(@dare.proposer, @dare), method: :put do |f| %>
+<%= form_for @dare put_price_path(@dare.proposer, @dare), method: :put do |f| %>
 <%= f.number_field :price  %>
 <% end %>
 

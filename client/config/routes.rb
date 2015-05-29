@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   # Example of regular route:
     get '/users/:user_id/dares/:id/set_price' => 'dares#set_price', as: :set_price
-    put '/users/:user_id/dares/:id/set_price' => 'dares#put_price', as: :set_price
+    put '/users/:user_id/dares/:id/set_price' => 'dares#put_price', as: :put_price
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

@@ -4,19 +4,19 @@
 
 <% @challenged_dares.each do |dare| %>
   <p>Challenged Dares</p>
-  <p><%= dare.title %></p>
+  <p><%= link_to dare.title, user_dares_path(dare.proposer, dare) %></p>
 <% end %>
 
 <hr>
 
 <% @proposed_dares.each do |dare| %>
   <p>Proposed Dares</p>
-  <p><%= dare.title %></p>
+  <p><%= link_to dare.title, user_dares_path(dare.proposer, dare) %></p>
 <% end %>
 
 <hr>
 
 <% @pledged_dares.each do |dare| %>
   <p>Pledged Dares</p>
-  <p><%= dare.title %></p>
+  <p><%= link_to dare.title, user_dares_path(dare.proposer, dare) %></p>
 <% end %>
