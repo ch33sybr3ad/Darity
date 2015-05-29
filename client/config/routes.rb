@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   end
 
   get '/home' => 'users#home'
+  post '/login' => 'users#login'
   match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
   get "/signout" => "sessions#destroy", as: :signout
   # The priority is based upon order of creation: first created -> highest priority.

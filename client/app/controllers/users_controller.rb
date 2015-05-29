@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def home
-
+    @user = User.new
   end
 
   def index
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @user = User.where(email: params[:email]).first
     if @user && @user.password == params[:password]
       session[:user_id] = @user.id
-      render @user
+      render "show"
     end
   end
 
