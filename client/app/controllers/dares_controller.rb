@@ -12,6 +12,16 @@ class DaresController < ApplicationController
     @daree = @dare.daree
   end
 
+  def edit
+    @dare = Dare.find(params[:id])
+  end
+
+  def update
+    @dare = Dare.find(params[:id])
+    @dare.update(dare_params)
+    redirect_to [@dare.proposer, @dare]
+  end
+
   def set_price
     @dare = Dare.find(params[:id])
     @daree = @dare.daree
@@ -33,7 +43,7 @@ class DaresController < ApplicationController
   private
 
   def dare_params
-    params.require(:dare).permit(:price, :charity)
+    params.require(:dare).permit(:price, :charity, :title, :description)
   end
 
 
