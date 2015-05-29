@@ -10,4 +10,7 @@ class DaresController < ApplicationController
     @dare = Dare.find(params[:id])
     @proposer = @dare.proposer
   end
+
+
+
 end

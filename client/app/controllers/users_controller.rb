@@ -2,8 +2,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(session[:user_id])
-    p @user
-    p '####################'
     retreive_all_dares
   end
 
@@ -12,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @user = User.new
+    @users = User.all
   end
 
   def login
@@ -26,9 +24,9 @@ class UsersController < ApplicationController
   private
 
   def retreive_all_dares
-    p @challenged_dares = @user.challenged_dares
-    p @proposed_dares = @user.proposed_dares
-    p @pledged_dares = @user.pledged_dares
+    @challenged_dares = @user.challenged_dares
+    @proposed_dares = @user.proposed_dares
+    @pledged_dares = @user.pledged_dares
   end
 
   def user_params

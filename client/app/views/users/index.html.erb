@@ -1,13 +1,13 @@
 <h1>Welcome to Darity</h1>
-<div class= "Log In">
-  <h1>Log in</h1>
-    <%= form_for(@user) do |f| %>
-    <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+<p>ALL USERS:</p>
 
-      <%= f.submit "Log in", class: "btn btn-primary" %>
-  <% end %>
-</div>
+<hr>
+
+<% @users.each do |user| %>
+  <p>
+    <%= user.username %>
+    <%= link_to 'Dare', '#' %>
+    <!-- controller: "dares", action: "" -->
+  </p>
+<% end %>
