@@ -1,22 +1,29 @@
 <h1>Welcome <%=@user.username%></h1>
 
-  <h3>This Daredevil:</h3>
+<h3>DARES THAT THE USER HAS DONE STUFF WITH</h3>
+<hr>
 
+<p>Challenged Dares: (dares you have made)</p>
 <% @challenged_dares.each do |dare| %>
-  <p>Challenged Dares</p>
   <p><%= link_to dare.title, user_dares_path(dare.proposer, dare) %></p>
+  <p><%= dare.description %></p>
 <% end %>
 
 <hr>
 
+<p>Proposed Dares: (dares you have been challenged)</p>
 <% @proposed_dares.each do |dare| %>
-  <p>Proposed Dares</p>
   <p><%= link_to dare.title, user_dares_path(dare.proposer, dare) %></p>
+  <p><%= dare.description %></p>
+  <%= link_to 'Accept Dare', '#' %>
+  <%= link_to 'Decline Dare', '#' %>
+  <p>Proposed Dares</p>
 <% end %>
 
 <hr>
 
+<p>Pledged Dares: (dares you pay for)</p>
 <% @pledged_dares.each do |dare| %>
-  <p>Pledged Dares</p>
   <p><%= link_to dare.title, user_dares_path(dare.proposer, dare) %></p>
+  <p><%= dare.description %></p>
 <% end %>
