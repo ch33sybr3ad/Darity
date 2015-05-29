@@ -22,7 +22,6 @@ class DaresController < ApplicationController
     @dare.proposer_id = params[:user_id]
     if @dare.save
       @daree = @dare.daree
-      binding.pry
       redirect_to @daree
     else
       render html: "<h1>ERROR</h1>"
