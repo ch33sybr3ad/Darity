@@ -5,5 +5,9 @@
 <hr>
 
 <% @users.each do |user| %>
-  <p><%= user.username %></p>
+  <p>
+    <%= user.username %>
+    <%= link_to 'Dare', '#' %>
+    <!-- controller: "dares", action: "" -->
+  </p>
 <% end %>
