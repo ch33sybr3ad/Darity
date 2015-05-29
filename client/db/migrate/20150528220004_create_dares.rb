@@ -7,6 +7,7 @@ class CreateDares < ActiveRecord::Migration
       t.integer :proposer_id
       t.integer :charity_id
       t.boolean :done, default: false
+      t.float :price
 
       t.timestamps null: false
     end
