@@ -6,14 +6,12 @@ Rails.application.routes.draw do
 
   match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
   get "/signout" => "sessions#destroy", as: :signout
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
   root 'dares#index'
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+    get '/users/:user_id/dares/:id' => 'dares#set_price'
+
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

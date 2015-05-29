@@ -9,5 +9,10 @@ class DaresController < ApplicationController
   def show
     @dare = Dare.find(params[:id])
     @proposer = @dare.proposer
+    @daree = @dare.daree
   end
+
+  def set_price
+  end
+
 end
