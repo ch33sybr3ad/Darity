@@ -4,8 +4,6 @@ Rails.application.routes.draw do
     resources :dares
   end
 
-  resources :donations, only: [:new, :create]
-
   get '/home' => 'users#home'
   post '/login' => 'users#login'
   match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
