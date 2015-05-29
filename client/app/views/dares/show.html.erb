@@ -1,6 +1,17 @@
-
 <h1><%= @dare.title %></h1>
+
+<% if current_user == @proposer %>
+  <%= link_to "edit", edit_user_dare_path(@proposer, @dare) %>
+  <%= link_to "delete", user_dare_path(@proposer, @dare), method: :delete %>
+<% elsif current_user == @daree %>
+  <%= link_to "delete", user_date_path(@proposer, @dare), method: :delete %>
+  <%= link_to "accept", set_price_path(@proposer, @dare) %>
+<% end %>
+
 
 <p><%= @dare.description %></p>
 
 <p>proposed by: <%= @proposer.username.capitalize %></p>
+<p>proposed to: <%= @dare.daree.username.capitalize %></p>
+
+<p><%= link_to "home",  user_dares_path(@daree) %></p>

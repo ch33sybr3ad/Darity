@@ -5,7 +5,7 @@
 
 <p>Challenged Dares: (dares you have made)</p>
 <% @challenged_dares.each do |dare| %>
-  <%= link_to dare.title %>
+  <p><%= link_to dare.title, user_dares_path(dare.proposer, dare) %></p>
   <p><%= dare.description %></p>
 <% end %>
 
@@ -13,16 +13,17 @@
 
 <p>Proposed Dares: (dares you have been challenged)</p>
 <% @proposed_dares.each do |dare| %>
-  <%= link_to dare.title, '#' %>
+  <p><%= link_to dare.title, user_dares_path(dare.proposer, dare) %></p>
   <p><%= dare.description %></p>
   <%= link_to 'Accept Dare', '#' %>
   <%= link_to 'Decline Dare', '#' %>
+  <p>Proposed Dares</p>
 <% end %>
 
 <hr>
 
 <p>Pledged Dares: (dares you pay for)</p>
 <% @pledged_dares.each do |dare| %>
-  <%= link_to dare.title, '#' %>
+  <p><%= link_to dare.title, user_dares_path(dare.proposer, dare) %></p>
   <p><%= dare.description %></p>
 <% end %>

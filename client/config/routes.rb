@@ -8,14 +8,15 @@ Rails.application.routes.draw do
   post '/login' => 'users#login'
   match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
   get "/signout" => "sessions#destroy", as: :signout
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
+
   root 'users#home'
 
+
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+    get '/users/:user_id/dares/:id/set_price' => 'dares#set_price', as: :set_price
+    put '/users/:user_id/dares/:id/set_price' => 'dares#put_price', as: :put_price
+
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

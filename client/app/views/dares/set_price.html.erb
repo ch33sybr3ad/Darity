@@ -1,0 +1,12 @@
+<h1><%= @dare.title %></h1>
+
+<p><%= @dare.description %></p>
+
+<%= form_for @dare put_price_path(@dare.proposer, @dare), method: :put do |f| %>
+<%= f.number_field :price  %>
+<% end %>
+
+<p>proposed by: <%= @dare.proposer.username.capitalize %></p>
+<p>proposed to: <%= @dare.daree.username.capitalize %></p>
+
+<p><%= link_to "home",  user_dares_path(@daree) %></p>
