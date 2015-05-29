@@ -11,6 +11,4 @@ class DaresController < ApplicationController
     @proposer = @dare.proposer
   end
 
-
-
 end
