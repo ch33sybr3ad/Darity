@@ -17,4 +17,9 @@ class DaresController < ApplicationController
     @daree = @dare.daree
   end
 
+  def stripe
+    @donation = Donation.new
+
+  end
+
 end

@@ -4,6 +4,10 @@ Rails.application.routes.draw do
     resources :dares
   end
 
+  post '/donations' => 'donations#create'
+  get '/donations' => 'donations#new'
+
+  get '/stripe' => 'dares#stripe'
   get '/home' => 'users#home'
   post '/login' => 'users#login'
   match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
