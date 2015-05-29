@@ -1,5 +1,13 @@
 <h1>Dares for <%= @user.username %></h1>
 
 <ul>
-  <%= render @dares %>
+  <%= render @challenged_dares %>
+</ul>
+
+<hr>
+
+<h2>Dares you proposed:</h2>
+
+<ul>
+  <%= render @proposed_dares %>
 </ul>
