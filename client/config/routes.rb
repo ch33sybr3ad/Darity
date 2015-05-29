@@ -4,10 +4,14 @@ Rails.application.routes.draw do
     resources :dares
   end
 
+  get '/home' => 'users#home'
+  post '/login' => 'users#login'
   match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
   get "/signout" => "sessions#destroy", as: :signout
 
-  root 'dares#index'
+
+  root 'users#home'
+
 
   # Example of regular route:
     get '/users/:user_id/dares/:id' => 'dares#set_price'
