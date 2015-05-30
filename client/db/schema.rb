@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150530043059) do
+ActiveRecord::Schema.define(version: 20150530164608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,16 @@ ActiveRecord::Schema.define(version: 20150530043059) do
     t.datetime "updated_at",                      null: false
     t.integer  "donation_amount"
     t.boolean  "completed",       default: false
+  end
+
+  create_table "pending_dares", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.integer  "daree_id"
+    t.integer  "proposer_id"
+    t.string   "twitter_handle"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "users", force: :cascade do |t|
