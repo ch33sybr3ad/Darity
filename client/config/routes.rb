@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :charities
+  resources :charities, only: [:show, :index]
 
   resources :users do
-    resources :dares do 
-    end
+    resources :dares
   end
-
+  
   get '/home' => 'users#home'
   post '/login' => 'users#login'
   match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
