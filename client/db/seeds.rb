@@ -13,15 +13,24 @@ users = Array.new(5) do
   )
 end
 
+ top_10_followed_charities = HTTParty.get('https://www.kimonolabs.com/api/e8cai98q?apikey=jR0ep0PlzRAYmFSLYW4sScLoay3VFcDE')
+  charities_array = top_10_followed_charities["results"]["collection1"]
 
-charity = Charity.create!(
-  name: 'Ping Pong 4 Kids',
-  url: 'http://pingpong.com',
-  description: 'provides ping pong to poor and rich kids',
-  picture_url: 'http://callsfreecalls.com/images/CFC_unique_charity.jpg'
-)
+    # binding.pry
+
+charities_array.each do |charity|
+  Charity.create!(
+    name: charity["title"]["text"],
+    followers: charity["Followers"],
+    url: charity["title"]["href"],
+    description: "Click on link for more charity info",
+    )
+end
+
 
 5.times do
+
+  charity = Charity.order("RANDOM()").first
 
   users.rotate!
 
