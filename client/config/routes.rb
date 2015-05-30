@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :dares
   end
-  
+
   get '/home' => 'users#home'
   post '/login' => 'users#login'
   match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]

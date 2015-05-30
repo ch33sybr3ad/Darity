@@ -22,7 +22,19 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = User.new(signup_params)
+    respond_to do |format|
+      if @user.save
+        # Tell the UserMailer to send a welcome email after save
+        UserMailer.thank_you(@user).deliver_now
 
+        format.html { redirect_to(@user, notice: 'User was successfully created.') }
+        format.json { render json: @user, status: :created, location: @user }
+      else
+        format.html { render action: 'home' }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   private
@@ -35,6 +47,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :password)
+  end
+
+  def signup_params
+    params.require(:user).permit(:username, :email, :password)
   end
 
   def find_user
