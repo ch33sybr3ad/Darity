@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
   get "/signout" => "sessions#destroy", as: :signout
 
-
   root 'users#home'
 
   get '/users/:user_id/dares/:id/set_price' => 'dares#set_price', as: :set_price
@@ -20,6 +19,8 @@ Rails.application.routes.draw do
   get '/dares/:dare_id/video/new' => 'videos#new', as: :new_video
   post '/dares/:dare_id/video' => 'videos#create', as: :dare_videos
 
+  get '/dares/:dare_id/donations/:id/pay' => 'donations#pay', as: :pay_donations
+  post '/dares/:dare_id/donations/:id/pay' => 'donations#paid'
   get '/dares/:dare_id/donations/new' => 'donations#new', as: :new_donation
   post '/dares/:dare_id/donations' => 'donations#create', as: :donations
 

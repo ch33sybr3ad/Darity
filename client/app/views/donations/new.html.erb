@@ -1,17 +1,5 @@
-<%= form_tag @donation do %>
-  <article>
-    <label class="amount">
-      <span>Amount: $5.00</span>
-    </label>
-  </article>
-
-  <%= label_tag(:donation_amount, "Donation Amount: $") %>
-  <%= text_field_tag(:donation_amount) %>
-
-<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-        data-description="A month's subscription"
-        data-amount= "<%= @amount %>">
-</script>
-
+<%= form_for @donation do |f| %>
+  <%= f.label :donation_amount %>
+  <%= f.text_field :donation_amount %>
+  <%= f.submit "Submit" %>
 <% end %>
