@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 
-
   def show
     find_user
     retreive_all_dares
