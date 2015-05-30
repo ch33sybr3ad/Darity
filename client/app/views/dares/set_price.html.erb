@@ -2,7 +2,7 @@
 
 <p><%= @dare.description %></p>
 
-<%= form_for @dare, url: put_price_path(@dare.proposer, @dare) do |f| %>
+<%= form_for @dare, url: put_price_path(@proposer, @dare) do |f| %>
   <%= f.label :price %>
   <%= f.number_field :price  %>
   <%= f.label :charity %>
@@ -14,7 +14,7 @@
   <%= f.submit :submit %>
 <% end %>
 
-<p>proposed by: <%= @dare.proposer.username.capitalize %></p>
-<p>proposed to: <%= @dare.daree.username.capitalize %></p>
+<p>proposed by: <%= @proposer.username.capitalize %></p>
+<p>proposed to: <%= @daree.username.capitalize %></p>
 
 <p><%= link_to "home",  user_dares_path(@daree) %></p>

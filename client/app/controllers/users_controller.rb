@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
+
   def show
-    @user = User.find(params[:id])
+    find_user
     retreive_all_dares
   end
 
@@ -31,6 +32,15 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :password)
+  end
+
+  def find_user
+    begin
+    @user = User.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      @user = User.new
+      render html: "<h1>User No Found</h1>"
+    end
   end
 
 end
