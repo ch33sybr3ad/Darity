@@ -37,6 +37,10 @@
       redirect_to donations_path
   end
 
+  def guage
+
+  end
+
   private
 
     def donation_params
