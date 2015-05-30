@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get '/dares/:dare_id/donations/new' => 'donations#new', as: :new_donation
   post '/dares/:dare_id/donations' => 'donations#create', as: :donations
 
+  get '/d3guage' => 'donations#guage', as: :gauge
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
