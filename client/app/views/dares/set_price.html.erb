@@ -6,7 +6,11 @@
   <%= f.label :price %>
   <%= f.number_field :price  %>
   <%= f.label :charity %>
-  <%= f.text_field :charity, value: "" %>
+  <%= f.select :charity do  %>
+    <% @charities.each do |charity| %>
+      <%= content_tag :option, charity.name, value: charity.name %>
+    <% end %>
+  <% end %>
   <%= f.submit :submit %>
 <% end %>
 
