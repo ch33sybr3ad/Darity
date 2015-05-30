@@ -6,12 +6,14 @@ Dare.delete_all
 users = Array.new(5) do
   User.create!(
     username: Faker::Internet.user_name,
-    password: Faker::Internet.password,
+    password: 1234,
     email: Faker::Internet.safe_email,
     uid: Faker::Number.number(10),
     provider: 'Twitter'
   )
 end
+
+
 charity = Charity.create!(
   name: 'Ping Pong 4 Kids',
   url: 'http://pingpong.com',
