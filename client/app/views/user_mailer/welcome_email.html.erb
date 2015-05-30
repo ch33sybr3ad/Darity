@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <style type="text/css" media="screen">
+      body {
+        font-size: 18px;
+      }
+      .orange-circle-button {
+        box-shadow: 2px 4px 0 2px rgba(0,0,0,0.1);
+        border: .5em solid #E84D0E;
+        font-size: 1em;
+        line-height: 1.1em;
+        color: #ffffff;
+        background-color: #e84d0e;
+        margin: auto;
+        border-radius: 50%;
+        height: 7em;
+        width: 7em;
+        position: relative;
+      }
+      .orange-circle-button:hover {
+        color:#ffffff;
+        background-color: #e84d0e;
+        text-decoration: none;
+        border-color: #ff7536;
+
+      }
+      .orange-circle-button:visited {
+        color:#ffffff;
+        background-color: #e84d0e;
+        text-decoration: none;
+
+      }
+      .orange-circle-link-greater-than {
+        font-size: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="charity-img">
+      <img src="https://s-media-cache-ak0.pinimg.com/236x/f7/55/c3/f755c3433cb0243feab178b5ee1a3485.jpg" width="500px" height="500px" text-align="center">
+    </div>
+    <h1>Darity thanks you from the bottom of our hearts for signing up, <%= @user.username %></h1>
+
+    <p>Our app highly depends on you having a Twitter Account</p>
+    <p><strong>OUR FIRST DARE IS FOR YOU TO HAVE TWITTER</strong></p>
+    <br>
+    <hr>
+    <br>
+    <p>Sign up here with Twitter:</p>
+    <a href="https://twitter.com/signup"><button class="orange-circle-button btn btn-primary">Twitter Sign Up</button></a>
+    <br>
+    <hr>
+    <br>
+    <h1>FUNNEST WEBSITE TO DARE OTHERS WEIRD THINGS FOR CHARITY HERE AT <a href="http://localhost:3000/">http://localhost:3000/</a></h1>
+ </body>
+</html>

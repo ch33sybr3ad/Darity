@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end
 
   def index
+    @pending_dare = PendingDare.new
     if params[:phrase]
       @users = User.where("username LIKE ?", "%#{params[:phrase]}%")
       render json: @users
@@ -26,8 +27,36 @@ class UsersController < ApplicationController
     end
   end
 
-  def create
+  def new
+    @user = User.new
+    render "new"
+  end
 
+  def create
+    @user = User.new(signup_params)
+    respond_to do |format|
+      if @user.save
+        # Tell the UserMailer to send a welcome email after save
+        session[:user_id] = @user.id
+        UserMailer.welcome_email(@user).deliver_later
+
+        format.html { redirect_to(@user, notice: 'User was successfully created.') }
+        format.json { render json: @user, status: :created, location: @user }
+      else
+        format.html { render action: 'home' }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def invite
+    @pending_dare = PendingDare.new(pend_params)
+    @pending_dare.proposer = current_user
+    if @pending_dare.save
+      redirect_to @pending_dare
+    else
+      p 'fail'
+    end
   end
 
   private
@@ -40,6 +69,15 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :password)
+  end
+
+<<<<<<< HEAD
+  def pend_params
+    params.require(:pending_dare).permit(:title, :description, :twitter_handle)
+=======
+  def signup_params
+    params.require(:user).permit(:username, :email, :password)
+>>>>>>> master
   end
 
   def find_user
