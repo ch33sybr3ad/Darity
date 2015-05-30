@@ -3,5 +3,7 @@
 <% else %>
   <p>Title: <%= @pending_dare.title %></p>
   <p>Description: <%= @pending_dare.description %></p>
+
   <%= tweet_button message: 'tweet it!', dare: @pending_dare, user: current_user %>
+
 <% end %>
