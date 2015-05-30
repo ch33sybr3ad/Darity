@@ -254,6 +254,7 @@ DEPENDENCIES
   byebug
   capybara-rails
   coffee-rails (~> 4.1.0)
+  database_cleaner
   dotenv
   factory_girl_rails
   faker

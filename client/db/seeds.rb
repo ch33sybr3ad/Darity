@@ -25,16 +25,16 @@ charity = Charity.create!(
 
   a, b, c, d, e = users
 
-  dare = Dare.create!(
+  dare = Dare.new(
     title: Faker::Lorem.sentence,
     description: Faker::Lorem.paragraph,
   )
 
   a.proposed_dares << dare
   b.challenged_dares << dare
-  dare.pledgers << c
-  dare.pledgers << d
-  dare.pledgers << e
+  dare.donations.create!(user: c, donation_amount: 2)
+  dare.donations.create!(user: d, donation_amount: 2)
+  dare.donations.create!(user: e, donation_amount: 2)
   charity.dares << dare
 
   p dare.proposer == a
@@ -44,4 +44,5 @@ charity = Charity.create!(
   p e.pledged_dares.first == dare
   p dare.charity == charity
 
+  dare.save
 end
