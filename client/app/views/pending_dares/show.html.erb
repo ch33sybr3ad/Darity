@@ -1,0 +1,6 @@
+<% if !current_user %>
+  <a href="/auth/twitter">Sign in with Twitter</a>
+<% else %>
+  <p>Title: <%= @pending_dare.title %></p>
+  <p>Description: <%= @pending_dare.description %></p>
+<% end %>

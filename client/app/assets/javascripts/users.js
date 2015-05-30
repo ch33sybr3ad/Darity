@@ -1,5 +1,4 @@
-$(document).ready(function() {
-
+var searchFunction = function() {
   $("#search-bar").on('keyup', function() {
     var phrase = $(this).val();
     $.get('/users?phrase='+phrase).done(function(payload) {
@@ -9,7 +8,7 @@ $(document).ready(function() {
         payload.forEach(function(user) {
           $('.user-wrap').append(
             '<p>'+user.username+
-              ' <a href="/users/'+user.id+'">Dare</a>'+
+            ' <a href="/users/'+user.id+'">Dare</a>'+
             '</p>'
             );
         });
@@ -22,5 +21,10 @@ $(document).ready(function() {
       console.log(err);
     });
   });
+};
 
-});
+var ready = function() {
+  searchFunction();
+}
+$(document).ready(ready);
+$(document).on('page:load', ready);
