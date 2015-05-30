@@ -30,7 +30,8 @@
         :description => @dare.title,
         :currency    => 'usd'
       )
-
+    @donation.completed = true
+    @donation.save
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to donations_path
