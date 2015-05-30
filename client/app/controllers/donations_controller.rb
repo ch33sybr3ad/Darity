@@ -1,8 +1,13 @@
  class DonationsController < ApplicationController
+  
   def new
   end
 
   def create
+
+  end
+
+  def pay
     @amount = 500
 
     customer = Stripe::Customer.create(
@@ -19,6 +24,6 @@
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
-      redirect_to charges_path
+      redirect_to donations_path
   end
 end
