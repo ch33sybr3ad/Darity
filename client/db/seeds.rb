@@ -28,6 +28,13 @@ charities_array.each do |charity|
 end
 
 
+# File.open(dares.csv).each do |line|
+#   print "#{line}"
+# end
+
+
+
+
 5.times do
 
   charity = Charity.order("RANDOM()").first

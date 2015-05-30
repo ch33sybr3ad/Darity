@@ -1,4 +1,7 @@
-FactoryGirl.define do
+FactoryGirl.define do  factory :generate_dare do
+    description "MyString"
+  end
+
   factory :user do
     username Faker::Name.name
     password Faker::Internet.password
@@ -9,7 +12,10 @@ FactoryGirl.define do
   end
 end
 
-FactoryGirl.define do
+FactoryGirl.define do  factory :generate_dare do
+    description "MyString"
+  end
+
   factory :dare do
    title Faker::Lorem.sentence
    description Faker::Lorem.paragraph

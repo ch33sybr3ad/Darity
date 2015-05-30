@@ -1,0 +1,2 @@
+class GenerateDaresController < ApplicationController
+end
