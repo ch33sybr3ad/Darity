@@ -21,6 +21,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def create
+
+  end
+
   private
 
   def retreive_all_dares
