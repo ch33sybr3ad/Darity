@@ -1,12 +1,14 @@
+<input id="search-bar" type="text" placeholder="search">
+
 <h1>Welcome to Darity</h1>
 
 <p>ALL USERS:</p>
 
-<hr>
-
-<% @users.each do |user| %>
+<div class="user-wrap">
+  <% @users.each do |user| %>
   <p>
     <%= user.username %>
     <%= link_to 'Dare', user %>
   </p>
-<% end %>
+  <% end %>
+</div>
