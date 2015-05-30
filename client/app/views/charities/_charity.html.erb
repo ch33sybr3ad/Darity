@@ -1,4 +1,7 @@
 <li class='list-group-item'>
-  <p><%= charity.name %></p>
-  <p><%= charity.description %></p>
+  <p>Name: <%= charity.name %></p>
+  <p>Followers: <%= charity.followers %> </p>
+  <button class="btn btn-default">
+    <%= link_to "More Information about this Charity", charity.url %>
+  </button>
 </li>
