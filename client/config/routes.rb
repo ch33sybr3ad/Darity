@@ -25,6 +25,9 @@ Rails.application.routes.draw do
   post '/dares/:dare_id/donations' => 'donations#create', as: :donations
 
   get '/d3guage' => 'donations#guage', as: :gauge
+
+  post '/user/invites' => "users#invite", as: :user_invite
+  resources :pending_dares, only: :show
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

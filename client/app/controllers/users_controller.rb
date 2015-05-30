@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end
 
   def index
+    @pending_dare = PendingDare.new
     if params[:phrase]
       @users = User.where("username LIKE ?", "%#{params[:phrase]}%")
       render json: @users
@@ -48,6 +49,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def invite
+    @pending_dare = PendingDare.new(pend_params)
+    @pending_dare.proposer = current_user
+    if @pending_dare.save
+      redirect_to @pending_dare
+    else
+      p 'fail'
+    end
+  end
+
   private
 
   def retreive_all_dares
@@ -58,6 +69,11 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :password)
+  end
+
+
+  def pend_params
+    params.require(:pending_dare).permit(:title, :description, :twitter_handle)
   end
 
   def signup_params

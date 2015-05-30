@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 
   has_many :challenged_dares, foreign_key: :daree_id, class_name: "Dare"
   has_many :proposed_dares, foreign_key: :proposer_id, class_name: "Dare"
+  has_many :pending_dares, foreign_key: :proposer_id, class_name: "Dare"
 
 
   def self.create_with_omniauth(auth)
