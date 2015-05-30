@@ -43,9 +43,11 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'rack-test'
-  gem 'rspec'
+  gem 'rspec-rails'
   gem 'faker'
   gem 'pry'
   gem 'pry-byebug'
+  gem 'factory_girl_rails'
+  gem 'capybara-rails'
 end
 
