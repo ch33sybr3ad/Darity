@@ -38,6 +38,7 @@ class DaresController < ApplicationController
 
   def set_price
     @daree = @dare.daree
+    @proposer = @dare.proposer
     @charities = Charity.all
   end
 

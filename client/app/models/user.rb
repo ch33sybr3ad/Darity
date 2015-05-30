@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   has_many :proposed_dares, foreign_key: :proposer_id, class_name: "Dare"
 
 
+
+
   def self.create_with_omniauth(auth)
     create! do |user|
       user.provider = auth["provider"]
