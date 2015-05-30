@@ -1,22 +1,7 @@
 <section class="container">
 
 <h1><%= @user.username.capitalize %>'s Page</h1>
-<a class="tweet-button"
-  href="https://twitter.com/intent/tweet?text=Darity%20-%20Dare%20For%20Charity&url=localhost:3000/users"
-  data-size="large">
-DARE <%= @user.username.upcase %></a>
 
-<a href="https://twitter.com/share" class="twitter-share-button" data-via="<%= @user.username %>" data-size="large">Tweet Share</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-<%= link_to "dare #{@user.username.capitalize}!", new_user_dare_path(current_user) + "?daree=#{@user.id}" %>
-
-
-
-  <a class="twitter-share-button"
-    href="https://twitter.com/intent/tweet?text=Hello%20world"
-    data-size="large">
-  TWEET DARE</a>
   <%= link_to "dare #{@user.username.capitalize}!", new_user_dare_path(current_user) + "?daree=#{@user.id}" %>
   <h3>Challenged Dares: (Dares <%= @user.username %> has been challenged)</h3>
   <ul class="list-group">
@@ -24,6 +9,9 @@ DARE <%= @user.username.upcase %></a>
       <li class="list-group-item">
         <p><%= link_to dare.title, user_dare_path(dare.proposer, dare) %></p>
         <p><%= dare.description %></p>
+        <button class="btn btn-primary">
+          <%= link_to "Make It Viral!", "https://twitter.com/intent/tweet?text=#{dare.description}%20%23Darity%20%23Dare%20%23For%20%23Charity&url=localhost:3000/users/#{@user.id}", "data-via" => "#{dare.proposer}", "data-related" => "#{@user.id}" %>
+        </button>
       </li>
     <% end %>
   </ul>
