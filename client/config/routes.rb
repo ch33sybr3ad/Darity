@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+
   resources :charities
   resources :users do
     resources :dares
   end
+
+
 
   resources :donations, only: [:new, :create]
 
@@ -14,11 +17,11 @@ Rails.application.routes.draw do
 
   root 'users#home'
 
+  get '/users/:user_id/dares/:id/set_price' => 'dares#set_price', as: :set_price
+  patch '/users/:user_id/dares/:id/set_price' => 'dares#put_price', as: :put_price
 
-  # Example of regular route:
-    get '/users/:user_id/dares/:id/set_price' => 'dares#set_price', as: :set_price
-    patch '/users/:user_id/dares/:id/set_price' => 'dares#put_price', as: :put_price
-
+  get '/dares/:dare_id/video/new' => 'videos#new', as: :new_video
+  post '/dares/:dare_id/video' => 'videos#create', as: :dare_videos
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
