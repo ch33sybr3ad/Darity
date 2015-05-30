@@ -4,7 +4,7 @@ class CreateCharities < ActiveRecord::Migration
       t.string :name
       t.string :url
       t.text :description
-      t.string :picture_url
+      t.string :followers
 
       t.timestamps null: false
     end

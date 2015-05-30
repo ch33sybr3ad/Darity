@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20150530164608) do
     t.string   "name"
     t.string   "url"
     t.text     "description"
-    t.string   "picture_url"
+    t.string   "followers"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

@@ -71,13 +71,13 @@ class UsersController < ApplicationController
     params.require(:user).permit(:email, :password)
   end
 
-<<<<<<< HEAD
+
   def pend_params
     params.require(:pending_dare).permit(:title, :description, :twitter_handle)
-=======
+  end
+
   def signup_params
     params.require(:user).permit(:username, :email, :password)
->>>>>>> master
   end
 
   def find_user

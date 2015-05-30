@@ -6,20 +6,31 @@ Dare.delete_all
 users = Array.new(5) do
   User.create!(
     username: Faker::Internet.user_name,
-    password: Faker::Internet.password,
+    password: 1234,
     email: Faker::Internet.safe_email,
     uid: Faker::Number.number(10),
     provider: 'Twitter'
   )
 end
-charity = Charity.create!(
-  name: 'Ping Pong 4 Kids',
-  url: 'http://pingpong.com',
-  description: 'provides ping pong to poor and rich kids',
-  picture_url: 'http://callsfreecalls.com/images/CFC_unique_charity.jpg'
-)
+
+ top_10_followed_charities = HTTParty.get('https://www.kimonolabs.com/api/e8cai98q?apikey=jR0ep0PlzRAYmFSLYW4sScLoay3VFcDE')
+  charities_array = top_10_followed_charities["results"]["collection1"]
+
+    # binding.pry
+
+charities_array.each do |charity|
+  Charity.create!(
+    name: charity["title"]["text"],
+    followers: charity["Followers"],
+    url: charity["title"]["href"],
+    description: "Click on link for more charity info",
+    )
+end
+
 
 5.times do
+
+  charity = Charity.order("RANDOM()").first
 
   users.rotate!
 
