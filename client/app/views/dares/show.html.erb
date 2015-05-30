@@ -1,21 +1,23 @@
-<h1><%= @dare.title %></h1>
+<div class="container">
+  <h1><%= @dare.title %></h1>
 
 
-<% if current_user == @proposer %>
-  <%= link_to "edit", edit_user_dare_path(@proposer, @dare) %>
-  <%= link_to "delete", user_dare_path(@proposer, @dare), method: :delete %>
-<% elsif current_user == @daree %>
-  <%= link_to "delete", user_dare_path(@proposer, @dare), method: :delete %>
-  <% if @dare.price %>
-    <%= link_to "upload video", new_video_path(@dare) %>
-  <% else %>
-    <%= link_to "accept", set_price_path(@proposer, @dare) %>
+  <% if current_user == @proposer %>
+    <%= link_to "edit", edit_user_dare_path(@proposer, @dare) %>
+    <%= link_to "delete", user_dare_path(@proposer, @dare), method: :delete %>
+  <% elsif current_user == @daree %>
+    <%= link_to "delete", user_dare_path(@proposer, @dare), method: :delete %>
+    <% if @dare.price %>
+      <%= link_to "upload video", new_video_path(@dare) %>
+    <% else %>
+      <%= link_to "accept", set_price_path(@proposer, @dare) %>
+    <% end %>
   <% end %>
-<% end %>
 
 
-<p><%= @dare.description %></p>
+  <p><%= @dare.description %></p>
 
-<p>proposed by: <%= link_to @proposer.username.capitalize, @proposer %></p>
-<p>proposed to: <%= link_to @dare.daree.username.capitalize, @dare.daree %></p>
+  <p>proposed by: <%= link_to @proposer.username.capitalize, @proposer %></p>
+  <p>proposed to: <%= link_to @daree.username.capitalize, @daree %></p>
 
+</div>

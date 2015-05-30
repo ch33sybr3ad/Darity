@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :charities
+
   resources :users do
     resources :dares
   end

@@ -1,26 +1,39 @@
-<h1><%= @user.username.capitalize %>'s Page</h1>
+<section class="container">
 
-<%= link_to "dare #{@user.username.capitalize}!", new_user_dare_path(current_user) + "?daree=#{@user.id}" %>
+  <h1><%= @user.username.capitalize %>'s Page</h1>
 
-<p>Challenged Dares: (dares <%= @user.username %> has been challenged)</p>
-<% @challenged_dares.each do |dare| %>
-  <p><%= link_to dare.title, user_dare_path(dare.proposer, dare) %></p>
-  <p><%= dare.description %></p>
-<% end %>
+    <%= link_to "dare #{@user.username.capitalize}!", new_user_dare_path(current_user) + "?daree=#{@user.id}" %>
+    <h3>Challenged Dares: (Dares <%= @user.username %> has been challenged)</h3>
+    <ul class="list-group">
+      <% @challenged_dares.each do |dare| %>
+        <li class="list-group-item">
+          <p><%= link_to dare.title, user_dare_path(dare.proposer, dare) %></p>
+          <p><%= dare.description %></p>
+          <button class="btn btn-primary">
+           <%= link_to "Make It Viral!", "https://twitter.com/intent/tweet?text=%23Viral%20#{dare.title}%20-%20dared%20to%20%40#{dare.daree.username}%20proposed%20by%20%40#{dare.proposer.username}%20%23Darity%20%23Dare%20For%20%23Charity%20see%20dare%20here%20localhost:3000/users/#{@user.id}/dares/#{dare.id}&url=localhost:3000/users/#{@user.id}/dares/#{dare.id}", "data-via" => "#{dare.proposer}", "data-related" => "#{dare.daree}" %>
+          </button>
+        </li>
+      <% end %>
+    </ul>
 
-<hr>
+    <h3>Proposed Dares: (Dares <%= @user.username %> has proposed)</h3>
+    <ul class="list-group">
+      <% @proposed_dares.each do |dare| %>
+      <li class="list-group-item">
+        <p><%= link_to dare.title, user_dare_path(dare.proposer, dare) %></p>
+        <p><%= dare.description %></p>
+      </li>
+    <% end %>
+  </ul>
 
-<p>Proposed Dares: (dares <%= @user.username %> has proposed)</p>
-<% @proposed_dares.each do |dare| %>
-  <p><%= link_to dare.title, user_dare_path(dare.proposer, dare) %></p>
-  <p><%= dare.description %></p>
-  <p>Proposed Dares</p>
-<% end %>
 
-<hr>
-
-<p>Pledged Dares: (dares <%= @user.username %> pay for)</p>
-<% @pledged_dares.each do |dare| %>
-  <p><%= link_to dare.title, user_dare_path(dare.proposer, dare) %></p>
-  <p><%= dare.description %></p>
-<% end %>
+    <h3>Pledged Dares: (Dares <%= @user.username %> pay for)</h3>
+    <ul class="list-group">
+    <% @pledged_dares.each do |dare| %>
+      <li class="list-group-item">
+        <p><%= link_to dare.title, user_dare_path(dare.proposer, dare) %></p>
+        <p><%= dare.description %></p>
+      </li>
+    <% end %>
+    </ul>
+</section>
