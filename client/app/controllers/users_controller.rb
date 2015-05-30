@@ -10,7 +10,12 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    if params[:phrase]
+      @users = User.where("username LIKE ?", "%#{params[:phrase]}%")
+      render json: @users
+    else
+      @users = User.all
+    end
   end
 
   def login
