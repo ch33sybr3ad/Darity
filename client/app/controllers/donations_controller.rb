@@ -1,6 +1,8 @@
  class DonationsController < ApplicationController
 
   def new
+    @dare = Dare.find(params[:dare_id])
+    @user = User.where()
     @donation = Donation.new
   end
 
@@ -25,13 +27,14 @@
       )
 
       charge = Stripe::Charge.create(
-        :customer    => @user.id,
+        :customer    => customer.id,
         :amount      => @donation.donation_amount * 100,
         :description => @dare.title,
         :currency    => 'usd'
       )
     @donation.completed = true
     @donation.save
+    UserMailer.thank_you(@user).deliver_later
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to donations_path
