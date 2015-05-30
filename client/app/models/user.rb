@@ -8,11 +8,28 @@ class User < ActiveRecord::Base
 
 
   def self.create_with_omniauth(auth)
-    create! do |user|
+    new_user = create! do |user|
       user.provider = auth["provider"]
       user.uid = auth["uid"]
       user.username = auth['info']['nickname']
       user.image_url = auth['info']['image']
+    end
+    new_user.check_for_pending_dares
+    new_user
+  end
+
+  def check_for_pending_dares
+    dares = PendingDare.where(twitter_handle: username)
+    if dares.any?
+      dares.each do |pending|
+        dare = Dare.create(
+          title: pending.title,
+          description: pending.description,
+          proposer_id: pending.proposer_id,
+          daree_id: id
+        )
+        pending.destroy
+      end
     end
   end
 
