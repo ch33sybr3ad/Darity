@@ -1,4 +1,5 @@
-<h1><%= @dare.title %></h1>
+<div class="container">
+  <h1><%= @dare.title %></h1>
 
 
 <% if current_user == @proposer %>
@@ -17,8 +18,9 @@
 <% end %>
 
 
-<p><%= @dare.description %></p>
+  <p><%= @dare.description %></p>
 
-<p>proposed by: <%= link_to @proposer.username.capitalize, @proposer %></p>
-<p>proposed to: <%= link_to @dare.daree.username.capitalize, @dare.daree %></p>
+  <p>proposed by: <%= link_to @proposer.username.capitalize, @proposer %></p>
+  <p>proposed to: <%= link_to @daree.username.capitalize, @daree %></p>
 
+</div>

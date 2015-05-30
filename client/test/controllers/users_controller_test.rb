@@ -20,7 +20,7 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "user show page shows dares" do
-
+    log_in_as(@user)
   end
 
   test "user show page shows redirects to dares" do

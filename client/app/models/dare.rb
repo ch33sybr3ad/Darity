@@ -6,4 +6,7 @@ class Dare < ActiveRecord::Base
   belongs_to :proposer, foreign_key: :proposer_id, class_name: "User"
   belongs_to :daree, foreign_key: :daree_id, class_name: "User"
   belongs_to :charity
+
+  validates_presence_of :title, :description, :proposer_id, :daree_id
+  validates :price, allow_nil: true, numericality: true
 end

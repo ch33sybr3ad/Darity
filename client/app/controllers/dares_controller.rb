@@ -1,19 +1,19 @@
 class DaresController < ApplicationController
 
+  before_action(:find_dare, except: [:index, :new, :create])
+  before_action(:find_user, only: [:index, :new])
+
   def index
-    @user = User.find(params[:user_id])
     @challenged_dares = @user.challenged_dares
     @proposed_dares = @user.proposed_dares
   end
 
   def show
-    @dare = Dare.find(params[:id])
     @proposer = @dare.proposer
     @daree = @dare.daree
   end
 
   def new
-    @user = User.find(params[:user_id])
     @dare = Dare.new
   end
 
@@ -29,29 +29,26 @@ class DaresController < ApplicationController
   end
 
   def edit
-    @dare = Dare.find(params[:id])
   end
 
   def update
-    @dare = Dare.find(params[:id])
     @dare.update(dare_params)
     redirect_to [@dare.proposer, @dare]
   end
 
   def set_price
-    @dare = Dare.find(params[:id])
     @daree = @dare.daree
+    @proposer = @dare.proposer
+    @charities = Charity.all
   end
 
   def put_price
-    @dare = Dare.find(params[:id])
     @charity = Charity.find_or_create_by(name: dare_params[:charity])
     @dare.update(price: dare_params[:price], charity: @charity)
     redirect_to [@dare.proposer, @dare]
   end
 
   def destroy
-    @dare = Dare.find(params[:id])
     @dare.destroy
     redirect_to current_user
   end
@@ -60,6 +57,22 @@ class DaresController < ApplicationController
 
   def dare_params
     params.require(:dare).permit(:price, :charity, :title, :description, :daree_id)
+  end
+
+  def find_dare
+    begin
+    @dare = Dare.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      render html: "<h1>Dare Action</h1>"
+    end
+  end
+
+  def find_user
+    begin
+      @user = User.find(params[:user_id])
+    rescue ActiveRecord::RecordNotFound
+      render html: "<h1>User not found.</h1>"
+    end
   end
 
 
