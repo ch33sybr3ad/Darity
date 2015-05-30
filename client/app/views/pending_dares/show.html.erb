@@ -3,7 +3,7 @@
 <% else %>
   <p>Title: <%= @pending_dare.title %></p>
   <p>Description: <%= @pending_dare.description %></p>
-  <button class="btn btn-primary">
-    <%= link_to "DARE IT TO 'EM", "https://twitter.com/intent/tweet?text=%23Viral%20%40#{@pending_dare.twitter_handle}%20#{@pending_dare.description}%20-%20dared%20by%20%40#{@pending_dare.proposer.username}%20%23Darity%20%23Dare%20For%20%23Charity%20localhost:3000" %>
- </button>
+
+  <%= tweet_button message: 'tweet it!', dare: @pending_dare, user: current_user %>
+
 <% end %>
