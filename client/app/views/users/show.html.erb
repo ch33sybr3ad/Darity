@@ -10,7 +10,7 @@
           <p><%= link_to dare.title, user_dare_path(dare.proposer, dare) %></p>
           <p><%= dare.description %></p>
           <button class="btn btn-primary">
-            <%= link_to "Make It Viral!", "https://twitter.com/intent/tweet?text=#{dare.description}%20%23Darity%20%23Dare%20%23For%20%23Charity&url=localhost:3000/users/#{@user.id}", "data-via" => "#{dare.proposer}", "data-related" => "#{@user.id}" %>
+           <%= link_to "Make It Viral!", "https://twitter.com/intent/tweet?text=%23Viral%20#{dare.title}%20-%20dared%20to%20%40#{dare.daree.username}%20proposed%20by%20%40#{dare.proposer.username}%20%23Darity%20%23Dare%20For%20%23Charity%20see%20dare%20here%20localhost:3000/users/#{@user.id}/dares/#{dare.id}&url=localhost:3000/users/#{@user.id}/dares/#{dare.id}", "data-via" => "#{dare.proposer}", "data-related" => "#{dare.daree}" %>
           </button>
         </li>
       <% end %>
@@ -22,9 +22,10 @@
       <li class="list-group-item">
         <p><%= link_to dare.title, user_dare_path(dare.proposer, dare) %></p>
         <p><%= dare.description %></p>
-        </li>
-      <% end %>
-    </ul>
+      </li>
+    <% end %>
+  </ul>
+
 
     <h3>Pledged Dares: (Dares <%= @user.username %> pay for)</h3>
     <ul class="list-group">
