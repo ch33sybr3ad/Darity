@@ -7,6 +7,10 @@ RSpec.describe User, type: :model do
     FactoryGirl.create(:user)
   }
 
-  it { should respond_to(:email) }
+  it { should respond_to(:username) }
+  it { should respond_to(:challenged_dares) }
+  it { should respond_to(:proposed_dares) }
+  it { should respond_to(:pledged_dares) }
+  it { should respond_to(:donations) }
 
 end

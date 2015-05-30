@@ -13,9 +13,8 @@ FactoryGirl.define do
   factory :dare do
    title Faker::Lorem.sentence
    description Faker::Lorem.paragraph
-   daree_id rand(1..10)
-   proposer_id rand(1..10)
-   charity_id rand(1..10)
-   done false
+   daree_id (1..100).to_a.sample
+   proposer_id (1..100).to_a.sample
+   charity_id (1..100).to_a.sample
   end
 end

@@ -8,7 +8,5 @@ class Dare < ActiveRecord::Base
   belongs_to :charity
 
   validates_presence_of :title, :description, :proposer_id, :daree_id
-
-  validates :price, numericality: true
-
+  validates :price, allow_nil: true, numericality: true
 end
