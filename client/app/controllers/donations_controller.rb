@@ -33,8 +33,10 @@
         :currency    => 'usd'
       )
     @donation.completed = true
-    @donation.save
-    UserMailer.thank_you(@user).deliver_later
+    if @donation.save && @user.save
+      UserMailer.thank_you(customer.email).deliver_later
+      redirect_to @user
+    end
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to donations_path
