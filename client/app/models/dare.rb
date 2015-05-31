@@ -10,3 +10,4 @@ class Dare < ActiveRecord::Base
   validates_presence_of :title, :description, :proposer_id, :daree_id
   validates :price, allow_nil: true, numericality: true
 end
+
