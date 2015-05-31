@@ -15,7 +15,7 @@ var searchFunction = function() {
             '<p>'+user.username+
             ' <a href="/users/'+user.id+'">Dare</a>'+
             '</p>'
-            );
+          );
         });
       } else {
         $('#invite-twitter').show();
