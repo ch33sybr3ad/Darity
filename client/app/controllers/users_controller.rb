@@ -59,6 +59,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def check
+    reply = HTTParty.get("http://twitter.com/#{params[:handle]}").parsed_response
+    render (reply =~ /Sorry, that page doesn/ ? { json: false } : { json: true })
+  end
+
   private
 
   def retreive_all_dares
