@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  attr_accessor :remember_token, :activation_token
+
   has_many :donations, foreign_key: "pledger_id"
   has_many :pledged_dares, through: :donations, source: :dare, foreign_key: "pledged_dare_id"
 
@@ -6,6 +8,8 @@ class User < ActiveRecord::Base
   has_many :proposed_dares, foreign_key: :proposer_id, class_name: "Dare"
   has_many :pending_dares, foreign_key: :proposer_id, class_name: "Dare"
 
+  before_create :create_activation_digest
+  before_save :downcase_email
 
   def self.create_with_omniauth(auth)
     new_user = create! do |user|
@@ -33,4 +37,29 @@ class User < ActiveRecord::Base
     end
   end
 
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                  BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
+
+  def remember
+    self.remember_token = User.new_token
+    update_attribute(:remember_digest, User.digest(remember_token))
+  end
+
+  def User.new_token
+    SecureRandom.urlsafe_base64
+  end
+
+  private
+
+  def downcase_email
+    self.email = email.downcase
+  end
+
+  def create_activation_digest
+    self.activation_token = User.new_token
+    self.activation_digest = User.digest(activation_token)
+  end
 end

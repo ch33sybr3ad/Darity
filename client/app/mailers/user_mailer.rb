@@ -14,4 +14,14 @@ class UserMailer < ApplicationMailer
     @user = user
     mail(to: @user.email, subject: "Darity welcomes you with open arms!")
   end
+
+  def account_activation
+    @greeting = "Hi!"
+    mail to: "to@example.org"
+  end
+
+  def password_reset
+    @greeting = "Hi!"
+    mail to: "to@example.org"
+  end
 end

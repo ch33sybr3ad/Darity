@@ -10,7 +10,10 @@ users = Array.new(5) do
     password: 1234,
     email: Faker::Internet.safe_email,
     uid: Faker::Number.number(10),
-    provider: 'Twitter'
+    provider: 'Twitter',
+    admin: true,
+    activated: true,
+    activated_at: Time.zone.now
   )
 end
 

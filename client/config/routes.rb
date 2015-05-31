@@ -1,11 +1,15 @@
  Rails.application.routes.draw do
 
+  get 'account_activations/edit'
+
   resources :generate_dares
   resources :charities, only: [:show, :index]
 
   resources :users do
     resources :dares
   end
+
+  resources :account_activations, only: [:edit]
 
   get '/home' => 'users#home'
   post '/login' => 'users#login'
