@@ -1,11 +1,18 @@
 #video {
-  top: 0;
-  position: fixed; right: 0; bottom: 0;
-  z-index: -100; 
-  /*background-size: cover;*/
-  /*overflow: hidden;*/
+  opacity: .7;
 }
 
 .hero-wrapper {
+  position: relative;
+  margin: 0 auto;
+}
 
+.video-container {
+  z-index:100;
+  position: relative;
+}
+
+.header-text {
+  position: relative;
+  z-index:-10;
 }
