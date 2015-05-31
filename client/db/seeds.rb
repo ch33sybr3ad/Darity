@@ -14,7 +14,9 @@ users = Array.new(5) do
 end
 
  top_10_followed_charities = HTTParty.get('https://www.kimonolabs.com/api/e8cai98q?apikey=jR0ep0PlzRAYmFSLYW4sScLoay3VFcDE')
+
   charities_array = top_10_followed_charities["results"]["collection1"]
+
 
     # binding.pry
 
@@ -28,9 +30,9 @@ charities_array.each do |charity|
 end
 
 
-# File.open(dares.csv).each do |line|
-#   print "#{line}"
-# end
+File.open('./db/dares.csv').each do |line|
+  GenerateDare.create!(description: "#{line.chomp}")
+end
 
 
 

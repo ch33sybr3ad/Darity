@@ -8,3 +8,23 @@
     <%= f.submit :submit %>
     <%= f.hidden_field :daree_id, value: params[:daree] %>
   <% end %>
+
+  <hr>
+
+  <h4>Can't think of a Dare? Click the generate button to get the creative juices flowing!</h4>
+
+  <button class="btn btn-default generate" href="<%= @user.id %>">
+    Click to generate Dare!
+  </button>
+
+<script id="generated-dare" type="text/x-handlebars-template">
+    <li>
+      <h4>{{description}}</h4>
+    </li>
+  </script>
+
+<div class="container" id="gen-dare">
+</div>
+
+
+

@@ -14,6 +14,7 @@ class DaresController < ApplicationController
   end
 
   def new
+    @generate_dares = GenerateDare.all
     @dare = Dare.new
   end
 
