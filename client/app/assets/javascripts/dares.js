@@ -2,7 +2,7 @@ $(document).ready(function(){
   eventBindings();
 });
 
-$(document).pagechange(function(){
+$(document).on('page:load', function(){
   eventBindings();
 });
 
