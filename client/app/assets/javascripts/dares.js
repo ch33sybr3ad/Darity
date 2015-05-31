@@ -10,6 +10,7 @@ $(document).on('page:load', function(){
 var eventBindings = function(){
   $('.generate').on('click', generateDare)
 }
+}
 
 var generateDare = function(event){
   event.preventDefault();
