@@ -15,13 +15,13 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email, subject: "Darity welcomes you with open arms!")
   end
 
-  def account_activation
-    @greeting = "Hi!"
-    mail to: "to@example.org"
+  def account_activation(user)
+    @user = user
+    mail(to: @user.email, subject: "Darity Account activation")
   end
 
-  def password_reset
-    @greeting = "Hi!"
-    mail to: "to@example.org"
+  def password_reset(user)
+    @user = user
+    mail(to: @user.email, subject: "Darity Password Reset")
   end
 end
