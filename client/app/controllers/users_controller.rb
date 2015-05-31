@@ -2,7 +2,19 @@ class UsersController < ApplicationController
 
   def show
     find_user
-    retreive_all_dares
+    case params[:dare_type]
+    when 'challenged'
+      @challenged_dares = @user.challenged_dares
+      render :'dares/challenged', layout: false
+    when 'proposed'
+      @proposed_dares = @user.proposed_dares
+      render :'dares/proposed', layout: false
+    when 'pledged'
+      @pledged_dares = @user.pledged_dares
+      render :'dares/pledged', layout: false
+    else
+      retreive_all_dares
+    end
   end
 
   def home
