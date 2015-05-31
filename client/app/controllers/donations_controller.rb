@@ -25,25 +25,27 @@
         :email => params[:stripeEmail],
         :card  => params[:stripeToken]
       )
-      charge = Stripe::Charge.create(
+    charge = Stripe::Charge.create(
         :customer    => customer.id,
         :amount      => @donation.donation_amount * 100,
-        :description => @dare.title,
+        :description => @dare.description,
+        :title => @dare.title,
         :currency    => 'usd'
       )
     @donation.completed = true
 
-    if @user.email == nil
-      if @donation.save && @user.save
-        @user.email = customer.email
-        @user.save
-        UserMailer.thank_you(customer.email).deliver_later
-        redirect_to @user
-      else
-        UserMailer.thank_you(customer.email).deliver_later
-        redirect_to @user
-      end
+    if @user.email == nil && @donation.save && @user.save && @dare.save
+      binding.pry
+      @user.email = customer.email
+      @user.save
+      UserMailer.thank_you(@user, charge.amount.to_i/100, charge.title, charge.description, @dare.daree.username).deliver_later
+      redirect_to @user
+    else
+      @donation.save && @user.save && @dare.save
+      UserMailer.thank_you(@user, charge.amount.to_i/100, charge.title, charge.description, @dare.daree.username).deliver_later
+      redirect_to @user
     end
+
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to donations_path
