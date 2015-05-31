@@ -15,22 +15,23 @@ users = Array.new(5) do
 end
 
 
- top_10_followed_charities = HTTParty.get('https://www.kimonolabs.com/api/e8cai98q?apikey=jR0ep0PlzRAYmFSLYW4sScLoay3VFcDE')
+ a_e_charities = HTTParty.get('https://www.kimonolabs.com/api/ci5w4v76?apikey=jR0ep0PlzRAYmFSLYW4sScLoay3VFcDE')
 
-  charities_array = top_10_followed_charities["results"]["collection1"]
 
+  charities_array = a_e_charities["results"]["collection1"]
 
 
 
 
 charities_array.each do |charity|
   Charity.create!(
-    name: charity["title"]["text"],
-    followers: charity["Followers"],
-    url: charity["title"]["href"],
-    description: "Click on link for more charity info",
+    name: charity["title"],
+    url: charity["url"],
+    mission: charity["misson"],
+    transparency_score: charity["transparency score"],
     )
 end
+
 
 
 File.open('./db/dares.csv').each do |line|
