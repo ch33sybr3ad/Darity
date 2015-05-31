@@ -4,6 +4,7 @@
 
   resources :generate_dares
   resources :charities, only: [:show, :index]
+  resources :pending_dares, only: :show
 
   resources :users do
     resources :dares
@@ -11,12 +12,13 @@
 
   resources :account_activations, only: [:edit]
 
+  root 'users#home'
+
   get '/home' => 'users#home'
   post '/login' => 'users#login'
   match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
   get "/signout" => "sessions#destroy", as: :signout
 
-  root 'users#home'
 
   get '/generate' => "generate_dares#generate", as: :generate
 
@@ -34,7 +36,8 @@
   get '/d3guage' => 'donations#guage', as: :gauge
 
   post '/user/invites' => "users#invite", as: :user_invite
-  resources :pending_dares, only: :show
+
+  get '/check_handle/:handle' => "users#check", as: :check
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

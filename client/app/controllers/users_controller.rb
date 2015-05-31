@@ -2,7 +2,19 @@ class UsersController < ApplicationController
 
   def show
     find_user
-    retreive_all_dares
+    case params[:dare_type]
+    when 'challenged'
+      @challenged_dares = @user.challenged_dares
+      render :'dares/challenged', layout: false
+    when 'proposed'
+      @proposed_dares = @user.proposed_dares
+      render :'dares/proposed', layout: false
+    when 'pledged'
+      @pledged_dares = @user.pledged_dares
+      render :'dares/pledged', layout: false
+    else
+      retreive_all_dares
+    end
   end
 
   def home
@@ -59,6 +71,11 @@ class UsersController < ApplicationController
     else
       p 'fail'
     end
+  end
+
+  def check
+    reply = HTTParty.get("http://twitter.com/#{params[:handle]}").parsed_response
+    render (reply =~ /Sorry, that page doesn/ ? { json: false } : { json: true })
   end
 
   private
