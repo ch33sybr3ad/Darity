@@ -15,6 +15,8 @@ gem 'coffee-rails', '~> 4.1.0'
 
 gem 'omniauth-twitter'
 gem 'httparty'
+gem 'handlebars_assets', '~> 0.4.4'
+gem 'sprockets'
 
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -30,6 +32,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'dotenv'
 gem 'youtube_it'
+gem 'twitter-bootstrap-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

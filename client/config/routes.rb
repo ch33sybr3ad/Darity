@@ -1,5 +1,6 @@
  Rails.application.routes.draw do
 
+  resources :generate_dares
   resources :charities, only: [:show, :index]
 
   resources :users do
@@ -12,6 +13,8 @@
   get "/signout" => "sessions#destroy", as: :signout
 
   root 'users#home'
+
+  get '/generate' => "generate_dares#generate", as: :generate
 
   get '/users/:user_id/dares/:id/set_price' => 'dares#set_price', as: :set_price
   patch '/users/:user_id/dares/:id/set_price' => 'dares#put_price', as: :put_price
@@ -28,6 +31,7 @@
 
   post '/user/invites' => "users#invite", as: :user_invite
   resources :pending_dares, only: :show
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
