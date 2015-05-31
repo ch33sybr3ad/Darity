@@ -32,12 +32,7 @@
         :currency    => 'usd'
       )
     @donation.completed = true
-    p @user
-    p "USERRR****************"
-    p customer
-    p "CUSTOMERRR****************"
-    p customer.email
-    p "EMAILL****************"
+
     if @user.email == nil
       if @donation.save && @user.save
         @user.email = customer.email
