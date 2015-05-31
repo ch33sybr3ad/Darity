@@ -17,11 +17,15 @@
     Click to generate Dare!
   </button>
 
+  <button class="btn btn-default use-dare" href="<%= @user.id %>" style="display: none">
+    Use Dare!
+  </button>
+
 <script id="generated-dare" type="text/x-handlebars-template">
-    <li>
-      <h4>{{description}}</h4>
-    </li>
-  </script>
+  <li>
+    <h4>{{description}}</h4> 
+  </li>
+</script>
 
 <div class="container" id="gen-dare">
 </div>
