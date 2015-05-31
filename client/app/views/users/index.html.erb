@@ -16,16 +16,11 @@
 </section>
 
 <div style="display: none;" id="invite-twitter" class="container">
- <!--  <form method="post" action="<%= user_invite_path %>">
-    <p id="handle-p"></p>
-    <input type="hidden" name="username" id="handle-in">
-    <input type="text" name="title">
-    <textarea name="description"></textarea>
-    <input type="submit" value="Dare This Person" name="username" id="handle-in">
-  </form> -->
 
   <%= form_for @pending_dare, url: user_invite_path do |f| %>
   <p id="handle-p"></p>
+  <p id="valid">valid</p>
+  <p id="invalid">invalid</p>
     <%= f.hidden_field :twitter_handle, id: 'handle-in' %>
     <%= f.text_field :title %>
     <%= f.text_area :description %>

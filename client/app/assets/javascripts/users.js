@@ -1,3 +1,7 @@
+var checkTwitterHandle = function(handle) {
+  return $.get('/check_handle/' + handle);
+}
+
 var searchFunction = function() {
   $("#search-bar").on('keyup', function() {
     var phrase = $(this).val();
@@ -23,8 +27,20 @@ var searchFunction = function() {
   });
 };
 
+var dareForm = function() {
+  $('#new_pending_dare').on('submit', function(e) {
+    e.preventDefault();
+    var handle = $(this).find('#handle-in').val();
+    checkTwitterHandle(handle).done(function(bool) {
+      debugger;
+    });
+  });
+}
+
 var ready = function() {
   searchFunction();
+  dareForm();
 }
+
 $(document).ready(ready);
 $(document).on('page:load', ready);
