@@ -15,7 +15,7 @@ var searchFunction = function() {
             '<p>'+user.username+
             ' <a href="/users/'+user.id+'">Dare</a>'+
             '</p>'
-            );
+          );
         });
       } else {
         $('#invite-twitter').show();
@@ -42,9 +42,47 @@ var dareForm = function() {
   });
 }
 
+var daresModule = {
+  challenged: function() {
+    $.get(window.location.pathname + '?dare_type=challenged').done(function(page) {
+      $('#view-dares').html(page);
+    });
+  },
+  proposed: function() {
+    $.get(window.location.pathname + '?dare_type=proposed').done(function(page) {
+      $('#view-dares').html(page);
+    });
+  },
+  pledged: function() {
+    $.get(window.location.pathname + '?dare_type=pledged').done(function(page) {
+      $('#view-dares').html(page);
+    });
+  },
+};
+
+$.routes.add('/challenged', 'challenged', daresModule.challenged);
+$.routes.add('/proposed', 'proposed', daresModule.proposed);
+$.routes.add('/pledged', 'pledged', daresModule.pledged);
+
+var tabs = function() {
+  $('#challenged').on('click', function(e) {
+    e.preventDefault();
+    $.routes.find('challenged').routeTo();
+  });
+  $('#proposed').on('click', function(e) {
+    e.preventDefault();
+    $.routes.find('proposed').routeTo();
+  });
+  $('#pledged').on('click', function(e) {
+    e.preventDefault();
+    $.routes.find('pledged').routeTo();
+  });
+};
+
 var ready = function() {
   searchFunction();
   dareForm();
+  tabs();
 }
 
 $(document).ready(ready);

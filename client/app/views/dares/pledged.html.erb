@@ -1,0 +1,9 @@
+<h3>Pledged Dares: (Dares <%= @user.username %> pay for)</h3>
+<ul class="list-group">
+<% @pledged_dares.each do |dare| %>
+  <li class="list-group-item">
+    <p><%= link_to dare.title, user_dare_path(dare.proposer, dare) %></p>
+    <p><%= dare.description %></p>
+  </li>
+<% end %>
+</ul>

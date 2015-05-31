@@ -2,36 +2,12 @@
 
   <h1><%= @user.username.capitalize %>'s Page</h1>
 
-    <%= link_to "dare #{@user.username.capitalize}!", new_user_dare_path(current_user) + "?daree=#{@user.id}" %>
-    <h3>Challenged Dares: (Dares <%= @user.username %> has been challenged)</h3>
-    <ul class="list-group">
-      <% @challenged_dares.each do |dare| %>
-        <li class="list-group-item">
-          <p><%= link_to dare.title, user_dare_path(dare.proposer, dare) %></p>
-          <p><%= dare.description %></p>
-          <%= tweet_button message: 'tweet it!', user: @user, dare: dare %>
-        </li>
-      <% end %>
-    </ul>
+  <%= link_to "dare #{@user.username.capitalize}!", new_user_dare_path(current_user) + "?daree=#{@user.id}" %>
 
-    <h3>Proposed Dares: (Dares <%= @user.username %> has proposed)</h3>
-    <ul class="list-group">
-      <% @proposed_dares.each do |dare| %>
-      <li class="list-group-item">
-        <p><%= link_to dare.title, user_dare_path(dare.proposer, dare) %></p>
-        <p><%= dare.description %></p>
-      </li>
-    <% end %>
-  </ul>
+  <a href="" id="challenged">challenged</a>
+  <a href="" id="proposed">proposed</a>
+  <a href="" id="pledged">pledged</a>
 
+  <section id="view-dares"></section>
 
-    <h3>Pledged Dares: (Dares <%= @user.username %> pay for)</h3>
-    <ul class="list-group">
-    <% @pledged_dares.each do |dare| %>
-      <li class="list-group-item">
-        <p><%= link_to dare.title, user_dare_path(dare.proposer, dare) %></p>
-        <p><%= dare.description %></p>
-      </li>
-    <% end %>
-    </ul>
 </section>
