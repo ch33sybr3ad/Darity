@@ -19,8 +19,7 @@
 
   <%= form_for @pending_dare, url: user_invite_path do |f| %>
   <p id="handle-p"></p>
-  <p id="valid">valid</p>
-  <p id="invalid">invalid</p>
+  <p id="invalid" style="display: none;">invalid</p>
     <%= f.hidden_field :twitter_handle, id: 'handle-in' %>
     <%= f.text_field :title %>
     <%= f.text_area :description %>

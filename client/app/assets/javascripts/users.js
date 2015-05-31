@@ -5,6 +5,7 @@ var checkTwitterHandle = function(handle) {
 var searchFunction = function() {
   $("#search-bar").on('keyup', function() {
     var phrase = $(this).val();
+    $('#invalid').hide();
     $.get('/users?phrase='+phrase).done(function(payload) {
       $('.user-wrap').empty();
       $('#invite-twitter').hide();
@@ -32,7 +33,11 @@ var dareForm = function() {
     e.preventDefault();
     var handle = $(this).find('#handle-in').val();
     checkTwitterHandle(handle).done(function(bool) {
-      debugger;
+      if (bool) {
+        $('#new_pending_dare').off('submit').submit();
+      } else {
+        $('#invalid').show();
+      }
     });
   });
 }
