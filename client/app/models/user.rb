@@ -43,13 +43,25 @@ class User < ActiveRecord::Base
     BCrypt::Password.create(string, cost: cost)
   end
 
+  def User.new_token
+    SecureRandom.urlsafe_base64
+  end
+
   def remember
     self.remember_token = User.new_token
     update_attribute(:remember_digest, User.digest(remember_token))
   end
 
-  def User.new_token
-    SecureRandom.urlsafe_base64
+  # Forgets a user
+  def forget
+    update_attribute(:remember_digest, nil)
+  end
+
+  # Returns true if the given token matches the digest
+  def authenticated?(attribute, token)
+    digest = self.send("#{attribute}_digest")
+    return false if digest.nil?
+    BCrypt::Password.new(digest).is_password?(token)
   end
 
   private

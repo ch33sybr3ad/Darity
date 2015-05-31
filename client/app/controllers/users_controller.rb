@@ -37,6 +37,8 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         # Tell the UserMailer to send a welcome email after save
+        UserMailer.account_activation(@user).deliver_now
+        flash[:info] = "Success! Email sent for verification. Please check your email."
         session[:user_id] = @user.id
         UserMailer.welcome_email(@user).deliver_later
 
@@ -70,7 +72,6 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:email, :password)
   end
-
 
   def pend_params
     params.require(:pending_dare).permit(:title, :description, :twitter_handle)

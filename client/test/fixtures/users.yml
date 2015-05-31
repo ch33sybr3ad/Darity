@@ -1,6 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-nam:
+namnguyen:
   username: NamNguyen
   password: 123456
   email: nguyennam9696@gmail.com

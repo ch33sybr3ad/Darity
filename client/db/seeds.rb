@@ -4,6 +4,7 @@ User.delete_all
 Dare.delete_all
 Charity.delete_all
 
+
 users = Array.new(5) do
   User.create!(
     username: Faker::Internet.user_name,
