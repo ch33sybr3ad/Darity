@@ -1,4 +1,5 @@
 module ApplicationHelper
+
   def tweet_button(args)
     begin
       target = args[:dare].daree.username
