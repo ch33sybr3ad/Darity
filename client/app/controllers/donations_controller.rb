@@ -29,20 +29,18 @@
         :customer    => customer.id,
         :amount      => @donation.donation_amount * 100,
         :description => @dare.description,
-        :title => @dare.title,
         :currency    => 'usd'
       )
     @donation.completed = true
 
     if @user.email == nil && @donation.save && @user.save && @dare.save
-      binding.pry
       @user.email = customer.email
       @user.save
-      UserMailer.thank_you(@user, charge.amount.to_i/100, charge.title, charge.description, @dare.daree.username).deliver_later
+      UserMailer.thank_you(@user, charge.amount.to_i/100, @dare.title, @dare.description, @dare.daree.username).deliver_later
       redirect_to @user
     else
       @donation.save && @user.save && @dare.save
-      UserMailer.thank_you(@user, charge.amount.to_i/100, charge.title, charge.description, @dare.daree.username).deliver_later
+      UserMailer.thank_you(@user, charge.amount.to_i/100, @dare.title, @dare.description, @dare.daree.username).deliver_later
       redirect_to @user
     end
 
