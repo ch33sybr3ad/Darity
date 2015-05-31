@@ -2,6 +2,7 @@ require 'faker'
 
 User.delete_all
 Dare.delete_all
+Charity.delete_all
 
 users = Array.new(5) do
   User.create!(
@@ -13,12 +14,14 @@ users = Array.new(5) do
   )
 end
 
+
  top_10_followed_charities = HTTParty.get('https://www.kimonolabs.com/api/e8cai98q?apikey=jR0ep0PlzRAYmFSLYW4sScLoay3VFcDE')
 
   charities_array = top_10_followed_charities["results"]["collection1"]
 
 
-    # binding.pry
+
+
 
 charities_array.each do |charity|
   Charity.create!(

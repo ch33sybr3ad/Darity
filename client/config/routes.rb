@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+ Rails.application.routes.draw do
 
   resources :generate_dares
   resources :charities, only: [:show, :index]

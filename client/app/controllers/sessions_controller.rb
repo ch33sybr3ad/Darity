@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     auth = request.env["omniauth.auth"]
     user = User.where(uid: auth["uid"], provider: auth["provider"]).first || User.create_with_omniauth(auth)
     session[:user_id] = user.id
-    redirect_to root_url, :notice => "Signed in!"
+    redirect_to user, :notice => "Signed in!"
   end
 
   def destroy
