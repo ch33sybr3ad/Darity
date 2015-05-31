@@ -22,10 +22,9 @@
     @user = User.find(@donation.pledger_id)
 
     customer = Stripe::Customer.create(
-        :email => @user.email,
+        :email => params[:stripeEmail],
         :card  => params[:stripeToken]
       )
-
       charge = Stripe::Charge.create(
         :customer    => customer.id,
         :amount      => @donation.donation_amount * 100,
@@ -33,9 +32,22 @@
         :currency    => 'usd'
       )
     @donation.completed = true
-    if @donation.save && @user.save
-      UserMailer.thank_you(customer.email).deliver_later
-      redirect_to @user
+    p @user
+    p "USERRR****************"
+    p customer
+    p "CUSTOMERRR****************"
+    p customer.email
+    p "EMAILL****************"
+    if @user.email == nil
+      if @donation.save && @user.save
+        @user.email = customer.email
+        @user.save
+        UserMailer.thank_you(customer.email).deliver_later
+        redirect_to @user
+      else
+        UserMailer.thank_you(customer.email).deliver_later
+        redirect_to @user
+      end
     end
     rescue Stripe::CardError => e
       flash[:error] = e.message
