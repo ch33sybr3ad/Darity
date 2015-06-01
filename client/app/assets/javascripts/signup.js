@@ -1,34 +1,28 @@
 var watchForm = function() {
-  $('.signup-link a').on('click', function(event){
-    event.preventDefault();
+  $('.signup-link a').on('click', function(e){
+    e.preventDefault();
 
     $('.login-area').hide();
     $('.signup-area').show();
   });
 
-  $('.login-link a').on('click', function(event){
-    event.preventDefault();
+  $('.login-link a').on('click', function(e){
+    e.preventDefault();
 
     $('.signup-area').hide();
     $('.login-area').show();
   });
 
-  $('.new_user').on('submit', function(event){
-    event.preventDefault();
+  $('.new_user').on('submit', function(e){
+    e.preventDefault();
 
-    if ($('input#user_password').val() === $('input#user_password_confirm').val()) {
-      $.ajax({
-        type: 'POST',
-        url: $(this).attr('action'),
-        dataType: "json",
-        data: $(this).serialize()
-      }).done(function(response){
-        $('.new_user').off('submit').submit();
-      });
+    if ($('input#signup-password').val() === $('input#signup-password-confirm').val()) {
+      $('.new_user').off('submit').submit();
     } else {
-      $('invalid-sign-up').css('color', 'red')
-      $('invalid-sign-up').text('Password Not Matching');
+      $('.alert').show();
+      $('.alert').text('Password Not Matching');
     }
+
   });
 };
 
