@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def show
     find_user
+    @relationship = Relationship.where(followee_id: params[:id], follower_id: current_user.id) if current_user
     case params[:dare_type]
     when 'challenged'
       @challenged_dares = @user.challenged_dares
