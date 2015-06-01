@@ -2,15 +2,15 @@ $(document).ready(function(){
   $('.signup-link a').on('click', function(event){
     event.preventDefault();
 
-    $('.login-area').hide();
-    $('.signup-area').show();
+    $('.login-area').fadeOut();
+    $('.signup-area').fadeIn();
   });
 
   $('.login-link a').on('click', function(event){
     event.preventDefault();
 
-    $('.signup-area').hide();
-    $('.login-area').show();
+    $('.signup-area').fadeOut();
+    $('.login-area').fadeIn();
   });
 
   $('.new_user').on('submit', function(event){
