@@ -13,5 +13,7 @@ RSpec.describe User, type: :model do
   it { should respond_to(:pledged_dares) }
   it { should respond_to(:pending_dares) }
   it { should respond_to(:donations) }
+  it { should respond_to(:followers) }
+  it { should respond_to(:followees) }
 
 end
