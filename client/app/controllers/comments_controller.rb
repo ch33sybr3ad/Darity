@@ -1,9 +1,14 @@
 class CommentsController < ApplicationController
 
   def create
-    @comment = Comment.create(comment_params)
-    #needs a redirect to somewhere!
-    
+    @comment = Comment.new(comment_params)
+    @dare = Dare.find(@comment.dare_id)
+    if @comment.save
+      render json: @comment.to_json
+    else
+      return "fail!"
+      #need error handling
+    end
   end
 
   private
