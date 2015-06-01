@@ -9,7 +9,6 @@ class User < ActiveRecord::Base
   has_many :pending_dares, foreign_key: :proposer_id, class_name: "Dare"
 
   before_create :create_activation_digest
-  before_save :downcase_email
 
   def self.create_with_omniauth(auth)
     new_user = create! do |user|
@@ -64,11 +63,21 @@ class User < ActiveRecord::Base
     BCrypt::Password.new(digest).is_password?(token)
   end
 
-  private
-
-  def downcase_email
-    self.email = email.downcase
+  # Activates an account.
+  def activate
+    self.update_attribute(:activated,    true)
+    self.update_attribute(:activated_at, Time.zone.now)
   end
+
+  def send_welcome_email
+      UserMailer.welcome_email(self).deliver_later
+  end
+
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
+  end
+
+  private
 
   def create_activation_digest
     self.activation_token = User.new_token

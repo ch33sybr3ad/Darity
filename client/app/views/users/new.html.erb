@@ -1,4 +1,5 @@
-<div class= "Sign Up">
+<div class= "invalid-sign-up"></div>
+<div class= "signup-area">
     <h1>Sign Up</h1>
       <%= form_for @user do |f| %>
 
@@ -8,8 +9,11 @@
       <%= f.label :email %>
         <%= f.email_field :email, class: 'form-control' %>
 
-        <%= f.label :password %>
+      <%= f.label :password %>
         <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.label :password_confirm %>
+        <%= f.password_field :password_confirm, class: 'form-control' %>
 
         <%= f.submit "Sign Up", class: "btn btn-primary" %>
     <% end %>

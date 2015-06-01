@@ -64,17 +64,25 @@ $.routes.add('/challenged', 'challenged', daresModule.challenged);
 $.routes.add('/proposed', 'proposed', daresModule.proposed);
 $.routes.add('/pledged', 'pledged', daresModule.pledged);
 
+var setActiveTab = function(tab) {
+  $('.nav-tabs li').removeClass('active');
+  tab.parent().addClass('active');
+};
+
 var tabs = function() {
   $('#challenged').on('click', function(e) {
     e.preventDefault();
+    setActiveTab($(this));
     $.routes.find('challenged').routeTo();
   });
   $('#proposed').on('click', function(e) {
     e.preventDefault();
+    setActiveTab($(this));
     $.routes.find('proposed').routeTo();
   });
   $('#pledged').on('click', function(e) {
     e.preventDefault();
+    setActiveTab($(this));
     $.routes.find('pledged').routeTo();
   });
 };
