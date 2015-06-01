@@ -21,6 +21,7 @@ end
 
 
   charities_array = a_e_charities["results"]["collection1"]
+  charities_array = charities_array.shift(50)
 
 charities_array.each do |charity|
   Charity.create!(
