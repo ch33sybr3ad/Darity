@@ -11,6 +11,10 @@ class DaresController < ApplicationController
   def show
     @proposer = @dare.proposer
     @daree = @dare.daree
+    @pledged = 0
+    @dare.donations.each do |user|
+      @pledged += user.donation_amount
+    end
   end
 
   def new
