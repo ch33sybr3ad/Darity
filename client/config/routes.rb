@@ -16,6 +16,8 @@
 
   root 'users#home'
 
+  get '/feed' => 'users#feed', as: :feed
+
   get '/home' => 'users#home'
   get '/about' => 'users#about'
   post '/login' => 'users#login'

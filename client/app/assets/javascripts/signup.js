@@ -27,4 +27,3 @@ var watchForm = function() {
 };
 
 $(document).on('ready', watchForm);
-$(document).on('page:load', watchForm);

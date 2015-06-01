@@ -68,6 +68,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def feed
+    @followees = current_user.followees
+    @dares = @followees.map { |followee|
+      followee.dares
+    }.flatten
+  end
+
   def invite
     @pending_dare = PendingDare.new(pend_params)
     @pending_dare.proposer = current_user
