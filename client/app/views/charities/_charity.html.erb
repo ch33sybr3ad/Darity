@@ -1,7 +1,11 @@
-<li class='list-group-item'>
-  <p>Name: <%= charity.name %></p>
-  <p>Followers: <%= charity.followers %> </p>
-  <button class="btn btn-default">
-    <%= link_to "More Information about this Charity", charity.url %>
-  </button>
-</li>
+<tr>
+  <th>Name</th>
+  <th>Mission</th>
+  <th>Transparency Score</th>
+  <th>Url</th>
+</tr>
+  <td><%= charity.name  %></td>
+  <td><%= charity.mission  %></td>
+  <td><%= charity.transparency_score %></td>
+  <td> <%= link_to "More Information about this Charity", charity.url %></td>
+</tr>
