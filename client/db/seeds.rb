@@ -5,6 +5,7 @@ Dare.delete_all
 Charity.delete_all
 Video.delete_all
 Comment.delete_all
+Relationship.delete_all
 
 
 users = Array.new(5) do
@@ -68,12 +69,21 @@ end
   p dare.charity == charity
 
   dare.save
+
+  Relationship.create!(
+    follower: a,
+    followee: b
+  )
+  Relationship.create!(
+    follower: a,
+    followee: c
+  )
 end
 
 first_user = User.first
 first_dare = Dare.first
 
-5.times do 
+5.times do
   Comment.create(body: Faker::Lorem.sentence, likes: rand(1..20), user_id: first_user.id, dare_id: first_dare.id)
 end
 
