@@ -1,4 +1,8 @@
-<h3>Pledged Dares: (Dares <%= @user.username %> pay for)</h3>
+<% if @user == current_user %>
+<h3>You've contributed to:</h3>
+<% else %>
+<h3><%= @user.username %> has contributed to:</h3>
+<% end %>
 <ul class="list-group">
   <% if @user.challenged_dares == [] %>
     <div class="alert alert-warning">
