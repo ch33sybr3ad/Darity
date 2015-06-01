@@ -1,12 +1,13 @@
-<h1>new dare </h1>
+<section class="container">
 
-  <%= form_for [@user, @dare] do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-    <%= f.submit :submit %>
-    <%= f.hidden_field :daree_id, value: params[:daree] %>
+  <%= form_for [@user, @dare], html: {class: 'form-horizontal'} do |f| %>
+  <legend>new dare</legend>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <%= f.submit :submit %>
+  <%= f.hidden_field :daree_id, value: params[:daree] %>
   <% end %>
 
   <hr>
@@ -21,14 +22,13 @@
     Use Dare!
   </button>
 
-<script id="generated-dare" type="text/x-handlebars-template">
+  <script id="generated-dare" type="text/x-handlebars-template">
   <li>
-    <h4>{{description}}</h4> 
+  <h4>{{description}}</h4>
   </li>
-</script>
+  </script>
 
-<div class="container" id="gen-dare">
-</div>
+  <div class="container" id="gen-dare">
+  </div>
 
-
-
+</section>

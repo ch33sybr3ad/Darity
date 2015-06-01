@@ -4,7 +4,7 @@
   <li class="list-group-item">
     <p><%= link_to dare.title, user_dare_path(dare.proposer, dare) %></p>
     <p><%= dare.description %></p>
-    <%= tweet_button message: '<i class="fa fa-twitter"></i> tweet it!', user: @user, dare: dare %>
+    <%= tweet_button message: 'tweet it!', user: @user, dare: dare %>
   </li>
   <% end %>
 </ul>
