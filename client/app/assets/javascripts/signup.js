@@ -1,4 +1,4 @@
-$(document).ready(function(){
+var watchForm = function() {
   $('.signup-link a').on('click', function(event){
     event.preventDefault();
 
@@ -31,4 +31,7 @@ $(document).ready(function(){
       $('invalid-sign-up').text('Password Not Matching');
     }
   });
-});
+};
+
+$(document).on('ready', watchForm);
+$(document).on('page:load', watchForm);
