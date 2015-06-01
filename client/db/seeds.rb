@@ -4,7 +4,6 @@ User.delete_all
 Dare.delete_all
 Charity.delete_all
 
-
 users = Array.new(5) do
   User.create!(
     username: Faker::Internet.user_name,
@@ -18,14 +17,10 @@ users = Array.new(5) do
   )
 end
 
-
  a_e_charities = HTTParty.get('https://www.kimonolabs.com/api/ci5w4v76?apikey=jR0ep0PlzRAYmFSLYW4sScLoay3VFcDE')
 
 
   charities_array = a_e_charities["results"]["collection1"]
-
-
-
 
 charities_array.each do |charity|
   Charity.create!(
@@ -36,13 +31,9 @@ charities_array.each do |charity|
     )
 end
 
-
-
 File.open('./db/dares.csv').each do |line|
   GenerateDare.create!(description: "#{line.chomp}")
 end
-
-
 
 
 5.times do
