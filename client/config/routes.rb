@@ -9,6 +9,7 @@
 
   resources :users do
     resources :dares
+    resources :relationships, only: [:create, :destroy, :index]
   end
 
   resources :account_activations, only: [:edit]

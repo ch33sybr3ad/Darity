@@ -31,6 +31,14 @@
           <li><%= link_to 'All Users', users_path %></li>
           <li><%= link_to 'About Us', about_path %></li>
         </ul>
+        <form id="signin" class="navbar-form navbar-left" role="form">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+            <input id="user-search" type="text" class="form-control" name="search" value="" placeholder="find users">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Search</button>
+        </form>
 
         <ul class="nav navbar-nav navbar-right">
 
