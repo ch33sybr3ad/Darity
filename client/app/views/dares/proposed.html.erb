@@ -4,10 +4,16 @@
 <h3><%= @user.username %> has dared people to:</h3>
 <% end %>
 <ul class="list-group">
-  <% @proposed_dares.each do |dare| %>
-  <li class="list-group-item">
-    <p><%= link_to dare.title, user_dare_path(dare.proposer, dare) %></p>
-    <p><%= dare.description %></p>
-  </li>
+  <% if @user.challenged_dares == [] %>
+    <div class="alert alert-warning">
+      You have no pledged dares, so . . . Darity dares you to . . . DARE OTHERS RIDICULOUSLY INNOVATIVE DARES!
+    </div>
+  <% else %>
+    <% @proposed_dares.each do |dare| %>
+      <li class="list-group-item">
+        <p><%= link_to dare.title, user_dare_path(dare.proposer, dare) %></p>
+        <p><%= dare.description %></p>
+      </li>
+    <% end %>
   <% end %>
 </ul>
