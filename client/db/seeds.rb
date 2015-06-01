@@ -20,6 +20,7 @@ users = Array.new(5) do
   )
 end
 
+a_e_charities = HTTParty.get('https://www.kimonolabs.com/api/ci5w4v76?apikey=jR0ep0PlzRAYmFSLYW4sScLoay3VFcDE')
 charities_array = a_e_charities["results"]["collection1"]
 charities_array = charities_array.shift(50)
 
@@ -36,6 +37,7 @@ end
 File.open('./db/dares.csv').each do |line|
   GenerateDare.create!(description: "#{line.chomp}")
 end
+
 
 
 5.times do
@@ -67,3 +69,16 @@ end
 
   dare.save
 end
+
+first_user = User.first
+first_dare = Dare.first
+
+5.times do 
+  Comment.create(body: Faker::Lorem.sentence, likes: rand(1..20), user_id: first_user.id, dare_id: first_dare.id)
+end
+
+Video.create(title: "testing", url: "https://www.youtube.com/watch?v=Y2bNfUNUpRk", dare_id: first_dare.id, description: "video is for testing", uid: "Y2bNfUNUpRk")
+
+
+
+

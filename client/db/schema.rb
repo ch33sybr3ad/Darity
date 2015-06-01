@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20150601174305) do
     t.string   "body"
     t.integer  "likes",      default: 0
     t.integer  "user_id"
-    t.integer  "video_id"
+    t.integer  "dare_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
