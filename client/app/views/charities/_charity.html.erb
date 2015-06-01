@@ -4,23 +4,9 @@
   <th>Transparency Score</th>
   <th>Url</th>
 </tr>
+<tr>
   <td><%= charity.name  %></td>
   <td><%= charity.mission  %></td>
   <td><%= charity.transparency_score %></td>
   <td> <%= link_to "More Information about this Charity", charity.url %></td>
-  <td>  
-    <svg id="fillgauge1" width="97%" height="250"></svg>
-      <script language="JavaScript">
-          loadLiquidFillGauge("fillgauge1", 55);
-          var config1 = liquidFillGaugeDefaultSettings();
-          config1.circleColor = "#FF7777";
-          config1.textColor = "#FF4444";
-          config1.waveTextColor = "#FFAAAA";
-          config1.waveColor = "#FFDDDD";
-          config1.circleThickness = 0.2;
-          config1.textVertPosition = 0.2;
-          config1.waveAnimateTime = 1000;
-          loadLiquidFillGauge("fillgauge2", 28, config1);
-      </script>
-  </td>
 </tr>
