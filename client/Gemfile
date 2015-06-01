@@ -18,7 +18,8 @@ gem 'omniauth-twitter'
 gem 'httparty'
 gem 'handlebars_assets', '~> 0.4.4'
 gem 'sprockets'
-
+gem 'will_paginate',            '3.0.7'
+gem 'bootstrap-will_paginate',  '0.0.10'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
