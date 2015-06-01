@@ -1,4 +1,8 @@
-<h3>Proposed Dares: (Dares <%= @user.username %> has proposed)</h3>
+<% if @user == current_user %>
+<h3>You've dared people to:</h3>
+<% else %>
+<h3><%= @user.username %> has dared people to:</h3>
+<% end %>
 <ul class="list-group">
   <% @proposed_dares.each do |dare| %>
   <li class="list-group-item">

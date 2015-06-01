@@ -1,4 +1,8 @@
-<h3>Challenged Dares: (Dares <%= @user.username %> has been challenged)</h3>
+<% if @user == current_user %>
+<h3>You've been challenged to:</h3>
+<% else %>
+<h3><%= @user.username %> has been challenged to:</h3>
+<% end %>
 <ul class="list-group">
   <% @challenged_dares.each do |dare| %>
   <li class="list-group-item">
