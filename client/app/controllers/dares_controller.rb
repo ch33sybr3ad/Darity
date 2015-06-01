@@ -12,8 +12,6 @@ class DaresController < ApplicationController
     @proposer = @dare.proposer
     @daree = @dare.daree
     @pledged = 0
-
-
     @dare.donations.each do |user|
       @pledged += user.donation_amount
     end
@@ -21,6 +19,7 @@ class DaresController < ApplicationController
     if @video
       @url = @video.url.gsub(/&.*/, "").gsub(/.*=/, "")
     end
+    @comments = @dare.comments
   end
 
   def new
