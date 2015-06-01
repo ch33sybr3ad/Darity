@@ -49,19 +49,15 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         # Tell the UserMailer to send a welcome email after save
-        UserMailer.welcome_email(@user).deliver_later
-        login(@user)
-        if @user.activated?
-          UserMailer.account_activation(@user).deliver_now
-          format.html { redirect_to(@user, notice: 'Darity email sent. Please confirm your registered email.') }
-          format.json { render json: @user, status: :created, location: @user }
-        else
-          message = "Account not activated. Check your email for activation link."
-          flash[:warning] = message
-          format.html { render action: 'home' }
-          format.json { render json: @user.errors, status: :unprocessable_entity }
-          redirect_to root_url
-        end
+        session[:user_id] = @user.id
+        @user.send_welcome_email
+        @user.send_activation_email
+        flash[:info] = "Please check your email to activate your account"
+        format.html { redirect_to @user, notice: 'Darity email sent. Please check your email to activate your account' }
+        format.json { render json: @user, status: :created, location: @user }
+      else
+        format.html { redirect_to new_user_path }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
