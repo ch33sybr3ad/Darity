@@ -22,19 +22,16 @@
 
         <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>
+    <div class= "signup-link">
+      <p>New User? <%= link_to "Sign Up Here", new_user_path %></p>
+    </div>
   </div>
 
 </div>
 
-<div class= "signup-link">
-  <p>New User? <%= link_to "Sign Up Here", new_user_path %></p>
-</div>
 
 <div class= "invalid-sign-up"></div>
 <div class= "signup-area" style="display:none">
-    <div class="login-link">
-      <p>Already have an account? <%= link_to "Log In Here", home_path %></p>
-    </div>
     <h1>Sign Up</h1>
       <%= form_for @user do |f| %>
 
@@ -52,6 +49,9 @@
 
         <%= f.submit "Sign Up", class: "btn btn-primary" %>
     <% end %>
+    <div class="login-link">
+      <p>Already have an account? <%= link_to "Log In Here", home_path %></p>
+    </div>
 </div>
 </section>
 
