@@ -8,6 +8,9 @@ class User < ActiveRecord::Base
   has_many :proposed_dares, foreign_key: :proposer_id, class_name: "Dare"
   has_many :pending_dares, foreign_key: :proposer_id, class_name: "Dare"
 
+
+  has_many :comments
+
   has_many :followers, through: :i_am_followee_relations
   has_many :i_am_followee_relations, class_name: "Relationship", foreign_key: "followee_id"
 

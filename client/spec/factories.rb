@@ -1,4 +1,6 @@
+
 FactoryGirl.define do
+
   factory :user do
     username Faker::Name.name
     password Faker::Internet.password
@@ -9,7 +11,8 @@ FactoryGirl.define do
   end
 end
 
-FactoryGirl.define do
+FactoryGirl.define do  
+
   factory :dare do
    title Faker::Lorem.sentence
    description Faker::Lorem.paragraph

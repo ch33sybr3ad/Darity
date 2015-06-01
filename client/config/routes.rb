@@ -1,5 +1,6 @@
  Rails.application.routes.draw do
 
+  resources :comments
   get 'account_activations/edit'
 
   resources :generate_dares
