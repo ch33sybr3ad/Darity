@@ -16,7 +16,9 @@ class DaresController < ApplicationController
       @pledged += user.donation_amount
     end
     @video = Video.where(dare_id: @dare.id).first
-    p @url = @video.url.gsub(/&.*/, "").gsub(/.*=/, "")
+    if @video
+      @url = @video.url.gsub(/&.*/, "").gsub(/.*=/, "")
+    end
   end
 
   def new
