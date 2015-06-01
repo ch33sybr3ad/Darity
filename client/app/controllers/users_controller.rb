@@ -21,6 +21,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def about
+
+  end
+
   def index
     @pending_dare = PendingDare.new
     if params[:phrase]
