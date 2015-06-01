@@ -16,3 +16,22 @@
   position: relative;
   z-index:100;
 }
+
+/*body * {
+  border: red 1px dashed;
+}*/
+
+
+.nav-tabs {
+  a {
+    transition: 1s;
+  }
+  .active {
+    a {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: red;
+    }
+  }
+}
+
