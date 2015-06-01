@@ -3,9 +3,9 @@ require 'faker'
 User.delete_all
 Dare.delete_all
 Charity.delete_all
+Video.delete_all
+Comment.delete_all
 
-client = YouTubeIt::Client.new(:username => ENV['GMAIL'], :password => ENV['GMAIL_PASSWORD'], :dev_key => ENV["YOUTUBE_API_KEY"])
-binding.pry 
 
 users = Array.new(5) do
   User.create!(

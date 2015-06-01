@@ -4,6 +4,7 @@ class CreateComments < ActiveRecord::Migration
       t.string :body
       t.integer :likes, default: 0
       t.integer :user_id
+      t.integer :video_id
 
       t.timestamps null: false
     end
