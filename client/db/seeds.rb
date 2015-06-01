@@ -4,6 +4,9 @@ User.delete_all
 Dare.delete_all
 Charity.delete_all
 
+client = YouTubeIt::Client.new(:username => ENV['GMAIL'], :password => ENV['GMAIL_PASSWORD'], :dev_key => ENV["YOUTUBE_API_KEY"])
+binding.pry
+
 users = Array.new(5) do
   User.create!(
     username: Faker::Internet.user_name,
@@ -17,11 +20,9 @@ users = Array.new(5) do
   )
 end
 
- a_e_charities = HTTParty.get('https://www.kimonolabs.com/api/ci5w4v76?apikey=jR0ep0PlzRAYmFSLYW4sScLoay3VFcDE')
+charities_array = a_e_charities["results"]["collection1"]
+charities_array = charities_array.shift(50)
 
-
-  charities_array = a_e_charities["results"]["collection1"]
-  charities_array = charities_array.shift(50)
 
 charities_array.each do |charity|
   Charity.create!(
