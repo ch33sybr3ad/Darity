@@ -2,15 +2,15 @@ var watchForm = function() {
   $('.signup-link a').on('click', function(event){
     event.preventDefault();
 
-    $('.login-area').fadeOut();
-    $('.signup-area').fadeIn();
+    $('.login-area').hide();
+    $('.signup-area').show();
   });
 
   $('.login-link a').on('click', function(event){
     event.preventDefault();
 
-    $('.signup-area').fadeOut();
-    $('.login-area').fadeIn();
+    $('.signup-area').hide();
+    $('.login-area').show();
   });
 
   $('.new_user').on('submit', function(event){
