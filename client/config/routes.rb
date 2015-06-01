@@ -1,5 +1,7 @@
  Rails.application.routes.draw do
 
+  get 'account_activations/edit'
+
   resources :generate_dares
   resources :charities, only: [:show, :index]
   resources :pending_dares, only: :show
@@ -7,6 +9,8 @@
   resources :users do
     resources :dares
   end
+
+  resources :account_activations, only: [:edit]
 
   root 'users#home'
 

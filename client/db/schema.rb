@@ -69,8 +69,13 @@ ActiveRecord::Schema.define(version: 20150530212302) do
     t.string   "provider"
     t.string   "uid"
     t.string   "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "admin",             default: false
+    t.string   "remember_digest"
+    t.string   "activation_digest"
+    t.boolean  "activated",         default: false
+    t.datetime "activated_at"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
   create_table "videos", force: :cascade do |t|

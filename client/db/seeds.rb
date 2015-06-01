@@ -4,13 +4,17 @@ User.delete_all
 Dare.delete_all
 Charity.delete_all
 
+
 users = Array.new(5) do
   User.create!(
     username: Faker::Internet.user_name,
     password: 1234,
     email: Faker::Internet.safe_email,
     uid: Faker::Number.number(10),
-    provider: 'Twitter'
+    provider: 'Twitter',
+    admin: true,
+    activated: true,
+    activated_at: Time.zone.now
   )
 end
 

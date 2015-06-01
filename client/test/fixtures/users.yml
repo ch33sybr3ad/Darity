@@ -1,11 +1,24 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+namnguyen:
+  username: NamNguyen
+  password: 123456
+  email: nguyennam9696@gmail.com
+  provider: MyProvider
+  uid: MyUid
+  admin: true
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
 jason:
   username: JasonZhao
   password: 123456
   email: jason@gmail.com
   provider: MyProvider
   uid: MyUid
+  admin: true
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 darity:
   username: Darity
@@ -13,3 +26,6 @@ darity:
   email: darity@gmail.com
   provider: MyProvider
   uid: MyUid
+  admin: true
+  activated: true
+  activated_at: <%= Time.zone.now %>

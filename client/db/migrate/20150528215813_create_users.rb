@@ -7,6 +7,11 @@ class CreateUsers < ActiveRecord::Migration
       t.string :provider
       t.string :uid
       t.string :image_url
+      t.boolean :admin, default: false
+      t.string :remember_digest
+      t.string :activation_digest
+      t.boolean :activated, default: false
+      t.datetime :activated_at
 
       t.timestamps null: false
     end
