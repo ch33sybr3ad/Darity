@@ -1,0 +1,10 @@
+<h3>Challenged Dares: (Dares <%= @user.username %> has been challenged)</h3>
+<ul class="list-group">
+  <% @challenged_dares.each do |dare| %>
+  <li class="list-group-item">
+    <p><%= link_to dare.title, user_dare_path(dare.proposer, dare) %></p>
+    <p><%= dare.description %></p>
+    <%= tweet_button message: 'tweet it!', user: @user, dare: dare %>
+  </li>
+  <% end %>
+</ul>
