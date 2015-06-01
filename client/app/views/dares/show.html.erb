@@ -19,6 +19,15 @@
 
 
   <p><%= @dare.description %></p>
+  <p><%= @dare.price %></p> 
+  <p><%= @dare.donations.count %></p> 
+  <p><%= @pledged %></p> 
+
+
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+    </div>
+  </div>
 
   <p>proposed by: <%= link_to @proposer.username.capitalize, @proposer %></p>
   <p>proposed to: <%= link_to @daree.username.capitalize, @daree %></p>
