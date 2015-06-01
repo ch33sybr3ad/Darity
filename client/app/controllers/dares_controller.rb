@@ -19,6 +19,11 @@ class DaresController < ApplicationController
     if @video
       @url = @video.url.gsub(/&.*/, "").gsub(/.*=/, "")
     end
+    # remeber to ENV the key 
+    video_id = HTTParty.get('https://www.googleapis.com/youtube/v3/search?key=AIzaSyAUQlLRWt45qfS-hje55R41pkbsDjR5Jqk&channelId=UCxM2Q1ltQu3-cnZAqP_6gvw&part=snippet,id&order=date&maxResults=20')
+    # video_id.each do |video|
+    #   video["id"]["videoId"]
+    # end
   end
 
   def new
