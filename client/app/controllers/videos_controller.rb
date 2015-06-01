@@ -15,7 +15,7 @@ class VideosController < ApplicationController
     if @video.save
       redirect_to current_user
     else
-      render html: "<h1>Error</h1>"
+      render html: "Error"
     end
   end
 

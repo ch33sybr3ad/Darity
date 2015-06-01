@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_many :proposed_dares, foreign_key: :proposer_id, class_name: "Dare"
   has_many :pending_dares, foreign_key: :proposer_id, class_name: "Dare"
 
+  has_many :comments
+
   before_create :create_activation_digest
 
   def self.create_with_omniauth(auth)
