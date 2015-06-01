@@ -3,8 +3,8 @@ class CreateCharities < ActiveRecord::Migration
     create_table :charities do |t|
       t.string :name
       t.string :url
-      t.text :description
-      t.string :followers
+      t.text :mission
+      t.string :transparency_score
 
       t.timestamps null: false
     end

@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 20150530212302) do
   create_table "charities", force: :cascade do |t|
     t.string   "name"
     t.string   "url"
-    t.text     "description"
-    t.string   "followers"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.text     "mission"
+    t.string   "transparency_score"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "dares", force: :cascade do |t|

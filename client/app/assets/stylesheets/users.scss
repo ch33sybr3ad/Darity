@@ -8,11 +8,11 @@
 }
 
 .video-container {
-  z-index:100;
+  z-index:-10;
   position: relative;
 }
 
 .header-text {
   position: relative;
-  z-index:-10;
+  z-index:100;
 }
