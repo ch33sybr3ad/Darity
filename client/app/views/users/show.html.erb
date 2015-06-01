@@ -16,6 +16,11 @@
           <%= link_to "follow", user_relationships_path(@user), method: :post, class: 'btn btn-default' %>
         <% end %>
       <% end %>
+
+      <ul>
+        <%= render @followees %>
+      </ul>
+
       </div>
     </section>
 
