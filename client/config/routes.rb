@@ -15,6 +15,7 @@
   root 'users#home'
 
   get '/home' => 'users#home'
+  get '/about' => 'users#about'
   post '/login' => 'users#login'
   match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
   get "/signout" => "sessions#destroy", as: :signout
