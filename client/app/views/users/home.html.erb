@@ -1,24 +1,25 @@
 <section class="container">
 
-<div class="video-container">
-  <div class="hero-unit hero-wrapper embed-responsive embed-responsive-16by9">
-    <video id="video" poster="" autoplay loop class="embed-responsive-item">
-      <source src="https://a0.muscache.com/airbnb/static/London-P1-1.mp4" type="video/mp4">
-      <source src="https://a0.muscache.com/airbnb/static/London-P1-0.webm" type="video/ogg">
-    </video>
+  <div class="video-container">
+    <div class="hero-unit hero-wrapper embed-responsive embed-responsive-16by9">
+      <video id="video" poster="" autoplay loop class="embed-responsive-item">
+        <source src="https://a0.muscache.com/airbnb/static/London-P1-1.mp4" type="video/mp4">
+        <source src="https://a0.muscache.com/airbnb/static/London-P1-0.webm" type="video/ogg">
+      </video>
+    </div>
   </div>
-</div>
 
-<div class="header-text">
-  <h1>Welcome to Darity</h1>
-  <div class= "login-area">
-    <h1>Log in</h1>
-      <%= form_for(@user, url: login_path) do |f| %>
-      <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control' %>
+  <div class="header-text">
+    <h1>Welcome to Darity</h1>
+    <div class= "login-area">
+      <h1>Log in</h1>
+        <%= form_for @user, url: login_path do |f| %>
+        <%= f.label :email %>
+          <%= f.email_field :email, class: 'form-control' %>
 
-        <%= f.label :password %>
-        <%= f.password_field :password, class: 'form-control' %>
+          <%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control' %>
+
 
         <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>
@@ -26,32 +27,27 @@
       <p>New User? <%= link_to "Sign Up Here", new_user_path %></p>
     </div>
   </div>
-
 </div>
-
 
 <div class= "invalid-sign-up"></div>
 <div class= "signup-area" style="display:none">
-    <h1>Sign Up</h1>
-      <%= form_for @user do |f| %>
 
-      <%= f.label :username %>
-        <%= f.text_field :username, class: 'form-control' %>
+  <h1>Sign Up</h1>
+    <%= bootstrap_form_for @user do |f| %>
 
-      <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control' %>
+      <%= f.text_field :username %>
 
-      <%= f.label :password %>
-        <%= f.password_field :password, class: 'form-control' %>
+      <%= f.email_field :email %>
 
-      <%= f.label :password_confirm %>
-        <%= f.password_field :password_confirm, class: 'form-control' %>
+      <%= f.password_field :password %>
 
-        <%= f.submit "Sign Up", class: "btn btn-primary" %>
-    <% end %>
-    <div class="login-link">
-      <p>Already have an account? <%= link_to "Log In Here", home_path %></p>
-    </div>
+      <%= f.password_field :password_confirm %>
+
+      <%= f.submit "Sign Up", class: "btn btn-primary" %>
+  <% end %>
+  <div class="login-link">
+    <p>Already have an account? <%= link_to "Log In Here", home_path %></p>
+  </div>
 </div>
 </section>
 
