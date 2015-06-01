@@ -19,13 +19,13 @@
 
 
   <p><%= @dare.description %></p>
-  <p><%= @dare.price %></p> 
-  <p><%= @dare.donations.count %></p> 
-  <p><%= @pledged %></p> 
+  <p>Total Pledgers: <%= @dare.donations.count %></p> 
 
+  <p>$<%= @pledged %> of $<%= @dare.price.to_i %> collected</p> 
 
   <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:<%= (@pledged / @dare.price)*100 %>%;">
+
     </div>
   </div>
 
