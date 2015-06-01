@@ -1,12 +1,8 @@
-
-
 class CharitiesController < ApplicationController
 
 
   def index
-    @charities = Charity.all
-
-    # binding.pry
+    @charities = Charity.paginate(page: params[:page], :per_page => 10)
   end
 
   def new
