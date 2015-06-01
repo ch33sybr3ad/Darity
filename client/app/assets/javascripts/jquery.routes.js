@@ -1,12 +1,3 @@
-/*
- * jQuery routes - v2.0
- * Routing in javascript using hashchange event.
- * http://thorsteinsson.is/projects/jquery-routes/
- *
- * Copyright (c) 2010 Ægir Þorsteinsson
- * Licensed under a Creative Commons Attribution 3.0 license
- * http://creativecommons.org/licenses/by/3.0/
- */
 (function($) {
   var routecount = 0,
     datelpad = function(d) {
