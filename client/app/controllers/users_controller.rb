@@ -76,6 +76,7 @@ class UsersController < ApplicationController
     @dares = @followees.map { |followee|
       followee.dares
     }.flatten
+    @donation = Donation.where(id: current_user.id).first
   end
 
   def invite
