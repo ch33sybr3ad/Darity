@@ -5,16 +5,29 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def logged_in?
-    !current_user.nil?
+    !!current_user
   end
 
   def login(user)
     session[:user_id] = user.id
   end
 
+  def _404
+    render :'404', layout: false, status: 404
+  end
+
   private
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  def find_user
+    begin
+    @user = User.find(params[:user_id] || params[:id])
+    rescue ActiveRecord::RecordNotFound
+      @user = User.new
+      _404
+    end
   end
 end
