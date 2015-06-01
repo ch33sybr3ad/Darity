@@ -9,7 +9,6 @@ class User < ActiveRecord::Base
   has_many :pending_dares, foreign_key: :proposer_id, class_name: "Dare"
 
   before_create :create_activation_digest
-  before_save :downcase_email
 
   def self.create_with_omniauth(auth)
     new_user = create! do |user|
@@ -79,10 +78,6 @@ class User < ActiveRecord::Base
   end
 
   private
-
-  def downcase_email
-    self.email = email.downcase
-  end
 
   def create_activation_digest
     self.activation_token = User.new_token

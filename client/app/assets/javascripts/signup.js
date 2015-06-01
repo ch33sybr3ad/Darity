@@ -3,7 +3,6 @@ var watchForm = function() {
     event.preventDefault();
 
     $('.login-area').hide();
-    $('.signup-link').hide();
     $('.signup-area').show();
   });
 
@@ -12,8 +11,8 @@ var watchForm = function() {
 
     $('.signup-area').hide();
     $('.login-area').show();
-    $('.signup-link').show();
   });
+
   $('.new_user').on('submit', function(event){
     event.preventDefault();
 
