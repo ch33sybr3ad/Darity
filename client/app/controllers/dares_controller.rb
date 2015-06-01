@@ -12,6 +12,7 @@ class DaresController < ApplicationController
     @proposer = @dare.proposer
     @daree = @dare.daree
     @pledged = 0
+    @comment = Comment.new
     @dare.donations.each do |user|
       @pledged += user.donation_amount
     end
