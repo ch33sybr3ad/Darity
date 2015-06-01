@@ -15,6 +15,8 @@ class DaresController < ApplicationController
     @dare.donations.each do |user|
       @pledged += user.donation_amount
     end
+    @video = Video.where(dare_id: @dare.id).first
+    p @url = @video.url.gsub(/&.*/, "").gsub(/.*=/, "")
   end
 
   def new

@@ -1,34 +1,33 @@
-<h1>new dare </h1>
+<section class="container">
 
-  <%= form_for [@user, @dare] do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-    <%= f.submit :submit %>
-    <%= f.hidden_field :daree_id, value: params[:daree] %>
-  <% end %>
+  <div class="row">
+    <div class="col-md-9">
+      <%= bootstrap_form_for [@user, @dare], html: {class: 'form-horizontal'} do |f| %>
+      <legend>new dare</legend>
+      <%= f.text_field :title %>
+      <%= f.text_area :description %>
+      <%= f.submit :submit %>
+      <%= f.hidden_field :daree_id, value: params[:daree] %>
+      <% end %>
 
-  <hr>
+    </div>
+    <div class="col-md-3">
+      <h4>Can't think of a Dare? Click the generate button to get the creative juices flowing!</h4>
 
-  <h4>Can't think of a Dare? Click the generate button to get the creative juices flowing!</h4>
+      <button class="btn btn-default generate" href="<%= @user.id %>">
+        Click to generate Dare!
+      </button>
 
-  <button class="btn btn-default generate" href="<%= @user.id %>">
-    Click to generate Dare!
-  </button>
+      <button class="btn btn-default use-dare" href="<%= @user.id %>" style="display: none">
+        Use Dare!
+      </button>
 
-  <button class="btn btn-default use-dare" href="<%= @user.id %>" style="display: none">
-    Use Dare!
-  </button>
+      <script id="generated-dare" type="text/x-handlebars-template">
+      <h4>{{description}}</h4>
+      </script>
 
-<script id="generated-dare" type="text/x-handlebars-template">
-  <li>
-    <h4>{{description}}</h4> 
-  </li>
-</script>
-
-<div class="container" id="gen-dare">
-</div>
-
-
-
+      <div class="container" id="gen-dare">
+      </div>
+    </div>
+  </div>
+</section>
