@@ -3,24 +3,53 @@ var checkTwitterHandle = function(handle) {
 }
 
 var searchFunction = function() {
-  $("#search-bar").on('keyup', function() {
+  // $("#search-bar").on('keyup', function() {
+  //   var phrase = $(this).val();
+  //   $('#invalid').hide();
+  //   $.get('/users?phrase='+phrase).done(function(payload) {
+  //     $('.user-wrap').empty();
+  //     $('#invite-twitter').hide();
+  //     if (payload.length > 0) {
+  //       payload.forEach(function(user) {
+  //         $('.user-wrap').append(
+  //           '<p>'+user.username+
+  //           ' <a href="/users/'+user.id+'">Dare</a>'+
+  //           '</p>'
+  //         );
+  //       });
+  //     } else {
+  //       $('#invite-twitter').show();
+  //       $('#handle-p').text(phrase);
+  //       $('#handle-in').attr('value', phrase);
+  //     }
+  //   }).fail(function(err) {
+  //     console.log(err);
+  //   });
+  // });
+
+  $("#user-search").on('keyup', function() {
     var phrase = $(this).val();
-    $('#invalid').hide();
     $.get('/users?phrase='+phrase).done(function(payload) {
-      $('.user-wrap').empty();
-      $('#invite-twitter').hide();
+      $('#user-find li:not(:first-child)').remove();
       if (payload.length > 0) {
-        payload.forEach(function(user) {
-          $('.user-wrap').append(
-            '<p>'+user.username+
-            ' <a href="/users/'+user.id+'">Dare</a>'+
-            '</p>'
+        payload.slice(0, 6).forEach(function(user) {
+          $('#user-find').append(
+            '<li><a href="/users/'+user.id+'">'+user.username+'</a></li>'
           );
         });
       } else {
-        $('#invite-twitter').show();
-        $('#handle-p').text(phrase);
-        $('#handle-in').attr('value', phrase);
+        checkTwitterHandle(phrase).done(function(bool) {
+          $('#user-find li:not(:first-child)').remove();
+          if (bool) {
+            $('#user-find').append(
+              '<li><a href="/users/invite/'+phrase+'"> Invite '+phrase+' on Twitter</a></li>'
+            );
+          } else {
+            $('#user-find').append(
+              '<li>not found</li>'
+            );
+          }
+        });
       }
     }).fail(function(err) {
       console.log(err);

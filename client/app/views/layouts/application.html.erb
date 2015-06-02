@@ -23,22 +23,26 @@
         <a class="navbar-brand" href="#">Darity</a>
       </div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li><%= link_to 'Home', root_path %></li>
           <li><%= link_to 'Charities', charities_path %></li>
           <li><%= link_to 'All Users', users_path %></li>
           <li><%= link_to 'About Us', about_path %></li>
+          <li class="dropdown hidden-xs">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Find User <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu" id="user-find">
+              <li id="drop-search">
+                <form id="signin" class="navbar-form navbar-left" role="form">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                    <input id="user-search" type="text" class="form-control" name="search" value="" placeholder="find users">
+                  </div>
+                </form>
+              </li>
+            </ul>
+          </li>
         </ul>
-        <form id="signin" class="navbar-form navbar-left" role="form">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-search"></i></span>
-            <input id="user-search" type="text" class="form-control" name="search" value="" placeholder="find users">
-          </div>
-
-          <button type="submit" class="btn btn-primary">Search</button>
-        </form>
 
         <ul class="nav navbar-nav navbar-right">
 
@@ -55,7 +59,7 @@
           </li>
           <% else %>
 
-          <li class="hidden-xs"><p class="navbar-text">Already have an account?</p></li>
+          <li class="hidden-xs hidden-sm"><p class="navbar-text">Already have an account?</p></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
             <ul id="login-dp" class="dropdown-menu">
@@ -68,7 +72,7 @@
                     <a href="/auth/twitter" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
                   </div>
                   <p>or</p>
-                  <%= bootstrap_form_for @user, url: login_path, html: { class: 'login-user' } do |f| %>
+                  <%= bootstrap_form_for @user || User.new, url: login_path, html: { class: 'login-user' } do |f| %>
                   <%= f.email_field :email %>
                   <%= f.password_field :password %>
                   <div class="form-group">

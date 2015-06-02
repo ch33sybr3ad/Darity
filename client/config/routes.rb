@@ -37,7 +37,8 @@
   post '/dares/:dare_id/donations/:id/pay' => 'donations#paid'
   get '/dares/:dare_id/donations/new' => 'donations#new', as: :new_donation
   post '/dares/:dare_id/donations' => 'donations#create', as: :donations
-  
+
+  get '/users/invite/:handle' => "users#new_invite"
   post '/user/invites' => "users#invite", as: :user_invite
 
   get '/check_handle/:handle' => "users#check", as: :check
