@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @dare = Dare.find(@comment.dare_id)
     if @comment.save
+      binding.pry
       render json: { comment: @comment, username: current_user.username }.to_json
     else
       return "fail!"
@@ -12,24 +13,39 @@ class CommentsController < ApplicationController
   end
 
   def upvote
-    @comment = Comment.find(params[:id])
-    @comment.likes += 1
-    @comment.save
-    render json: @comment
+    like = Like.find_or_create_by(comment_id: like_params["id"] ,user_id: current_user.id)
+    like.value = 1
+    like.save
+    count = Like.where(comment_id: like_params["id"])
+              .inject(0) { |sum, like| sum + like.value }
+
+    comment = Comment.find(like_params['id'])
+    comment.likes_count = count
+    comment.save
+    render json: comment
   end
 
   def downvote
-    @comment = Comment.find(params[:id])
-    @comment.likes -= 1
-    @comment.save
-    render json: @comment
+    like = Like.find_or_create_by(comment_id: like_params["id"] ,user_id: current_user.id)
+    like.value = -1
+    like.save
+    count = Like.where(comment_id: like_params["id"])
+              .inject(0) { |sum, like| sum + like.value }
+    comment = Comment.find(params[:id])
+    comment.likes_count = count 
+    comment.save
+    render json: comment
   end
 
 
   private
 
   def comment_params
-    params.require(:comment).permit(:body, :user_id, :dare_id)
+    params.require(:comment).permit(:body, :author_id, :dare_id)
+  end
+
+  def like_params
+    params.require(:like).permit(:id)
   end
 
   

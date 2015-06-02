@@ -27,11 +27,11 @@ ActiveRecord::Schema.define(version: 20150602182505) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "body"
-    t.integer  "likes",      default: 0
+    t.integer  "likes_count", default: 0
     t.integer  "author_id"
     t.integer  "dare_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "dares", force: :cascade do |t|
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20150602182505) do
   create_table "likes", force: :cascade do |t|
     t.integer  "comment_id"
     t.integer  "user_id"
+    t.integer  "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

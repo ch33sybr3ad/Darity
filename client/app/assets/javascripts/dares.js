@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
   $('.approve').on('click', function(event) {
     event.preventDefault();
@@ -35,6 +34,15 @@ $(document).ready(function() {
       data: {id: dareId},
     });
 
+    request.failure(function(response){
+      alert("voted against!")
+    })
+  })
+})
+
+
+$(document).ready(function(){
+  $('.new_comment').on('submit', function(e){
     request.done(function(response) {
       $('.disapprove').css('background-color', 'red');
       $('.approve').css('background-color', 'inherit');
@@ -59,15 +67,14 @@ $(document).ready(function() {
     var dareId = $(this).find('[name="comment[dare_id]"]').val();
 
     var request = $.ajax({
-      url: '/comments',
-      method: 'POST',
-      data: { comment: { body: commentText, user_id: Number(userId), dare_id: Number(dareId) } }
-    });
-
+      url: '/comments', 
+      method: 'POST', 
+      data: { comment: { body: commentText, author_id: Number(userId), dare_id: Number(dareId) } }
+    })
 
     request.done(function(response) {
       console.log(response);
-      $('.comment-list').prepend('<li>' +response.comment.body+ " " +response.comment.likes+ " " + response.username + "</li>");
+      $('.comment-list').prepend('<li>' +response.comment.body+ " " +response.comment.likes_count+ " " + response.username + "</li>")
     }).fail(function(){
       console.log('fail');
     });
@@ -77,11 +84,14 @@ $(document).ready(function() {
   $('.comment-list').on('click', 'a', function(event) {
     event.preventDefault();
     var current = $(this);
+    var likeId = current.attr("href").match(/\d+/)[0]
+
     $.ajax({
-      url: current.attr("href"),
-      method: 'POST',
+      url: current.attr("href"), 
+      method: 'POST', 
+      data: { like: { id: likeId } }
     }).done(function(response){
-      this.parent().find('span').text(response.likes)
+      this.parent().find('span').text(response.likes_count)
     }.bind(current)).fail(function(error){
       console.log("uh oh error")
     });
