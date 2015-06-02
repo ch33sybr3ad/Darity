@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+  $('body').scrollspy({ target: '#navbar' })
+
   $('#show-signup').on('click', function(e) {
     e.preventDefault();
     $('a.dropdown-toggle.signup').dropdown('toggle');

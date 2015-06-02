@@ -1,3 +1,5 @@
+body { position: relative; }
+
 
 #video {
   opacity: .7;
@@ -28,16 +30,40 @@
   h3 { opacity: 0.6; color: white; }
 }
 
+@media only screen and (max-width: 850px) {
+  .jumbotron { padding: 10em; }
+}
+
+@media only screen and (max-width: 680px) {
+  .jumbotron { padding: 8em; }
+}
+
+@media only screen and (max-width: 500px) {
+  .jumbotron { padding: 4em; }
+}
+
 .flowchart {
-  padding-top: 90px;
   padding-bottom: 20px;
   text-align: center;
   .fa-lg:before { font-size: 6em; }
+  .fa-lg { padding-top: 90px; }
   h3 { font-weight: lighter; }
+  .fa-arrow-right {
+    position: relative;
+    top: 90px;
+  }
 }
 
 .container.notice {
   position: fixed;
   top: 70px;
   z-index: 10;
+}
+
+.charity {
+  text-align: center;
+}
+
+@media only screen and (max-width: 765px) {
+  .charity { width: 300px; }
 }
