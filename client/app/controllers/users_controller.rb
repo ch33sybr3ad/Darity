@@ -73,7 +73,6 @@ class UsersController < ApplicationController
 
   def feed
     @followees = current_user.followees
-    binding.pry
     @dares = @followees.map { |followee|
       followee.dares
     }.flatten
