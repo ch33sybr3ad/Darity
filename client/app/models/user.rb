@@ -24,10 +24,14 @@ class User < ActiveRecord::Base
   validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
 
 
+  has_secure_password
+
   before_create :create_activation_digest
 
   def all_dares
-    challenged_feed + proposed_feed + pledged_feed
+    challenged_dares + proposed_dares + pledged_dares
+    # query = "select dares.* from dares join donations on dares.id = donations.pledged_dare_id where dares.proposer_id = #{id} or dares.daree_id = #{id} or donations.pledger_id = #{id}"
+    # p ActiveRecord::Base.connection.execute(query).first
   end
 
   def challenged_feed

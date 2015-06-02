@@ -35,7 +35,7 @@
       @user.save
     end
     UserMailer.thank_you(@user, charge.amount.to_i/100, @dare.title, @dare.description, @dare.daree.username).deliver_later
-    redirect_to @user
+    redirect_to user_dare_path
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
