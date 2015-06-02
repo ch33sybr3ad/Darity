@@ -66,4 +66,13 @@
     }
 }
 
-.navbar { margin-bottom: 0 }
+.navbar {
+  margin-bottom: 0;
+  .navbar-brand { color: inherit; }
+  .navbar-nav>li>a { color: inherit; }
+}
+
+.navbar-default {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+}

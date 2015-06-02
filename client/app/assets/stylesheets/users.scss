@@ -2,28 +2,6 @@ html {
   word-wrap: break-word;
 }
 
-#video {
-  opacity: .7;
-}
-
-.hero-wrapper {
-  position: relative;
-  margin: 0 auto;
-}
-
-.video-container {
-  z-index:-10;
-  position: relative;
-}
-
-.header-text {
-  position: relative;
-  z-index:100;
-}
-
-.follows {
-  margin-top: 1em;
-}
 
 /*body * {
   border: red 1px dashed;
