@@ -1,7 +1,7 @@
   <li>
     <%=comment.body%>
     <span><%=comment.likes%></span>
-    <%=comment.user.username%>
+    <%=comment.author.username%>
     <%= link_to "upvote", upvote_path(comment)  %>
     <%= link_to "downvote", downvote_path(comment)  %>
   </li>
