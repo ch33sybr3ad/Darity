@@ -24,7 +24,6 @@
   match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
   get "/signout" => "sessions#destroy", as: :signout
 
-
   get '/generate' => "generate_dares#generate", as: :generate
 
   get '/users/:user_id/dares/:id/set_price' => 'dares#set_price', as: :set_price
@@ -38,7 +37,15 @@
   get '/dares/:dare_id/donations/new' => 'donations#new', as: :new_donation
   post '/dares/:dare_id/donations' => 'donations#create', as: :donations
 
+  patch '/dares/:dare_id/donations/approve' => "dares#approve", as: :approve
+
+  patch '/dares/:dare_id/donations/disapprove' => "dares#disapprove", as: :disapprove
+
+  get '/d3guage' => 'donations#guage', as: :gauge
+
+
   get '/users/invite/:handle' => "users#new_invite"
+
   post '/user/invites' => "users#invite", as: :user_invite
 
   get '/check_handle/:handle' => "users#check", as: :check

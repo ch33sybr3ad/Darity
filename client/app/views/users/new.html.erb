@@ -1,20 +1,12 @@
-<div class= "invalid-sign-up"></div>
-<div class= "signup-area">
+
+<div class= "signup-area container">
     <h1>Sign Up</h1>
-      <%= form_for @user do |f| %>
+      <%= bootstrap_form_for @user do |f| %>
+      <%= f.text_field :username %>
+      <%= f.email_field :email %>
+      <%= f.password_field :password %>
+      <%= f.password_field :password_confirm %>
 
-      <%= f.label :username %>
-        <%= f.text_field :username, class: 'form-control' %>
-
-      <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control' %>
-
-      <%= f.label :password %>
-        <%= f.password_field :password, class: 'form-control' %>
-
-      <%= f.label :password_confirm %>
-        <%= f.password_field :password_confirm, class: 'form-control' %>
-
-        <%= f.submit "Sign Up", class: "btn btn-primary" %>
+      <%= f.submit "Sign Up", class: "btn btn-primary" %>
     <% end %>
 </div>

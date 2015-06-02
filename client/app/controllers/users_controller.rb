@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
+  before_action(:find_user, only: [:show, :edit, :update])
 
   def show
-    find_user
     @relationship = Relationship.where(followee_id: params[:id], follower_id: current_user.id) if current_user
     @followees = @user.followees
     case params[:dare_type]
@@ -24,7 +24,6 @@ class UsersController < ApplicationController
   end
 
   def about
-
   end
 
   def index
@@ -49,14 +48,31 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @user.password == user_params['current_password']
+      @user.update(password: user_params['new_password'])
+      flash[:notice] = "Successfully Changed Account Settings"
+      render "edit", id: @user
+    else
+      render "edit", id: @user
+      flash[:notice] = "Failed to Change Account Settings"
+    end
+  end
+
   def new
     @user = User.new
   end
 
   def create
     @user = User.new(signup_params)
+    if already_a_twitter_handle?(@user.username)
+      @user.errors.add(:username, 'is already taken')
+    end
     respond_to do |format|
-      if @user.save
+      if @user.errors.empty? && @user.save
         # Tell the UserMailer to send a welcome email after save
         session[:user_id] = @user.id
         @user.send_welcome_email
@@ -65,6 +81,7 @@ class UsersController < ApplicationController
         format.html { redirect_to @user, notice: 'Darity email sent. Please check your email to activate your account' }
         format.json { render json: @user, status: :created, location: @user }
       else
+        flash[:error] = @user.errors.full_messages.first
         format.html { redirect_to new_user_path }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
@@ -76,7 +93,6 @@ class UsersController < ApplicationController
     @all_dares = @followees.flat_map { |followee|
       followee.all_dares
     }
-    # @donation = Donation.where(id: current_user.id).first
   end
 
   def new_invite
@@ -94,8 +110,7 @@ class UsersController < ApplicationController
   end
 
   def check
-    reply = HTTParty.get("http://twitter.com/#{params[:handle]}").parsed_response
-    render (reply =~ /Sorry, that page doesn/ ? { json: false } : { json: true })
+    render (already_a_twitter_handle?(params[:handle]) ? { json: true } : { json: false })
   end
 
   private
@@ -107,7 +122,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :password)
+    params.require(:user).permit(:email, :password, :current_password, :new_password, :confirm_password)
   end
 
   def pend_params
@@ -116,6 +131,11 @@ class UsersController < ApplicationController
 
   def signup_params
     params.require(:user).permit(:username, :email, :password)
+  end
+
+  def already_a_twitter_handle?(handle)
+    reply = HTTParty.get("http://twitter.com/#{handle}").parsed_response
+    !(reply =~ /Sorry, that page doesn/)
   end
 
 end
