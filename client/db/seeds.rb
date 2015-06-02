@@ -11,7 +11,7 @@ Relationship.delete_all
 users = Array.new(5) do
   User.create!(
     username: Faker::Internet.user_name,
-    password: 1234,
+    password: '1234',
     email: Faker::Internet.safe_email,
     uid: Faker::Number.number(10),
     provider: 'Twitter',
