@@ -38,23 +38,10 @@ class User < ActiveRecord::Base
   end
 
   def all_dares
-    challenged_dares + proposed_dares + pledged_dares
-    # query = "select dares.* from dares join donations on dares.id = donations.pledged_dare_id where dares.proposer_id = #{id} or dares.daree_id = #{id} or donations.pledger_id = #{id}"
-    # p ActiveRecord::Base.connection.execute(query).first
+    feed = challenged_dares + proposed_dares + pledged_dares
+    feed.sort_by &:created_at
   end
-
-  def challenged_feed
-    challenged_dares.order(created_at: :desc)
-  end
-
-  def proposed_feed
-    proposed_dares.order(created_at: :desc)
-  end
-
-  def pledged_feed
-    pledged_dares.order(created_at: :desc)
-  end
-
+  
   def self.create_with_omniauth(auth)
     new_user = create! do |user|
       user.provider = auth["provider"]
