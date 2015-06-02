@@ -29,8 +29,15 @@
 }
 
 .flowchart {
-  padding-top: 80px;
+  padding-top: 90px;
+  padding-bottom: 20px;
   text-align: center;
   .fa-lg:before { font-size: 6em; }
   h3 { font-weight: lighter; }
+}
+
+.container.notice {
+  position: fixed;
+  top: 70px;
+  z-index: 10;
 }
