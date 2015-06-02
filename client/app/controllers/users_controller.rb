@@ -53,12 +53,19 @@ class UsersController < ApplicationController
 
   def update
     if @user.password == user_params['current_password']
-      @user.update(password: user_params['new_password'])
-      flash[:notice] = "Successfully Changed Account Settings"
-      render "edit", id: @user
+      if user_params['new_password'] && user_params['confirm_password']
+        @user.update(password: user_params['new_password'])
+      end
+      if @user.update(email: user_params['email'])
+        flash[:notice] = "Successfully Changed Account Settings"
+        render "edit", id: @user
+      else
+        flash[:error] = "Invalid Email"
+        render "edit", id: @user
+      end
     else
+      flash[:error] = "Incorrect Password"
       render "edit", id: @user
-      flash[:notice] = "Failed to Change Account Settings"
     end
   end
 

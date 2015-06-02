@@ -48,7 +48,6 @@ $(document).ready(function() {
 
   });
 
-
 });
 
 
@@ -65,6 +64,7 @@ $(document).ready(function() {
       data: { comment: { body: commentText, user_id: Number(userId), dare_id: Number(dareId) } }
     });
 
+
     request.done(function(response) {
       console.log(response);
       $('.comment-list').prepend('<li>' +response.comment.body+ " " +response.comment.likes+ " " + response.username + "</li>");
@@ -72,4 +72,23 @@ $(document).ready(function() {
       console.log('fail');
     });
   });
+
 });
+
+
+  $('.comment-list').on('click', 'a', function(event){
+    event.preventDefault();
+    var current = $(this);
+
+    $.ajax({
+      url: current.attr("href"),
+      method: 'POST',
+    }).done(function(response){
+      this.parent().find('span').text(response.likes)
+    }.bind(current)).fail(function(error){
+      console.log("uh oh error")
+    });
+
+  })
+
+})
