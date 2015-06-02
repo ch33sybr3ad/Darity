@@ -70,13 +70,4 @@ class DaresController < ApplicationController
     params.require(:dare).permit(:price, :charity, :title, :description, :daree_id)
   end
 
-  def find_dare
-    begin
-    @dare = Dare.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-      @dare = Dare.new
-      _404
-    end
-  end
-
 end

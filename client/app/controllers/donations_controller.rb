@@ -1,8 +1,8 @@
  class DonationsController < ApplicationController
+  before_action(:find_dare, only: [:new, :paid])
+  before_action(:find_donation, only: [:pay, :paid])
 
   def new
-    @dare = Dare.find(params[:dare_id])
-    @user = User.where()
     @donation = Donation.new
   end
 
@@ -12,13 +12,10 @@
   end
 
   def pay
-    @donation = Donation.find(params[:id])
     @amount = @donation.donation_amount * 100
   end
 
   def paid
-    @dare = Dare.find(params[:dare_id])
-    @donation = Donation.find(params[:id])
     @user = User.find(@donation.pledger_id)
 
     customer = Stripe::Customer.create(
@@ -33,24 +30,16 @@
       )
     @donation.completed = true
 
-    if @user.email == nil && @donation.save && @user.save && @dare.save
+    if @user.email == nil && @donation.save && @dare.save
       @user.email = customer.email
       @user.save
-      UserMailer.thank_you(@user, charge.amount.to_i/100, @dare.title, @dare.description, @dare.daree.username).deliver_later
-      redirect_to @user
-    else
-      @donation.save && @user.save && @dare.save
-      UserMailer.thank_you(@user, charge.amount.to_i/100, @dare.title, @dare.description, @dare.daree.username).deliver_later
-      redirect_to @user
     end
+    UserMailer.thank_you(@user, charge.amount.to_i/100, @dare.title, @dare.description, @dare.daree.username).deliver_later
+    redirect_to @user
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to donations_path
-  end
-
-  def guage
-
   end
 
   private
@@ -58,4 +47,9 @@
     def donation_params
       params.require(:donation).permit(:donation_amount)
     end
+
+    def find_donation
+      @donation = Donation.find(params[:id])
+    end
+    
 end

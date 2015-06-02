@@ -30,4 +30,13 @@ class ApplicationController < ActionController::Base
       _404
     end
   end
+
+  def find_dare
+    begin
+    @dare = Dare.find(params[:dare_id] || params[:id])
+    rescue ActiveRecord::RecordNotFound
+      @dare = Dare.new
+      _404
+    end
+  end
 end
