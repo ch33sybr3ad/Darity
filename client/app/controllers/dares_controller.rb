@@ -13,14 +13,11 @@ class DaresController < ApplicationController
     @daree = @dare.daree
     @pledged = @dare.donations.inject(0) { |sum, donation| sum + donation.donation_amount }
     @video = Video.where(dare_id: @dare.id).first
-    if @video
-      @url = @video.url.gsub(/&.*/, "").gsub(/.*=/, "")
-    end
+    @url = @video.url.gsub(/&.*/, "").gsub(/.*=/, "") if @video
     @comments = @dare.comments
   end
 
   def new
-    # @generate_dares = GenerateDare.all
     @dare = Dare.new
   end
 
@@ -40,24 +37,27 @@ class DaresController < ApplicationController
   end
 
   def update
+    _404 if @dare.proposer != current_user
     @dare.update(dare_params)
     redirect_to [@dare.proposer, @dare]
   end
 
   def set_price
     @daree = @dare.daree
+    _404 if @daree != current_user
     @proposer = @dare.proposer
     @charities = Charity.all
   end
 
   def put_price
+    _404 if @dare.daree != current_user
     @charity = Charity.find_or_create_by(name: dare_params[:charity])
     @dare.update(price: dare_params[:price], charity: @charity)
     redirect_to [@dare.proposer, @dare]
   end
 
   def destroy
-    @dare.destroy
+    @dare.destroy if current_user == @dare.daree || current_user == @dare.proposer
     redirect_to current_user
   end
 
