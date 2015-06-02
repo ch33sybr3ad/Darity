@@ -13,10 +13,10 @@
             </h5>
             <p>Do you think <%= dare.proposer.username %> should accept this dare?</p>
           </li>
-          <% if dare.charity != nil %>
+          <% if dare.charity != nil && dare.proposer.donations !=nil %>
           <li class="list-group-item">
             <h5 class="list-group-item-heading">
-              <p><%= image_tag dare.daree.image_url %><%= link_to dare.daree.username, dare.daree %> just donated to <%= dare.charity.name %> for $<%= dare.daree.donations[0]%></p>
+              <p><%= image_tag dare.daree.image_url %><%= link_to dare.daree.username, dare.daree %> just donated to <%= dare.charity.name %> for $<%= dare.proposer.donations[0]%></p>
               <div class="feed-video"><%= dare.video %></div>
             </h5>
           </li>
