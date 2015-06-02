@@ -1,23 +1,26 @@
-<h1> Account Settings </h1>
-<p>Change your basic account and language settings</p>
+<div class="container">
+  <h1> Account Settings </h1>
+  <p>Change your basic account and language settings</p>
 
-<%= form_for @user do |f| %>
+  <%= bootstrap_form_for @user do |f| %>
 
-<%= f.label :email %>
-  <%= f.email_field :email, class: 'form-control' %>
+  <%= f.email_field :email %>
 
-<%= f.label :password %>
-  <%= f.password_field :password, class: 'form-control' %>
+  <%= f.password_field :current_password %>
 
-<%= f.label :password_confirm %>
-<%= f.password_field :password_confirm, class: 'form-control' %>
+  <%= f.password_field :new_password %>
 
-<%= f.submit "Sign Up", class: "btn btn-primary" %>
-<% end %>
+  <%= f.password_field :confirm_password %>
+
+  <%= f.hidden_field :user_id, value: @user.id %>
+
+  <%= f.submit "Save Changes", class: "btn btn-primary" %>
+  <% end %>
 
 
-<p>Email</p>
+  <p>Email</p>
 
-<p>Password</p>
+  <p>Password</p>
 
-<p>Delete Account</p>
+  <p>Delete Account</p>
+</div>  

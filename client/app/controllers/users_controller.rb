@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action(:find_user, only: [:show, :edit])
+  before_action(:find_user, only: [:show, :edit, :update])
 
   def show
     @relationship = Relationship.where(followee_id: params[:id], follower_id: current_user.id) if current_user
@@ -24,7 +24,6 @@ class UsersController < ApplicationController
   end
 
   def about
-
   end
 
   def index
@@ -50,6 +49,18 @@ class UsersController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    binding.pry
+    if @user.password == user_params['current_password']
+      @user.update(password: user_params['new_password'])
+      flash[:notice] = "Successfully Changed Account Settings"
+      render "edit", id: @user
+    else
+      render "edit", id: @user
+      flash[:notice] = "Failed to Change Account Settings"
+    end
   end
 
   def new
@@ -106,7 +117,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :password)
+    params.require(:user).permit(:email, :password, :current_password, :new_password, :confirm_password)
   end
 
   def pend_params
