@@ -53,6 +53,14 @@
 
   end
 
+  def approve
+    binding.pry
+  end
+
+  def disapprove
+    binding.pry
+  end
+
   private
 
     def donation_params
