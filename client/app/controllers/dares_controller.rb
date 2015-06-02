@@ -20,7 +20,7 @@ class DaresController < ApplicationController
     if @video
       @url = @video.url.gsub(/&.*/, "").gsub(/.*=/, "")
     end
-    @comments = @dare.comments
+    @comments = @dare.comments.reverse
   end
 
   def new

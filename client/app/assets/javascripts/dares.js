@@ -12,9 +12,8 @@ $(document).ready(function(){
     })
 
     request.done(function(response){
-      console.log(response); 
-      console.log("success"); 
-      debugger
+      console.log(response);
+      $('.comment-list').prepend('<li>' +response.body+ " " +response.likes+ " " + response.user_id + "</li>")
     }).fail(function(){
       console.log('fail'); 
     })
@@ -23,3 +22,4 @@ $(document).ready(function(){
 
   });
 })
+
