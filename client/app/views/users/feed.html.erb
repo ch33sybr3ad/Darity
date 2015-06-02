@@ -2,22 +2,24 @@
   <div class="panel panel-default">
     <section class="panel-body">
       <ul class="list-group">
-        <% @dares.each do |dare| %>
-          <% @followees.each do |followee| %>
-            <li class="list-group-item">
-              <h5 class="list-group-item-heading">
-                <%= link_to dare.proposer.username, dare.proposer %>
-                          just dared
-                <%= link_to dare.daree.username, dare.daree %>
-              </h5>
-            </li>
-            <li class="list-group-item">
-              <h5 class="list-group-item-heading">
-                <%= link_to dare.daree.username, dare.daree %>
-                          was challenged by
-                <%= link_to dare.proposer.username, dare.proposer %>
-              </h5>
-            </li>
+        <% @all_dares.each do |dare| %>
+          <li class="list-group-item">
+            <h5 class="list-group-item-heading">
+              <%= image_tag dare.proposer.image_url %><%= link_to dare.proposer.username, dare.proposer %>
+                        just dared
+              <%= image_tag dare.daree.image_url %><%= link_to dare.daree.username, dare.daree %>
+                        to the
+              "<%= dare.title %>"
+            </h5>
+            <p>Do you think <%= dare.proposer.username %> should accept this dare?</p>
+          </li>
+          <% if dare.charity != nil %>
+          <li class="list-group-item">
+            <h5 class="list-group-item-heading">
+              <p><%= image_tag dare.daree.image_url %><%= link_to dare.daree.username, dare.daree %> just donated to <%= dare.charity.name %> for $<%= dare.daree.donations[0].donation_amount %></p>
+              <div class="feed-video"><%= dare.video %></div>
+            </h5>
+          </li>
           <% end %>
         <% end %>
       </ul>
