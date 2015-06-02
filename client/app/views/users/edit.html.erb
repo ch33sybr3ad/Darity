@@ -1,6 +1,21 @@
 <h1> Account Settings </h1>
 <p>Change your basic account and language settings</p>
 
+<%= form_for @user do |f| %>
+
+<%= f.label :email %>
+  <%= f.email_field :email, class: 'form-control' %>
+
+<%= f.label :password %>
+  <%= f.password_field :password, class: 'form-control' %>
+
+<%= f.label :password_confirm %>
+<%= f.password_field :password_confirm, class: 'form-control' %>
+
+<%= f.submit "Sign Up", class: "btn btn-primary" %>
+<% end %>
+
+
 <p>Email</p>
 
 <p>Password</p>

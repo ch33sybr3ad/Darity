@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
+  before_action(:find_user, only: [:show, :edit])
 
   def show
-    find_user
     @relationship = Relationship.where(followee_id: params[:id], follower_id: current_user.id) if current_user
     @followees = @user.followees
     case params[:dare_type]
@@ -50,7 +50,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-
   end
 
   def new
