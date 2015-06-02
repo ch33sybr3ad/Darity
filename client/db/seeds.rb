@@ -81,14 +81,17 @@ dare.save
   )
 end
 
-first_user = User.first
-first_dare = Dare.first
+p first_user = User.first
+p second_user = User.second
+p first_dare = Dare.first
+p second_dare = Dare.second
 
-# 5.times do
-#   Comment.create(body: Faker::Lorem.sentence, likes: rand(1..20), dare_id: first_dare.id)
-# end
+Comment.create(body: Faker::Lorem.sentence, likes_count: 9, author_id: first_user.id, dare_id: first_dare.id)
+Comment.create(body: Faker::Lorem.sentence, likes_count: 10, author_id: second_user.id, dare_id: first_dare.id)
+
 
 Video.create(title: "testing", url: "https://www.youtube.com/watch?v=Y2bNfUNUpRk", dare_id: first_dare.id, description: "video is for testing", uid: "Y2bNfUNUpRk")
+Video.create(title: "testing", url: "https://www.youtube.com/watch?v=Oqa9tKarkNA", dare_id: second_dare.id, description: "video is for testing", uid: "Oqa9tKarkNA")
 
 
 

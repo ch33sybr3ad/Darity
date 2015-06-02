@@ -1,5 +1,3 @@
-
-
 $(document).ready(function() {
   $('.approve').on('click', function(event){
     event.preventDefault();
@@ -46,12 +44,8 @@ $(document).ready(function() {
     request.failure(function(response){
       alert("voted against!")
     })
-
   })
-
-
 })
-
 
 
 $(document).ready(function(){
@@ -64,12 +58,12 @@ $(document).ready(function(){
     var request = $.ajax({
       url: '/comments', 
       method: 'POST', 
-      data: { comment: { body: commentText, user_id: Number(userId), dare_id: Number(dareId) } }
+      data: { comment: { body: commentText, author_id: Number(userId), dare_id: Number(dareId) } }
     })
 
     request.done(function(response){
       console.log(response);
-      $('.comment-list').prepend('<li>' +response.comment.body+ " " +response.comment.likes+ " " + response.username + "</li>")
+      $('.comment-list').prepend('<li>' +response.comment.body+ " " +response.comment.likes_count+ " " + response.username + "</li>")
     }).fail(function(){
       console.log('fail'); 
     })
@@ -84,7 +78,7 @@ $(document).ready(function(){
       url: current.attr("href"), 
       method: 'POST', 
     }).done(function(response){
-      this.parent().find('span').text(response.likes)
+      this.parent().find('span').text(response.likes_count)
     }.bind(current)).fail(function(error){
       console.log("uh oh error")
     }); 
