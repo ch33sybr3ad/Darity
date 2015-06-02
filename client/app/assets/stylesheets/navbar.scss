@@ -1,3 +1,7 @@
+$red-dark: rgb(159, 44, 53);
+$red-pink: rgb(239, 64, 74);
+$red-light: rgb(178, 50, 59);
+
 
 .nav-tabs {
   a {
@@ -68,11 +72,19 @@
 
 .navbar {
   margin-bottom: 0;
-  .navbar-brand { color: inherit; }
-  .navbar-nav>li>a { color: inherit; }
+  .navbar-brand { color: white; }
+  .navbar-nav>li>a { color: white; }
 }
 
 .navbar-default {
   background-color: rgba(0, 0, 0, 0);
-  color: white;
+
+  .navbar-nav>.open>a:focus {
+    background-color: rgba(239, 64, 74, 0.8);
+    color: white;
+  }
+  .navbar-nav > li > a:hover {
+    background-color: rgba(239, 64, 74, 0.8);
+    color: white;
+  }
 }
