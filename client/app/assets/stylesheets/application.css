@@ -12,5 +12,6 @@
  *
  *= require rails_bootstrap_forms
  *= require_tree .
+ *= require social-share-button
  *= require_self
  */
