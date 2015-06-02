@@ -140,31 +140,38 @@
   <% end %>
 
 <%= yield %>
-<nav class="navbar navbar-inverse navbar-bottom">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-4">
-        <h5 id='footer-header'> SITEMAP </h3>
-        <div class="col-sm-4">
-            <p>News</p>
-            <p>contact</p>
+
+  <section>
+
+  </section>
+
+  <footer class="container">
+      <div class="row">
+          <div class="col-md-4">
+              <span class="copyright">&copy; Darity 2015. All Rights Reserved.</span>
           </div>
-          <div class="col-sm-4">
-            <p>FAQ</p>
-            <p>Privacy Policy</p>
+          <div class="col-md-4">
+              <ul class="list-inline social-buttons">
+                  <li><a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+                  </li>
+                  <li><a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                  </li>
+                  <li><a href="#"><i class="fa fa-youtube fa-2x"></i></a>
+                  </li>
+                  <li><a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
+                  </li>
+              </ul>
           </div>
-        </div>
-        <div class="col-sm-4">
-          <h5 id='footer-header'> xxxx </h3>
-            <p>yyyyyyyyyyyyy</p>
+          <div class="col-md-4">
+              <ul class="list-inline quicklinks">
+                  <li><a href="#">Privacy Policy</a>
+                  </li>
+                  <li><a href="#">Terms of Use</a>
+                  </li>
+              </ul>
           </div>
-          <div class="col-sm-4">
-            <h5 id='footer-header'> xxxxx </h3>
-              <p>uuuuuuuuuuuuuuu</p>
-            </div>
-          </div>
-        </div>
-</nav>
+      </div>
+  </footer>
 
   <%= javascript_include_tag 'application' %>
 </body>
