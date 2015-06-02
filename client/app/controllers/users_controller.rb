@@ -55,8 +55,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(signup_params)
+    if already_a_twitter_handle?(@user.username)
+      @user.errors.add(:username, 'is already taken')
+    end
     respond_to do |format|
-      if @user.save
+      if @user.errors.empty? && @user.save
         # Tell the UserMailer to send a welcome email after save
         session[:user_id] = @user.id
         @user.send_welcome_email
@@ -65,6 +68,7 @@ class UsersController < ApplicationController
         format.html { redirect_to @user, notice: 'Darity email sent. Please check your email to activate your account' }
         format.json { render json: @user, status: :created, location: @user }
       else
+        flash[:error] = @user.errors.full_messages.first
         format.html { redirect_to new_user_path }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
@@ -76,15 +80,6 @@ class UsersController < ApplicationController
     @all_dares = @followees.map { |followee|
       followee.all_dares
     }.flatten
-    # @challenged_dares = @followees.map { |followee|
-    #   followee.challenged_feed
-    # }.flatten
-    # @proposed_dares = @followees.map { |followee|
-    #   followee.proposed_feed
-    # }.flatten
-    # @pledged_dares = @followees.map { |followee|
-    #   followee.pledged_feed
-    # }.flatten
     @donation = Donation.where(id: current_user.id).first
   end
 
@@ -103,8 +98,7 @@ class UsersController < ApplicationController
   end
 
   def check
-    reply = HTTParty.get("http://twitter.com/#{params[:handle]}").parsed_response
-    render (reply =~ /Sorry, that page doesn/ ? { json: false } : { json: true })
+    render (already_a_twitter_handle?(params[:handle]) ? { json: true } : { json: false })
   end
 
   private
@@ -125,6 +119,11 @@ class UsersController < ApplicationController
 
   def signup_params
     params.require(:user).permit(:username, :email, :password)
+  end
+
+  def already_a_twitter_handle?(handle)
+    reply = HTTParty.get("http://twitter.com/#{handle}").parsed_response
+    !(reply =~ /Sorry, that page doesn/)
   end
 
 end

@@ -16,6 +16,9 @@ class User < ActiveRecord::Base
   has_many :followees, through: :i_am_follower_relations
   has_many :i_am_follower_relations, class_name: "Relationship", foreign_key: "follower_id"
 
+  validates_uniqueness_of :username
+  validates_uniqueness_of :email
+
   before_create :create_activation_digest
 
   def all_dares
