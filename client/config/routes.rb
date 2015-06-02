@@ -41,7 +41,9 @@
 
   patch '/dares/:dare_id/donations/disapprove' => "dares#disapprove", as: :disapprove
 
-  get '/d3guage' => 'donations#guage', as: :gauge
+
+  post '/comments/:id/upvote' => 'comments#upvote', as: :upvote
+  post '/comments/:id/downvote' => 'comments#downvote', as: :downvote
 
 
   get '/users/invite/:handle' => "users#new_invite"
