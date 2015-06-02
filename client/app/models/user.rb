@@ -19,7 +19,9 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username, :email
   validates :password, 
     presence: true,
-    length: {:within => 6..40}, 
+    length: {:within => 6..40}
+
+  validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
 
 
   before_create :create_activation_digest
