@@ -140,32 +140,31 @@
   <% end %>
 
 <%= yield %>
-<nav class="navbar navbar-inverse navbar-bottom" style="padding:0 0 120px 0">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                    <h5 id='footer-header'> SITEMAP </h3>
-                    <div class="col-sm-4" style="padding: 0 0 0 0px">
-                        <p>News</p>
-                        <p>contact</p>
-                    </div>
-                    <div class="col-sm-4" style="padding: 0 0 0 0px">
-                        <p>FAQ</p>
-                        <p>Privacy Policy</p>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <h5 id='footer-header'> xxxx </h3>
-                    <p>yyyyyyyyyyyyy</p>
-                </div>
-                <div class="col-sm-4">
-                    <h5 id='footer-header'> xxxxx </h3>
-                    <p>uuuuuuuuuuuuuuu</p>
-                </div>
-            </div>
+<nav class="navbar navbar-inverse navbar-bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <h5 id='footer-header'> SITEMAP </h3>
+        <div class="col-sm-4">
+            <p>News</p>
+            <p>contact</p>
+          </div>
+          <div class="col-sm-4">
+            <p>FAQ</p>
+            <p>Privacy Policy</p>
+          </div>
         </div>
-    </nav>
-  <%= yield %>
+        <div class="col-sm-4">
+          <h5 id='footer-header'> xxxx </h3>
+            <p>yyyyyyyyyyyyy</p>
+          </div>
+          <div class="col-sm-4">
+            <h5 id='footer-header'> xxxxx </h3>
+              <p>uuuuuuuuuuuuuuu</p>
+            </div>
+          </div>
+        </div>
+</nav>
 
   <%= javascript_include_tag 'application' %>
 </body>
