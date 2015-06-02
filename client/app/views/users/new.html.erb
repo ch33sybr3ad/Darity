@@ -1,12 +1,12 @@
 
 <div class= "signup-area container">
-    <h1>Sign Up</h1>
-      <%= bootstrap_form_for @user do |f| %>
-      <%= f.text_field :username %>
-      <%= f.email_field :email %>
-      <%= f.password_field :password %>
-      <%= f.password_field :password_confirm %>
-
-      <%= f.submit "Sign Up", class: "btn btn-primary" %>
-    <% end %>
+  <h1>Sign Up</h1>
+    <%= bootstrap_form_for @user, html: { id: 'new-user-again' } do |f| %>
+    <%= f.text_field :username %>
+    <%= f.email_field :email %>
+    <%= f.password_field :password, class: "signup-password"%>
+    <%= f.password_field :password_confirm, class: "signup-password-confirm"%>
+    <div class="invalid-sign-up alert alert-danger" style='display:none'></div>
+    <%= f.submit "Sign Up", class: "btn btn-primary" %>
+  <% end %>
 </div>
