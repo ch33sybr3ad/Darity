@@ -1,5 +1,5 @@
 
-FactoryGirl.define do
+FactoryGirl.define do  
 
   factory :user do
     username Faker::Name.name
@@ -11,7 +11,7 @@ FactoryGirl.define do
   end
 end
 
-FactoryGirl.define do  
+FactoryGirl.define do 
 
   factory :dare do
    title Faker::Lorem.sentence

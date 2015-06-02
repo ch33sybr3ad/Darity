@@ -8,13 +8,16 @@ class User < ActiveRecord::Base
   has_many :proposed_dares, foreign_key: :proposer_id, class_name: "Dare"
   has_many :pending_dares, foreign_key: :proposer_id, class_name: "Dare"
 
-  has_many :comments
-
   has_many :followers, through: :i_am_followee_relations
   has_many :i_am_followee_relations, class_name: "Relationship", foreign_key: "followee_id"
 
   has_many :followees, through: :i_am_follower_relations
   has_many :i_am_follower_relations, class_name: "Relationship", foreign_key: "follower_id"
+
+  has_many :likes
+  has_many :comments, through: :likes
+
+  has_many :posts, class_name: "Comment", foreign_key: "author_id"
 
   validates_uniqueness_of :username, :email
   validates :password, 

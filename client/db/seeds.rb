@@ -11,7 +11,7 @@ Relationship.delete_all
 users = Array.new(5) do
   User.create!(
     username: Faker::Internet.user_name,
-    password: 123456,
+    password: "123456",
     email: Faker::Internet.safe_email,
     uid: Faker::Number.number(10),
     provider: 'Twitter',
@@ -84,9 +84,9 @@ end
 first_user = User.first
 first_dare = Dare.first
 
-5.times do
-  Comment.create(body: Faker::Lorem.sentence, likes: rand(1..20), user_id: first_user.id, dare_id: first_dare.id)
-end
+# 5.times do
+#   Comment.create(body: Faker::Lorem.sentence, likes: rand(1..20), dare_id: first_dare.id)
+# end
 
 Video.create(title: "testing", url: "https://www.youtube.com/watch?v=Y2bNfUNUpRk", dare_id: first_dare.id, description: "video is for testing", uid: "Y2bNfUNUpRk")
 
