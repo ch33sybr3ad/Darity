@@ -34,15 +34,6 @@ $(document).ready(function() {
       data: {id: dareId},
     });
 
-    request.failure(function(response){
-      alert("voted against!")
-    })
-  })
-})
-
-
-$(document).ready(function(){
-  $('.new_comment').on('submit', function(e){
     request.done(function(response) {
       $('.disapprove').css('background-color', 'red');
       $('.approve').css('background-color', 'inherit');
@@ -50,12 +41,10 @@ $(document).ready(function(){
       $('.disapprove').text('Voted against the Dare Vid!');
     });
 
-    request.failure(function(response) {
-      alert("voted against!");
-    });
-
-  });
-
+    request.failure(function(response){
+      alert("voted against!")
+    })
+  })
 });
 
 
@@ -67,8 +56,8 @@ $(document).ready(function() {
     var dareId = $(this).find('[name="comment[dare_id]"]').val();
 
     var request = $.ajax({
-      url: '/comments', 
-      method: 'POST', 
+      url: '/comments',
+      method: 'POST',
       data: { comment: { body: commentText, author_id: Number(userId), dare_id: Number(dareId) } }
     })
 
@@ -87,8 +76,8 @@ $(document).ready(function() {
     var likeId = current.attr("href").match(/\d+/)[0]
 
     $.ajax({
-      url: current.attr("href"), 
-      method: 'POST', 
+      url: current.attr("href"),
+      method: 'POST',
       data: { like: { id: likeId } }
     }).done(function(response){
       this.parent().find('span').text(response.likes_count)
