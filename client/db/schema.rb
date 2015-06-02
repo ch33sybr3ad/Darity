@@ -19,19 +19,19 @@ ActiveRecord::Schema.define(version: 20150602182505) do
   create_table "charities", force: :cascade do |t|
     t.string   "name"
     t.string   "url"
-    t.text     "description"
-    t.string   "picture_url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.text     "mission"
+    t.string   "transparency_score"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "comments", force: :cascade do |t|
     t.string   "body"
-    t.integer  "likes",      default: 0
+    t.integer  "likes_count", default: 0
     t.integer  "author_id"
     t.integer  "dare_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "dares", force: :cascade do |t|
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20150602182505) do
   create_table "donations", force: :cascade do |t|
     t.integer  "pledger_id"
     t.integer  "pledged_dare_id"
+    t.boolean  "approve"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.integer  "donation_amount"
@@ -64,6 +65,7 @@ ActiveRecord::Schema.define(version: 20150602182505) do
   create_table "likes", force: :cascade do |t|
     t.integer  "comment_id"
     t.integer  "user_id"
+    t.integer  "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -87,13 +89,18 @@ ActiveRecord::Schema.define(version: 20150602182505) do
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
-    t.string   "password"
+    t.string   "password_digest"
     t.string   "email"
     t.string   "provider"
     t.string   "uid"
     t.string   "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "admin",             default: false
+    t.string   "remember_digest"
+    t.string   "activation_digest"
+    t.boolean  "activated",         default: false
+    t.datetime "activated_at"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
   create_table "videos", force: :cascade do |t|

@@ -68,13 +68,27 @@ class DaresController < ApplicationController
 
   def approve
     @dare = Dare.find(params[:dare_id])
-
     @donations = @dare.donations
-
     @donation = @donations.where(pledger_id: current_user.id).first
-
     @donation.approve = true
     @donation.save
+    @negative_count = 0
+    @positive_count = 0
+    @donations.each do |donation|
+      if donation.approve == false
+        @negative_count += 1
+      elsif donation.approve == true
+        @positive_count += 1
+      end
+    end
+
+    if (@negative_count.to_f / @donations.count.to_f) > 0.8
+      puts "refund money! unacceptable"
+    elsif (@positive_count.to_f / @donations.count.to_f) > 0.2
+      puts "give that money to charity"
+    else
+      puts "wait a period of time, and then give the money to charity"
+    end
 
     render json: @dare
   end
