@@ -17,6 +17,7 @@ users = Array.new(5) do
     provider: 'Twitter',
     image_url: Faker::Avatar.image("my-own-slug", "50x50"),
     admin: true,
+    image_url: "https://robohash.org/#{Faker::Name.last_name}.png",
     activated: true,
     activated_at: Time.zone.now
   )

@@ -20,16 +20,22 @@ class User < ActiveRecord::Base
   has_many :posts, class_name: "Comment", foreign_key: "author_id"
 
   validates_uniqueness_of :username, :email
-  validates :password, 
-    presence: true,
-    length: {:within => 6..40}
-
-  validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
 
 
-  has_secure_password
+  validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, allow_nil: true
+
+  has_secure_password validations: false
 
   before_create :create_activation_digest
+
+  validate :need_password_without_oauth
+
+  def need_password_without_oauth
+    if !self.provider
+      errors.add(:password, 'cannot be blank') if password == ""
+      errors.add(:password, 'must be within 6 to 40 characters') unless (6..40).include?((password || "").length)
+    end
+  end
 
   def all_dares
     challenged_dares + proposed_dares + pledged_dares

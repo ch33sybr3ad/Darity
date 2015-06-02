@@ -4,13 +4,13 @@
 
   <title>Client</title>
   <%= stylesheet_link_tag  'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+  <!-- // <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script> -->
   <%= csrf_meta_tags %>
 </head>
+
 <body>
-  <nav class="navbar navbar-default navbar-default" role="navigation">
-    <div class="container-fluid">
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -57,59 +57,120 @@
           </li>
           <% else %>
 
-          <li class="hidden-xs hidden-sm"><p class="navbar-text">Already have an account?</p></li>
+
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
-            <ul id="login-dp" class="dropdown-menu">
+            <a href="#" class="dropdown-toggle login" data-toggle="dropdown"><b>Log In</b> <span class="caret"></span></a>
+            <ul id="login-dp" class="dropdown-menu navform-style">
               <li>
-               <div class="row">
-                <div class="col-md-12">
-                  Login via
-                  <div class="social-buttons">
-                    <!-- <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a> -->
-                    <a href="/auth/twitter" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+                <div class="row">
+                  <div class="col-md-12">
+                    Log in via
+                    <div class="social-buttons">
+                      <!-- <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a> -->
+                      <a href="/auth/twitter" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+                    </div>
+                    <p>or</p>
+                    <%= bootstrap_form_for @user || User.new, url: login_path, html: { class: 'login-user' } do |f| %>
+                    <%= f.email_field :email %>
+                    <%= f.password_field :password %>
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                    </div>
+                    <% end %>
                   </div>
-                  <p>or</p>
-                  <%= bootstrap_form_for @user || User.new, url: login_path, html: { class: 'login-user' } do |f| %>
-                  <%= f.email_field :email %>
-                  <%= f.password_field :password %>
-                  <div class="form-group">
-                   <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-                 </div>
-                 <% end %>
-               </div>
-               <div class="bottom text-center">
-                New here ? <a href="#"><b>Join Us</b></a>
-              </div>
-            </div>
+                  <div class="bottom text-center">
+                  New here? <a href="#" id="show-signup"><b>Join Us</b></a>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle signup" data-toggle="dropdown"><b>Sign Up</b> <span class="caret"></span></a>
+            <ul id="signup-dp" class="dropdown-menu navform-style">
+              <li>
+                <div class="row">
+                  <div class="col-md-12">
+                    Sign up via
+                    <div class="social-buttons">
+                      <!-- <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a> -->
+                      <a href="/auth/twitter" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+                    </div>
+                    <p>or</p>
+                    <%= bootstrap_form_for @user || User.new do |f| %>
+                    <%= f.text_field :username %>
+                    <%= f.email_field :email %>
+                    <%= f.password_field :password, class: "signup-password"%>
+                    <%= f.password_field :password_confirm, class: "signup-password-confirm"%>
+                    <div class="invalid-sign-up alert alert-danger" style='display:none'></div>
+                    <%= f.submit "Sign Up", class: "btn btn-primary btn-block" %>
+                    <% end %>
+                  </div>
+                  <div class="bottom text-center">
+                    Already signed up? <a href="#" id="show-login"><b>Log in</b></a>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+          </li>
+        <% end %>
         </ul>
-      </li>
-      <% end %>
-    </ul>
-  </div>
-</div>
-</nav>
+      </div>  <!-- end navbar-collapse -->
+    </div> <!-- end container -->
+  </nav>
 
-<% if flash[:notice] %>
-<div class="container">
-  <div class="alert alert-success">
-    <i class="fa fa-check-circle"></i>
-    <%= flash[:notice] %>
+  <% if flash[:notice] %>
+  <div class="container notice">
+    <div class="alert alert-success alert-dismissable">
+      <i class="fa fa-check-circle"></i>
+      <%= flash[:notice] %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <i class="fa fa-times pull-right"></i>
+      </button>    </div>
   </div>
-</div>
-<% end %>
+  <% end %>
 
-<% if flash[:error] %>
-<div class="container">
-  <div class="alert alert-danger">
-    <i class="fa fa-exclamation-circle"></i>
-    <%= flash[:error] %>
+  <% if flash[:error] %>
+  <div class="container notice">
+    <div class="alert alert-danger alert-dismissable">
+      <i class="fa fa-exclamation-circle"></i>
+      <%= flash[:error] %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <i class="fa fa-times pull-right"></i>
+      </button>
+    </div>
   </div>
-</div>
-<% end %>
+  <% end %>
 
 <%= yield %>
+<nav class="navbar navbar-inverse navbar-bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <h5 id='footer-header'> SITEMAP </h3>
+        <div class="col-sm-4">
+            <p>News</p>
+            <p>contact</p>
+          </div>
+          <div class="col-sm-4">
+            <p>FAQ</p>
+            <p>Privacy Policy</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <h5 id='footer-header'> xxxx </h3>
+            <p>yyyyyyyyyyyyy</p>
+          </div>
+          <div class="col-sm-4">
+            <h5 id='footer-header'> xxxxx </h3>
+              <p>uuuuuuuuuuuuuuu</p>
+            </div>
+          </div>
+        </div>
+</nav>
 
+  <%= javascript_include_tag 'application' %>
 </body>
 </html>

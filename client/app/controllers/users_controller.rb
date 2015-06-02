@@ -88,8 +88,7 @@ class UsersController < ApplicationController
         format.html { redirect_to @user, notice: 'Darity email sent. Please check your email to activate your account' }
         format.json { render json: @user, status: :created, location: @user }
       else
-        flash[:error] = @user.errors.full_messages.first
-        format.html { redirect_to new_user_path }
+        format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
