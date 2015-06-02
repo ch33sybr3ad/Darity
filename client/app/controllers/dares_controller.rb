@@ -11,10 +11,13 @@ class DaresController < ApplicationController
   def show
     @proposer = @dare.proposer
     @daree = @dare.daree
+    @comment = Comment.new
     @pledged = @dare.donations.inject(0) { |sum, donation| sum + donation.donation_amount }
     @video = Video.where(dare_id: @dare.id).first
-    @url = @video.url.gsub(/&.*/, "").gsub(/.*=/, "") if @video
-    @comments = @dare.comments
+    if @video
+      @url = @video.url.gsub(/&.*/, "").gsub(/.*=/, "")
+    end
+    @comments = @dare.comments.reverse
   end
 
   def new
