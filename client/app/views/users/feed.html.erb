@@ -16,7 +16,7 @@
           <% if dare.charity != nil %>
           <li class="list-group-item">
             <h5 class="list-group-item-heading">
-              <p><%= image_tag dare.daree.image_url %><%= link_to dare.daree.username, dare.daree %> just donated to <%= dare.charity.name %> for $<%= dare.daree.donations[0].donation_amount %></p>
+              <p><%= image_tag dare.daree.image_url %><%= link_to dare.daree.username, dare.daree %> just donated to <%= dare.charity.name %> for $<%= dare.daree.donations[0]%></p>
               <div class="feed-video"><%= dare.video %></div>
             </h5>
           </li>
