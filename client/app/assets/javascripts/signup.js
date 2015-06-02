@@ -15,8 +15,7 @@ var watchForm = function() {
 
   $('.new_user').on('submit', function(e){
     e.preventDefault();
-
-    if ($('input#signup-password').val() === $('input#signup-password-confirm').val()) {
+    if ($(this).find('input.signup-password').val() === $(this).find('input.signup-password-confirm').val()) {
       $('.new_user').off('submit').submit();
     } else {
       $('.alert').show();
