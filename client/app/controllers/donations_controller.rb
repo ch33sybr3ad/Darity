@@ -51,5 +51,5 @@
     def find_donation
       @donation = Donation.find(params[:id])
     end
-    
+
 end

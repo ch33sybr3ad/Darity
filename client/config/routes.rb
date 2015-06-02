@@ -38,7 +38,15 @@
   get '/dares/:dare_id/donations/new' => 'donations#new', as: :new_donation
   post '/dares/:dare_id/donations' => 'donations#create', as: :donations
 
+  patch '/dares/:dare_id/donations/approve' => "dares#approve", as: :approve
+
+  patch '/dares/:dare_id/donations/disapprove' => "dares#disapprove", as: :disapprove
+
+  get '/d3guage' => 'donations#guage', as: :gauge
+
+
   get '/users/invite/:handle' => "users#new_invite"
+
   post '/user/invites' => "users#invite", as: :user_invite
 
   get '/check_handle/:handle' => "users#check", as: :check

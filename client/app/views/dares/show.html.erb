@@ -25,11 +25,11 @@
 <% end %>
 
   <p><%= @dare.description %></p>
-  <p>Total Pledgers: <%= @dare.donations.count %></p> 
+  <p>Total Pledgers: <%= @dare.donations.count %></p>
 
   <% if @dare.price %>
-    <p>$<%= @pledged %> of $<%= @dare.price.to_i %> collected</p> 
-    
+    <p>$<%= @pledged %> of $<%= @dare.price.to_i %> collected</p>
+
     <div class="progress">
       <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:<%= (@pledged / @dare.price)*100 %>%;">
       </div>
@@ -39,6 +39,30 @@
   <p>proposed by: <%= link_to @proposer.username.capitalize, @proposer %></p>
   <p>proposed to: <%= link_to @daree.username.capitalize, @daree %></p>
 
+
+
+  <% if @pledgers.include?(current_user)  %>
+    <button class="btn btn-default approve" href="<%= @dare.id%>">
+      Approve Dare Vid as Pledger!
+    </button>
+
+    <button class="btn btn-default disapprove" href="<%= @dare.id%>">
+      <!-- unacceptaaable! -->
+      Disapprove Dare Vid as Pledger!
+    </button>
+
+
+
+  <% end %>
+
+  <hr>
+
+  <h2>Comments</h2>
+
+
+
+
+  <ul>
 
 
   <%= form_for @comment, id: current_user do |f| %>

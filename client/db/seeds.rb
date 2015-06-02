@@ -68,7 +68,7 @@ end
   p e.pledged_dares.first == dare
   p dare.charity == charity
 
-  dare.save
+dare.save
 
   Relationship.create!(
     follower: a,
