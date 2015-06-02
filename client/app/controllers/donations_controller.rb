@@ -1,7 +1,7 @@
  class DonationsController < ApplicationController
+  before_action(:find_dare, only: [:new, :paid])
 
   def new
-    @dare = Dare.find(params[:dare_id])
     @user = User.where()
     @donation = Donation.new
   end
@@ -17,7 +17,6 @@
   end
 
   def paid
-    @dare = Dare.find(params[:dare_id])
     @donation = Donation.find(params[:id])
     @user = User.find(@donation.pledger_id)
 
@@ -57,5 +56,14 @@
 
     def donation_params
       params.require(:donation).permit(:donation_amount)
+    end
+
+    def find_dare
+      begin
+        @dare = Dare.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+        @dare = Dare.new
+        _404
+      end
     end
 end
