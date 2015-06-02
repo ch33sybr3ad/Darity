@@ -1,0 +1,8 @@
+<section class="container">
+  <%= bootstrap_form_for @pending_dare, url: user_invite_path do |f| %>
+    <%= f.hidden_field :twitter_handle, value: params[:handle] %>
+    <%= f.text_field :title %>
+    <%= f.text_area :description %>
+    <%= f.submit "dare #{params[:handle]}" %>
+  <% end %>
+</section>
