@@ -88,6 +88,10 @@ class UsersController < ApplicationController
     @donation = Donation.where(id: current_user.id).first
   end
 
+  def new_invite
+    @pending_dare = PendingDare.new
+  end
+
   def invite
     @pending_dare = PendingDare.new(pend_params)
     @pending_dare.proposer = current_user
