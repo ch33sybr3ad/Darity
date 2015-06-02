@@ -12,14 +12,12 @@ $(document).ready(function(){
     })
 
     request.done(function(response){
+      debugger
       console.log(response);
-      $('.comment-list').prepend('<li>' +response.body+ " " +response.likes+ " " + response.user_id + "</li>")
+      $('.comment-list').prepend('<li>' +response.comment.body+ " " +response.comment.likes+ " " + response.username + "</li>")
     }).fail(function(){
       console.log('fail'); 
     })
-
-
-
   });
 })
 
