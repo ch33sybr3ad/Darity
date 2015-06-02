@@ -90,10 +90,9 @@ class UsersController < ApplicationController
 
   def feed
     @followees = current_user.followees
-    @all_dares = @followees.map { |followee|
+    @all_dares = @followees.flat_map { |followee|
       followee.all_dares
-    }.flatten
-    @donation = Donation.where(id: current_user.id).first
+    }
   end
 
   def new_invite
