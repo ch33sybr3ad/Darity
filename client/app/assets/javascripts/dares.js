@@ -73,13 +73,10 @@ $(document).ready(function() {
     });
   });
 
-});
 
-
-  $('.comment-list').on('click', 'a', function(event){
+  $('.comment-list').on('click', 'a', function(event) {
     event.preventDefault();
     var current = $(this);
-
     $.ajax({
       url: current.attr("href"),
       method: 'POST',
@@ -89,6 +86,6 @@ $(document).ready(function() {
       console.log("uh oh error")
     });
 
-  })
+  });
 
-})
+});
