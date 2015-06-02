@@ -80,17 +80,14 @@ $(document).ready(function(){
     event.preventDefault();  
     var current = $(this);
 
-    var request = $.ajax({
+    $.ajax({
       url: current.attr("href"), 
       method: 'POST', 
+    }).done(function(response){
+      this.parent().find('span').text(response.likes)
+    }.bind(current)).fail(function(error){
+      console.log("uh oh error")
     }); 
-
-    request.done(function(response){
-      console.log(response); 
-      var likes = response.likes
-      debugger; 
-    }); 
-
 
   })
 

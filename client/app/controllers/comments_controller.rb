@@ -13,15 +13,16 @@ class CommentsController < ApplicationController
 
   def upvote
     @comment = Comment.find(params[:id])
-    p @comment.likes
-    p "$"*40
     @comment.likes += 1
-    p @comment.likes
+    @comment.save
     render json: @comment
   end
 
   def downvote
     @comment = Comment.find(params[:id])
+    @comment.likes -= 1
+    @comment.save
+    render json: @comment
   end
 
 
@@ -31,5 +32,6 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:body, :user_id, :dare_id)
   end
 
+  
 
 end

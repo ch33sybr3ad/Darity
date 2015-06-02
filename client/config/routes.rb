@@ -1,5 +1,9 @@
  Rails.application.routes.draw do
 
+  get 'likes/comment_id:integer'
+
+  get 'likes/user_id:integer'
+
   resources :comments
   get 'account_activations/edit'
 
