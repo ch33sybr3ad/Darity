@@ -43,6 +43,30 @@
 
 
 
+  <% if @pledgers.include?(current_user)  %>
+    <button class="btn btn-default approve" href="<%= @dare.id%>">
+      Approve Dare Vid as Pledger!
+    </button>
+
+    <button class="btn btn-default disapprove" href="<%= @dare.id%>">
+      <!-- unacceptaaable! -->
+      Disapprove Dare Vid as Pledger!
+    </button>
+
+
+
+  <% end %>
+
+  <hr>
+
+  <h2>Comments</h2>
+
+
+
+
+  <ul>
+
+
   <%= form_for @comment, id: current_user do |f| %>
     <%= f.label :comment %>
     <%= f.text_area :body %>
