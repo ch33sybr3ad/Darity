@@ -86,8 +86,8 @@ p second_user = User.second
 p first_dare = Dare.first
 p second_dare = Dare.second
 
-Comment.create(body: Faker::Lorem.sentence, likes_count: 9, author_id: first_user.id, dare_id: first_dare.id)
-Comment.create(body: Faker::Lorem.sentence, likes_count: 10, author_id: second_user.id, dare_id: first_dare.id)
+Comment.create(body: Faker::Lorem.sentence, author_id: first_user.id, dare_id: first_dare.id)
+Comment.create(body: Faker::Lorem.sentence, author_id: second_user.id, dare_id: first_dare.id)
 
 
 Video.create(title: "testing", url: "https://www.youtube.com/watch?v=Y2bNfUNUpRk", dare_id: first_dare.id, description: "video is for testing", uid: "Y2bNfUNUpRk")

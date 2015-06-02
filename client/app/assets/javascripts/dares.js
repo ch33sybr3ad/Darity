@@ -73,10 +73,12 @@ $(document).ready(function(){
   $('.comment-list').on('click', 'a', function(event){
     event.preventDefault();  
     var current = $(this);
+    var likeId = current.attr("href").match(/\d+/)[0]
 
     $.ajax({
       url: current.attr("href"), 
       method: 'POST', 
+      data: { like: { id: likeId } }
     }).done(function(response){
       this.parent().find('span').text(response.likes_count)
     }.bind(current)).fail(function(error){
