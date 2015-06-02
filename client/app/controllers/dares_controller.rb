@@ -11,8 +11,10 @@ class DaresController < ApplicationController
   def show
     @proposer = @dare.proposer
     @daree = @dare.daree
+    @pledgers = @dare.pledgers
     @comment = Comment.new
     @pledged = @dare.donations.inject(0) { |sum, donation| sum + donation.donation_amount }
+
     @video = Video.where(dare_id: @dare.id).first
     if @video
       @url = @video.url.gsub(/&.*/, "").gsub(/.*=/, "")
@@ -62,6 +64,32 @@ class DaresController < ApplicationController
   def destroy
     @dare.destroy if current_user == @dare.daree || current_user == @dare.proposer
     redirect_to current_user
+  end
+
+  def approve
+    @dare = Dare.find(params[:dare_id])
+
+    @donations = @dare.donations
+
+    @donation = @donations.where(pledger_id: current_user.id).first
+
+    @donation.approve = true
+    @donation.save
+
+    render json: @dare
+  end
+
+  def disapprove
+    @dare = Dare.find(params[:dare_id])
+
+    @donations = @dare.donations
+
+    @donation = @donations.where(pledger_id: current_user.id).first
+
+    @donation.approve = false
+    @donation.save
+
+    render json: @dare
   end
 
   private

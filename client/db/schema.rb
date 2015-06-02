@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20150601174305) do
   create_table "donations", force: :cascade do |t|
     t.integer  "pledger_id"
     t.integer  "pledged_dare_id"
+    t.boolean  "approve"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.integer  "donation_amount"

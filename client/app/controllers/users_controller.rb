@@ -86,10 +86,23 @@ class UsersController < ApplicationController
 
   def feed
     @followees = current_user.followees
-    @dares = @followees.map { |followee|
-      followee.dares
+    @all_dares = @followees.map { |followee|
+      followee.all_dares
     }.flatten
+    # @challenged_dares = @followees.map { |followee|
+    #   followee.challenged_feed
+    # }.flatten
+    # @proposed_dares = @followees.map { |followee|
+    #   followee.proposed_feed
+    # }.flatten
+    # @pledged_dares = @followees.map { |followee|
+    #   followee.pledged_feed
+    # }.flatten
     @donation = Donation.where(id: current_user.id).first
+  end
+
+  def new_invite
+    @pending_dare = PendingDare.new
   end
 
   def invite
