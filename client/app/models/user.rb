@@ -16,8 +16,11 @@ class User < ActiveRecord::Base
   has_many :followees, through: :i_am_follower_relations
   has_many :i_am_follower_relations, class_name: "Relationship", foreign_key: "follower_id"
 
-  validates_uniqueness_of :username
-  validates_uniqueness_of :email
+  validates_uniqueness_of :username, :email
+  validates :password, 
+    presence: true,
+    length: {:within => 6..40}, 
+
 
   before_create :create_activation_digest
 
