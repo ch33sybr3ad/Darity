@@ -1,0 +1,24 @@
+<div class="container">
+  <h1> Account Settings </h1>
+  <p>Change your basic account and language settings</p>
+
+  <%= bootstrap_form_for @user do |f| %>
+
+  <%= f.email_field :email %>
+
+  <%= f.password_field :current_password %>
+
+  <%= f.password_field :new_password %>
+
+  <%= f.password_field :confirm_password %>
+  
+  <%= f.submit "Save Changes", class: "btn btn-primary" %>
+  <% end %>
+
+
+  <p>Email</p>
+
+  <p>Password</p>
+
+  <p>Delete Account</p>
+</div>  
