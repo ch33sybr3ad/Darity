@@ -3,8 +3,8 @@
 <head>
 
   <title>Client</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag  'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
   <%= csrf_meta_tags %>
 </head>
@@ -43,6 +43,7 @@
         <ul class="nav navbar-nav navbar-right">
 
           <% if current_user %>
+          <li><%= link_to 'My Feed', feed_path %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.username %> <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
@@ -67,7 +68,7 @@
                     <a href="/auth/twitter" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
                   </div>
                   <p>or</p>
-                  <%= bootstrap_form_for User.new, url: login_path, html: { class: 'login-user' } do |f| %>
+                  <%= bootstrap_form_for @user, url: login_path, html: { class: 'login-user' } do |f| %>
                   <%= f.email_field :email %>
                   <%= f.password_field :password %>
                   <div class="form-group">
@@ -91,7 +92,17 @@
 <% if flash[:notice] %>
 <div class="container">
   <div class="alert alert-success">
+    <i class="fa fa-check-circle"></i>
     <%= flash[:notice] %>
+  </div>
+</div>
+<% end %>
+
+<% if flash[:error] %>
+<div class="container">
+  <div class="alert alert-danger">
+    <i class="fa fa-exclamation-circle"></i>
+    <%= flash[:error] %>
   </div>
 </div>
 <% end %>

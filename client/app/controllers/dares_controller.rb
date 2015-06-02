@@ -11,11 +11,8 @@ class DaresController < ApplicationController
   def show
     @proposer = @dare.proposer
     @daree = @dare.daree
-    @pledged = 0
     @comment = Comment.new
-    @dare.donations.each do |user|
-      @pledged += user.donation_amount
-    end
+    @pledged = @dare.donations.inject(0) { |sum, donation| sum + donation.donation_amount }
     @video = Video.where(dare_id: @dare.id).first
     if @video
       @url = @video.url.gsub(/&.*/, "").gsub(/.*=/, "")
@@ -24,7 +21,7 @@ class DaresController < ApplicationController
   end
 
   def new
-    @generate_dares = GenerateDare.all
+    # @generate_dares = GenerateDare.all
     @dare = Dare.new
   end
 
@@ -35,7 +32,8 @@ class DaresController < ApplicationController
       @daree = @dare.daree
       redirect_to @daree
     else
-      render html: "<h1>ERROR</h1>"
+      flash[:error] = "Invalid Dare"
+      render :new
     end
   end
 
@@ -74,17 +72,9 @@ class DaresController < ApplicationController
     begin
     @dare = Dare.find(params[:id])
     rescue ActiveRecord::RecordNotFound
-      render html: "<h1>Dare Action</h1>"
+      @dare = Dare.new
+      _404
     end
   end
-
-  def find_user
-    begin
-      @user = User.find(params[:user_id])
-    rescue ActiveRecord::RecordNotFound
-      render html: "<h1>User not found.</h1>"
-    end
-  end
-
 
 end

@@ -1,37 +1,30 @@
-var eventBindings = function(){
-  $('.generate').on('click', generateDare)
-  $('.use-dare').on('click', useDare)
-}
+var eventBindings = function() {
+  $('.generate').on('click', generateDare);
+  $('.use-dare').on('click', useDare);
+};
 
-var generateDare = function(event){
+var generateDare = function(event) {
   event.preventDefault();
 
   var req = $.ajax({
     url : "/generate",
     method: 'get',
     dateType: 'json',
-  })
+  });
 
-  req.done(function(response){
-    var source = $('#generated-dare').html();
-    var template = Handlebars.compile(source);
+  req.done(function(response) {
+    $("#gen-dare").html('<p>'+response.description+'</p>');
+    $('.use-dare').css('display', 'inline');
+  });
+};
 
-    $("#gen-dare").html('')
-    $('#gen-dare').append(template(response));
-    $('.use-dare').css('display', 'inline')
-  })
-}
-
-var useDare = function(event){
-  event.preventDefault();
-
-  var dareText = $('#gen-dare li h4').text();
-  $('textarea').val("I dare you to " + dareText.toLowerCase() );
-}
+var useDare = function() {
+  $('#dare_title').val("I dare you to " + $('#gen-dare p').text().toLowerCase() );
+};
 
 
 var ready = function() {
   eventBindings();
 }
 $(document).ready(ready);
-$(document).on('page:load', ready);
+
