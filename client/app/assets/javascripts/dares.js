@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-// var eventBindings = function(){
-//   console.log("bindings");
-//   // $('.approve').on('click', approveVid);
-// }
 
 
 $(document).ready(function() {
@@ -58,14 +53,7 @@ $(document).ready(function() {
 })
 
 
-// var approveVid = function(event){
-//   event.preventDefault();
-//   debugger
-// }
 
-
-
-=======
 $(document).ready(function(){
   $('.new_comment').on('submit', function(e){
     e.preventDefault();
@@ -80,13 +68,32 @@ $(document).ready(function(){
     })
 
     request.done(function(response){
-      debugger
       console.log(response);
       $('.comment-list').prepend('<li>' +response.comment.body+ " " +response.comment.likes+ " " + response.username + "</li>")
     }).fail(function(){
       console.log('fail'); 
     })
   });
+
+
+  $('.comment-list').on('click', 'a', function(event){
+    event.preventDefault();  
+    var current = $(this);
+
+    var request = $.ajax({
+      url: current.attr("href"), 
+      method: 'POST', 
+    }); 
+
+    request.done(function(response){
+      console.log(response); 
+      var likes = response.likes
+      debugger; 
+    }); 
+
+
+  })
+
 })
 
->>>>>>> master
+

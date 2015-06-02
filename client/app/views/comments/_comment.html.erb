@@ -1,6 +1,8 @@
-<li>
-  <%=comment.body%>
-  <%=comment.likes%>
-  <%=comment.user.username%>
-</li>
+  <li>
+    <%=comment.body%>
+    <%=comment.likes%>
+    <%=comment.user.username%>
+    <%= link_to "upvote", upvote_path(comment)  %>
+    <%= link_to "downvote", downvote_path(comment)  %>
+  </li>
 <hr>

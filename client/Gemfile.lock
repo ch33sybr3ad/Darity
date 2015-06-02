@@ -104,7 +104,7 @@ GEM
       execjs (>= 1.2.9)
       sprockets (>= 2.0.3)
       tilt
-    hashie (3.4.1)
+    hashie (3.4.2)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     httparty (0.13.5)
@@ -121,7 +121,7 @@ GEM
     jquery-turbolinks (2.1.0)
       railties (>= 3.1.0)
       turbolinks
-    json (1.8.2)
+    json (1.8.3)
     jwt (1.5.0)
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
