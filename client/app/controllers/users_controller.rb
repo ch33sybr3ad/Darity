@@ -52,7 +52,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    binding.pry
     if @user.password == user_params['current_password']
       @user.update(password: user_params['new_password'])
       flash[:notice] = "Successfully Changed Account Settings"
