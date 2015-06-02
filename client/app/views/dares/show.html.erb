@@ -21,7 +21,6 @@
 
 
 <% if @video %>
-  <p>HERE IS THE VIDEO</p>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @url %>" frameborder="0" allowfullscreen></iframe>
 <% end %>
 
@@ -39,6 +38,7 @@
 
   <p>proposed by: <%= link_to @proposer.username.capitalize, @proposer %></p>
   <p>proposed to: <%= link_to @daree.username.capitalize, @daree %></p>
+
 
 
   <% if @pledgers.include?(current_user)  %>
@@ -63,6 +63,18 @@
 
 
   <ul>
+
+
+  <%= form_for @comment, id: current_user do |f| %>
+    <%= f.label :comment %>
+    <%= f.text_area :body %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.hidden_field :dare_id, value: @dare.id %>
+    <%= f.submit :submit %>
+  <% end %>
+
+
+  <ul class="comment-list">
     <%= render @comments %>
   </ul>
 

@@ -41,13 +41,16 @@ class UsersController < ApplicationController
     @user = User.where(email: user_params["email"]).first
     if @user && @user.password == user_params["password"]
       session[:user_id] = @user.id
-      redirect_to @user
+      redirect_to @user, notice: 'Signed In'
+    else
+      @user = User.new(email: user_params["email"])
+      flash[:error] = 'Invalid Info'
+      render :home
     end
   end
 
   def new
     @user = User.new
-    render "new"
   end
 
   def create
@@ -70,9 +73,23 @@ class UsersController < ApplicationController
 
   def feed
     @followees = current_user.followees
-    @dares = @followees.map { |followee|
-      followee.dares
+    @all_dares = @followees.map { |followee|
+      followee.all_dares
     }.flatten
+    # @challenged_dares = @followees.map { |followee|
+    #   followee.challenged_feed
+    # }.flatten
+    # @proposed_dares = @followees.map { |followee|
+    #   followee.proposed_feed
+    # }.flatten
+    # @pledged_dares = @followees.map { |followee|
+    #   followee.pledged_feed
+    # }.flatten
+    @donation = Donation.where(id: current_user.id).first
+  end
+
+  def new_invite
+    @pending_dare = PendingDare.new
   end
 
   def invite
@@ -108,15 +125,6 @@ class UsersController < ApplicationController
 
   def signup_params
     params.require(:user).permit(:username, :email, :password)
-  end
-
-  def find_user
-    begin
-    @user = User.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-      @user = User.new
-      render html: "<h1>User No Found</h1>"
-    end
   end
 
 end

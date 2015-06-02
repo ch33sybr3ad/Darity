@@ -2,25 +2,25 @@
   <div class="panel panel-default">
     <section class="panel-body">
       <ul class="list-group">
-        <% @dares.each do |dare| %>
+        <% @all_dares.each do |dare| %>
           <li class="list-group-item">
-            <h5 class="list-group-item-heading"><%= dare.title %></h5>
-            <p><%= dare.description %></p>
-            <p>
-              <%= link_to dare.proposer.username, dare.proposer %>
-                        dares
-              <%= link_to dare.daree.username, dare.daree %>
-            </p>
-            <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count"></div>
-            <div id="fb-root"></div>
-            <script>(function(d, s, id) {
-              var js, fjs = d.getElementsByTagName(s)[0];
-              if (d.getElementById(id)) return;
-              js = d.createElement(s); js.id = id;
-              js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
-              fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));</script>
+            <h5 class="list-group-item-heading">
+              <%= image_tag dare.proposer.image_url %><%= link_to dare.proposer.username, dare.proposer %>
+                        just dared
+              <%= image_tag dare.daree.image_url %><%= link_to dare.daree.username, dare.daree %>
+                        to the
+              "<%= dare.title %>"
+            </h5>
+            <p>Do you think <%= dare.proposer.username %> should accept this dare?</p>
           </li>
+          <% if dare.charity != nil %>
+          <li class="list-group-item">
+            <h5 class="list-group-item-heading">
+              <p><%= image_tag dare.daree.image_url %><%= link_to dare.daree.username, dare.daree %> just donated to <%= dare.charity.name %> for $<%= dare.daree.donations[0]%></p>
+              <div class="feed-video"><%= dare.video %></div>
+            </h5>
+          </li>
+          <% end %>
         <% end %>
       </ul>
     </section>

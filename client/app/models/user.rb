@@ -18,8 +18,20 @@ class User < ActiveRecord::Base
 
   before_create :create_activation_digest
 
-  def dares
-    challenged_dares + proposed_dares + pledged_dares
+  def all_dares
+    challenged_feed + proposed_feed + pledged_feed
+  end
+
+  def challenged_feed
+    challenged_dares.order(created_at: :desc)
+  end
+
+  def proposed_feed
+    proposed_dares.order(created_at: :desc)
+  end
+
+  def pledged_feed
+    pledged_dares.order(created_at: :desc)
   end
 
   def self.create_with_omniauth(auth)

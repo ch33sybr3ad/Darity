@@ -11,23 +11,18 @@ class DaresController < ApplicationController
   def show
     @proposer = @dare.proposer
     @daree = @dare.daree
-    @pledged = 0
     @pledgers = @dare.pledgers
-
-
-    @dare.donations.each do |user|
-      @pledged += user.donation_amount
-    end
+    @comment = Comment.new
+    @pledged = @dare.donations.inject(0) { |sum, donation| sum + donation.donation_amount }
 
     @video = Video.where(dare_id: @dare.id).first
     if @video
       @url = @video.url.gsub(/&.*/, "").gsub(/.*=/, "")
     end
-    @comments = @dare.comments
+    @comments = @dare.comments.reverse
   end
 
   def new
-    @generate_dares = GenerateDare.all
     @dare = Dare.new
   end
 
@@ -38,7 +33,8 @@ class DaresController < ApplicationController
       @daree = @dare.daree
       redirect_to @daree
     else
-      render html: "<h1>ERROR</h1>"
+      flash[:error] = "Invalid Dare"
+      render :new
     end
   end
 
@@ -46,24 +42,27 @@ class DaresController < ApplicationController
   end
 
   def update
+    _404 if @dare.proposer != current_user
     @dare.update(dare_params)
     redirect_to [@dare.proposer, @dare]
   end
 
   def set_price
     @daree = @dare.daree
+    _404 if @daree != current_user
     @proposer = @dare.proposer
     @charities = Charity.all
   end
 
   def put_price
+    _404 if @dare.daree != current_user
     @charity = Charity.find_or_create_by(name: dare_params[:charity])
     @dare.update(price: dare_params[:price], charity: @charity)
     redirect_to [@dare.proposer, @dare]
   end
 
   def destroy
-    @dare.destroy
+    @dare.destroy if current_user == @dare.daree || current_user == @dare.proposer
     redirect_to current_user
   end
 
@@ -98,22 +97,5 @@ class DaresController < ApplicationController
   def dare_params
     params.require(:dare).permit(:price, :charity, :title, :description, :daree_id)
   end
-
-  def find_dare
-    begin
-    @dare = Dare.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-      render html: "<h1>Dare Action</h1>"
-    end
-  end
-
-  def find_user
-    begin
-      @user = User.find(params[:user_id])
-    rescue ActiveRecord::RecordNotFound
-      render html: "<h1>User not found.</h1>"
-    end
-  end
-
 
 end

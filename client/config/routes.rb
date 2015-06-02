@@ -44,6 +44,9 @@
 
   get '/d3guage' => 'donations#guage', as: :gauge
 
+
+  get '/users/invite/:handle' => "users#new_invite"
+
   post '/user/invites' => "users#invite", as: :user_invite
 
   get '/check_handle/:handle' => "users#check", as: :check

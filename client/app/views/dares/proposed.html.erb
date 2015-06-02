@@ -4,9 +4,9 @@
 <h3><%= @user.username %> has dared people to:</h3>
 <% end %>
 <ul class="list-group">
-  <% if @user.challenged_dares == [] %>
+  <% if @user.proposed_dares.empty? %>
     <div class="alert alert-warning">
-      You have no pledged dares, so . . . Darity dares you to . . . DARE OTHERS RIDICULOUSLY INNOVATIVE DARES!
+      You have no proposed dares, so . . . Darity dares you to . . . DARE OTHERS RIDICULOUSLY INNOVATIVE DARES!
     </div>
   <% else %>
     <% @proposed_dares.each do |dare| %>
