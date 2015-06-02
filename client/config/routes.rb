@@ -24,7 +24,6 @@
   match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
   get "/signout" => "sessions#destroy", as: :signout
 
-
   get '/generate' => "generate_dares#generate", as: :generate
 
   get '/users/:user_id/dares/:id/set_price' => 'dares#set_price', as: :set_price
