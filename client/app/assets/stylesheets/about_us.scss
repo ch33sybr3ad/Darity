@@ -2,13 +2,26 @@
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
 
-.profile-container {
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+.a-team .col-md-12{
+  margin-top: 1.5em;
+}
+.a-team {
+  /*max-width: 500px;*/
   margin-top: 10%;
 }
+.a-team h1 {
+  margin-left: auto;
+  margin-right: auto;
+}
+.social-buttons li{
+  position: relative;
+}
 
+.social-buttons li i{
+  position: absolute;
+  top: 5px;
+  left: 13px;
+}
 h1 {
   font-family: "Open Sans", sans;
   font-weight: 300;
@@ -28,14 +41,14 @@ h2 {
 h4 {
   margin-top: 1px;
 }
-.service-details {
+.profile-container {
   width: 470px;
   height: 352px;
   overflow: hidden;
   position: relative;
 }
 
-.service-details img {
+.profile-container img {
   position: absolute;
   top: 0;
   left: 0;
@@ -48,11 +61,11 @@ h4 {
 
 }
 
-.service-details:hover img {
+.profile-container:hover img {
   opacity: 0.7 !important;
 }
 
-.service-details .service-hover-text h3 {
+.profile-container .profile-hover h3 {
   padding: 0px;
   margin: 0px;
   font-size: 25px;
@@ -60,7 +73,7 @@ h4 {
   font-family: "Open Sans";
 }
 
-.service-details .service-hover-text h4 {
+.profile-container .profile-hover h4 {
   padding: 0px;
   padding-bottom: 13px;
   margin: 0px;
@@ -72,14 +85,14 @@ h4 {
   border-bottom: 2px solid #000;
 }
 
-.service-details .service-hover-text p {
+.profile-container .profile-hover p {
   padding-top: 13px;
   font-size: 14px;
   line-height: 20px;
   font-family: "Open Sans";
 }
 
-.service-details .service-hover-text{
+.profile-container .profile-hover{
   width: 50%;
   height: 100%;
   position: absolute;
@@ -93,7 +106,7 @@ h4 {
   -moz-transition: all 0.4s;
 }
 
-.service-details:hover .service-hover-text {
+.profile-container:hover .profile-hover {
   display: block !important;
   color: rgba(255,255,255,1);
   background:rgba(217,14,14,0.85);
@@ -102,7 +115,7 @@ h4 {
 }
 
 
-.service-details .service-text {
+.profile-container .profile-text {
   width: 50%;
   height: inherit;
   background: #000;
@@ -111,7 +124,7 @@ h4 {
   left: 50%;
 }
 
-.service-details .service-text p {
+.profile-container .profile-text p {
   padding:100px 0px 0px 20px;
   font-size: 24px;
   font-family: "Open Sans";
@@ -119,28 +132,50 @@ h4 {
   color: #fff;
 }
 
-.service-details .service-text p span {
+.profile-container .profile-text p span {
   font-family: "Open Sans" !important;
 }
 
-.service-details .service-text a , .service-white .service-text {
+.profile-container .profile-text a , .profile-info .profile-text {
   padding: 0px 0px 0px 20px;
-  font-size: 14px !important;
-  color:#FF5A22 !important;
-  font-family: "Open Sans" !important;
-  text-decoration: none !important;
+  font-size: 14px;
+  color:#fff;
+  font-family: "Open Sans";
+  text-decoration: none;
 }
 
-.service-details .service-text {
+.profile-container .profile-text {
   float: left;
 }
 
-.service-white {
+.profile-info {
   background: #eee !important;
   width: 50% !important;
   height: inherit !important;
 }
 
-.service-white p {
+.profile-info p {
   color: #000 !important;
+}
+ul.social-buttons {
+    margin-bottom: 0;
+}
+ul.social-buttons li a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    font-size: 20px;
+    line-height: 40px;
+    outline: 0;
+    color: #fff;
+    background-color: #222;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+}
+ul.social-buttons li a:hover,
+ul.social-buttons li a:focus,
+ul.social-buttons li a:active {
+    background-color: #D90E0E !important;
 }
