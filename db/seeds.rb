@@ -95,7 +95,12 @@ end
 first_user = User.first
 second_user = User.second
 first_dare = Dare.first
+first_dare.price = 10
+first_dare.done = true
+first_dare.save
 second_dare = Dare.second
+second_dare.price = 10
+second_dare.save
 
 PendingDare.create(title: all_dares.shuffle.first.description, description: "YOU AIN'T DOWN", proposer_id: first_user.id, twitter_handle: "acarl005")
 PendingDare.create(title: all_dares.shuffle.first.description, description: "YOU AIN'T DOWN", proposer_id: first_user.id, twitter_handle: "CharlieDubs23" )
