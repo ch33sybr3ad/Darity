@@ -1,11 +1,15 @@
 require 'faker'
 
-User.delete_all
-Dare.delete_all
 Charity.delete_all
-Video.delete_all
 Comment.delete_all
+Dare.delete_all
+Donation.delete_all
+GenerateDare.delete_all
+Like.delete_all
+PendingDare.delete_all
 Relationship.delete_all
+User.delete_all
+Video.delete_all
 
 
 users = Array.new(5) do
@@ -47,7 +51,7 @@ File.open('./db/dares.csv').each do |line|
   GenerateDare.create!(description: "#{line.chomp}")
 end
 
-
+all_dares = GenerateDare.all
 
 5.times do
 
@@ -58,7 +62,7 @@ end
   a, b, c, d, e = users
 
   dare = Dare.new(
-    title: Faker::Lorem.sentence,
+    title: all_dares.shuffle.first.description,
     description: Faker::Lorem.paragraph,
   )
 
@@ -71,9 +75,9 @@ end
 
   p dare.proposer == a
   p dare.daree == b
-  p c.pledged_dares.first == dare
-  p d.pledged_dares.first == dare
-  p e.pledged_dares.first == dare
+  p c.pledged_dares.last == dare
+  p d.pledged_dares.last == dare
+  p e.pledged_dares.last == dare
   p dare.charity == charity
 
 dare.save
@@ -88,17 +92,22 @@ dare.save
   )
 end
 
-p first_user = User.first
-p second_user = User.second
-p first_dare = Dare.first
-p second_dare = Dare.second
+first_user = User.first
+second_user = User.second
+first_dare = Dare.first
+second_dare = Dare.second
+
+PendingDare.create(title: all_dares.shuffle.first.description, description: "YOU AIN'T DOWN", proposer_id: first_user.id, twitter_handle: "acarl005")
+PendingDare.create(title: all_dares.shuffle.first.description, description: "YOU AIN'T DOWN", proposer_id: first_user.id, twitter_handle: "CharlieDubs23" )
+PendingDare.create(title: all_dares.shuffle.first.description, description: "YOU AIN'T DOWN", proposer_id: second_user.id, twitter_handle: "nomnomnaam")
+PendingDare.create(title: all_dares.shuffle.first.description, description: "YOU AIN'T DOWN", proposer_id: second_user.id, twitter_handle: "ch33sybr3ad" )
 
 Comment.create(body: Faker::Lorem.sentence, author_id: first_user.id, dare_id: first_dare.id)
 Comment.create(body: Faker::Lorem.sentence, author_id: second_user.id, dare_id: first_dare.id)
 
 
 Video.create(title: "testing", url: "https://www.youtube.com/watch?v=Y2bNfUNUpRk", dare_id: first_dare.id, description: "video is for testing", uid: "Y2bNfUNUpRk")
-Video.create(title: "testing", url: "https://www.youtube.com/watch?v=Oqa9tKarkNA", dare_id: second_dare.id, description: "video is for testing", uid: "Oqa9tKarkNA")
+Video.create(title: "THIS IS...", url: "https://www.youtube.com/watch?v=Oqa9tKarkNA", dare_id: second_dare.id, description: "UNACCEPTABLE!!!", uid: "Oqa9tKarkNA")
 
 
 
