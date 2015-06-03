@@ -1,80 +1,76 @@
 <div class="container">
-  <h1><%= @dare.title %></h1>
+  <div class="row">
+    <div class="dare-intro">
+      <h1><%= @dare.title %></h1>
+      <p><%= @dare.description %></p>
+      <p>proposed by: <%= link_to @proposer.username.capitalize, @proposer %></p>
+    </div> 
 
+    <div class="dare-info">
+      <p>proposed to: <%= link_to @daree.username.capitalize, @daree %></p>
+      <p>Total Pledgers: <%= @dare.donations.count %></p>
+      <% if @dare.price %>
+        <p>$<%= @pledged %> of $<%= @dare.price.to_i %> collected</p>
 
-<% if current_user == @proposer %>
-  <% if !@dare.price %>
-  <%= link_to "edit", edit_user_dare_path(@proposer, @dare) %>
-  <%= link_to "delete", user_dare_path(@proposer, @dare), method: :delete %>
-  <% end %>
-  <%= link_to "contribute", new_donation_path(@dare) %>
-<% elsif current_user == @daree %>
-  <%= link_to "delete", user_dare_path(@proposer, @dare), method: :delete %>
-  <% if @dare.price %>
-    <% if !@video %>
-      <%= link_to "upload video", new_video_path(@dare) %>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:<%= (@pledged / @dare.price)*100 %>%;">
+          </div>
+        </div>
       <% end %>
-  <% else %>
-    <%= link_to "accept", set_price_path(@proposer, @dare) %>
-  <% end %>
-<% else %>
-  <%= link_to "contribute", new_donation_path(@dare) %>
-<% end %>
 
-
-<% if @video %>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @url %>" frameborder="0" allowfullscreen></iframe>
-<% end %>
-
-  <p><%= @dare.description %></p>
-  <p>Total Pledgers: <%= @dare.donations.count %></p>
-
-  <% if @dare.price %>
-    <p>$<%= @pledged %> of $<%= @dare.price.to_i %> collected</p>
-
-    <div class="progress">
-      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:<%= (@pledged / @dare.price)*100 %>%;">
-      </div>
+      <% if current_user == @proposer %>
+        <% if !@dare.price %>
+          <%t= link_to "edit", edit_user_dare_path(@proposer, @dare), class: "btn btn-default" %>
+          <%= link_to "delete", user_dare_path(@proposer, @dare), method: :delete, class: "btn bn-default" %>
+        <% end %>
+        <%= link_to "contribute", new_donation_path(@dare), class: "btn btn-default" %>
+      <% elsif current_user == @daree %>
+        <%= link_to "delete", user_dare_path(@proposer, @dare), method: :delete, class: "btn btn-default" %>
+        <% if @dare.price %>
+          <% if !@video %>
+            <%= link_to "upload video", new_video_path(@dare), class: "btn btn-default" %>
+          <% end %>
+        <% else %>
+          <%= link_to "accept", set_price_path(@proposer, @dare), class: "btn btn-default" %>
+        <% end %>
+      <% else %>
+        <%= link_to "contribute", new_donation_path(@dare), class: "btn btn-default" %>
+      <% end %>
     </div>
+  </div>
+
+<div class="dare-video">
+  <% if @video %>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @url %>" frameborder="0" allowfullscreen></iframe>
   <% end %>
+  <p>
+    <% if @pledgers.include?(current_user)  %>
+      <button class="btn btn-default approve" href="<%= @dare.id%>">
+        Approve Dare Vid as Pledger!
+      </button>
 
-  <p>proposed by: <%= link_to @proposer.username.capitalize, @proposer %></p>
-  <p>proposed to: <%= link_to @daree.username.capitalize, @daree %></p>
+      <button class="btn btn-default disapprove" href="<%= @dare.id%>">
+        <!-- unacceptaaable! -->
+        Disapprove Dare Vid as Pledger!
+      </button>
+    <% end %>
+  </p>
+</div>
 
+<hr>
 
+<h2>Comments</h2>
 
-  <% if @pledgers.include?(current_user)  %>
-    <button class="btn btn-default approve" href="<%= @dare.id%>">
-      Approve Dare Vid as Pledger!
-    </button>
-
-    <button class="btn btn-default disapprove" href="<%= @dare.id%>">
-      <!-- unacceptaaable! -->
-      Disapprove Dare Vid as Pledger!
-    </button>
-  <% end %>
-
-  <hr>
-
-  <h2>Comments</h2>
-
-
-
-
-  <ul>
-
-
-  <%= form_for @comment, id: current_user do |f| %>
-    <%= f.label :comment %>
-    <%= f.text_area :body %>
-    <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.hidden_field :dare_id, value: @dare.id %>
-    <%= f.submit :submit %>
-  <% end %>
+<%= bootstrap_form_for @comment, id: current_user do |f| %>
+  <%= f.text_area :body %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :dare_id, value: @dare.id %>
+  <%= f.submit :submit %>
+<% end %>
 
 
-  <ul class="comment-list">
-    <%= render @comments %>
-  </ul>
+<ul class="comment-list">
+  <%= render @comments %>
+</ul>
 
 </div>
