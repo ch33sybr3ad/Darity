@@ -5,7 +5,7 @@
 
   resources :generate_dares
   resources :charities, only: [:show, :index]
-  resources :pending_dares, only: :show
+  resources :pending_dares, only: [:show, :create]
 
   resources :users do
     resources :dares
@@ -48,7 +48,7 @@
 
   get '/users/invite/:handle' => "users#new_invite"
 
-  post '/user/invites' => "users#invite", as: :user_invite
+
 
   get '/check_handle/:handle' => "users#check", as: :check
 

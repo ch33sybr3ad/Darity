@@ -107,15 +107,7 @@ class UsersController < ApplicationController
     @pending_dare = PendingDare.new
   end
 
-  def invite
-    @pending_dare = PendingDare.new(pend_params)
-    @pending_dare.proposer = current_user
-    if @pending_dare.save
-      redirect_to @pending_dare
-    else
-      p 'fail'
-    end
-  end
+
 
   def check
     render (already_a_twitter_handle?(params[:handle]) ? { json: true } : { json: false })
@@ -133,9 +125,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(:email, :password, :current_password, :new_password, :confirm_password)
   end
 
-  def pend_params
-    params.require(:pending_dare).permit(:title, :description, :twitter_handle)
-  end
+
 
   def signup_params
     params.require(:user).permit(:username, :email, :password)
