@@ -1,7 +1,7 @@
 <section class="container">
   <form class="row">
     <div class="form-group col-md-3 col-sm-4">
-      <input id="search-bar" type="text" placeholder="search" class="form-control input-md">
+      <input id="search-bar" type="text" placeholder="find users to dare" class="form-control input-md">
     </div>
   </form>
 
@@ -17,13 +17,38 @@
 </section>
 
 <div style="display: none;" id="invite-twitter" class="container">
-  <h3>Invite this person on twitter</h3>
-  <%= form_for @pending_dare, url: user_invite_path do |f| %>
-  <p id="handle-p"></p>
-  <p id="invalid" style="display: none;">Not a valid twitter handle</p>
-    <%= f.hidden_field :twitter_handle, id: 'handle-in' %>
-    <%= f.text_field :title %>
-    <%= f.text_area :description %>
-    <%= f.submit "dare this person" %>
-  <% end %>
+  <div class="row">
+    <div class="panel panel-default col-md-6">
+      <div class="panel-body">
+        <h3>Invite this person on twitter</h3>
+        <%= bootstrap_form_for @pending_dare, url: user_invite_path do |f| %>
+        <p id="handle-p"></p>
+        <p id="invalid" style="display: none;">Not a valid twitter handle</p>
+          <%= f.hidden_field :twitter_handle, id: 'handle-in' %>
+          <%= f.text_field :title %>
+          <%= f.text_area :description %>
+          <%= f.submit "Dare them!" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="panel panel-default col-md-6">
+      <div class="panel-body">
+        <h4>Can't think of a Dare? Click the generate button to get the creative juices flowing!</h4>
+
+        <button class="btn btn-default generate" href="#">
+          Click to generate Dare!
+        </button>
+
+        <button class="btn btn-default use-dare" href="#" style="display: none">
+          Use Dare!
+        </button>
+
+        <div id="gen-dare">
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+

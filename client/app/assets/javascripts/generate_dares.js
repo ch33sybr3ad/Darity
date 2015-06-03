@@ -20,6 +20,7 @@ var generateDare = function(event) {
 
 var useDare = function() {
   $('#dare_title').val("I dare you to " + $('#gen-dare p').text().toLowerCase() );
+  $('#pending_dare_title').val("I dare you to " + $('#gen-dare p').text().toLowerCase() );
 };
 
 
