@@ -3,11 +3,11 @@
 one:
   name: MyString
   url: MyString
-  description: MyText
-  picture_url: MyString
+  mission: MyText
+  transparency_score: MyString
 
 two:
   name: MyString
   url: MyString
-  description: MyText
-  picture_url: MyString
+  mission: MyText
+  transparency_score: MyString
