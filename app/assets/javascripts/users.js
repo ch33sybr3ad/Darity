@@ -1,3 +1,7 @@
+setTimeout(function() {
+  $('.notice').fadeOut();
+}, 3000);
+
 var checkTwitterHandle = function(handle) {
   return $.get('/check_handle/' + handle);
 }
