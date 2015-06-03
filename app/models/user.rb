@@ -54,6 +54,7 @@ class User < ActiveRecord::Base
   end
 
   def check_for_pending_dares
+    Dare.create(title: GenerateDare.all.shuffle.first.description, description: "Welcome to Darity. Your first mission is to COMPLETE this dare.", daree_id: @user.id, proposer_id: 1)
     dares = PendingDare.where(twitter_handle: username)
     if dares.any?
       dares.each do |pending|

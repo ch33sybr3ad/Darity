@@ -76,12 +76,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(signup_params)
-    Dare.create(title: GenerateDare.all.shuffle.first.description, daree_id: @user.id, proposer_id: 1)
     if already_a_twitter_handle?(@user.username)
       @user.errors.add(:username, 'is already taken')
     end
     respond_to do |format|
       if @user.errors.empty? && @user.save
+        Dare.create(title: GenerateDare.all.shuffle.first.description, description: "Welcome to Darirty. Welcome to Darity. Your first mission is to COMPLETE this dare.", daree_id: @user.id, proposer_id: 1)
+        binding.pry
         # Tell the UserMailer to send a welcome email after save
         session[:user_id] = @user.id
         @user.send_welcome_email
