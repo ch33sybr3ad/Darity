@@ -1,3 +1,11 @@
 # Logfile created on 2015-06-02 21:58:45 -0700 by logger.rb/41954
 D, [2015-06-02T22:31:39.853233 #95966] DEBUG -- : 400 Bad Request
 D, [2015-06-02T22:31:39.862212 #95966] DEBUG -- : []
+D, [2015-06-02T22:59:13.473883 #80782] DEBUG -- : undefined method `pending_dares_path' for #<#<Class:0x007fa4137120f0>:0x007fa413711380>
+D, [2015-06-02T22:59:13.486477 #80782] DEBUG -- : ["app/views/users/index.html.erb:29:in `_app_views_users_index_html_erb__3931017278929557148_70171338787040'"]
+D, [2015-06-02T23:02:40.149709 #80782] DEBUG -- : undefined local variable or method `pend_params' for #<PendingDaresController:0x007fa40fd8aa80>
+D, [2015-06-02T23:02:40.150718 #80782] DEBUG -- : ["app/controllers/pending_dares_controller.rb:8:in `create'"]
+D, [2015-06-02T23:12:27.954010 #80782] DEBUG -- : undefined local variable or method `pending_dare' for #<PendingDaresController:0x007fa410160b50>
+D, [2015-06-02T23:12:27.955283 #80782] DEBUG -- : ["app/controllers/pending_dares_controller.rb:11:in `create'"]
+D, [2015-06-02T23:12:38.290051 #80782] DEBUG -- : undefined method `redirect_tweet' for #<PendingDaresController:0x007fa4149b7d90>
+D, [2015-06-02T23:12:38.291110 #80782] DEBUG -- : ["app/controllers/pending_dares_controller.rb:11:in `create'"]

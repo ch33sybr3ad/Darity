@@ -1939,3 +1939,1920 @@ OAuth::Unauthorized (400 Bad Request):
   Rendered /Users/jasonzhao/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
   Rendered /Users/jasonzhao/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
   Rendered /Users/jasonzhao/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (52.0ms)
+
+
+Started GET "/users" for ::1 at 2015-06-02 22:49:28 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (16.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+  Rendered users/_user.html.erb (1.7ms)
+  Rendered users/index.html.erb within layouts/application (186.2ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Completed 200 OK in 3754ms (Views: 3689.6ms | ActiveRecord: 22.7ms)
+
+
+Started GET "/assets/charities.self-460555f1711322c4a6d2aea1309a62068b5d8efaaa6b5d917dc3fd485611bcb9.css?body=1" for ::1 at 2015-06-02 22:49:32 -0700
+
+
+Started GET "/assets/about_us.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-77d963462a71b85aa6c39f0110994006fed4301154d937da52eb3884ff813853.css?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-c1a8821f7eb1b195061d7706930814ecc6bd44db4c68f208da5fe14845fa11ea.css?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/contact_section.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/dares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/footer.self-0d1cb265b174beda769273c76bd1227aad6d659c8fad9a2c1af5b1e3886b8fd2.css?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/homepage.self-fd74e9ca08027989da14b7d41a36b55de5a81f337965cec4210fc72898c6bcdd.css?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/generate_dares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/navbar.self-9dae262873235b51fce59b2b11f1b6e0b33cfa316509c4b8e8bdec2bccfc8dca.css?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/users.self-831b586d85d739677ebfb1c858766c1181af6bf283d36d01adf31b90562c2018.css?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/likes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/pending_dares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/relationships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/videos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-db278e3a8fa6249c16796b113ebd29e11ef4e2cd021618ed84895d524a4511e0.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-ebce91ec66c71bcee451ea7da9128fd1bf8faa02c6d22ea04c598423431e4c08.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-ab1767545e27c0dbd36971e656ae4927171f673e3d932cdec2cbef39e991952b.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-8bb9309b6c24a4ba6b94026a049d25b13bdc0553b6fe83255c14a715ba624cc4.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-bd0c6724cdc75302fe98dfeff923112b76c1673cf4a0752a7050b7feea15594c.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-7e3ee4a243bb416b5f0111a0be08f8547c5d72ba71fe4afe4a4a007f5cb4e10e.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-d7f9330825307d053f68da11bb9ddc9b070df72deef3d115f2f3d55f66b17457.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-cd672ecad3b549e1dbd89bfd044e5812d6fdade56f42d48e3acee0c3f4614526.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/twitter/bootstrap/button.self-ceb562de883e04359bb2c06f07bdf6ecf065cc8a5027e2e58857c5e91b0b68e3.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-a87553101c955a01e2e8c81fad69a16582ddbf58fe95d5eb335dde5567af7647.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-5d09995e01b647168888180d40e271f9a6759d68ae7ac029d7026af58813d376.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-14e04bbe71282aa039322ab93e3a3a886ddede5f59a2f365f7c861f697bbeb21.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/jquery.routes.self-82369658e4edfb6385f776f8ae5975995bf0fdb68f28bdc7b416f9729433fad8.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/handlebars.self-57fef24df71388a1e3c2d68fd4a5faa2ba41bc8177615bcf911dc3c3f010a6f0.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/bootstrap.self-5afe7e91ef3675e2be97b8d060a7f3755d6dbc615b76df476df55143da70679f.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/dares.self-818a5f978114ac27a03a7d0e8139d781e7fcea4f7f7ea45bf5f83ff75f342e68.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/donations.self-7dbac1d4ded863899bcb0df3f33b0b069dc993bbb048f46db28a481b064433f4.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/generate_dares.self-6e35103673b98ad5e3f2ac8b0c69d2bfc80169444651b8866f657a05979690f8.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/likes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/signup.self-959266d1ffede10e30dc5de4d3b7e8da12a7ccedcb2bc945af6867467e5c0e13.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/users.self-182953686231f14845761f92cf02eccf0f633fe8b5810d64963477bdebadea29.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/videos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/assets/application.self-2d69f3d3cf38b2a324a62025b8d92e8c9928faaf5ae6822a7202c16459f8125c.js?body=1" for ::1 at 2015-06-02 22:49:33 -0700
+
+
+Started GET "/users?phrase=sg" for ::1 at 2015-06-02 22:49:35 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"sg"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%sg%')[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=sg" for ::1 at 2015-06-02 22:49:35 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"sg"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%sg%')
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=sgsr" for ::1 at 2015-06-02 22:49:36 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"sgsr"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%sgsr%')[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=sgsr" for ::1 at 2015-06-02 22:49:36 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"sgsr"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%sgsr%')
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/generate" for ::1 at 2015-06-02 22:50:01 -0700
+Processing by GenerateDaresController#generate as */*
+  [1m[36mGenerateDare Load (16.6ms)[0m  [1mSELECT  "generate_dares".* FROM "generate_dares"  ORDER BY RANDOM() LIMIT 1[0m
+Completed 200 OK in 27ms (Views: 0.2ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/feed" for ::1 at 2015-06-02 22:50:09 -0700
+Processing by UsersController#feed as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = $1[0m  [["follower_id", 13]]
+  Rendered users/feed.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 383ms (Views: 287.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users?phrase=a" for ::1 at 2015-06-02 22:50:12 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"a"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%a%')
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/10" for ::1 at 2015-06-02 22:50:13 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 10]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mDare Load (0.7ms)[0m  [1mSELECT  "dares".* FROM "dares"  ORDER BY "dares"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "relationships" WHERE "relationships"."followee_id" = $1 AND "relationships"."follower_id" = $2  [["followee_id", 10], ["follower_id", 13]]
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = $1 LIMIT 1[0m  [["follower_id", 10]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = $1  [["follower_id", 10]]
+  Rendered users/_user.html.erb (0.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 9]]
+  Rendered users/show.html.erb within layouts/application (130.5ms)
+Completed 200 OK in 437ms (Views: 399.9ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/users/10?dare_type=challenged" for ::1 at 2015-06-02 22:50:13 -0700
+Processing by UsersController#show as */*
+  Parameters: {"dare_type"=>"challenged", "id"=>"10"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 10]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mDare Load (0.8ms)[0m  [1mSELECT  "dares".* FROM "dares"  ORDER BY "dares"."id" ASC LIMIT 1[0m
+  [1m[35mDare Exists (0.6ms)[0m  SELECT  1 AS one FROM "dares" WHERE "dares"."daree_id" = $1 LIMIT 1  [["daree_id", 10]]
+  [1m[36mDare Load (1.9ms)[0m  [1mSELECT "dares".* FROM "dares" WHERE "dares"."daree_id" = $1[0m  [["daree_id", 10]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 10]]
+  Rendered dares/challenged.html.erb (18.2ms)
+Completed 200 OK in 34ms (Views: 22.8ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/users/13/dares/new?daree=10" for ::1 at 2015-06-02 22:50:14 -0700
+Processing by DaresController#new as HTML
+  Parameters: {"daree"=>"10", "user_id"=>"13"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  Rendered dares/new.html.erb within layouts/application (19.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+Completed 200 OK in 356ms (Views: 354.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/generate" for ::1 at 2015-06-02 22:50:18 -0700
+Processing by GenerateDaresController#generate as */*
+  [1m[35mGenerateDare Load (0.4ms)[0m  SELECT  "generate_dares".* FROM "generate_dares"  ORDER BY RANDOM() LIMIT 1
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-06-02 22:50:42 -0700
+Processing by UsersController#home as HTML
+  Rendered users/home.html.erb within layouts/application (195.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+Completed 200 OK in 506ms (Views: 504.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/13" for ::1 at 2015-06-02 22:50:45 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mDare Load (0.7ms)[0m  SELECT  "dares".* FROM "dares"  ORDER BY "dares"."id" ASC LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = $1 LIMIT 1[0m  [["follower_id", 13]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  Rendered users/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 366ms (Views: 357.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/users/13?dare_type=challenged" for ::1 at 2015-06-02 22:50:45 -0700
+Processing by UsersController#show as */*
+  Parameters: {"dare_type"=>"challenged", "id"=>"13"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mDare Load (0.5ms)[0m  SELECT  "dares".* FROM "dares"  ORDER BY "dares"."id" ASC LIMIT 1
+  [1m[36mDare Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "dares" WHERE "dares"."daree_id" = $1 LIMIT 1[0m  [["daree_id", 13]]
+  Rendered dares/challenged.html.erb (2.6ms)
+Completed 200 OK in 28ms (Views: 19.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users" for ::1 at 2015-06-02 22:50:47 -0700
+Processing by UsersController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+  Rendered users/_user.html.erb (1.9ms)
+  Rendered users/index.html.erb within layouts/application (25.5ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Completed 200 OK in 293ms (Views: 290.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users?phrase=areh" for ::1 at 2015-06-02 22:50:51 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"areh"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%areh%')[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users?phrase=areh" for ::1 at 2015-06-02 22:50:51 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"areh"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%areh%')
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=areh" for ::1 at 2015-06-02 22:50:51 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"areh"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%areh%')[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=areh" for ::1 at 2015-06-02 22:50:51 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"areh"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%areh%')
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=areherh" for ::1 at 2015-06-02 22:50:51 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"areherh"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%areherh%')[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=areherh" for ::1 at 2015-06-02 22:50:51 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"areherh"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%areherh%')
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=areherh" for ::1 at 2015-06-02 22:50:51 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"areherh"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%areherh%')[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users?phrase=ch" for ::1 at 2015-06-02 22:50:53 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"ch"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%ch%')
+Completed 200 OK in 105ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=ch" for ::1 at 2015-06-02 22:50:53 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"ch"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%ch%')[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users?phrase=ch" for ::1 at 2015-06-02 22:50:54 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"ch"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%ch%')
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=CharlieDubs23" for ::1 at 2015-06-02 22:51:00 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"CharlieDubs23"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%CharlieDubs23%')[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=CharlieDubs23" for ::1 at 2015-06-02 22:51:00 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"CharlieDubs23"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%CharlieDubs23%')
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2015-06-02 22:59:13 -0700
+Processing by UsersController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" LIMIT 30 OFFSET 0
+  Rendered users/_user.html.erb (1.1ms)
+  Rendered users/index.html.erb within layouts/application (138.2ms)
+Completed 500 Internal Server Error in 168ms (ActiveRecord: 3.3ms)
+
+ActionView::Template::Error (undefined method `pending_dares_path' for #<#<Class:0x007fa4137120f0>:0x007fa413711380>):
+    26:       <div class="panel panel-default">
+    27:         <div class="panel-body">
+    28:           <h3>Invite <span id="handle-p"></span> on twitter</h3>
+    29:           <%= bootstrap_form_for @pending_dare do |f| %>
+    30:           <p id="invalid" style="display: none;">Not a valid twitter handle</p>
+    31:             <%= f.hidden_field :twitter_handle, id: 'handle-in' %>
+    32:             <%= f.text_field :title %>
+  app/views/users/index.html.erb:29:in `_app_views_users_index_html_erb__3931017278929557148_70171338787040'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (33.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (22.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (49.8ms)
+
+
+Started GET "/users" for ::1 at 2015-06-02 22:59:50 -0700
+Processing by UsersController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" LIMIT 30 OFFSET 0
+  Rendered users/_user.html.erb (1.7ms)
+  Rendered users/index.html.erb within layouts/application (103.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+Completed 200 OK in 339ms (Views: 311.9ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/about_us.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-77d963462a71b85aa6c39f0110994006fed4301154d937da52eb3884ff813853.css?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-c1a8821f7eb1b195061d7706930814ecc6bd44db4c68f208da5fe14845fa11ea.css?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/charities.self-460555f1711322c4a6d2aea1309a62068b5d8efaaa6b5d917dc3fd485611bcb9.css?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/contact_section.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/dares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/footer.self-0d1cb265b174beda769273c76bd1227aad6d659c8fad9a2c1af5b1e3886b8fd2.css?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/generate_dares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/homepage.self-fd74e9ca08027989da14b7d41a36b55de5a81f337965cec4210fc72898c6bcdd.css?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/likes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/navbar.self-9dae262873235b51fce59b2b11f1b6e0b33cfa316509c4b8e8bdec2bccfc8dca.css?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/pending_dares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/relationships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/users.self-831b586d85d739677ebfb1c858766c1181af6bf283d36d01adf31b90562c2018.css?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/videos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-db278e3a8fa6249c16796b113ebd29e11ef4e2cd021618ed84895d524a4511e0.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-ebce91ec66c71bcee451ea7da9128fd1bf8faa02c6d22ea04c598423431e4c08.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-ab1767545e27c0dbd36971e656ae4927171f673e3d932cdec2cbef39e991952b.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-8bb9309b6c24a4ba6b94026a049d25b13bdc0553b6fe83255c14a715ba624cc4.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-bd0c6724cdc75302fe98dfeff923112b76c1673cf4a0752a7050b7feea15594c.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-7e3ee4a243bb416b5f0111a0be08f8547c5d72ba71fe4afe4a4a007f5cb4e10e.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-d7f9330825307d053f68da11bb9ddc9b070df72deef3d115f2f3d55f66b17457.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-cd672ecad3b549e1dbd89bfd044e5812d6fdade56f42d48e3acee0c3f4614526.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/twitter/bootstrap/button.self-ceb562de883e04359bb2c06f07bdf6ecf065cc8a5027e2e58857c5e91b0b68e3.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-a87553101c955a01e2e8c81fad69a16582ddbf58fe95d5eb335dde5567af7647.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-5d09995e01b647168888180d40e271f9a6759d68ae7ac029d7026af58813d376.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-14e04bbe71282aa039322ab93e3a3a886ddede5f59a2f365f7c861f697bbeb21.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/jquery.routes.self-82369658e4edfb6385f776f8ae5975995bf0fdb68f28bdc7b416f9729433fad8.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/handlebars.self-57fef24df71388a1e3c2d68fd4a5faa2ba41bc8177615bcf911dc3c3f010a6f0.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/bootstrap.self-5afe7e91ef3675e2be97b8d060a7f3755d6dbc615b76df476df55143da70679f.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/dares.self-818a5f978114ac27a03a7d0e8139d781e7fcea4f7f7ea45bf5f83ff75f342e68.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/donations.self-7dbac1d4ded863899bcb0df3f33b0b069dc993bbb048f46db28a481b064433f4.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/generate_dares.self-6e35103673b98ad5e3f2ac8b0c69d2bfc80169444651b8866f657a05979690f8.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/likes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/videos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/application.self-2d69f3d3cf38b2a324a62025b8d92e8c9928faaf5ae6822a7202c16459f8125c.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/signup.self-959266d1ffede10e30dc5de4d3b7e8da12a7ccedcb2bc945af6867467e5c0e13.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/assets/users.self-182953686231f14845761f92cf02eccf0f633fe8b5810d64963477bdebadea29.js?body=1" for ::1 at 2015-06-02 22:59:51 -0700
+
+
+Started GET "/users?phrase=asd" for ::1 at 2015-06-02 22:59:55 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"asd"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%asd%')
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users?phrase=asdf" for ::1 at 2015-06-02 22:59:55 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"asdf"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%asdf%')[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=asdf" for ::1 at 2015-06-02 22:59:55 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"asdf"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%asdf%')
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=asdf" for ::1 at 2015-06-02 22:59:55 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"asdf"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%asdf%')[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=asdfasdf" for ::1 at 2015-06-02 22:59:55 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"asdfasdf"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%asdfasdf%')
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=asdfasdf" for ::1 at 2015-06-02 22:59:55 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"asdfasdf"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%asdfasdf%')[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=asdfasdf" for ::1 at 2015-06-02 22:59:55 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"asdfasdf"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%asdfasdf%')
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=asdfasdf" for ::1 at 2015-06-02 22:59:55 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"asdfasdf"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%asdfasdf%')[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2015-06-02 23:01:29 -0700
+Processing by UsersController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+  Rendered users/_user.html.erb (1.3ms)
+  Rendered users/index.html.erb within layouts/application (21.2ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Completed 200 OK in 365ms (Views: 336.0ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-06-02 23:01:29 -0700
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:01:29 -0700
+
+
+Started GET "/assets/about_us.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:01:29 -0700
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-77d963462a71b85aa6c39f0110994006fed4301154d937da52eb3884ff813853.css?body=1" for ::1 at 2015-06-02 23:01:29 -0700
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-c1a8821f7eb1b195061d7706930814ecc6bd44db4c68f208da5fe14845fa11ea.css?body=1" for ::1 at 2015-06-02 23:01:29 -0700
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2015-06-02 23:01:29 -0700
+
+
+Started GET "/assets/charities.self-460555f1711322c4a6d2aea1309a62068b5d8efaaa6b5d917dc3fd485611bcb9.css?body=1" for ::1 at 2015-06-02 23:01:29 -0700
+
+
+Started GET "/assets/contact_section.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:01:29 -0700
+
+
+Started GET "/assets/dares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:01:29 -0700
+
+
+Started GET "/assets/footer.self-0d1cb265b174beda769273c76bd1227aad6d659c8fad9a2c1af5b1e3886b8fd2.css?body=1" for ::1 at 2015-06-02 23:01:29 -0700
+
+
+Started GET "/assets/generate_dares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:01:29 -0700
+
+
+Started GET "/assets/homepage.self-fd74e9ca08027989da14b7d41a36b55de5a81f337965cec4210fc72898c6bcdd.css?body=1" for ::1 at 2015-06-02 23:01:29 -0700
+
+
+Started GET "/assets/likes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:01:29 -0700
+
+
+Started GET "/assets/navbar.self-9dae262873235b51fce59b2b11f1b6e0b33cfa316509c4b8e8bdec2bccfc8dca.css?body=1" for ::1 at 2015-06-02 23:01:29 -0700
+
+
+Started GET "/assets/pending_dares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:01:29 -0700
+
+
+Started GET "/assets/relationships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/users.self-831b586d85d739677ebfb1c858766c1181af6bf283d36d01adf31b90562c2018.css?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-db278e3a8fa6249c16796b113ebd29e11ef4e2cd021618ed84895d524a4511e0.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/videos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-ebce91ec66c71bcee451ea7da9128fd1bf8faa02c6d22ea04c598423431e4c08.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-ab1767545e27c0dbd36971e656ae4927171f673e3d932cdec2cbef39e991952b.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-8bb9309b6c24a4ba6b94026a049d25b13bdc0553b6fe83255c14a715ba624cc4.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-bd0c6724cdc75302fe98dfeff923112b76c1673cf4a0752a7050b7feea15594c.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-7e3ee4a243bb416b5f0111a0be08f8547c5d72ba71fe4afe4a4a007f5cb4e10e.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-d7f9330825307d053f68da11bb9ddc9b070df72deef3d115f2f3d55f66b17457.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-cd672ecad3b549e1dbd89bfd044e5812d6fdade56f42d48e3acee0c3f4614526.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/twitter/bootstrap/button.self-ceb562de883e04359bb2c06f07bdf6ecf065cc8a5027e2e58857c5e91b0b68e3.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-a87553101c955a01e2e8c81fad69a16582ddbf58fe95d5eb335dde5567af7647.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-5d09995e01b647168888180d40e271f9a6759d68ae7ac029d7026af58813d376.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-14e04bbe71282aa039322ab93e3a3a886ddede5f59a2f365f7c861f697bbeb21.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/jquery.routes.self-82369658e4edfb6385f776f8ae5975995bf0fdb68f28bdc7b416f9729433fad8.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/handlebars.self-57fef24df71388a1e3c2d68fd4a5faa2ba41bc8177615bcf911dc3c3f010a6f0.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/bootstrap.self-5afe7e91ef3675e2be97b8d060a7f3755d6dbc615b76df476df55143da70679f.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/dares.self-818a5f978114ac27a03a7d0e8139d781e7fcea4f7f7ea45bf5f83ff75f342e68.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/donations.self-7dbac1d4ded863899bcb0df3f33b0b069dc993bbb048f46db28a481b064433f4.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/generate_dares.self-6e35103673b98ad5e3f2ac8b0c69d2bfc80169444651b8866f657a05979690f8.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/likes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/signup.self-959266d1ffede10e30dc5de4d3b7e8da12a7ccedcb2bc945af6867467e5c0e13.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/users.self-182953686231f14845761f92cf02eccf0f633fe8b5810d64963477bdebadea29.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/videos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/assets/application.self-2d69f3d3cf38b2a324a62025b8d92e8c9928faaf5ae6822a7202c16459f8125c.js?body=1" for ::1 at 2015-06-02 23:01:30 -0700
+
+
+Started GET "/users?phrase=C" for ::1 at 2015-06-02 23:01:31 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"C"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%C%')[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=C" for ::1 at 2015-06-02 23:01:31 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"C"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%C%')
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=Cha" for ::1 at 2015-06-02 23:01:31 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Cha"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%Cha%')[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=Charl" for ::1 at 2015-06-02 23:01:31 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Charl"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%Charl%')
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users?phrase=Charl" for ::1 at 2015-06-02 23:01:31 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Charl"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%Charl%')[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users?phrase=Charl" for ::1 at 2015-06-02 23:01:31 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Charl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%Charl%')
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=Charli" for ::1 at 2015-06-02 23:01:32 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Charli"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%Charli%')[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=Charlie" for ::1 at 2015-06-02 23:01:32 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Charlie"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%Charlie%')
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users?phrase=Charlie" for ::1 at 2015-06-02 23:01:33 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Charlie"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%Charlie%')[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=CharlieDubs23" for ::1 at 2015-06-02 23:01:33 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"CharlieDubs23"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%CharlieDubs23%')
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/check_handle/CharlieDubs23" for ::1 at 2015-06-02 23:02:39 -0700
+Processing by UsersController#check as */*
+  Parameters: {"handle"=>"CharlieDubs23"}
+Completed 200 OK in 459ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pending_dares" for ::1 at 2015-06-02 23:02:40 -0700
+Processing by PendingDaresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zH5igoJDFZ+kv7c4uAk4EF9xAci25n4rbO6hbCuNRk1CZoI6thOVf1sFyCW+YjRKvLJ6a7a/396J+8T3wT+yrw==", "pending_dare"=>{"twitter_handle"=>"CharlieDubs23", "title"=>"Fight a snake! With your trouser snake!", "description"=>"No hands!"}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `pend_params' for #<PendingDaresController:0x007fa40fd8aa80>):
+  app/controllers/pending_dares_controller.rb:8:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (16.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (35.7ms)
+
+
+Started POST "/pending_dares" for ::1 at 2015-06-02 23:02:56 -0700
+Processing by PendingDaresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zH5igoJDFZ+kv7c4uAk4EF9xAci25n4rbO6hbCuNRk1CZoI6thOVf1sFyCW+YjRKvLJ6a7a/396J+8T3wT+yrw==", "pending_dare"=>{"twitter_handle"=>"CharlieDubs23", "title"=>"Fight a snake! With your trouser snake!", "description"=>"No hands!"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "pending_dares" ("title", "description", "twitter_handle", "proposer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Fight a snake! With your trouser snake!"], ["description", "No hands!"], ["twitter_handle", "CharlieDubs23"], ["proposer_id", 13], ["created_at", "2015-06-03 06:02:56.453453"], ["updated_at", "2015-06-03 06:02:56.453453"]]
+  [1m[35m (50.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/pending_dares/4
+Completed 302 Found in 98ms (ActiveRecord: 53.9ms)
+
+
+Started GET "/pending_dares/4" for ::1 at 2015-06-02 23:02:56 -0700
+Processing by PendingDaresController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPendingDare Load (0.6ms)[0m  [1mSELECT  "pending_dares".* FROM "pending_dares" WHERE "pending_dares"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  Rendered pending_dares/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 316ms (Views: 313.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-06-02 23:02:56 -0700
+
+
+Started GET "/assets/charities.self-460555f1711322c4a6d2aea1309a62068b5d8efaaa6b5d917dc3fd485611bcb9.css?body=1" for ::1 at 2015-06-02 23:02:56 -0700
+
+
+Started GET "/assets/about_us.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:02:56 -0700
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-77d963462a71b85aa6c39f0110994006fed4301154d937da52eb3884ff813853.css?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-c1a8821f7eb1b195061d7706930814ecc6bd44db4c68f208da5fe14845fa11ea.css?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/contact_section.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/dares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/footer.self-0d1cb265b174beda769273c76bd1227aad6d659c8fad9a2c1af5b1e3886b8fd2.css?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/generate_dares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/homepage.self-fd74e9ca08027989da14b7d41a36b55de5a81f337965cec4210fc72898c6bcdd.css?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/likes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/navbar.self-9dae262873235b51fce59b2b11f1b6e0b33cfa316509c4b8e8bdec2bccfc8dca.css?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/pending_dares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/relationships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/users.self-831b586d85d739677ebfb1c858766c1181af6bf283d36d01adf31b90562c2018.css?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/videos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-db278e3a8fa6249c16796b113ebd29e11ef4e2cd021618ed84895d524a4511e0.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-ebce91ec66c71bcee451ea7da9128fd1bf8faa02c6d22ea04c598423431e4c08.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-ab1767545e27c0dbd36971e656ae4927171f673e3d932cdec2cbef39e991952b.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-8bb9309b6c24a4ba6b94026a049d25b13bdc0553b6fe83255c14a715ba624cc4.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-bd0c6724cdc75302fe98dfeff923112b76c1673cf4a0752a7050b7feea15594c.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-7e3ee4a243bb416b5f0111a0be08f8547c5d72ba71fe4afe4a4a007f5cb4e10e.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-d7f9330825307d053f68da11bb9ddc9b070df72deef3d115f2f3d55f66b17457.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-cd672ecad3b549e1dbd89bfd044e5812d6fdade56f42d48e3acee0c3f4614526.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/twitter/bootstrap/button.self-ceb562de883e04359bb2c06f07bdf6ecf065cc8a5027e2e58857c5e91b0b68e3.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-a87553101c955a01e2e8c81fad69a16582ddbf58fe95d5eb335dde5567af7647.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-5d09995e01b647168888180d40e271f9a6759d68ae7ac029d7026af58813d376.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-14e04bbe71282aa039322ab93e3a3a886ddede5f59a2f365f7c861f697bbeb21.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/jquery.routes.self-82369658e4edfb6385f776f8ae5975995bf0fdb68f28bdc7b416f9729433fad8.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/handlebars.self-57fef24df71388a1e3c2d68fd4a5faa2ba41bc8177615bcf911dc3c3f010a6f0.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/bootstrap.self-5afe7e91ef3675e2be97b8d060a7f3755d6dbc615b76df476df55143da70679f.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/dares.self-818a5f978114ac27a03a7d0e8139d781e7fcea4f7f7ea45bf5f83ff75f342e68.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/donations.self-7dbac1d4ded863899bcb0df3f33b0b069dc993bbb048f46db28a481b064433f4.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/generate_dares.self-6e35103673b98ad5e3f2ac8b0c69d2bfc80169444651b8866f657a05979690f8.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/likes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/signup.self-959266d1ffede10e30dc5de4d3b7e8da12a7ccedcb2bc945af6867467e5c0e13.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/users.self-182953686231f14845761f92cf02eccf0f633fe8b5810d64963477bdebadea29.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/videos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/assets/application.self-2d69f3d3cf38b2a324a62025b8d92e8c9928faaf5ae6822a7202c16459f8125c.js?body=1" for ::1 at 2015-06-02 23:02:57 -0700
+
+
+Started GET "/users" for ::1 at 2015-06-02 23:03:44 -0700
+Processing by UsersController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+  Rendered users/_user.html.erb (1.1ms)
+  Rendered users/index.html.erb within layouts/application (7.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Completed 200 OK in 320ms (Views: 318.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users?phrase=CharlieDubs23" for ::1 at 2015-06-02 23:03:44 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"CharlieDubs23"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%CharlieDubs23%')[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=C" for ::1 at 2015-06-02 23:03:46 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"C"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%C%')
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=Ch" for ::1 at 2015-06-02 23:03:46 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Ch"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%Ch%')[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users?phrase=Cha" for ::1 at 2015-06-02 23:03:46 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Cha"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%Cha%')
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=Charl" for ::1 at 2015-06-02 23:03:46 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Charl"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%Charl%')[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=Charl" for ::1 at 2015-06-02 23:03:46 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Charl"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%Charl%')
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users?phrase=Charli" for ::1 at 2015-06-02 23:03:47 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Charli"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%Charli%')[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=Charli" for ::1 at 2015-06-02 23:03:47 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Charli"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%Charli%')
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=Charli" for ::1 at 2015-06-02 23:03:48 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Charli"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%Charli%')[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=CharlieDubs23" for ::1 at 2015-06-02 23:03:48 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"CharlieDubs23"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%CharlieDubs23%')
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2015-06-02 23:12:07 -0700
+Processing by UsersController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" LIMIT 30 OFFSET 0
+  Rendered users/_user.html.erb (1.4ms)
+  Rendered users/index.html.erb within layouts/application (24.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+Completed 200 OK in 376ms (Views: 347.9ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/users" for ::1 at 2015-06-02 23:12:07 -0700
+Processing by UsersController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+  Rendered users/_user.html.erb (1.1ms)
+  Rendered users/index.html.erb within layouts/application (6.5ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Completed 200 OK in 322ms (Views: 320.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/contact_section.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/about_us.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-77d963462a71b85aa6c39f0110994006fed4301154d937da52eb3884ff813853.css?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-c1a8821f7eb1b195061d7706930814ecc6bd44db4c68f208da5fe14845fa11ea.css?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/charities.self-460555f1711322c4a6d2aea1309a62068b5d8efaaa6b5d917dc3fd485611bcb9.css?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/dares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/footer.self-0d1cb265b174beda769273c76bd1227aad6d659c8fad9a2c1af5b1e3886b8fd2.css?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/generate_dares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/homepage.self-fd74e9ca08027989da14b7d41a36b55de5a81f337965cec4210fc72898c6bcdd.css?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/likes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/navbar.self-9dae262873235b51fce59b2b11f1b6e0b33cfa316509c4b8e8bdec2bccfc8dca.css?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/pending_dares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/relationships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/users.self-831b586d85d739677ebfb1c858766c1181af6bf283d36d01adf31b90562c2018.css?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/videos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-db278e3a8fa6249c16796b113ebd29e11ef4e2cd021618ed84895d524a4511e0.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-ebce91ec66c71bcee451ea7da9128fd1bf8faa02c6d22ea04c598423431e4c08.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-ab1767545e27c0dbd36971e656ae4927171f673e3d932cdec2cbef39e991952b.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-8bb9309b6c24a4ba6b94026a049d25b13bdc0553b6fe83255c14a715ba624cc4.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-bd0c6724cdc75302fe98dfeff923112b76c1673cf4a0752a7050b7feea15594c.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-7e3ee4a243bb416b5f0111a0be08f8547c5d72ba71fe4afe4a4a007f5cb4e10e.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-d7f9330825307d053f68da11bb9ddc9b070df72deef3d115f2f3d55f66b17457.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-cd672ecad3b549e1dbd89bfd044e5812d6fdade56f42d48e3acee0c3f4614526.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/twitter/bootstrap/button.self-ceb562de883e04359bb2c06f07bdf6ecf065cc8a5027e2e58857c5e91b0b68e3.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-14e04bbe71282aa039322ab93e3a3a886ddede5f59a2f365f7c861f697bbeb21.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-5d09995e01b647168888180d40e271f9a6759d68ae7ac029d7026af58813d376.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-a87553101c955a01e2e8c81fad69a16582ddbf58fe95d5eb335dde5567af7647.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/jquery.routes.self-82369658e4edfb6385f776f8ae5975995bf0fdb68f28bdc7b416f9729433fad8.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/handlebars.self-57fef24df71388a1e3c2d68fd4a5faa2ba41bc8177615bcf911dc3c3f010a6f0.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/bootstrap.self-5afe7e91ef3675e2be97b8d060a7f3755d6dbc615b76df476df55143da70679f.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/dares.self-818a5f978114ac27a03a7d0e8139d781e7fcea4f7f7ea45bf5f83ff75f342e68.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/donations.self-7dbac1d4ded863899bcb0df3f33b0b069dc993bbb048f46db28a481b064433f4.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/generate_dares.self-6e35103673b98ad5e3f2ac8b0c69d2bfc80169444651b8866f657a05979690f8.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/likes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/signup.self-959266d1ffede10e30dc5de4d3b7e8da12a7ccedcb2bc945af6867467e5c0e13.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/users.self-182953686231f14845761f92cf02eccf0f633fe8b5810d64963477bdebadea29.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/videos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/assets/application.self-2d69f3d3cf38b2a324a62025b8d92e8c9928faaf5ae6822a7202c16459f8125c.js?body=1" for ::1 at 2015-06-02 23:12:08 -0700
+
+
+Started GET "/users?phrase=C" for ::1 at 2015-06-02 23:12:10 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"C"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%C%')[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users?phrase=C" for ::1 at 2015-06-02 23:12:10 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"C"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%C%')
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=Cha" for ::1 at 2015-06-02 23:12:10 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Cha"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%Cha%')[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=Charl" for ::1 at 2015-06-02 23:12:10 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Charl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%Charl%')
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=Charl" for ::1 at 2015-06-02 23:12:10 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Charl"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%Charl%')[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=Charli" for ::1 at 2015-06-02 23:12:10 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Charli"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%Charli%')
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=Charlie" for ::1 at 2015-06-02 23:12:10 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Charlie"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%Charlie%')[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users?phrase=Charlie" for ::1 at 2015-06-02 23:12:10 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Charlie"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%Charlie%')
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users?phrase=CharlieD" for ::1 at 2015-06-02 23:12:10 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"CharlieD"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%CharlieD%')[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=CharlieDu" for ::1 at 2015-06-02 23:12:11 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"CharlieDu"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%CharlieDu%')
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=CharlieDu" for ::1 at 2015-06-02 23:12:11 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"CharlieDu"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%CharlieDu%')[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=CharlieDuvs" for ::1 at 2015-06-02 23:12:11 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"CharlieDuvs"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%CharlieDuvs%')
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=CharlieDuvs" for ::1 at 2015-06-02 23:12:11 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"CharlieDuvs"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%CharlieDuvs%')[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=CharlieDuv" for ::1 at 2015-06-02 23:12:12 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"CharlieDuv"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%CharlieDuv%')
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=CharlieDub" for ::1 at 2015-06-02 23:12:12 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"CharlieDub"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%CharlieDub%')[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=CharlieDubs" for ::1 at 2015-06-02 23:12:12 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"CharlieDubs"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%CharlieDubs%')
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=CharlieDubs" for ::1 at 2015-06-02 23:12:12 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"CharlieDubs"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%CharlieDubs%')[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=CharlieDubs23" for ::1 at 2015-06-02 23:12:13 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"CharlieDubs23"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%CharlieDubs23%')
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=CharlieDubs23" for ::1 at 2015-06-02 23:12:13 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"CharlieDubs23"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%CharlieDubs23%')[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/generate" for ::1 at 2015-06-02 23:12:15 -0700
+Processing by GenerateDaresController#generate as */*
+  [1m[35mGenerateDare Load (0.4ms)[0m  SELECT  "generate_dares".* FROM "generate_dares"  ORDER BY RANDOM() LIMIT 1
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/generate" for ::1 at 2015-06-02 23:12:20 -0700
+Processing by GenerateDaresController#generate as */*
+  [1m[36mGenerateDare Load (0.4ms)[0m  [1mSELECT  "generate_dares".* FROM "generate_dares"  ORDER BY RANDOM() LIMIT 1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/check_handle/CharlieDubs23" for ::1 at 2015-06-02 23:12:27 -0700
+Processing by UsersController#check as */*
+  Parameters: {"handle"=>"CharlieDubs23"}
+Completed 200 OK in 397ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pending_dares" for ::1 at 2015-06-02 23:12:27 -0700
+Processing by PendingDaresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1ZmRU/Z7ZI/6hdt/9vlVJvSoXolUxXUVSwn2bQ6RZLhbgXHrwivkbwU/pGLwkll8F2slKlSc1OCuHJP25COQWg==", "pending_dare"=>{"twitter_handle"=>"CharlieDubs23", "title"=>"I dare you to peel a banana with out using your hands", "description"=>"asdf"}}
+  [1m[35mUser Load (1.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pending_dares" ("title", "description", "twitter_handle", "proposer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["title", "I dare you to peel a banana with out using your hands"], ["description", "asdf"], ["twitter_handle", "CharlieDubs23"], ["proposer_id", 13], ["created_at", "2015-06-03 06:12:27.942734"], ["updated_at", "2015-06-03 06:12:27.942734"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 2.7ms)
+
+NameError (undefined local variable or method `pending_dare' for #<PendingDaresController:0x007fa410160b50>):
+  app/controllers/pending_dares_controller.rb:11:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (114.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (18.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (37.3ms)
+
+
+Started POST "/pending_dares" for ::1 at 2015-06-02 23:12:38 -0700
+Processing by PendingDaresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1ZmRU/Z7ZI/6hdt/9vlVJvSoXolUxXUVSwn2bQ6RZLhbgXHrwivkbwU/pGLwkll8F2slKlSc1OCuHJP25COQWg==", "pending_dare"=>{"twitter_handle"=>"CharlieDubs23", "title"=>"I dare you to peel a banana with out using your hands", "description"=>"asdf"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pending_dares" ("title", "description", "twitter_handle", "proposer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["title", "I dare you to peel a banana with out using your hands"], ["description", "asdf"], ["twitter_handle", "CharlieDubs23"], ["proposer_id", 13], ["created_at", "2015-06-03 06:12:38.264497"], ["updated_at", "2015-06-03 06:12:38.264497"]]
+  [1m[36m (15.6ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 154ms (ActiveRecord: 19.4ms)
+
+NoMethodError (undefined method `redirect_tweet' for #<PendingDaresController:0x007fa4149b7d90>):
+  app/controllers/pending_dares_controller.rb:11:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (109.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (17.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (37.8ms)
+
+
+Started POST "/pending_dares" for ::1 at 2015-06-02 23:13:27 -0700
+Processing by PendingDaresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1ZmRU/Z7ZI/6hdt/9vlVJvSoXolUxXUVSwn2bQ6RZLhbgXHrwivkbwU/pGLwkll8F2slKlSc1OCuHJP25COQWg==", "pending_dare"=>{"twitter_handle"=>"CharlieDubs23", "title"=>"I dare you to peel a banana with out using your hands", "description"=>"asdf"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pending_dares" ("title", "description", "twitter_handle", "proposer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["title", "I dare you to peel a banana with out using your hands"], ["description", "asdf"], ["twitter_handle", "CharlieDubs23"], ["proposer_id", 13], ["created_at", "2015-06-03 06:13:28.013034"], ["updated_at", "2015-06-03 06:13:28.013034"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to https://twitter.com/intent/tweet?text=%20I dare you to peel a banana with out using your hands%20-%20dared%20to%20%40CharlieDubs23%20by%20%40acarl005%20%23Darity%20%23Dare%20For%20%23Charity%20%40TeamDarity%20localhost:3000/users/13/dares/7&url=localhost:3000/users/13/dares/7
+Completed 302 Found in 46ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/users" for ::1 at 2015-06-02 23:15:02 -0700
+Processing by UsersController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+  Rendered users/_user.html.erb (1.4ms)
+  Rendered users/index.html.erb within layouts/application (19.8ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Completed 200 OK in 361ms (Views: 331.9ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/about_us.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-77d963462a71b85aa6c39f0110994006fed4301154d937da52eb3884ff813853.css?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-c1a8821f7eb1b195061d7706930814ecc6bd44db4c68f208da5fe14845fa11ea.css?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/charities.self-460555f1711322c4a6d2aea1309a62068b5d8efaaa6b5d917dc3fd485611bcb9.css?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/contact_section.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/dares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/footer.self-0d1cb265b174beda769273c76bd1227aad6d659c8fad9a2c1af5b1e3886b8fd2.css?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/generate_dares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/homepage.self-fd74e9ca08027989da14b7d41a36b55de5a81f337965cec4210fc72898c6bcdd.css?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/likes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/navbar.self-9dae262873235b51fce59b2b11f1b6e0b33cfa316509c4b8e8bdec2bccfc8dca.css?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/pending_dares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/relationships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/users.self-831b586d85d739677ebfb1c858766c1181af6bf283d36d01adf31b90562c2018.css?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/videos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-db278e3a8fa6249c16796b113ebd29e11ef4e2cd021618ed84895d524a4511e0.js?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-ebce91ec66c71bcee451ea7da9128fd1bf8faa02c6d22ea04c598423431e4c08.js?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-8bb9309b6c24a4ba6b94026a049d25b13bdc0553b6fe83255c14a715ba624cc4.js?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-ab1767545e27c0dbd36971e656ae4927171f673e3d932cdec2cbef39e991952b.js?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-bd0c6724cdc75302fe98dfeff923112b76c1673cf4a0752a7050b7feea15594c.js?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-7e3ee4a243bb416b5f0111a0be08f8547c5d72ba71fe4afe4a4a007f5cb4e10e.js?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-d7f9330825307d053f68da11bb9ddc9b070df72deef3d115f2f3d55f66b17457.js?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/twitter/bootstrap/button.self-ceb562de883e04359bb2c06f07bdf6ecf065cc8a5027e2e58857c5e91b0b68e3.js?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-a87553101c955a01e2e8c81fad69a16582ddbf58fe95d5eb335dde5567af7647.js?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-5d09995e01b647168888180d40e271f9a6759d68ae7ac029d7026af58813d376.js?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-cd672ecad3b549e1dbd89bfd044e5812d6fdade56f42d48e3acee0c3f4614526.js?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-14e04bbe71282aa039322ab93e3a3a886ddede5f59a2f365f7c861f697bbeb21.js?body=1" for ::1 at 2015-06-02 23:15:03 -0700
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-06-02 23:15:04 -0700
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-06-02 23:15:04 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-02 23:15:04 -0700
+
+
+Started GET "/assets/jquery.routes.self-82369658e4edfb6385f776f8ae5975995bf0fdb68f28bdc7b416f9729433fad8.js?body=1" for ::1 at 2015-06-02 23:15:04 -0700
+
+
+Started GET "/assets/handlebars.self-57fef24df71388a1e3c2d68fd4a5faa2ba41bc8177615bcf911dc3c3f010a6f0.js?body=1" for ::1 at 2015-06-02 23:15:04 -0700
+
+
+Started GET "/assets/bootstrap.self-5afe7e91ef3675e2be97b8d060a7f3755d6dbc615b76df476df55143da70679f.js?body=1" for ::1 at 2015-06-02 23:15:04 -0700
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-06-02 23:15:04 -0700
+
+
+Started GET "/assets/dares.self-818a5f978114ac27a03a7d0e8139d781e7fcea4f7f7ea45bf5f83ff75f342e68.js?body=1" for ::1 at 2015-06-02 23:15:04 -0700
+
+
+Started GET "/assets/donations.self-7dbac1d4ded863899bcb0df3f33b0b069dc993bbb048f46db28a481b064433f4.js?body=1" for ::1 at 2015-06-02 23:15:04 -0700
+
+
+Started GET "/assets/generate_dares.self-6e35103673b98ad5e3f2ac8b0c69d2bfc80169444651b8866f657a05979690f8.js?body=1" for ::1 at 2015-06-02 23:15:04 -0700
+
+
+Started GET "/assets/likes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-02 23:15:04 -0700
+
+
+Started GET "/assets/signup.self-959266d1ffede10e30dc5de4d3b7e8da12a7ccedcb2bc945af6867467e5c0e13.js?body=1" for ::1 at 2015-06-02 23:15:04 -0700
+
+
+Started GET "/assets/users.self-182953686231f14845761f92cf02eccf0f633fe8b5810d64963477bdebadea29.js?body=1" for ::1 at 2015-06-02 23:15:04 -0700
+
+
+Started GET "/assets/videos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-02 23:15:04 -0700
+
+
+Started GET "/assets/application.self-2d69f3d3cf38b2a324a62025b8d92e8c9928faaf5ae6822a7202c16459f8125c.js?body=1" for ::1 at 2015-06-02 23:15:04 -0700
+
+
+Started GET "/users?phrase=V" for ::1 at 2015-06-02 23:15:05 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"V"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%V%')[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=Vh" for ::1 at 2015-06-02 23:15:05 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Vh"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%Vh%')
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=Vhs" for ::1 at 2015-06-02 23:15:05 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Vhs"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%Vhs%')[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users?phrase=Vhstl" for ::1 at 2015-06-02 23:15:05 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Vhstl"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%Vhstl%')
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users?phrase=Vhstl" for ::1 at 2015-06-02 23:15:05 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Vhstl"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%Vhstl%')[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users?phrase=Vhstli" for ::1 at 2015-06-02 23:15:05 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Vhstli"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%Vhstli%')
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=Vhstli" for ::1 at 2015-06-02 23:15:05 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Vhstli"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%Vhstli%')[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=" for ::1 at 2015-06-02 23:15:06 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>""}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%%')
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users?phrase=C" for ::1 at 2015-06-02 23:15:07 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"C"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%C%')[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=Ch" for ::1 at 2015-06-02 23:15:07 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Ch"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%Ch%')
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=Cha" for ::1 at 2015-06-02 23:15:07 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Cha"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%Cha%')[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users?phrase=Charl" for ::1 at 2015-06-02 23:15:07 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Charl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%Charl%')
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=Charl" for ::1 at 2015-06-02 23:15:07 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Charl"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%Charl%')[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users?phrase=Charli" for ::1 at 2015-06-02 23:15:07 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Charli"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%Charli%')
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=Charli" for ::1 at 2015-06-02 23:15:07 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Charli"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%Charli%')[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users?phrase=Charli" for ::1 at 2015-06-02 23:15:08 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Charli"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%Charli%')
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=CharlieDubs23" for ::1 at 2015-06-02 23:15:08 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"CharlieDubs23"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%CharlieDubs23%')[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=CharlieDubs23" for ::1 at 2015-06-02 23:15:13 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"CharlieDubs23"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%CharlieDubs23%')
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=CharlieDubs23" for ::1 at 2015-06-02 23:15:13 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"CharlieDubs23"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%CharlieDubs23%')[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=CharlieDubs23" for ::1 at 2015-06-02 23:15:13 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"CharlieDubs23"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%CharlieDubs23%')
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/check_handle/CharlieDubs23" for ::1 at 2015-06-02 23:15:18 -0700
+Processing by UsersController#check as */*
+  Parameters: {"handle"=>"CharlieDubs23"}
+Completed 200 OK in 471ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pending_dares" for ::1 at 2015-06-02 23:15:18 -0700
+Processing by PendingDaresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"10Cm6hfa5nrSVr44p/fI/rOJyf4406ieV4RWB1PGVx9ZWEZSI4pmmi3swSWhnMSkUEqyXTiKCWuykTOcuXSj/Q==", "pending_dare"=>{"twitter_handle"=>"CharlieDubs23", "title"=>"Fight a bear~", "description"=>""}}
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  Rendered html template (0.0ms)
+Completed 200 OK in 49ms (Views: 39.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users" for ::1 at 2015-06-02 23:15:23 -0700
+Processing by UsersController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+  Rendered users/_user.html.erb (1.2ms)
+  Rendered users/index.html.erb within layouts/application (8.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Completed 200 OK in 235ms (Views: 232.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users?phrase=CharlieDubs23" for ::1 at 2015-06-02 23:15:23 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"CharlieDubs23"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%CharlieDubs23%')[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=C" for ::1 at 2015-06-02 23:15:26 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"C"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%C%')
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=C" for ::1 at 2015-06-02 23:15:26 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"C"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%C%')[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users?phrase=Cha" for ::1 at 2015-06-02 23:15:26 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Cha"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%Cha%')
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=Char" for ::1 at 2015-06-02 23:15:26 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Char"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%Char%')[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=Charl" for ::1 at 2015-06-02 23:15:26 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Charl"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%Charl%')
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=Charli" for ::1 at 2015-06-02 23:15:26 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Charli"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%Charli%')[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=Charlie" for ::1 at 2015-06-02 23:15:26 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Charlie"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%Charlie%')
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=Charlie" for ::1 at 2015-06-02 23:15:26 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Charlie"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%Charlie%')[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?phrase=Charlie" for ::1 at 2015-06-02 23:15:27 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"Charlie"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%Charlie%')
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?phrase=CharlieDubs23" for ::1 at 2015-06-02 23:15:27 -0700
+Processing by UsersController#index as */*
+  Parameters: {"phrase"=>"CharlieDubs23"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%CharlieDubs23%')[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/check_handle/CharlieDubs23" for ::1 at 2015-06-02 23:16:04 -0700
+Processing by UsersController#check as */*
+  Parameters: {"handle"=>"CharlieDubs23"}
+Completed 200 OK in 277ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pending_dares" for ::1 at 2015-06-02 23:16:05 -0700
+Processing by PendingDaresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g6+cWMqvf/hT5wjPvJ0V5VwBJG01Byw2vtq+rqgSrtINt3zg/v//GKxdd9K69hm/v8JfzjVejcNbz9s1QqBaMA==", "pending_dare"=>{"twitter_handle"=>"CharlieDubs23", "title"=>"Fight a snake, with no hands!", "description"=>"Punt that little critter!"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pending_dares" ("title", "description", "twitter_handle", "proposer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["title", "Fight a snake, with no hands!"], ["description", "Punt that little critter!"], ["twitter_handle", "CharlieDubs23"], ["proposer_id", 13], ["created_at", "2015-06-03 06:16:05.040433"], ["updated_at", "2015-06-03 06:16:05.040433"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to https://twitter.com/intent/tweet?text=%20Fight a snake, with no hands!%20-%20dared%20to%20%40CharlieDubs23%20by%20%40acarl005%20%23Darity%20localhost:3000/users/13/dares/8&url=localhost:3000/users/13/dares/8
+Completed 302 Found in 8ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/6/dares/1" for ::1 at 2015-06-02 23:17:07 -0700
+Processing by DaresController#show as HTML
+  Parameters: {"user_id"=>"6", "id"=>"1"}
+  [1m[35mDare Load (1.3ms)[0m  SELECT  "dares".* FROM "dares" WHERE "dares"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered dares/404.html.erb (0.4ms)
+Filter chain halted as :find_dare rendered or redirected
+Completed 404 Not Found in 33ms (Views: 4.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/users/13/dares/8" for ::1 at 2015-06-02 23:17:25 -0700
+Processing by DaresController#show as HTML
+  Parameters: {"user_id"=>"13", "id"=>"8"}
+  [1m[36mDare Load (0.3ms)[0m  [1mSELECT  "dares".* FROM "dares" WHERE "dares"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 10]]
+  [1m[35mDonation Load (0.5ms)[0m  SELECT "donations".* FROM "donations" WHERE "donations"."pledged_dare_id" = $1  [["pledged_dare_id", 8]]
+  [1m[36mVideo Load (0.6ms)[0m  [1mSELECT  "videos".* FROM "videos" WHERE "videos"."dare_id" = $1  ORDER BY "videos"."id" ASC LIMIT 1[0m  [["dare_id", 8]]
+  [1m[35mComment Load (0.5ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."dare_id" = $1  [["dare_id", 8]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "donations" WHERE "donations"."pledged_dare_id" = $1  [["pledged_dare_id", 8]]
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "donations" ON "users"."id" = "donations"."pledger_id" WHERE "donations"."pledged_dare_id" = $1 AND "users"."id" = $2 LIMIT 1[0m  [["pledged_dare_id", 8], ["id", 13]]
+  Rendered collection (0.0ms)
+  Rendered dares/show.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 368ms (Views: 215.2ms | ActiveRecord: 7.0ms)

@@ -21,7 +21,7 @@ var searchFunction = function() {
       } else {
         $('.user-wrap').append("<p>We don't have this user. Invite them on twitter by typing their twitter handle!");
         $('#invite-twitter').show();
-        $('#handle-p').text(phrase);
+        $('#handle-p').text('@' + phrase);
         $('#handle-in').attr('value', phrase);
       }
     }).fail(function(err) {

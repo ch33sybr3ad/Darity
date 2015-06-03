@@ -16,6 +16,16 @@ class ApplicationController < ActionController::Base
     render :'404', layout: false, status: 404
   end
 
+  def redirect_tweet(args)
+    begin
+      target = args[:dare].daree.username
+    rescue
+      target = args[:dare].twitter_handle
+    end
+    redirect_to "https://twitter.com/intent/tweet?text=%20#{args[:dare].title}%20-%20dared%20to%20%40#{target}%20by%20%40#{args[:dare].proposer.username}%20%23Darity%20localhost:3000/&url=localhost:3000/users/#{args[:user].id}/dares/#{args[:dare].id}"
+  end
+
+
   private
 
   def current_user

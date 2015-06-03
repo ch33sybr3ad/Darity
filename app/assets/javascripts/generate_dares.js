@@ -13,14 +13,14 @@ var generateDare = function(event) {
   });
 
   req.done(function(response) {
-    $("#gen-dare").html('<p>'+response.description+'</p>');
+    $("#gen-dare").html('<h4>'+response.description+'</h4>');
     $('.use-dare').css('display', 'inline');
   });
 };
 
 var useDare = function() {
-  $('#dare_title').val("I dare you to " + $('#gen-dare p').text().toLowerCase() );
-  $('#pending_dare_title').val("I dare you to " + $('#gen-dare p').text().toLowerCase() );
+  $('#dare_title').val("I dare you to " + $('#gen-dare h4').text().toLowerCase() );
+  $('#pending_dare_title').val("I dare you to " + $('#gen-dare h4').text().toLowerCase() );
 };
 
 
