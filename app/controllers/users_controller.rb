@@ -76,6 +76,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(signup_params)
+    Dare.create(title: GenerateDare.all.shuffle.first.description, daree_id: @user.id, proposer_id: 1)
     if already_a_twitter_handle?(@user.username)
       @user.errors.add(:username, 'is already taken')
     end
