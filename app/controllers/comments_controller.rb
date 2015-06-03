@@ -4,7 +4,6 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @dare = Dare.find(@comment.dare_id)
     if @comment.save
-      binding.pry
       render json: { comment: @comment, username: current_user.username }.to_json
     else
       return "fail!"
