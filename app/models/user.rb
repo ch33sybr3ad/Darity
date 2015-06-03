@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
   has_many :likes
   has_many :comments, through: :likes
 
+  has_many :authored_comments, class_name: 'Comment', foreign_key: 'author_id'
+
   has_many :posts, class_name: "Comment", foreign_key: "author_id"
 
   validates_uniqueness_of :username
