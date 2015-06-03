@@ -1,25 +1,26 @@
 <section class="container">
-  <input id="search-bar" type="text" placeholder="search">
+  <form class="row">
+    <div class="form-group col-md-3 col-sm-4">
+      <input id="search-bar" type="text" placeholder="search" class="form-control input-md">
+    </div>
+  </form>
 
-  <h1>Welcome to Darity</h1>
-
+  <h4>Our Users:</h4>
   <div class="user-wrap">
 
-  <p>ALL USERS:</p>
-    <% @users.each do |user| %>
-    <p>
-      <%= user.username.capitalize %>
-      <%= link_to 'Dare', user %>
-    </p>
-    <% end %>
+    <%= will_paginate %>
+    <ul>
+      <%= render @users %>
+    </ul>
+
   </div>
 </section>
 
 <div style="display: none;" id="invite-twitter" class="container">
-
+  <h3>Invite this person on twitter</h3>
   <%= form_for @pending_dare, url: user_invite_path do |f| %>
   <p id="handle-p"></p>
-  <p id="invalid" style="display: none;">invalid</p>
+  <p id="invalid" style="display: none;">Not a valid twitter handle</p>
     <%= f.hidden_field :twitter_handle, id: 'handle-in' %>
     <%= f.text_field :title %>
     <%= f.text_area :description %>

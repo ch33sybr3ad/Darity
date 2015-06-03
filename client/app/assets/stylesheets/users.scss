@@ -1,9 +1,14 @@
-html {
-  word-wrap: break-word;
+.user-partial {
+  img {
+    max-width: 30px;
+    padding-right: 8px;
+  }
 }
+/*
+body {
+  background: rgb(159, 44, 53);
+  background: rgb(239, 64, 74);
+  background: rgb(178, 50, 59);
 
-
-/*body * {
-  border: red 1px dashed;
-}*/
-
+}
+*/
