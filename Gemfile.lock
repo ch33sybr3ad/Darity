@@ -322,3 +322,6 @@ DEPENDENCIES
   web-console (~> 2.0)
   will_paginate (= 3.0.7)
   youtube_it
+
+BUNDLED WITH
+   1.10.2
