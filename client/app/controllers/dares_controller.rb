@@ -9,6 +9,7 @@ class DaresController < ApplicationController
   end
 
   def show
+    # DareDisabler.perform_in(1.minute, @dare.id)
     @proposer = @dare.proposer
     @daree = @dare.daree
     @pledgers = @dare.pledgers
