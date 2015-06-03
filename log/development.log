@@ -1,0 +1,407 @@
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-02 21:59:09 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (12.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#home as HTML
+  Rendered users/home.html.erb within layouts/application (482.7ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 3755ms (Views: 3705.8ms | ActiveRecord: 16.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+Processing by UsersController#home as HTML
+  Rendered users/home.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 237ms (Views: 236.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+
+
+Started GET "/assets/about_us.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-77d963462a71b85aa6c39f0110994006fed4301154d937da52eb3884ff813853.css?body=1" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-c1a8821f7eb1b195061d7706930814ecc6bd44db4c68f208da5fe14845fa11ea.css?body=1" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+
+
+Started GET "/assets/charities.self-a4399b10e0316d129b51cf4821120dca46fb95770ae7dbc5eaec02e2b9bc19c7.css?body=1" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+
+
+Started GET "/assets/contact_section.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+
+
+Started GET "/assets/dares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+
+
+Started GET "/assets/footer.self-99cae87595fb83192bc653ffddf92d97190b64af59faebf42108b718587edb93.css?body=1" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+
+
+Started GET "/assets/generate_dares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+
+
+Started GET "/assets/homepage.self-43f503712234d6afa65ba1791571cdf07abc7bbf9b05e589856647c6b4b2399c.css?body=1" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+
+
+Started GET "/assets/likes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+
+
+Started GET "/assets/navbar.self-6fde0d1376f0c179ceb6cd9ba3e069b929e7cce4c6361511a26cdcbfaded6aeb.css?body=1" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+
+
+Started GET "/assets/pending_dares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+
+
+Started GET "/assets/relationships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+
+
+Started GET "/assets/users.self-10740d5334959e104efeac78d502fb50c779cea22c2ba7c7874f348f41dfb3a5.css?body=1" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+
+
+Started GET "/assets/videos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-db278e3a8fa6249c16796b113ebd29e11ef4e2cd021618ed84895d524a4511e0.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-ebce91ec66c71bcee451ea7da9128fd1bf8faa02c6d22ea04c598423431e4c08.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-ab1767545e27c0dbd36971e656ae4927171f673e3d932cdec2cbef39e991952b.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-8bb9309b6c24a4ba6b94026a049d25b13bdc0553b6fe83255c14a715ba624cc4.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-bd0c6724cdc75302fe98dfeff923112b76c1673cf4a0752a7050b7feea15594c.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-7e3ee4a243bb416b5f0111a0be08f8547c5d72ba71fe4afe4a4a007f5cb4e10e.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:13 -0700
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-d7f9330825307d053f68da11bb9ddc9b070df72deef3d115f2f3d55f66b17457.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:14 -0700
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-cd672ecad3b549e1dbd89bfd044e5812d6fdade56f42d48e3acee0c3f4614526.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:14 -0700
+
+
+Started GET "/assets/twitter/bootstrap/button.self-ceb562de883e04359bb2c06f07bdf6ecf065cc8a5027e2e58857c5e91b0b68e3.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:14 -0700
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-a87553101c955a01e2e8c81fad69a16582ddbf58fe95d5eb335dde5567af7647.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:14 -0700
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-5d09995e01b647168888180d40e271f9a6759d68ae7ac029d7026af58813d376.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:14 -0700
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-14e04bbe71282aa039322ab93e3a3a886ddede5f59a2f365f7c861f697bbeb21.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:14 -0700
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:14 -0700
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:14 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:14 -0700
+
+
+Started GET "/assets/jquery.routes.self-82369658e4edfb6385f776f8ae5975995bf0fdb68f28bdc7b416f9729433fad8.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:14 -0700
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:14 -0700
+
+
+Started GET "/assets/bootstrap.self-5afe7e91ef3675e2be97b8d060a7f3755d6dbc615b76df476df55143da70679f.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:14 -0700
+
+
+Started GET "/assets/handlebars.self-57fef24df71388a1e3c2d68fd4a5faa2ba41bc8177615bcf911dc3c3f010a6f0.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:14 -0700
+
+
+Started GET "/assets/dares.self-818a5f978114ac27a03a7d0e8139d781e7fcea4f7f7ea45bf5f83ff75f342e68.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:14 -0700
+
+
+Started GET "/assets/donations.self-7dbac1d4ded863899bcb0df3f33b0b069dc993bbb048f46db28a481b064433f4.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:14 -0700
+
+
+Started GET "/assets/generate_dares.self-08e7fb24390f226f4e5c696260f77a76f884bf580818bf9498cea0dfc3ffa692.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:14 -0700
+
+
+Started GET "/assets/likes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:14 -0700
+
+
+Started GET "/assets/signup.self-959266d1ffede10e30dc5de4d3b7e8da12a7ccedcb2bc945af6867467e5c0e13.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:14 -0700
+
+
+Started GET "/assets/users.self-77608d922671c73183f9739b4822d2a154121660255581e0659313b85694de25.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:14 -0700
+
+
+Started GET "/assets/videos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:14 -0700
+
+
+Started GET "/assets/application.self-2d69f3d3cf38b2a324a62025b8d92e8c9928faaf5ae6822a7202c16459f8125c.js?body=1" for 127.0.0.1 at 2015-06-02 21:59:14 -0700
+
+
+Started GET "/assets/fontawesome-webfont-66db52b456efe7e29cec11fa09421d03cb09e37ed1b567307ec0444fd605ce31.woff" for 127.0.0.1 at 2015-06-02 21:59:14 -0700
+
+
+Started GET "/assets/dino-04a87d1be44746398a0738144d32f7c3a743bb56ed9397f31bd31c5cb2fb5089.jpg" for 127.0.0.1 at 2015-06-02 21:59:14 -0700
+
+
+Started GET "/assets/virus-1bf9a703cef4baae6845dd800415963049e63db5d9c2daedb55039162feb8c4f.jpg" for 127.0.0.1 at 2015-06-02 21:59:14 -0700
+
+
+Started GET "/assets/4paws-e4c1b5c0db4d052306de429e83e0b6b6265a9d31cb7717b298ce8c5e49763de7.png" for 127.0.0.1 at 2015-06-02 21:59:14 -0700
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-06-02 21:59:26 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mDare Load (6.9ms)[0m  SELECT  "dares".* FROM "dares"  ORDER BY "dares"."id" ASC LIMIT 1
+  [1m[36mUser Exists (12.3ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = $1 LIMIT 1[0m  [["follower_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = $1  [["follower_id", 1]]
+  Rendered users/_user.html.erb (1.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (60.0ms)
+Completed 200 OK in 637ms (Views: 315.2ms | ActiveRecord: 25.2ms)
+
+
+Started GET "/users/1?dare_type=challenged" for 127.0.0.1 at 2015-06-02 21:59:27 -0700
+Processing by UsersController#show as */*
+  Parameters: {"dare_type"=>"challenged", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mDare Load (0.5ms)[0m  [1mSELECT  "dares".* FROM "dares"  ORDER BY "dares"."id" ASC LIMIT 1[0m
+  [1m[35mDare Exists (0.3ms)[0m  SELECT  1 AS one FROM "dares" WHERE "dares"."daree_id" = $1 LIMIT 1  [["daree_id", 1]]
+  [1m[36mDare Load (0.2ms)[0m  [1mSELECT "dares".* FROM "dares" WHERE "dares"."daree_id" = $1[0m  [["daree_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered dares/challenged.html.erb (10.8ms)
+Completed 200 OK in 24ms (Views: 14.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2015-06-02 21:59:29 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered users/edit.html.erb within layouts/application (22.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 198ms (Views: 196.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/feed" for 127.0.0.1 at 2015-06-02 21:59:30 -0700
+Processing by UsersController#feed as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = $1[0m  [["follower_id", 1]]
+  [1m[35mDare Load (0.3ms)[0m  SELECT "dares".* FROM "dares" WHERE "dares"."daree_id" = $1  [["daree_id", 2]]
+  [1m[36mDare Load (0.2ms)[0m  [1mSELECT "dares".* FROM "dares" WHERE "dares"."proposer_id" = $1[0m  [["proposer_id", 2]]
+  [1m[35mDare Load (0.5ms)[0m  SELECT "dares".* FROM "dares" INNER JOIN "donations" ON "dares"."id" = "donations"."pledged_dare_id" WHERE "donations"."pledger_id" = $1  [["pledger_id", 2]]
+  [1m[36mDare Load (0.2ms)[0m  [1mSELECT "dares".* FROM "dares" WHERE "dares"."daree_id" = $1[0m  [["daree_id", 3]]
+  [1m[35mDare Load (0.2ms)[0m  SELECT "dares".* FROM "dares" WHERE "dares"."proposer_id" = $1  [["proposer_id", 3]]
+  [1m[36mDare Load (0.3ms)[0m  [1mSELECT "dares".* FROM "dares" INNER JOIN "donations" ON "dares"."id" = "donations"."pledged_dare_id" WHERE "donations"."pledger_id" = $1[0m  [["pledger_id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCharity Load (0.4ms)[0m  SELECT  "charities".* FROM "charities" WHERE "charities"."id" = $1 LIMIT 1  [["id", 22]]
+  [1m[36mDonation Load (0.2ms)[0m  [1mSELECT "donations".* FROM "donations" WHERE "donations"."pledger_id" = $1[0m  [["pledger_id", 2]]
+  [1m[35mVideo Load (0.3ms)[0m  SELECT  "videos".* FROM "videos" WHERE "videos"."dare_id" = $1 LIMIT 1  [["dare_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCharity Load (0.2ms)[0m  [1mSELECT  "charities".* FROM "charities" WHERE "charities"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mDonation Load (0.2ms)[0m  SELECT "donations".* FROM "donations" WHERE "donations"."pledger_id" = $1  [["pledger_id", 3]]
+  [1m[36mVideo Load (0.1ms)[0m  [1mSELECT  "videos".* FROM "videos" WHERE "videos"."dare_id" = $1 LIMIT 1[0m  [["dare_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mCharity Load (0.2ms)[0m  SELECT  "charities".* FROM "charities" WHERE "charities"."id" = $1 LIMIT 1  [["id", 23]]
+  [1m[36mDonation Load (0.2ms)[0m  [1mSELECT "donations".* FROM "donations" WHERE "donations"."pledger_id" = $1[0m  [["pledger_id", 4]]
+  [1m[35mVideo Load (0.1ms)[0m  SELECT  "videos".* FROM "videos" WHERE "videos"."dare_id" = $1 LIMIT 1  [["dare_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCharity Load (0.2ms)[0m  [1mSELECT  "charities".* FROM "charities" WHERE "charities"."id" = $1 LIMIT 1[0m  [["id", 41]]
+  [1m[35mDonation Load (0.1ms)[0m  SELECT "donations".* FROM "donations" WHERE "donations"."pledger_id" = $1  [["pledger_id", 5]]
+  [1m[36mVideo Load (0.1ms)[0m  [1mSELECT  "videos".* FROM "videos" WHERE "videos"."dare_id" = $1 LIMIT 1[0m  [["dare_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCharity Load (0.2ms)[0m  SELECT  "charities".* FROM "charities" WHERE "charities"."id" = $1 LIMIT 1  [["id", 29]]
+  [1m[36mDonation Load (0.1ms)[0m  [1mSELECT "donations".* FROM "donations" WHERE "donations"."pledger_id" = $1[0m  [["pledger_id", 1]]
+  [1m[35mVideo Load (0.2ms)[0m  SELECT  "videos".* FROM "videos" WHERE "videos"."dare_id" = $1 LIMIT 1  [["dare_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "charities".* FROM "charities" WHERE "charities"."id" = $1 LIMIT 1[0m  [["id", 22]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "donations".* FROM "donations" WHERE "donations"."pledger_id" = $1  [["pledger_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "videos".* FROM "videos" WHERE "videos"."dare_id" = $1 LIMIT 1[0m  [["dare_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "charities".* FROM "charities" WHERE "charities"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "donations".* FROM "donations" WHERE "donations"."pledger_id" = $1[0m  [["pledger_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "videos".* FROM "videos" WHERE "videos"."dare_id" = $1 LIMIT 1  [["dare_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "charities".* FROM "charities" WHERE "charities"."id" = $1 LIMIT 1[0m  [["id", 23]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "donations".* FROM "donations" WHERE "donations"."pledger_id" = $1  [["pledger_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "videos".* FROM "videos" WHERE "videos"."dare_id" = $1 LIMIT 1[0m  [["dare_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "charities".* FROM "charities" WHERE "charities"."id" = $1 LIMIT 1  [["id", 41]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "donations".* FROM "donations" WHERE "donations"."pledger_id" = $1[0m  [["pledger_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "videos".* FROM "videos" WHERE "videos"."dare_id" = $1 LIMIT 1  [["dare_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "charities".* FROM "charities" WHERE "charities"."id" = $1 LIMIT 1[0m  [["id", 29]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "donations".* FROM "donations" WHERE "donations"."pledger_id" = $1  [["pledger_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "videos".* FROM "videos" WHERE "videos"."dare_id" = $1 LIMIT 1[0m  [["dare_id", 5]]
+  Rendered users/feed.html.erb within layouts/application (150.5ms)
+Completed 200 OK in 348ms (Views: 329.6ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2015-06-02 21:59:31 -0700
+Processing by UsersController#about as HTML
+  Rendered users/about.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 270ms (Views: 269.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/charities" for 127.0.0.1 at 2015-06-02 21:59:32 -0700
+Processing by CharitiesController#index as HTML
+  [1m[36m (12.2ms)[0m  [1mSELECT COUNT(*) FROM "charities"[0m
+  [1m[35mCharity Load (0.4ms)[0m  SELECT  "charities".* FROM "charities" LIMIT 10 OFFSET 0
+  Rendered charities/_charity.html.erb (1.2ms)
+  Rendered charities/index.html.erb within layouts/application (21.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 299ms (Views: 285.3ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-02 21:59:33 -0700
+Processing by UsersController#home as HTML
+  Rendered users/home.html.erb within layouts/application (4.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 273ms (Views: 272.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/charities" for 127.0.0.1 at 2015-06-02 21:59:34 -0700
+Processing by CharitiesController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "charities"[0m
+  [1m[35mCharity Load (0.3ms)[0m  SELECT  "charities".* FROM "charities" LIMIT 10 OFFSET 0
+  Rendered charities/_charity.html.erb (0.6ms)
+  Rendered charities/index.html.erb within layouts/application (5.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 192ms (Views: 190.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2015-06-02 21:59:34 -0700
+Processing by UsersController#about as HTML
+  Rendered users/about.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 265ms (Views: 264.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/charities" for 127.0.0.1 at 2015-06-02 21:59:35 -0700
+Processing by CharitiesController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "charities"[0m
+  [1m[35mCharity Load (0.2ms)[0m  SELECT  "charities".* FROM "charities" LIMIT 10 OFFSET 0
+  Rendered charities/_charity.html.erb (0.7ms)
+  Rendered charities/index.html.erb within layouts/application (5.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 291ms (Views: 289.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-02 21:59:36 -0700
+Processing by UsersController#home as HTML
+  Rendered users/home.html.erb within layouts/application (3.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 185ms (Views: 184.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-02 21:59:43 -0700
+Processing by UsersController#home as HTML
+  Rendered users/home.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 300ms (Views: 299.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-02 21:59:44 -0700
+Processing by UsersController#home as HTML
+  Rendered users/home.html.erb within layouts/application (4.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 302ms (Views: 293.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-02 22:00:09 -0700
+Processing by UsersController#home as HTML
+  Rendered users/home.html.erb within layouts/application (19.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 271ms (Views: 265.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/charities" for 127.0.0.1 at 2015-06-02 22:00:10 -0700
+Processing by CharitiesController#index as HTML
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "charities"
+  [1m[36mCharity Load (0.4ms)[0m  [1mSELECT  "charities".* FROM "charities" LIMIT 10 OFFSET 0[0m
+  Rendered charities/_charity.html.erb (0.7ms)
+  Rendered charities/index.html.erb within layouts/application (14.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 413ms (Views: 408.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2015-06-02 22:00:10 -0700
+Processing by UsersController#about as HTML
+  Rendered users/about.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 189ms (Views: 188.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2015-06-02 22:00:12 -0700
+Processing by UsersController#about as HTML
+  Rendered users/about.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 273ms (Views: 272.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/charities" for 127.0.0.1 at 2015-06-02 22:00:12 -0700
+Processing by CharitiesController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "charities"[0m
+  [1m[35mCharity Load (0.3ms)[0m  SELECT  "charities".* FROM "charities" LIMIT 10 OFFSET 0
+  Rendered charities/_charity.html.erb (0.7ms)
+  Rendered charities/index.html.erb within layouts/application (6.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 279ms (Views: 278.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-02 22:00:13 -0700
+Processing by UsersController#home as HTML
+  Rendered users/home.html.erb within layouts/application (3.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 178ms (Views: 177.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2015-06-02 22:00:14 -0700
+Processing by UsersController#about as HTML
+  Rendered users/about.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 295ms (Views: 294.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/charities" for 127.0.0.1 at 2015-06-02 22:00:15 -0700
+Processing by CharitiesController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "charities"
+  [1m[36mCharity Load (0.2ms)[0m  [1mSELECT  "charities".* FROM "charities" LIMIT 10 OFFSET 0[0m
+  Rendered charities/_charity.html.erb (0.7ms)
+  Rendered charities/index.html.erb within layouts/application (5.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 310ms (Views: 308.3ms | ActiveRecord: 0.7ms)
