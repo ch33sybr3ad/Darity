@@ -4,7 +4,7 @@
       <h1><%= @dare.title %></h1>
       <p><%= @dare.description %></p>
       <p>proposed by: <%= link_to @proposer.username.capitalize, @proposer %></p>
-    </div> 
+    </div>
 
     <div class="dare-info">
       <p>proposed to: <%= link_to @daree.username.capitalize, @daree %></p>
@@ -61,16 +61,52 @@
 
 <h2>Comments</h2>
 
-<%= bootstrap_form_for @comment, id: current_user do |f| %>
-  <%= f.text_area :body %>
-  <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.hidden_field :dare_id, value: @dare.id %>
-  <%= f.submit :submit %>
+
+<% if current_user %>
+
+  <%= bootstrap_form_for @comment, id: current_user do |f| %>
+    <%= f.text_area :body %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.hidden_field :dare_id, value: @dare.id %>
+    <%= f.submit :submit %>
+  <% end %>
+
+<% else %>
+
+ <a href="/auth/twitter" class="btn btn-tw"><i class="fa fa-twitter"></i> Sign up to leave a comment </a>
+
 <% end %>
 
+ <script id="new-dare-comment" type="text/x-handlebars-template">
+  <li>
+    <div class="media">
+      <a class="pull-left" href="#">
+        <img class="media-object" src="{{image_url}}">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading">{{username}}</h4>
+          {{comment.body}}
+          <span>{{ comment.likes_count }}</span>
+            <a href="/comments/{{comment.id}}/upvote" class="btn btn-default btn-sm">
+              <i class="fa fa-thumbs-o-up"></i>
+            </a>
+            <a href="/comments/{{comment.id}}/downvote" class="btn btn-default btn-sm">
+              <i class="fa fa-thumbs-o-down"></i>
+            </a>
+        <div class="media">
+          {{comment.created_at.strftime("%I:%M%p %m/%d/%y") }}
+        </div>
+      </div>
+    </div>
+  </li>
+  <hr>
+ </script>
 
 <ul class="comment-list">
   <%= render @comments %>
 </ul>
 
 </div>
+
+
+

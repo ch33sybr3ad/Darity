@@ -4,7 +4,8 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @dare = Dare.find(@comment.dare_id)
     if @comment.save
-      render json: { comment: @comment, username: current_user.username }.to_json
+      render json: { comment: @comment, username: current_user.username,
+       image_url: current_user.image_url }.to_json
     else
       return "fail!"
       #need error handling
@@ -31,7 +32,7 @@ class CommentsController < ApplicationController
     count = Like.where(comment_id: like_params["id"])
               .inject(0) { |sum, like| sum + like.value }
     comment = Comment.find(params[:id])
-    comment.likes_count = count 
+    comment.likes_count = count
     comment.save
     render json: comment
   end
@@ -47,6 +48,6 @@ class CommentsController < ApplicationController
     params.require(:like).permit(:id)
   end
 
-  
+
 
 end

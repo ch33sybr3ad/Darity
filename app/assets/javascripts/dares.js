@@ -49,6 +49,11 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
+
+
+  var source = $('#new-dare-comment').html();
+  var template = Handlebars.compile(source);
+
   $('.new_comment').on('submit', function(e) {
     e.preventDefault();
     var commentText = $(this).find('textarea').val();
@@ -62,9 +67,9 @@ $(document).ready(function() {
     })
 
     request.done(function(response) {
-      console.log(response);
-      $('.comment-list').prepend('<li>' +response.comment.body+ " " +response.comment.likes_count+ " " + response.username + "</li>")
-    }).fail(function(){
+      debugger
+      $('.comment-list').prepend(template(response));
+    }).fail(function() {
       console.log('fail');
     });
   });
