@@ -5,12 +5,16 @@ class PendingDaresController < ApplicationController
   end
 
   def create
-    @pending_dare = PendingDare.new(pend_params)
-    @pending_dare.proposer = current_user
-    if @pending_dare.save
-      redirect_tweet(dare: @pending_dare, user: current_user)
+    if !current_user
+      redirect_to new_user_path
     else
-      render html: 'fail'
+      @pending_dare = PendingDare.new(pend_params)
+      @pending_dare.proposer = current_user
+      if @pending_dare.save
+        redirect_tweet(dare: @pending_dare, user: current_user)
+      else
+        render html: 'fail'
+      end
     end
   end
 

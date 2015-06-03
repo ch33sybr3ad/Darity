@@ -4,6 +4,9 @@
 
   def new
     @donation = Donation.new
+    if !current_user
+      redirect_to new_user_path, notice: "To contribute create an account!"
+    end
   end
 
   def create
