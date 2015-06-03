@@ -4,7 +4,7 @@
     <div class="form-group col-md-3 col-sm-4">
       <div class="input-group">
         <div class="input-group-addon">@</div>
-        <input id="search-bar" type="text" placeholder="find users to dare" class="form-control input-md">
+        <input id="search-bar" type="text" placeholder="find users to dare" class="form-control input-md" value="<%= params[:search] %>">
       </div>
     </div>
   </form>
@@ -25,7 +25,7 @@
     <div class="col-md-6">
       <div class="panel panel-default">
         <div class="panel-body">
-          <h3>Invite <span id="handle-p"></span> on twitter</h3>
+          <h3>Invite <span id="handle-p"></span> on twitter with their first Dare!</h3>
           <%= bootstrap_form_for @pending_dare do |f| %>
           <p id="invalid" style="display: none;">Not a valid twitter handle</p>
             <%= f.hidden_field :twitter_handle, id: 'handle-in' %>

@@ -1,20 +1,7 @@
-$(document).ready(function() {
-
-  $('body').scrollspy({ target: '#navbar' })
-
-  $('#show-signup').on('click', function(e) {
-    e.preventDefault();
-    $('a.dropdown-toggle.signup').dropdown('toggle');
-  });
-
-  $('#show-login').on('click', function(e) {
-    e.preventDefault();
-    $('a.dropdown-toggle.login').dropdown('toggle');
-  });
-
   var watchForm = function() {
     $('.new_user').on('submit', function(e){
       e.preventDefault();
+      debugger;
       if ($(this).find('input.signup-password').val() === $(this).find('input.signup-password-confirm').val()) {
         $('.new_user').off('submit').submit();
       } else {
@@ -38,4 +25,22 @@ $(document).ready(function() {
       };
     });
   };
+
+$(document).ready(function() {
+
+  watchForm();
+  editForm();
+
+  $('body').scrollspy({ target: '#navbar' })
+
+  $('#show-signup').on('click', function(e) {
+    e.preventDefault();
+    $('a.dropdown-toggle.signup').dropdown('toggle');
+  });
+
+  $('#show-login').on('click', function(e) {
+    e.preventDefault();
+    $('a.dropdown-toggle.login').dropdown('toggle');
+  });
+
 });

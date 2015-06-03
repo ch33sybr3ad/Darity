@@ -82,7 +82,6 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.errors.empty? && @user.save
         Dare.create(title: GenerateDare.all.shuffle.first.description, description: "Welcome to Darirty. Welcome to Darity. Your first mission is to COMPLETE this dare.", daree_id: @user.id, proposer_id: 1)
-        binding.pry
         # Tell the UserMailer to send a welcome email after save
         session[:user_id] = @user.id
         @user.send_welcome_email

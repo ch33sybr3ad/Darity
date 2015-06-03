@@ -1,6 +1,13 @@
 
 <div class= "signup-area container">
-  <h1>Sign Up</h1>
+
+  <h1>Sign up via</h1>
+  <br>
+  <center>
+    <a href="/auth/twitter" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+    <hr>
+    <p>or</p>
+  </center>
     <%= bootstrap_form_for @user, html: { id: 'new-user-again' } do |f| %>
     <%= f.text_field :username %>
     <%= f.email_field :email %>
