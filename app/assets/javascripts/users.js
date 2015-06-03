@@ -3,7 +3,8 @@ var checkTwitterHandle = function(handle) {
 }
 
 var searchFunction = function() {
-  $("#search-bar").on('keyup', function() {
+
+  var searchPage = function() {
     var phrase = $(this).val();
     $('#invalid').hide();
     $.get('/users?phrase='+phrase).done(function(payload) {
@@ -27,9 +28,9 @@ var searchFunction = function() {
     }).fail(function(err) {
       console.log(err);
     });
-  });
+  };
 
-  $("#user-search").on('keyup', function() {
+  var searchBar = function() {
     var phrase = $(this).val();
     $.get('/users?phrase='+phrase).done(function(payload) {
       $('#user-find li:not(:first-child)').remove();
@@ -56,7 +57,13 @@ var searchFunction = function() {
     }).fail(function(err) {
       console.log(err);
     });
-  });
+  };
+
+  $("#search-bar").on('keyup', searchPage);
+  $("#search-bar").on('change', searchPage);
+
+  $("#user-search").on('keyup', searchBar);
+  $("#user-search").on('change', searchBar);
 };
 
 var dareForm = function() {
@@ -119,10 +126,19 @@ var tabs = function() {
   $('#challenged').click();
 };
 
+var prepareSearch = function() {
+  $('#search-bar').trigger("keyup");
+  $('#search-bar').parents('form').on('submit', function(e){
+    e.preventDefault();
+  });
+};
+
+
 var ready = function() {
   searchFunction();
   dareForm();
   tabs();
+  prepareSearch();
 }
 
 $(document).ready(ready);

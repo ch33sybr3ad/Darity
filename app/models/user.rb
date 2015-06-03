@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 
   has_many :posts, class_name: "Comment", foreign_key: "author_id"
 
-  validates_uniqueness_of :username, :email
+  validates_uniqueness_of :username
 
 
   validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, allow_nil: true
@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
     feed = challenged_dares + proposed_dares + pledged_dares
     feed.sort_by &:created_at
   end
-  
+
   def self.create_with_omniauth(auth)
     new_user = create! do |user|
       user.provider = auth["provider"]
@@ -54,7 +54,7 @@ class User < ActiveRecord::Base
   end
 
   def check_for_pending_dares
-    Dare.create(title: GenerateDare.all.shuffle.first.description, description: "Welcome to Darity. Your first mission is to COMPLETE this dare.", daree_id: @user.id, proposer_id: 1)
+    Dare.create(title: GenerateDare.all.shuffle.first.description, description: "Welcome to Darity. Your first mission is to COMPLETE this dare.", daree_id: id, proposer_id: 1)
     dares = PendingDare.where(twitter_handle: username)
     if dares.any?
       dares.each do |pending|
