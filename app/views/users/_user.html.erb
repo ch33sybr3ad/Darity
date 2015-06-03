@@ -1,0 +1,6 @@
+<%= link_to user_path(user) do %>
+  <li class="list-group-item user-partial">
+    <%= image_tag user.image_url %>
+    <%= user.username %>
+  </li>
+<% end %>
