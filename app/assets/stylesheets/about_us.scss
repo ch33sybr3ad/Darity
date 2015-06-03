@@ -1,0 +1,183 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
+.a-team .col-md-12{
+  margin-top: 1.5em;
+}
+
+.a-team {
+  margin-top: 10%;
+}
+
+.a-team h1 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  font-family: "Open Sans", sans;
+  font-weight: 300;
+  text-align: center;
+  color: rgba(255,255,255,0.6)
+}
+
+h2 {
+  color:#2c3e52;
+  font-family: "Open Sans", sans;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+h4 {
+  margin-top: 1px;
+}
+
+.profile-container {
+  width: 470px;
+  height: 352px;
+  overflow: hidden;
+  position: relative;
+}
+
+.profile-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: inherit;
+  width: auto;
+  height: 100%;
+  float: left;
+  transition: all 0.8s;
+  -moz-transition: all 0.8s;
+}
+
+.profile-container:hover img {
+  opacity: 0.7 !important;
+}
+
+.profile-container .profile-hover h3 {
+  padding: 0px;
+  margin: 0px;
+  font-size: 25px;
+  font-weight: 300;
+  font-family: "Open Sans";
+}
+
+.profile-container .profile-hover h4 {
+  padding: 0px;
+  padding-bottom: 13px;
+  margin: 0px;
+  font-size: 14px;
+  letter-spacing: 3px;
+  width: 90%;
+  font-family: "Open Sans";
+  text-transform: uppercase;
+  border-bottom: 2px solid #000;
+}
+
+.profile-container .profile-hover p {
+  padding-top: 13px;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "Open Sans";
+}
+
+.profile-container .profile-hover{
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  padding: 3% 4%;
+  background: #D90E0E;
+  color: rgba(255,255,255,1);
+  transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.4s;
+}
+
+.profile-container:hover .profile-hover {
+  display: block !important;
+  color: rgba(255,255,255,1);
+  background:rgba(217,14,14,0.85);
+  left: 0px;
+  top: 0px;
+}
+
+.profile-container .profile-text {
+  width: 50%;
+  height: inherit;
+  background: #000;
+  float: left;
+  position: absolute;
+  left: 50%;
+}
+
+.profile-container .profile-text p {
+  padding:100px 0px 0px 20px;
+  font-size: 24px;
+  font-family: "Open Sans";
+  font-weight:700;
+  color: #fff;
+}
+
+.profile-container .profile-text p span {
+  font-family: "Open Sans" !important;
+}
+
+.profile-container .profile-text a , .profile-info .profile-text {
+  padding: 0px 0px 0px 20px;
+  font-size: 14px;
+  color:#fff;
+  font-family: "Open Sans";
+  text-decoration: none;
+}
+
+.profile-container .profile-text {
+  float: left;
+}
+
+.profile-info {
+  background: #eee !important;
+  width: 50% !important;
+  height: inherit !important;
+}
+
+.profile-info p {
+  color: #000 !important;
+}
+
+ul.social-buttons {
+  margin-bottom: 0;
+}
+
+ul.social-buttons li a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    font-size: 20px;
+    line-height: 40px;
+    outline: 0;
+    color: #fff;
+    background-color: #222;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+}
+
+ul.social-buttons li a:hover,
+ul.social-buttons li a:focus,
+ul.social-buttons li a:active {
+  background-color: #D90E0E !important;
+}
+
+.social-buttons li{
+  position: relative;
+}
+
+.social-buttons li i{
+  position: absolute;
+  top: 5px;
+  left: 13px;
+}
