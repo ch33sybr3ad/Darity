@@ -1809,3 +1809,133 @@ ORDER BY c.conname
   [1m[35m (0.1ms)[0m  BEGIN
   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "videos" ("title", "url", "dare_id", "description", "uid", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "THIS IS..."], ["url", "https://www.youtube.com/watch?v=Oqa9tKarkNA"], ["dare_id", 2], ["description", "UNACCEPTABLE!!!"], ["uid", "Oqa9tKarkNA"], ["created_at", "2015-06-03 05:26:59.516525"], ["updated_at", "2015-06-03 05:26:59.516525"]]
   [1m[35m (0.3ms)[0m  COMMIT
+
+
+Started GET "/users/6" for 127.0.0.1 at 2015-06-02 22:31:33 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mDare Load (0.5ms)[0m  SELECT  "dares".* FROM "dares"  ORDER BY "dares"."id" ASC LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = $1 LIMIT 1[0m  [["follower_id", 6]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (72.2ms)
+Completed 200 OK in 1010ms (Views: 871.3ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/assets/charities.self-a4399b10e0316d129b51cf4821120dca46fb95770ae7dbc5eaec02e2b9bc19c7.css?body=1" for 127.0.0.1 at 2015-06-02 22:31:34 -0700
+
+
+Started GET "/assets/footer.self-99cae87595fb83192bc653ffddf92d97190b64af59faebf42108b718587edb93.css?body=1" for 127.0.0.1 at 2015-06-02 22:31:34 -0700
+
+
+Started GET "/assets/homepage.self-43f503712234d6afa65ba1791571cdf07abc7bbf9b05e589856647c6b4b2399c.css?body=1" for 127.0.0.1 at 2015-06-02 22:31:34 -0700
+
+
+Started GET "/assets/users.self-10740d5334959e104efeac78d502fb50c779cea22c2ba7c7874f348f41dfb3a5.css?body=1" for 127.0.0.1 at 2015-06-02 22:31:34 -0700
+
+
+Started GET "/assets/navbar.self-6fde0d1376f0c179ceb6cd9ba3e069b929e7cce4c6361511a26cdcbfaded6aeb.css?body=1" for 127.0.0.1 at 2015-06-02 22:31:34 -0700
+
+
+Started GET "/assets/generate_dares.self-08e7fb24390f226f4e5c696260f77a76f884bf580818bf9498cea0dfc3ffa692.js?body=1" for 127.0.0.1 at 2015-06-02 22:31:34 -0700
+
+
+Started GET "/users/6?dare_type=challenged" for 127.0.0.1 at 2015-06-02 22:31:35 -0700
+Processing by UsersController#show as */*
+  Parameters: {"dare_type"=>"challenged", "id"=>"6"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mDare Load (1.8ms)[0m  SELECT  "dares".* FROM "dares"  ORDER BY "dares"."id" ASC LIMIT 1
+  [1m[36mDare Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "dares" WHERE "dares"."daree_id" = $1 LIMIT 1[0m  [["daree_id", 6]]
+  [1m[35mDare Load (0.3ms)[0m  SELECT "dares".* FROM "dares" WHERE "dares"."daree_id" = $1  [["daree_id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 6]]
+  Rendered dares/challenged.html.erb (11.3ms)
+Completed 200 OK in 33ms (Views: 20.7ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2015-06-02 22:31:37 -0700
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:9292/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-02 22:31:37 -0700
+Processing by UsersController#home as HTML
+  Rendered users/home.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 277ms (Views: 276.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2015-06-02 22:31:39 -0700
+
+OAuth::Unauthorized (400 Bad Request):
+  oauth (0.4.7) lib/oauth/consumer.rb:216:in `token_request'
+  oauth (0.4.7) lib/oauth/consumer.rb:136:in `get_request_token'
+  omniauth-oauth (1.1.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+  omniauth-twitter (1.2.0) lib/omniauth/strategies/twitter.rb:60:in `request_phase'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:215:in `request_call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:183:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/builder.rb:59:in `call'
+  exception_notification (4.1.0) lib/exception_notification/rack.rb:32:in `call'
+  rack (1.6.1) lib/rack/etag.rb:24:in `call'
+  rack (1.6.1) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.1) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.1) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.1) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.1) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  puma (2.11.3) lib/puma/rack_patch.rb:13:in `call'
+  puma (2.11.3) lib/puma/configuration.rb:51:in `call'
+  puma (2.11.3) lib/puma/server.rb:507:in `handle_request'
+  puma (2.11.3) lib/puma/server.rb:375:in `process_client'
+  puma (2.11.3) lib/puma/server.rb:262:in `block in run'
+  puma (2.11.3) lib/puma/thread_pool.rb:104:in `call'
+  puma (2.11.3) lib/puma/thread_pool.rb:104:in `block in spawn_thread'
+
+
+  Rendered /Users/jasonzhao/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /Users/jasonzhao/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (113.5ms)
+  Rendered /Users/jasonzhao/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/jasonzhao/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (147.5ms)
+  Rendered /Users/jasonzhao/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/jasonzhao/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/jasonzhao/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/jasonzhao/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/jasonzhao/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (26.1ms)
+  Rendered /Users/jasonzhao/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jasonzhao/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/jasonzhao/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (52.0ms)
