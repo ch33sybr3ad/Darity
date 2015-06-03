@@ -16,8 +16,10 @@
           <% if dare.charity != nil && dare.proposer.donations !=nil %>
           <li class="list-group-item">
             <h5 class="list-group-item-heading">
-              <p><%= image_tag dare.daree.image_url %><%= link_to dare.daree.username, dare.daree %> just donated to <%= dare.charity.name %> for $<%= dare.proposer.donations[0]%></p>
-              <div class="feed-video"><%= dare.video %></div>
+              <p><%= image_tag dare.daree.image_url %><%= link_to dare.daree.username, dare.daree %> just donated to <%= dare.charity.name %> for $<%= dare.proposer.donations.last.donation_amount%></p>
+              <% if dare.video %>
+                <div class="feed-video"><%= link_to 'Watch Dare', "https://www.youtube.com/watch?v=#{dare.video.uid}" %></div>
+              <% end %> 
             </h5>
           </li>
           <% end %>
