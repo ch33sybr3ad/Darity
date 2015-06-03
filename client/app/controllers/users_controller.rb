@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def show
     @relationship = Relationship.where(followee_id: params[:id], follower_id: current_user.id) if current_user
     @followees = @user.followees
+    @sample_dare = Dare.first
     case params[:dare_type]
     when 'challenged'
       @challenged_dares = @user.challenged_dares
@@ -30,9 +31,9 @@ class UsersController < ApplicationController
     @pending_dare = PendingDare.new
     if params[:phrase]
       @users = User.where("username LIKE ?", "%#{params[:phrase]}%")
-      render json: @users
+      render json: @users.to_json, only: [:username, :image_url, :id]
     else
-      @users = User.all
+      @users = User.paginate(page: params[:page], :per_page => 30)
     end
   end
 

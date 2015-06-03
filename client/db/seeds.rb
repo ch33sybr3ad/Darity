@@ -23,6 +23,13 @@ users = Array.new(5) do
   )
 end
 
+Dare.create!(
+  title: 'Deliver a 3-5 minute lecture to your parents entitled "flirting for the modern teenager".',
+  description: 'Be sure to include diagrams and demonstrations. Uses the other players to demonstrate your points.',
+  proposer: users.first,
+  daree: users[1]
+)
+
 a_e_charities = HTTParty.get('https://www.kimonolabs.com/api/ci5w4v76?apikey=jR0ep0PlzRAYmFSLYW4sScLoay3VFcDE')
 charities_array = a_e_charities["results"]["collection1"]
 charities_array = charities_array.shift(50)

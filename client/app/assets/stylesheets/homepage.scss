@@ -1,5 +1,9 @@
-body { position: relative; }
+html { word-wrap: break-word; }
 
+body {
+  position: relative;
+  padding-top: 80px;
+}
 
 #video {
   opacity: .7;
@@ -11,12 +15,9 @@ body { position: relative; }
 }
 
 .video-container {
+  margin-top: -80px;
   position: relative;
   z-index: -10;
-}
-
-.follows {
-  margin-top: 1em;
 }
 
 .jumbotron {

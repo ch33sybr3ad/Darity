@@ -2,53 +2,67 @@
 
   <div class="row">
     <div class="col col-md-3">
-    <section class="user panel panel-default">
-      <div class="panel-body">
-        <%= image_tag @user.image_url %>
-        <h2><%= @user.username.capitalize %></h2>
+      <section class="user panel panel-default">
+        <div class="panel-body">
+          <%= image_tag @user.image_url, class: 'img-responsive' %>
+          <h2><%= @user.username.capitalize %></h2>
 
-        <% if @user == current_user %>
-        <%= link_to "Dare Yourself!", new_user_dare_path(current_user) + "?daree=#{@user.id}", class: 'btn btn-danger btn-lg' %>
-        <% elsif current_user %>
-        <%= link_to "DARE!", new_user_dare_path(current_user) + "?daree=#{@user.id}", class: 'btn btn-danger' %>
-        <% if @relationship.any? %>
-        <%= link_to "unfollow", user_relationship_path(@user, @relationship), method: :delete, class: 'btn btn-default' %>
-        <% else %>
-        <%= link_to "follow", user_relationships_path(@user), method: :post, class: 'btn btn-default' %>
-        <% end %>
-        <% end %>
+          <% if @user == current_user %>
+          <%= link_to "Dare Yourself!", new_user_dare_path(current_user) + "?daree=#{@user.id}", class: 'btn btn-danger' %>
+          <% elsif current_user %>
+          <%= link_to "DARE!", new_user_dare_path(current_user) + "?daree=#{@user.id}", class: 'btn btn-danger' %>
+          <% if @relationship.any? %>
+          <%= link_to "unfollow", user_relationship_path(@user, @relationship), method: :delete, class: 'btn btn-default' %>
+          <% else %>
+          <%= link_to "follow", user_relationships_path(@user), method: :post, class: 'btn btn-default' %>
+          <% end %>
+          <% end %>
 
+        </div>
+      </section>
+
+      <section class="follows col col-md-12 panel panel-default">
+        <div class="panel-body">
+          <h4>Following:</h4>
+          <% if @followees.any? %>
+          <ul class="list-group">
+            <%= render @followees %>
+          </ul>
+          <% else %>
+            <%= link_to 'find people', users_path, class: 'btn btn-default' %>
+          <% end %>
+
+        </div>
+      </section>
+    </div>
+  </section>
+
+
+  <div class="dares col col-md-9">
+    <section class="panel panel-default">
+      <div class="panel-heading">
+        Trending Dare
       </div>
+      <div class="panel-body">
+        <h4><%= @sample_dare.title %></h4>
+        <p><%= @sample_dare.description %></p>
+        <p><%= link_to @sample_dare.proposer.username %> dares <%= link_to @sample_dare.daree.username %></p>
+        <%= link_to 'DARE SOMEONE', users_path, class: 'btn btn-success btn-lg' %>
+      </div>
+    </section>
+    <section class="panel panel-default">
+      <div class="panel-body">
 
-        <section class="follows col col-md-12 panel panel-default">
-          <div class="panel-body">
-            <h4>Following:</h4>
-            <% if @followees.any? %>
-            <ul class="list-group">
-              <%= render @followees %>
-            </ul>
-            <% else %>
-            no one yet
-            <% end %>
+        <ul class="nav nav-tabs">
+          <li role="presentation"><a href="" id="challenged">challenged</a></li>
+          <li role="presentation"><a href="" id="proposed">proposed</a></li>
+          <li role="presentation"><a href="" id="pledged">pledged</a></li>
+        </ul>
 
-          </div>
-        </section>
-    </div>
-  </section>
-
-
-  <section class="dares col col-md-9 panel panel-default">
-    <div class="panel-body">
-
-      <ul class="nav nav-tabs">
-        <li role="presentation"><a href="" id="challenged">challenged</a></li>
-        <li role="presentation"><a href="" id="proposed">proposed</a></li>
-        <li role="presentation"><a href="" id="pledged">pledged</a></li>
-      </ul>
-
-      <div id="view-dares"></div>
-    </div>
-  </section>
+        <div id="view-dares"></div>
+      </div>
+    </section>
+  </div>
 </div>
 
 </main>
