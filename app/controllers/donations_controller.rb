@@ -4,6 +4,10 @@
 
   def new
     @donation = Donation.new
+    @charity = @dare.charity
+    @daree = @dare.daree
+    @pledged = @dare.donations.inject(0) { |sum, donation| sum + donation.donation_amount }
+
     if !current_user
       redirect_to new_user_path, notice: "To contribute create an account!"
     end
