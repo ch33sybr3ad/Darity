@@ -1,3 +1,5 @@
+<div class="backed"></div>
+
 <main class="container">
 
   <div class="row">
@@ -46,8 +48,13 @@
       <div class="panel-body">
         <h4><%= @sample_dare.title %></h4>
         <p><%= @sample_dare.description %></p>
-        <p><%= link_to @sample_dare.proposer.username %> dares <%= link_to @sample_dare.daree.username %></p>
-        <%= link_to 'DARE SOMEONE', users_path, class: 'btn btn-success btn-lg' %>
+        <% proposer = @sample_dare.proposer %>
+        <% daree = @sample_dare.daree %>
+        <p><%= link_to proposer.username, proposer %>
+          dares
+          <%= link_to daree.username, daree %>
+        </p>
+        <%= link_to 'DARE SOMEONE', users_path, class: 'btn btn-danger btn-lg' %>
       </div>
     </section>
     <section class="panel panel-default">
