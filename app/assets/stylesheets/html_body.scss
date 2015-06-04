@@ -1,4 +1,7 @@
-$red-dark: rgb(159, 44, 53);
+/*$red-dark: rgb(159, 44, 53);*/
+/*$red-dark: #AF3331;*/
+$red-dark: #C03836;
+/*$red-dark: #890620;*/
 $red-pink: rgb(239, 64, 74);
 $red-light: rgb(178, 50, 59);
 
@@ -33,9 +36,6 @@ a:hover {
   color: $red-dark;
 }
 
-.panel {
-  background: #efefef;
-}
 
 .panel-white { background-color: white; }
 
@@ -43,6 +43,7 @@ a:hover {
     background: $red-pink;
     color: #ffffff;
 }
+
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
     background: #33a6cc;
