@@ -165,18 +165,11 @@ ul.social-buttons li a {
     -moz-transition: all .3s;
     transition: all .3s;
 }
-
-ul.social-buttons li a:hover,
-ul.social-buttons li a:focus,
-ul.social-buttons li a:active {
-  background-color: #D90E0E !important;
-}
-
-.social-buttons li{
+.a-team .social-buttons li{
   position: relative;
 }
 
-.social-buttons li i{
+.a-team .social-buttons li i{
   position: absolute;
   top: 5px;
   left: 13px;
