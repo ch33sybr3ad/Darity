@@ -1,19 +1,24 @@
+<div class="backed"></div>
 
 <div class= "signup-area container">
-
-  <h1>Sign up via</h1>
-  <br>
-  <center>
-    <a href="/auth/twitter" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
-    <hr>
-    <p>or</p>
-  </center>
-    <%= bootstrap_form_for @user, html: { id: 'new-user-again' } do |f| %>
-    <%= f.text_field :username %>
-    <%= f.email_field :email %>
-    <%= f.password_field :password, class: "signup-password"%>
-    <%= f.password_field :password_confirm, class: "signup-password-confirm"%>
-    <div class="invalid-sign-up alert alert-danger" style='display:none'></div>
-    <%= f.submit "Sign Up", class: "btn btn-primary" %>
-  <% end %>
+  <div class="panel panel-default wid-90">
+    <div class="panel-heading">
+      <center><h1>Sign up via</h1></center>
+    </div>
+    <div class="panel-body wid-90">
+      <center>
+        <a href="/auth/twitter" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+        <hr>
+        <p>or</p>
+      </center>
+        <%= bootstrap_form_for @user, layout: :horizontal, html: { id: 'new-user-again', class: 'new_user' } do |f| %>
+        <%= f.text_field :username, required: true %>
+        <%= f.email_field :email, required: true %>
+        <%= f.password_field :password, class: "signup-password", required: true %>
+        <%= f.password_field :password_confirm, class: "signup-password-confirm", required: true %>
+        <div class="invalid-sign-up alert alert-danger" style='display:none'></div>
+        <%= f.submit "Sign Up", class: "btn btn-danger" %>
+      <% end %>
+    </div>
+  </div>
 </div>

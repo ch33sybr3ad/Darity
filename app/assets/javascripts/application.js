@@ -15,6 +15,7 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require ./jquery.routes
+//= require jquery.scrollTo
 // require turbolinks
 //= require handlebars
 //= require_tree .
