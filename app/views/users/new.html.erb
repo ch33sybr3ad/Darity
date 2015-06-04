@@ -11,7 +11,7 @@
         <hr>
         <p>or</p>
       </center>
-        <%= bootstrap_form_for @user, layout: :horizontal, html: { id: 'new-user-again', class: 'new_user' } do |f| %>
+        <%= bootstrap_form_for @user, layout: :horizontal, html: { id: 'new-user-again', class: 'new_user ' } do |f| %>
         <%= f.text_field :username, required: true %>
         <%= f.email_field :email, required: true %>
         <%= f.password_field :password, class: "signup-password", required: true %>
