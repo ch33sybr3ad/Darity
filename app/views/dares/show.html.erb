@@ -60,72 +60,80 @@
     </div>
   </div>
 
-<div class="dare-video">
-  <% if @video %>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @url %>" frameborder="0" allowfullscreen></iframe>
-  <% end %>
-  <p>
-    <% if @pledgers.include?(current_user)  %>
-      <button class="btn btn-default approve" href="<%= @dare.id%>">
-        Approve Dare Vid as Pledger!
-      </button>
+  <div class="dare-video">
 
-      <button class="btn btn-default disapprove" href="<%= @dare.id%>">
-        <!-- unacceptaaable! -->
-        Disapprove Dare Vid as Pledger!
-      </button>
+    <% if @video %>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @url %>" frameborder="0" allowfullscreen></iframe>
+    <% elsif @dare.price %>
+      <%= image_tag 'gopher_accepted.png' %>
+    <% else %>
+      <%= image_tag 'gopher_pending.png' %>
     <% end %>
-  </p>
-</div>
+    <p>
+      <% if @pledgers.include?(current_user)  %>
+        <button class="btn btn-default approve" href="<%= @dare.id%>">
+          Approve Dare Vid as Pledger!
+        </button>
 
-<hr>
+        <button class="btn btn-default disapprove" href="<%= @dare.id%>">
+          <!-- unacceptaaable! -->
+          Disapprove Dare Vid as Pledger!
+        </button>
+      <% end %>
+    </p>
 
-<h2>Comments</h2>
+  </div>
+
+  <div class="panel panel-default wid-90">
+    <div class="panel-body wid-90">
+      <h2>Comments</h2>
 
 
-<% if current_user %>
+      <% if current_user %>
 
-  <%= bootstrap_form_for @comment, id: current_user do |f| %>
-    <%= f.text_area :body %>
-    <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.hidden_field :dare_id, value: @dare.id %>
-    <%= f.submit :submit %>
-  <% end %>
+        <%= bootstrap_form_for @comment, id: current_user do |f| %>
+          <%= f.text_area :body %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <%= f.hidden_field :dare_id, value: @dare.id %>
+          <%= f.submit :submit %>
+        <% end %>
 
-<% else %>
+      <% else %>
 
- <a href="/auth/twitter" class="btn btn-tw"><i class="fa fa-twitter"></i> Sign up to leave a comment </a>
+       <a href="/auth/twitter" class="btn btn-tw"><i class="fa fa-twitter"></i> Sign up to leave a comment </a>
 
-<% end %>
+      <% end %>
 
- <script id="new-dare-comment" type="text/x-handlebars-template">
-  <li>
-    <div class="media">
-      <a class="pull-left" href="#">
-        <img class="media-object" src="{{image_url}}">
-      </a>
-      <div class="media-body">
-        <h4 class="media-heading">{{username}}</h4>
-          {{comment.body}}
-          <span>{{ comment.likes_count }}</span>
-            <a href="/comments/{{comment.id}}/upvote" class="btn btn-default btn-sm">
-              <i class="fa fa-thumbs-o-up"></i>
+       <script id="new-dare-comment" type="text/x-handlebars-template">
+        <li>
+          <div class="media">
+            <a class="pull-left" href="#">
+              <img class="media-object" src="{{image_url}}">
             </a>
-            <a href="/comments/{{comment.id}}/downvote" class="btn btn-default btn-sm">
-              <i class="fa fa-thumbs-o-down"></i>
-            </a>
-        <div class="media">
-          {{comment.created_at.strftime("%I:%M%p %m/%d/%y") }}
-        </div>
-      </div>
+            <div class="media-body">
+              <h4 class="media-heading">{{username}}</h4>
+                {{comment.body}}
+                <span>{{ comment.likes_count }}</span>
+                  <a href="/comments/{{comment.id}}/upvote" class="btn btn-default btn-sm">
+                    <i class="fa fa-thumbs-o-up"></i>
+                  </a>
+                  <a href="/comments/{{comment.id}}/downvote" class="btn btn-default btn-sm">
+                    <i class="fa fa-thumbs-o-down"></i>
+                  </a>
+              <div class="media">
+                {{ comment.created_at }}
+              </div>
+            </div>
+          </div>
+        </li>
+        <hr>
+       </script>
+
+      <ul class="comment-list list-group">
+        <%= render @comments %>
+      </ul>
     </div>
-  </li>
-  <hr>
- </script>
-
-<ul class="comment-list">
-  <%= render @comments %>
-</ul>
+  </div>
 
 </div>
 
