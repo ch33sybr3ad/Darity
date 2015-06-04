@@ -39,7 +39,8 @@ class UsersController < ApplicationController
 
   def login
     @user = User.where(email: user_params["email"]).first
-    if @user && @user.password == user_params["password"]
+    pass = (user_params["password"] == "" ? nil : user_params["password"])
+    if @user && @user.password == pass
       session[:user_id] = @user.id
       redirect_to @user, notice: 'Signed In'
     else

@@ -4,7 +4,8 @@
       <img class="media-object" src="<%=comment.author.image_url%>">
     </a>
     <div class="media-body">
-      <h4 class="media-heading"><%= comment.author.username %></h4>
+      <% author = comment.author %>
+      <h4 class="media-heading"><%= link_to author.username, author, method: :get %></h4>
         <p><%= comment.body %></p>
         <span><%=comment.likes_count%></span>
           <%= link_to upvote_path(comment), class: "btn btn-default btn-sm" do %>
