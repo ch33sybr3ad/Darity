@@ -4,7 +4,7 @@
 
   <title>Client</title>
   <%= stylesheet_link_tag  'application', media: 'all' %>
-  <!-- // <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script> -->
+
   <%= csrf_meta_tags %>
 </head>
 
@@ -72,7 +72,7 @@
                     </div>
                     <p>or</p>
                     <%= bootstrap_form_for @user || User.new, url: login_path, html: { class: 'login-user' } do |f| %>
-                    <%= f.email_field :email %>
+                    <%= f.email_field :email, required: true %>
                     <%= f.password_field :password %>
                     <div class="form-group">
                       <button type="submit" class="btn btn-danger btn-block">Sign in</button>
@@ -100,10 +100,10 @@
                     </div>
                     <p>or</p>
                     <%= bootstrap_form_for @user || User.new do |f| %>
-                    <%= f.text_field :username %>
-                    <%= f.email_field :email %>
-                    <%= f.password_field :password, class: "signup-password"%>
-                    <%= f.password_field :password_confirm, class: "signup-password-confirm"%>
+                    <%= f.text_field :username, required: true %>
+                    <%= f.email_field :email, required: true %>
+                    <%= f.password_field :password, class: "signup-password", required: true %>
+                    <%= f.password_field :password_confirm, class: "signup-password-confirm", required: true %>
                     <div class="invalid-sign-up alert alert-danger" style='display:none'></div>
                     <%= f.submit "Sign Up", class: "btn btn-danger btn-block" %>
                     <% end %>

@@ -5,6 +5,7 @@
   def new
     @donation = Donation.new
     @charity = @dare.charity
+    @proposer = @dare.proposer
     @daree = @dare.daree
     @pledged = @dare.donations.inject(0) { |sum, donation| sum + donation.donation_amount }
 
