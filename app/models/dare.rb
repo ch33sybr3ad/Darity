@@ -10,5 +10,9 @@ class Dare < ActiveRecord::Base
 
   validates_presence_of :title, :description, :proposer_id, :daree_id
   validates :price, allow_nil: true, numericality: true
+
+  def pledged
+    donations.inject(0) { |sum, donation| sum + donation.donation_amount }
+  end
 end
 

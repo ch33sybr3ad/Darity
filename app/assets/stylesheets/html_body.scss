@@ -1,9 +1,62 @@
+$red-dark: rgb(159, 44, 53);
+$red-pink: rgb(239, 64, 74);
+$red-light: rgb(178, 50, 59);
+
 html,
 body {
    margin:0;
    height:100%;
+   word-wrap: break-word;
 }
 
 #wrap {
   min-height: 90%;
 }
+
+.backed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -50;
+  background-color: $red-dark;
+}
+
+a {
+  color: $red-pink;
+}
+
+.panel-title > a { color: $red-pink; }
+
+a:hover {
+  color: $red-dark;
+}
+
+.panel {
+  background: #efefef;
+}
+
+.panel-white { background-color: white; }
+
+.btn-danger {
+    background: $red-pink;
+    color: #ffffff;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #33a6cc;
+}
+
+.btn-primary:active, .btn-primary.active {
+    background: #007299;
+    box-shadow: none;
+}
+
+.nav-tabs { border-bottom: #222, 1px, solid }
+
+.mar-left { margin-left: 20px; }
+.wid-80 { width: 80%; margin: 0 auto;}
+.wid-90 { width: 90%; margin: 0 auto;}
+
+hr { color: black; }
