@@ -21,6 +21,7 @@ gem 'sprockets'
 gem 'will_paginate',            '3.0.7'
 gem 'bootstrap-will_paginate',  '0.0.10'
 gem 'jquery-turbolinks'
+gem "jquery-scrollto-rails"
 gem 'sidekiq'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
