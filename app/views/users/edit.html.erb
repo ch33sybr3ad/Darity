@@ -1,25 +1,24 @@
+<div class="backed"></div>
+
 <div class="container">
-  <h1> Account Settings </h1>
+  <div class="panel panel-default wid-90">
+    <div class="panel-body wid-90">
+      <h1> Account Settings </h1>
 
-  <p>Change your basic account and language settings</p>
+      <p>Change your basic account and language settings</p>
 
-  <%= bootstrap_form_for @user do |f| %>
+      <%= bootstrap_form_for @user, layout: :horizontal do |f| %>
 
-  <%= f.email_field :email %>
+      <%= f.email_field :email %>
 
-  <%= f.password_field :current_password %>
+      <%= f.password_field :current_password %>
 
-  <%= f.password_field :new_password %>
+      <%= f.password_field :new_password %>
 
-  <%= f.password_field :confirm_password %>
-  
-  <%= f.submit "Save Changes", class: "btn btn-primary" %>
-  <% end %>
+      <%= f.password_field :confirm_password %>
 
-
-  <p>Email</p>
-
-  <p>Password</p>
-
-  <p>Delete Account</p>
-</div>  
+      <%= f.submit "Save Changes", class: "btn btn-info" %>
+      <% end %>
+    </div>
+  </div>
+</div>

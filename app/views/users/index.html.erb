@@ -30,11 +30,11 @@
               <div class="panel-body">
                 <h3>Invite <span id="handle-p"></span> on twitter with their first Dare!</h3>
                 <%= bootstrap_form_for @pending_dare do |f| %>
-                <p id="invalid" style="display: none;">Not a valid twitter handle</p>
+                <p id="invalid" style="display: none; color: red;">Not a valid twitter handle</p>
                   <%= f.hidden_field :twitter_handle, id: 'handle-in' %>
                   <%= f.text_field :title %>
                   <%= f.text_area :description %>
-                  <%= f.submit "Tweet this Dare!", class: 'btn btn-primary' %>
+                  <%= f.submit "Tweet this Dare!", class: 'btn btn-info' %>
                 <% end %>
               </div>
             </div>
@@ -44,11 +44,11 @@
               <div class="panel-body">
                 <h4>Can't think of a Dare? Click the generate button to get the creative juices flowing!</h4>
 
-                <button class="btn btn-success generate" href="#">
+                <button class="btn btn-default generate" href="#">
                   Generate a Dare!
                 </button>
 
-                <button class="btn btn-danger use-dare" href="#" style="display: none">
+                <button class="btn btn-default use-dare" href="#" style="display: none">
                   Autofill
                 </button>
 
