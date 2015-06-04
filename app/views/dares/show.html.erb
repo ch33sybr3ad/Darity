@@ -22,7 +22,7 @@
           </div>
 
           <p><%= link_to @proposer.username.capitalize, @proposer, class: 'label label-default' %> dares <%= link_to @daree.username.capitalize, @daree, class: 'label label-default' %></p>
-          <p>Total <%= link_to "pledgers", %> <%= @dare.donations.count %></p>
+          <p>Total <%= @dare.donations.count %></p>
           <% if @dare.price %>
             <p>$<%= @pledged %> of $<%= @dare.price.to_i %> collected</p>
 
