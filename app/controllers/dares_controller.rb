@@ -14,7 +14,7 @@ class DaresController < ApplicationController
     @daree = @dare.daree
     @pledgers = @dare.pledgers
     @comment = Comment.new
-    @pledged = @dare.donations.inject(0) { |sum, donation| sum + donation.donation_amount }
+    @pledged = @dare.pledged
 
     @video = Video.where(dare_id: @dare.id).first
     if @video

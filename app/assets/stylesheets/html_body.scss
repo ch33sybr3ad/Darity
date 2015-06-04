@@ -12,9 +12,21 @@ body {
   min-height: 90%;
 }
 
+.backed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -50;
+  background-color: $red-dark;
+}
+
 a {
   color: $red-pink;
 }
+
+.panel-title > a { color: $red-pink; }
 
 a:hover {
   color: $red-dark;
@@ -25,8 +37,8 @@ a:hover {
 }
 
 
-.btn-primary {
-    background: #0099cc;
+.btn-danger {
+    background: $red-pink;
     color: #ffffff;
 }
 
@@ -38,3 +50,6 @@ a:hover {
     background: #007299;
     box-shadow: none;
 }
+
+.nav-tabs { border-bottom: #222, 1px, solid }
+
