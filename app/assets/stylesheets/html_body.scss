@@ -1,3 +1,7 @@
+$red-dark: rgb(159, 44, 53);
+$red-pink: rgb(239, 64, 74);
+$red-light: rgb(178, 50, 59);
+
 html,
 body {
    margin:0;
@@ -7,3 +11,45 @@ body {
 #wrap {
   min-height: 90%;
 }
+
+.backed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -50;
+  background-color: $red-dark;
+}
+
+a {
+  color: $red-pink;
+}
+
+.panel-title > a { color: $red-pink; }
+
+a:hover {
+  color: $red-dark;
+}
+
+.panel {
+  background: #efefef;
+}
+
+
+.btn-danger {
+    background: $red-pink;
+    color: #ffffff;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #33a6cc;
+}
+
+.btn-primary:active, .btn-primary.active {
+    background: #007299;
+    box-shadow: none;
+}
+
+.nav-tabs { border-bottom: #222, 1px, solid }
+
