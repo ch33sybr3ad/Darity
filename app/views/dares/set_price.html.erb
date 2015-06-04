@@ -1,20 +1,26 @@
-<h1><%= @dare.title %></h1>
+<div class="backed"></div>
 
-<p><%= @dare.description %></p>
+<div class="container">
+  <div class="panel panel-body">
+    <div class="panel-heading">
+      <h1><%= @dare.title %></h1>
+    </div>
+    <div class="panel-body">
 
-<%= form_for @dare, url: put_price_path(@proposer, @dare) do |f| %>
-  <%= f.label :price %>
-  <%= f.number_field :price  %>
-  <%= f.label :charity %>
-  <%= f.select :charity do  %>
-    <% @charities.each do |charity| %>
-      <%= content_tag :option, charity.name, value: charity.name %>
-    <% end %>
-  <% end %>
-  <%= f.submit :submit %>
-<% end %>
+      <p><%= @dare.description %></p>
 
-<p>proposed by: <%= @proposer.username.capitalize %></p>
-<p>proposed to: <%= @daree.username.capitalize %></p>
+      <hr>
 
-<p><%= link_to "home",  user_dares_path(@daree) %></p>
+      <%= bootstrap_form_for @dare, layout: :horizontal, url: put_price_path(@proposer, @dare) do |f| %>
+        <%= f.number_field :price, prepend: '$'  %>
+        <%= f.select :charity, @charities.map { |char| [char.name, char.name]}  %>
+        <%= f.submit :submit, class: 'col-md-offset-4, btn btn-danger' %>
+      <% end %>
+
+      <p>proposed by: <%= @proposer.username.capitalize %></p>
+      <p>proposed to: <%= @daree.username.capitalize %></p>
+
+      <p><%= link_to "back",  user_dares_path(@daree) %></p>
+    </div>
+  </div>
+</div>

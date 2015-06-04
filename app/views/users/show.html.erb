@@ -31,6 +31,7 @@
             <%= render @followees %>
           </ul>
           <% else %>
+          <p>no one yet...</p>
             <%= link_to 'find people', users_path, class: 'btn btn-default' %>
           <% end %>
 

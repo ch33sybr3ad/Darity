@@ -3,6 +3,10 @@
     max-width: 30px;
     padding-right: 8px;
   }
+  background: -webkit-linear-gradient(white, #eee);
+  background: -o-linear-gradient(white, #eee);
+  background: -moz-linear-gradient(white, #eee);
+  background: linear-gradient(white, #eee);
 }
 
 #gen-dare {
