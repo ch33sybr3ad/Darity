@@ -39,8 +39,7 @@ class UsersController < ApplicationController
 
   def login
     @user = User.where(email: user_params["email"]).first
-    pass = (user_params["password"] == "" ? nil : user_params["password"])
-    if @user && @user.password == pass
+    if @user && @user.authenticate(user_params["password"]) || !@user.password_digest
       session[:user_id] = @user.id
       redirect_to @user, notice: 'Signed In'
     else
@@ -54,21 +53,24 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.password == user_params['current_password']
-      if user_params['new_password'] && user_params['confirm_password']
-        @user.update(password: user_params['new_password'])
+    if !@user.password_digest || @user.authenticate(user_params['current_password'])
+      if user_params['new_password'] != ''
+        if user_params['new_password'] == user_params['confirm_password']
+          @user.password = user_params['new_password']
+          flash[:notice] = "Password Changed" if @user.save
+        else
+          @user.errors.add(:new_password, "doesn't match")
+        end
       end
-      if @user.update(email: user_params['email'])
-        flash[:notice] = "Successfully Changed Account Settings"
-        render "edit", id: @user
-      else
-        flash[:error] = "Invalid Email"
-        render "edit", id: @user
+      if @user.errors.empty? && @user.update(email: user_params['email'])
+        flash[:notice] ||= ''
+        flash[:notice] += " Email Changed"
       end
     else
-      flash[:error] = "Incorrect Password"
-      render "edit", id: @user
+      @user.errors.add(:current_password, "incorrect")
     end
+    p '#' * 50, @user.errors.full_messages, '#' * 50
+    render "edit", id: @user
   end
 
   def new

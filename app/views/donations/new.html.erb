@@ -1,18 +1,20 @@
+<div class="backed"></div>
+
 <div class="container">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <div class="panel panel-default">
         <div class="panel-body">
           <h3>Donation for <%= link_to @charity.name, @charity.url %></h3>
-          <%= bootstrap_form_for @donation, html: {class: "form-inline"} do |f| %>
-            <%= f.text_field :donation_amount %>
+          <%= bootstrap_form_for @donation, layout: :horizontal do |f| %>
+            <%= f.text_field :donation_amount, prepend: '$', required: true %>
             <%= f.submit "Submit", class: 'btn btn-success' %>
           <% end %>
 
           <hr>
 
           <div class="dare-info">
-            <p>dared to: <%= link_to @daree.username.capitalize, @daree %></p>
+            <p><%= link_to @proposer.username, @proposer %> dares <%= link_to @daree.username, @daree %></p>
             <p>Total Pledgers: <%= @dare.donations.count %></p>
             <% if @dare.price %>
               <p>$<%= @pledged %> of $<%= @dare.price.to_i %> collected</p>
@@ -23,6 +25,9 @@
               </div>
             <% end %>
           </div>
+
+          <%= back_button [@proposer, @dare] %>
+
         </div>
       </div>
     </div>

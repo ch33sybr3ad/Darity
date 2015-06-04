@@ -14,13 +14,13 @@
       <hr>
 
       <%= bootstrap_form_for @dare, layout: :horizontal, url: put_price_path(@proposer, @dare) do |f| %>
-        <%= f.number_field :price, prepend: '$'  %>
-        <%= f.select :charity, @charities.map { |char| [char.name, char.name]}  %>
+        <%= f.number_field :price, prepend: '$', required: true  %>
+        <%= f.select :charity, @charities.map { |char| [char.name, char.name]}, required: true  %>
         <%= f.submit :submit, class: 'col-md-offset-2 btn btn-danger' %>
       <% end %>
 
 
-      <p><%= link_to raw('<i class="fa fa-long-arrow-left"></i> ' + "back"),  user_dares_path(@daree), class: 'btn btn-default btn-sm' %></p>
+      <p><%= link_to raw('<i class="fa fa-long-arrow-left"></i> ' + "back"),  user_path(@daree), class: 'btn btn-default btn-sm' %></p>
     </div>
   </div>
 </div>
