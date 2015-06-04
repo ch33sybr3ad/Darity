@@ -1,0 +1,155 @@
+# Logfile created on 2015-05-30 10:27:07 -0700 by logger.rb/41954
+D, [2015-05-30T10:54:57.912158 #33779] DEBUG -- : /Users/charlieward/Desktop/DBC_stuff/darity/client/app/controllers/charities_controller.rb:5: syntax error, unexpected '}', expecting =>
+    client = JustGiving::Search.new({'a014c532'})
+                                                ^
+D, [2015-05-30T10:54:57.913870 #33779] DEBUG -- : []
+D, [2015-05-30T10:55:28.349932 #33779] DEBUG -- : /Users/charlieward/Desktop/DBC_stuff/darity/client/app/controllers/charities_controller.rb:5: syntax error, unexpected '}', expecting =>
+    client = JustGiving::Search.new({"a014c532"})
+                                                ^
+D, [2015-05-30T10:55:28.350736 #33779] DEBUG -- : []
+D, [2015-05-30T10:55:50.150199 #34957] DEBUG -- : /Users/charlieward/Desktop/DBC_stuff/darity/client/app/controllers/charities_controller.rb:5: syntax error, unexpected '}', expecting =>
+    client = JustGiving::Search.new({"a014c532"})
+                                                ^
+D, [2015-05-30T10:55:50.150899 #34957] DEBUG -- : []
+D, [2015-05-30T10:55:53.442530 #34957] DEBUG -- : /Users/charlieward/Desktop/DBC_stuff/darity/client/app/controllers/charities_controller.rb:5: syntax error, unexpected '}', expecting =>
+    client = JustGiving::Search.new({"a014c532"})
+                                                ^
+D, [2015-05-30T10:55:53.443220 #34957] DEBUG -- : []
+D, [2015-05-30T10:56:24.602275 #34957] DEBUG -- : /Users/charlieward/Desktop/DBC_stuff/darity/client/app/controllers/charities_controller.rb:5: syntax error, unexpected '}', expecting =>
+    client = JustGiving::Search.new({"a014c532"})
+                                                ^
+D, [2015-05-30T10:56:24.603115 #34957] DEBUG -- : []
+D, [2015-05-30T10:57:08.969803 #34957] DEBUG -- : /Users/charlieward/Desktop/DBC_stuff/darity/client/app/controllers/charities_controller.rb:8: syntax error, unexpected '}', expecting =>
+    client = JustGiving::Search.new({"a014c532"})
+                                                ^
+D, [2015-05-30T10:57:08.970578 #34957] DEBUG -- : []
+D, [2015-05-30T10:57:11.568931 #34957] DEBUG -- : /Users/charlieward/Desktop/DBC_stuff/darity/client/app/controllers/charities_controller.rb:8: syntax error, unexpected '}', expecting =>
+    client = JustGiving::Search.new({"a014c532"})
+                                                ^
+D, [2015-05-30T10:57:11.569626 #34957] DEBUG -- : []
+D, [2015-05-30T10:58:07.822753 #34957] DEBUG -- : JustGiving::Error::InternalServerError
+D, [2015-05-30T10:58:07.830383 #34957] DEBUG -- : ["app/controllers/charities_controller.rb:10:in `index'"]
+D, [2015-05-30T11:59:28.541054 #34957] DEBUG -- : 'nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.
+D, [2015-05-30T11:59:28.550380 #34957] DEBUG -- : ["app/views/charities/index.html.erb:5:in `_app_views_charities_index_html_erb___2471153179405447331_70289966764980'"]
+D, [2015-05-30T12:11:06.012043 #35566] DEBUG -- : 'nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.
+D, [2015-05-30T12:11:06.022389 #35566] DEBUG -- : ["app/views/charities/index.html.erb:5:in `_app_views_charities_index_html_erb___264177850975880075_70200723393340'"]
+D, [2015-05-30T12:36:55.203047 #36381] DEBUG -- : /Users/charlieward/Desktop/DBC_stuff/darity/client/app/controllers/users_controller.rb:74: syntax error, unexpected <<, expecting keyword_end
+<<<<<<< HEAD
+  ^
+/Users/charlieward/Desktop/DBC_stuff/darity/client/app/controllers/users_controller.rb:77: syntax error, unexpected ===, expecting keyword_end
+=======
+   ^
+/Users/charlieward/Desktop/DBC_stuff/darity/client/app/controllers/users_controller.rb:80: syntax error, unexpected >>, expecting keyword_end
+>>>>>>> master
+  ^
+/Users/charlieward/Desktop/DBC_stuff/darity/client/app/controllers/users_controller.rb:92: syntax error, unexpected end-of-input, expecting keyword_end
+D, [2015-05-30T12:36:55.204042 #36381] DEBUG -- : []
+D, [2015-05-30T16:31:28.677449 #38931] DEBUG -- : uninitialized constant DaresController::GenerateDares
+D, [2015-05-30T16:31:28.678454 #38931] DEBUG -- : ["app/controllers/dares_controller.rb:17:in `new'"]
+D, [2015-05-30T16:31:28.891755 #38931] DEBUG -- : uninitialized constant DaresController::GenerateDares
+D, [2015-05-30T16:31:28.892612 #38931] DEBUG -- : ["app/controllers/dares_controller.rb:17:in `new'"]
+D, [2015-05-30T17:55:53.919826 #38931] DEBUG -- : Missing template generate_dares/generate, application/generate with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :png, :jpeg, :gif, :bmp, :tiff, :mpeg, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/charlieward/Desktop/DBC_stuff/darity/client/app/views"
+
+D, [2015-05-30T17:55:53.920974 #38931] DEBUG -- : []
+D, [2015-05-30T17:56:31.594092 #38931] DEBUG -- : Missing template generate_dares/generate, application/generate with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :png, :jpeg, :gif, :bmp, :tiff, :mpeg, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/charlieward/Desktop/DBC_stuff/darity/client/app/views"
+
+D, [2015-05-30T17:56:31.614736 #38931] DEBUG -- : []
+D, [2015-05-30T18:05:04.047341 #38931] DEBUG -- : Missing template generate_dares/generate, application/generate with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/charlieward/Desktop/DBC_stuff/darity/client/app/views"
+
+D, [2015-05-30T18:05:04.144785 #38931] DEBUG -- : ["app/controllers/generate_dares_controller.rb:5:in `generate'"]
+D, [2015-05-30T18:05:25.424722 #38931] DEBUG -- : Missing template generate_dares/generate, application/generate with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/charlieward/Desktop/DBC_stuff/darity/client/app/views"
+
+D, [2015-05-30T18:05:25.440771 #38931] DEBUG -- : ["app/controllers/generate_dares_controller.rb:5:in `generate'"]
+D, [2015-05-30T18:06:51.184088 #38931] DEBUG -- : Missing template generate_dares/generate, application/generate with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/charlieward/Desktop/DBC_stuff/darity/client/app/views"
+
+D, [2015-05-30T18:06:51.196988 #38931] DEBUG -- : ["app/controllers/generate_dares_controller.rb:6:in `generate'"]
+D, [2015-05-30T18:20:49.991487 #38931] DEBUG -- : couldn't find file 'handlebars' with type 'application/javascript'
+D, [2015-05-30T18:20:50.004986 #38931] DEBUG -- : ["app/assets/javascripts/application.js:16", "app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4596523479082932161_70361484381840'"]
+D, [2015-05-31T14:04:24.657772 #41769] DEBUG -- : No route matches {:action=>"new", :controller=>"dares", :user_id=>nil} missing required keys: [:user_id]
+D, [2015-05-31T14:04:24.659519 #41769] DEBUG -- : ["app/views/users/show.html.erb:5:in `_app_views_users_show_html_erb__4315605967418017138_70141560999260'"]
+D, [2015-05-31T16:55:03.608419 #43691] DEBUG -- : Couldn't find User with 'id'=6
+D, [2015-05-31T16:55:03.609810 #43691] DEBUG -- : ["app/controllers/application_controller.rb:10:in `current_user'", "app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__1961201333575386017_70134580627480'"]
+D, [2015-05-31T16:55:39.006980 #43691] DEBUG -- : undefined method `mission' for #<Charity:0x007f92fb10b9c8>
+D, [2015-05-31T16:55:39.008442 #43691] DEBUG -- : ["app/views/charities/_charity.html.erb:17:in `_app_views_charities__charity_html_erb___3336188822105048680_70134617635700'", "app/views/charities/index.html.erb:5:in `_app_views_charities_index_html_erb__3257350257013205791_70134609514660'"]
+D, [2015-05-31T16:55:39.731359 #43691] DEBUG -- : undefined method `mission' for #<Charity:0x007f92f8f7bd30>
+D, [2015-05-31T16:55:39.732569 #43691] DEBUG -- : ["app/views/charities/_charity.html.erb:17:in `_app_views_charities__charity_html_erb___3336188822105048680_70134617635700'", "app/views/charities/index.html.erb:5:in `_app_views_charities_index_html_erb__3257350257013205791_70134609514660'"]
+D, [2015-05-31T16:56:52.761027 #43798] DEBUG -- : Couldn't find User with 'id'=6
+D, [2015-05-31T16:56:52.762507 #43798] DEBUG -- : ["app/controllers/application_controller.rb:10:in `current_user'", "app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__3338460841262042452_70098743251900'"]
+D, [2015-05-31T16:57:09.118855 #43798] DEBUG -- : undefined method `misson' for #<Charity:0x007f82494fc2c0>
+D, [2015-05-31T16:57:09.120826 #43798] DEBUG -- : ["app/views/charities/_charity.html.erb:3:in `_app_views_charities__charity_html_erb___2878465589478573899_70098715840100'", "app/views/charities/index.html.erb:5:in `_app_views_charities_index_html_erb__715496344192818363_70098715173000'"]
+D, [2015-05-31T16:57:09.683518 #43798] DEBUG -- : undefined method `misson' for #<Charity:0x007f8248624b58>
+D, [2015-05-31T16:57:09.685049 #43798] DEBUG -- : ["app/views/charities/_charity.html.erb:3:in `_app_views_charities__charity_html_erb___2878465589478573899_70098715840100'", "app/views/charities/index.html.erb:5:in `_app_views_charities_index_html_erb__715496344192818363_70098715173000'"]
+D, [2015-05-31T20:52:01.305119 #43798] DEBUG -- : undefined method `bootstrap_form_for' for #<#<Class:0x007f82422e5240>:0x007f82422e4520>
+D, [2015-05-31T20:52:01.306619 #43798] DEBUG -- : ["app/views/users/home.html.erb:36:in `_app_views_users_home_html_erb___2238598650846240256_70098803465140'"]
+D, [2015-05-31T20:52:50.675293 #45721] DEBUG -- : undefined method `activation_digest=' for #<User:0x007f9713968280>
+D, [2015-05-31T20:52:50.676567 #45721] DEBUG -- : ["app/models/user.rb:84:in `create_activation_digest'", "app/models/user.rb:14:in `create_with_omniauth'", "app/controllers/sessions_controller.rb:5:in `create'"]
+D, [2015-05-31T20:53:21.643898 #45721] DEBUG -- : Session Expired
+D, [2015-05-31T20:53:21.644687 #45721] DEBUG -- : []
+D, [2015-05-31T20:53:24.180669 #45721] DEBUG -- : Session Expired
+D, [2015-05-31T20:53:24.181225 #45721] DEBUG -- : []
+D, [2015-05-31T20:53:51.927672 #45785] DEBUG -- : undefined method `activation_digest=' for #<User:0x007ffe3c8fdc88>
+D, [2015-05-31T20:53:51.929196 #45785] DEBUG -- : ["app/models/user.rb:84:in `create_activation_digest'", "app/models/user.rb:14:in `create_with_omniauth'", "app/controllers/sessions_controller.rb:5:in `create'"]
+D, [2015-05-31T20:55:23.436520 #45785] DEBUG -- : No route matches {:action=>"new", :controller=>"dares", :user_id=>nil} missing required keys: [:user_id]
+D, [2015-05-31T20:55:23.437882 #45785] DEBUG -- : ["app/views/users/show.html.erb:12:in `_app_views_users_show_html_erb__251232468435115302_70365020300660'"]
+D, [2015-05-31T20:55:27.552492 #45785] DEBUG -- : No route matches {:action=>"new", :controller=>"dares", :user_id=>nil} missing required keys: [:user_id]
+D, [2015-05-31T20:55:27.553688 #45785] DEBUG -- : ["app/views/users/show.html.erb:12:in `_app_views_users_show_html_erb__251232468435115302_70365020300660'"]
+D, [2015-05-31T20:55:39.199516 #45785] DEBUG -- : No route matches {:action=>"new", :controller=>"dares", :user_id=>nil} missing required keys: [:user_id]
+D, [2015-05-31T20:55:39.200669 #45785] DEBUG -- : ["app/views/users/show.html.erb:12:in `_app_views_users_show_html_erb__251232468435115302_70365020300660'"]
+D, [2015-05-31T20:57:12.177354 #46082] DEBUG -- : undefined method `activation_digest=' for #<User:0x007fced1fe3bc8>
+D, [2015-05-31T20:57:12.179138 #46082] DEBUG -- : ["app/models/user.rb:84:in `create_activation_digest'", "app/models/user.rb:14:in `create_with_omniauth'", "app/controllers/sessions_controller.rb:5:in `create'"]
+D, [2015-05-31T21:13:53.382857 #46315] DEBUG -- : ActionController::InvalidAuthenticityToken
+D, [2015-05-31T21:13:53.383750 #46315] DEBUG -- : []
+D, [2015-05-31T21:26:40.813706 #46315] DEBUG -- : undefined local variable or method `binging' for #<DaresController:0x007fa2f0e215b8>
+D, [2015-05-31T21:26:40.814623 #46315] DEBUG -- : ["app/controllers/dares_controller.rb:15:in `show'"]
+D, [2015-06-01T10:21:52.149969 #48031] DEBUG -- : Missing template users/login, application/login with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/charlieward/Desktop/DBC_stuff/darity/client/app/views"
+  * "/Users/charlieward/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/twitter-bootstrap-rails-3.2.0/app/views"
+
+D, [2015-06-01T10:21:52.151406 #48031] DEBUG -- : []
+D, [2015-06-01T15:43:30.229764 #49694] DEBUG -- : Couldn't find User with 'id'=1
+D, [2015-06-01T15:43:30.230978 #49694] DEBUG -- : ["app/controllers/application_controller.rb:18:in `current_user'", "app/views/users/home.html.erb:16:in `_app_views_users_home_html_erb__1545009212122469441_70320364556020'"]
+D, [2015-06-01T15:43:33.927414 #49694] DEBUG -- : Couldn't find User with 'id'=1
+D, [2015-06-01T15:43:33.929080 #49694] DEBUG -- : ["app/controllers/application_controller.rb:18:in `current_user'", "app/views/users/home.html.erb:16:in `_app_views_users_home_html_erb__1545009212122469441_70320364556020'"]
+D, [2015-06-01T17:20:27.053004 #50623] DEBUG -- : ActionController::InvalidAuthenticityToken
+D, [2015-06-01T17:20:27.054756 #50623] DEBUG -- : []
+D, [2015-06-01T17:20:32.001361 #50623] DEBUG -- : ActionController::InvalidAuthenticityToken
+D, [2015-06-01T17:20:32.002235 #50623] DEBUG -- : []
+D, [2015-06-01T19:02:01.496515 #50623] DEBUG -- : undefined method `id' for nil:NilClass
+D, [2015-06-01T19:02:01.505484 #50623] DEBUG -- : ["app/views/dares/show.html.erb:45:in `_app_views_dares_show_html_erb__1116786827159712308_70227887194400'"]
+D, [2015-06-01T19:09:50.433745 #50623] DEBUG -- : You want to finish 3 frames, but stack size is only -45
+D, [2015-06-01T19:09:50.444979 #50623] DEBUG -- : ["app/controllers/donations_controller.rb:57:in `approve'"]
+D, [2015-06-01T19:10:59.263408 #50623] DEBUG -- : You want to finish 3 frames, but stack size is only -33
+D, [2015-06-01T19:10:59.348114 #50623] DEBUG -- : ["app/controllers/donations_controller.rb:57:in `approve'"]
+D, [2015-06-01T19:18:46.567720 #50623] DEBUG -- : You want to finish 3 frames, but stack size is only -24
+D, [2015-06-01T19:18:46.577781 #50623] DEBUG -- : ["app/controllers/dares_controller.rb:71:in `approve'"]
+D, [2015-06-01T19:24:07.304237 #50623] DEBUG -- : param is missing or the value is empty: dare
+D, [2015-06-01T19:24:07.310029 #50623] DEBUG -- : ["app/controllers/dares_controller.rb:89:in `dare_params'", "app/controllers/dares_controller.rb:71:in `approve'"]
+D, [2015-06-01T19:24:40.587437 #50623] DEBUG -- : Missing template dares/approve, application/approve with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :png, :jpeg, :gif, :bmp, :tiff, :mpeg, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/charlieward/Desktop/DBC_stuff/darity/client/app/views"
+  * "/Users/charlieward/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/twitter-bootstrap-rails-3.2.0/app/views"
+
+D, [2015-06-01T19:24:40.601758 #50623] DEBUG -- : []
+D, [2015-06-01T19:46:05.802220 #50623] DEBUG -- : Missing template dares/approve, application/approve with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/charlieward/Desktop/DBC_stuff/darity/client/app/views"
+  * "/Users/charlieward/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/twitter-bootstrap-rails-3.2.0/app/views"
+
+D, [2015-06-01T19:46:05.814581 #50623] DEBUG -- : []
+D, [2015-06-01T19:49:00.381049 #50623] DEBUG -- : Missing template dares/approve, application/approve with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/charlieward/Desktop/DBC_stuff/darity/client/app/views"
+  * "/Users/charlieward/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/twitter-bootstrap-rails-3.2.0/app/views"
+
+D, [2015-06-01T19:49:00.393506 #50623] DEBUG -- : []
+D, [2015-06-01T19:51:57.135512 #50623] DEBUG -- : Missing template dares/approve, application/approve with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/charlieward/Desktop/DBC_stuff/darity/client/app/views"
+  * "/Users/charlieward/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/twitter-bootstrap-rails-3.2.0/app/views"
+
+D, [2015-06-01T19:51:57.148861 #50623] DEBUG -- : []
+D, [2015-06-01T20:08:04.861614 #50623] DEBUG -- : You want to finish 3 frames, but stack size is only -14
+D, [2015-06-01T20:08:04.875755 #50623] DEBUG -- : ["app/controllers/dares_controller.rb:79:in `approve'"]
+D, [2015-06-01T20:08:08.525934 #50623] DEBUG -- : You want to finish 3 frames, but stack size is only -13
+D, [2015-06-01T20:08:08.537494 #50623] DEBUG -- : ["app/controllers/dares_controller.rb:79:in `approve'"]

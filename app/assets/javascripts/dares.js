@@ -41,7 +41,7 @@ $(document).ready(function() {
       $('.disapprove').text('Voted against the Dare Vid!');
     });
 
-    request.failure(function(response){
+    request.fail(function(response){
       alert("voted against!")
     })
   })
@@ -67,8 +67,8 @@ $(document).ready(function() {
     })
 
     request.done(function(response) {
-      debugger
       $('.comment-list').prepend(template(response));
+      $('#comment_body').val('');
     }).fail(function() {
       console.log('fail');
     });
