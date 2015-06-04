@@ -3,30 +3,53 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-md-7">
+    <div class="col-md-9">
       <div class="panel panel-default">
         <div class="panel-body">
+          <%= render partial: 'button_group', locals: {dare: @dare} %>
           <div class="dare-intro">
             <h1><%= @dare.title %></h1>
             <p><%= @dare.description %></p>
+          </div>
+          <hr>
+          <div class="dare-video">
+
+            <% if @video %>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @url %>" frameborder="0" allowfullscreen></iframe>
+            <% elsif @dare.price %>
+              <%= image_tag 'gopher_accepted.png', class: 'gopher' %>
+            <% else %>
+              <%= image_tag 'gopher_pending.png', class: 'gopher' %>
+            <% end %>
+            <p>
+              <% if @pledgers.include?(current_user)  %>
+                <button class="btn btn-default approve" href="<%= @dare.id%>">
+                  Approve Dare Vid as Pledger!
+                </button>
+
+                <button class="btn btn-default disapprove" href="<%= @dare.id%>">
+                  <!-- unacceptaaable! -->
+                  Disapprove Dare Vid as Pledger!
+                </button>
+              <% end %>
+            </p>
+
           </div>
         </div>
       </div>
     </div>
 
-    <div class="col-md-5">
+    <div class="col-md-3">
       <div class="panel panel-default">
         <div class="panel-body">
-          <%= render partial: 'button_group', locals: {dare: @dare} %>
 
-
-          <p><%= link_to @proposer.username.capitalize, @proposer, class: 'label label-default' %> dares <%= link_to @daree.username.capitalize, @daree, class: 'label label-default' %></p>
+          <p><%= link_to @proposer.username.capitalize, @proposer %> dares <%= link_to @daree.username.capitalize, @daree %></p>
           <p><%= @pledgers.count %> contributers total</p>
 
 
-          <p><% @pledgers.each do |user| %>
-                      <span><%= link_to user.username, user %>, </span>
-                    <% end %></p>
+          <p><% @pledgers.uniq.each do |user| %>
+            <%= render user %>
+          <% end %></p>
 
           <% if @dare.price %>
             <p>$<%= @pledged %> of $<%= @dare.price.to_i %> collected</p>
@@ -60,29 +83,7 @@
     </div>
   </div>
 
-  <div class="dare-video">
 
-    <% if @video %>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @url %>" frameborder="0" allowfullscreen></iframe>
-    <% elsif @dare.price %>
-      <%= image_tag 'gopher_accepted.png' %>
-    <% else %>
-      <%= image_tag 'gopher_pending.png' %>
-    <% end %>
-    <p>
-      <% if @pledgers.include?(current_user)  %>
-        <button class="btn btn-default approve" href="<%= @dare.id%>">
-          Approve Dare Vid as Pledger!
-        </button>
-
-        <button class="btn btn-default disapprove" href="<%= @dare.id%>">
-          <!-- unacceptaaable! -->
-          Disapprove Dare Vid as Pledger!
-        </button>
-      <% end %>
-    </p>
-
-  </div>
 
   <div class="panel panel-default wid-90">
     <div class="panel-body wid-90">
@@ -105,14 +106,14 @@
       <% end %>
 
        <script id="new-dare-comment" type="text/x-handlebars-template">
-        <li>
+        <li class="list-group-item">
           <div class="media">
             <a class="pull-left" href="#">
               <img class="media-object" src="{{image_url}}">
             </a>
             <div class="media-body">
               <h4 class="media-heading">{{username}}</h4>
-                {{comment.body}}
+                <p>{{comment.body}}</p>
                 <span>{{ comment.likes_count }}</span>
                   <a href="/comments/{{comment.id}}/upvote" class="btn btn-default btn-sm">
                     <i class="fa fa-thumbs-o-up"></i>
@@ -120,13 +121,12 @@
                   <a href="/comments/{{comment.id}}/downvote" class="btn btn-default btn-sm">
                     <i class="fa fa-thumbs-o-down"></i>
                   </a>
-              <div class="media">
-                {{ comment.created_at }}
+              <div class="media pull-right">
+                just now
               </div>
             </div>
           </div>
         </li>
-        <hr>
        </script>
 
       <ul class="comment-list list-group">
