@@ -52,7 +52,7 @@
           <% end %></p>
 
           <% if @dare.price %>
-            <p>$<%= @pledged %> of $<%= @dare.price.to_i %> collected</p>
+            <p>$<%= @pledged %> of $<%= @dare.price.to_i %> collected for <%= link_to @charity.name, @charity.url %></p>
 
             <div class="progress">
               <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:<%= (@pledged / @dare.price)*100 %>%;">

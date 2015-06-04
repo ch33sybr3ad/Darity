@@ -15,6 +15,7 @@ class DaresController < ApplicationController
     @pledgers = @dare.pledgers
     @comment = Comment.new
     @pledged = @dare.pledged
+    @charity = @dare.charity
 
     @video = Video.where(dare_id: @dare.id).first
     if @video
