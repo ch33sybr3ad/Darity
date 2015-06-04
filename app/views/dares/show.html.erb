@@ -15,14 +15,17 @@
     <div class="col-md-5">
       <div class="panel panel-default">
         <div class="panel-body">
-          <div class="btn-group" role="group" aria-label="...">
+          <div class="btn-group pull-right" role="group" aria-label="...">
             <button type="button" class="btn btn-sm btn-success">Proposed</button>
             <button type="button" class="btn btn-sm btn-<%= @dare.price ? 'success' : 'default' %>">Accepted</button>
             <button type="button" class="btn btn-sm btn-<%= @dare.video ? 'success' : 'default' %>">Completed</button>
           </div>
 
-          <p><%= link_to @proposer.username.capitalize, @proposer, class: 'label label-default' %> dares <%= link_to @daree.username.capitalize, @daree, class: 'label label-default' %></p>
-          <p>Total <%= @dare.donations.count %></p>
+          <p><%= link_to @proposer.username.capitalize, @proposer, class: 'label label-info' %> dares <%= link_to @daree.username.capitalize, @daree, class: 'label label-warning' %></p>
+          <p>Total <%= @pledgers.count %></p>
+          <% @pledgers.each do |user| %>
+            <span><%= link_to user.username, user %>, </span>
+          <% end %>
           <% if @dare.price %>
             <p>$<%= @pledged %> of $<%= @dare.price.to_i %> collected</p>
 
