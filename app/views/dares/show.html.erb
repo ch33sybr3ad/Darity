@@ -82,6 +82,11 @@
           <% else %>
             <%= link_to "contribute", new_donation_path(@dare), class: "btn btn-default" %>
           <% end %>
+
+          <% if current_user %>
+            <%= tweet_button user: current_user, dare: @dare, message: 'Tweet it' %>
+          <% end %>
+
         </div>
       </div>
     </div>

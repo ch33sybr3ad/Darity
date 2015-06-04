@@ -1,0 +1,17 @@
+<div class="backed"></div>
+
+<section class="container">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <%= bootstrap_form_for @pending_dare do |f| %>
+        <legend>Invite @<%= params[:handle] %> to Darity with a dare!</legend>
+          <%= f.hidden_field :twitter_handle, value: params[:handle] %>
+          <%= f.text_field :title, required: true %>
+          <%= f.text_area :description, required: true %>
+          <%= f.submit "Dare!", class: 'btn btn-danger' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
