@@ -6,7 +6,7 @@
       <ul class="list-group">
         <% if @all_dares.empty? %>
           <p>You're not following anyone yet! Click here to follow some people!</p>
-           <%= link_to 'find people', users_path, class: 'btn btn-default btn-success' %>
+           <%= link_to 'find people', users_path, class: 'btn btn-default btn-default' %>
         <% else %>
           <% @all_dares.each_with_index do |dare, i| %>
             <% daree = dare.daree; proposer = dare.proposer %>
@@ -16,6 +16,7 @@
                   <h4 class="panel-title">
                     <%= link_to proposer.username, proposer %>
                      dares
+                     <%= p dare, '#' * 100 %>
                     <%= link_to daree.username, daree %> to
                     <%= dare.title %>
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapse-<%= i %>" aria-expanded="true" aria-controls="collapse-<%= i %>">
