@@ -1,4 +1,6 @@
-html { word-wrap: break-word; }
+$red-dark: rgb(159, 44, 53);
+$red-pink: rgb(239, 64, 74);
+$red-light: rgb(178, 50, 59);
 
 body {
   position: relative;
@@ -45,11 +47,12 @@ body {
 }
 
 .flowchart {
+  color: $red-dark;
   padding-bottom: 20px;
   text-align: center;
   .fa-lg:before { font-size: 6em; }
   .fa-lg { padding-top: 90px; }
-  h3 { font-weight: lighter; }
+  h3 { font-weight: lighter; color: #333;}
   .fa-arrow-right {
     position: relative;
     top: 90px;
@@ -63,3 +66,4 @@ body {
 @media only screen and (max-width: 765px) {
   .charity { width: 300px; }
 }
+
