@@ -1,5 +1,5 @@
 <main class="container">
-  <div class="panel panel-default">
+  <div class="panel panel-default feed-container">
     <section class="panel-body">
       <ul class="list-group">
         <% if @all_dares.empty? %>
@@ -8,23 +8,27 @@
         <% else %>
           <% @all_dares.each do |dare| %>
             <li class="list-group-item">
-              <h5 class="list-group-item-heading">
-                <%= image_tag dare.proposer.image_url %><%= link_to dare.proposer.username, dare.proposer %>
-                          just dared
-                <%= image_tag dare.daree.image_url %><%= link_to dare.daree.username, dare.daree %>
-                          to the
-                "<%= dare.title %>"
-              </h5>
-              <p>Do you think <%= dare.proposer.username %> should accept this dare?</p>
+              <div class="feed-wrapper">
+                <h5 class="list-group-item-heading">
+                  <%= image_tag dare.proposer.image_url %><%= link_to dare.proposer.username, dare.proposer %>
+                            just dared
+                  <%= image_tag dare.daree.image_url %><%= link_to dare.daree.username, dare.daree %>
+                            to the
+                  "<%= dare.title %>"
+                </h5>
+                <p>Do you think <%= dare.proposer.username %> should accept this dare?</p>
+              </div>
             </li>
             <% if dare.charity != nil && dare.proposer.donations !=nil %>
             <li class="list-group-item">
-              <h5 class="list-group-item-heading">
-                <p><%= image_tag dare.daree.image_url %><%= link_to dare.daree.username, dare.daree %> just donated to <%= dare.charity.name %> for $<%= dare.proposer.donations.last.donation_amount%></p>
-                <% if dare.video %>
-                  <div class="feed-video"><%= link_to 'Watch Dare', "https://www.youtube.com/watch?v=#{dare.video.uid}" %></div>
-                <% end %>
-              </h5>
+              <div class="feed-wrapper">
+                <h5 class="list-group-item-heading">
+                  <p><%= image_tag dare.daree.image_url %><%= link_to dare.daree.username, dare.daree %> just donated to <%= dare.charity.name %> for $<%= dare.proposer.donations.last.donation_amount%></p>
+                  <% if dare.video %>
+                    <div class="feed-video"><%= link_to 'Watch Dare', "https://www.youtube.com/watch?v=#{dare.video.uid}" %></div>
+                  <% end %>
+                </h5>
+              </div>
             </li>
             <% end %>
           <% end %>
