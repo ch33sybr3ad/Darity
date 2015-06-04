@@ -1,0 +1,187 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:100,900);
+@-webkit-keyframes flip-top {
+  from {
+    -webkit-transform: rotate(50deg) translateY(100vh);
+            transform: rotate(50deg) translateY(100vh);
+  }
+}
+@keyframes flip-top {
+  from {
+    -webkit-transform: rotate(50deg) translateY(100vh);
+            transform: rotate(50deg) translateY(100vh);
+  }
+}
+@-webkit-keyframes flip-bottom {
+  from {
+    -webkit-transform: rotate(-50deg) translateY(100vh);
+            transform: rotate(-50deg) translateY(100vh);
+  }
+}
+@keyframes flip-bottom {
+  from {
+    -webkit-transform: rotate(-50deg) translateY(100vh);
+            transform: rotate(-50deg) translateY(100vh);
+  }
+}
+.glow {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  background: #111;
+  -webkit-animation: glow 8s both;
+          animation: glow 8s both;
+}
+
+.team-letter span {
+  font: 900 15vw Raleway;
+  position: relative;
+  display: inline-block;
+  -webkit-perspective: 500px;
+          perspective: 500px;
+}
+.team-letter span:nth-child(odd):before {
+  -webkit-animation-name: flip-top;
+          animation-name: flip-top;
+}
+.team-letter span:nth-child(odd):after {
+  -webkit-animation-name: flip-bottom;
+          animation-name: flip-bottom;
+}
+.team-letter span:nth-child(even):before {
+  -webkit-animation-name: flip-bottom;
+          animation-name: flip-bottom;
+}
+.team-letter span:nth-child(even):after {
+  -webkit-animation-name: flip-top;
+          animation-name: flip-top;
+}
+.team-letter span:nth-child(1n + 0):before {
+  color: #4EC0B6;
+}
+.team-letter span:nth-child(1n + 0):after {
+  color: #4ea4c0;
+}
+.team-letter span:nth-child(2n + 1):before {
+  color: #3967CB;
+}
+.team-letter span:nth-child(2n + 1):after {
+  color: #3c39cb;
+}
+.team-letter span:nth-child(3n + 2):before {
+  color: #FDCD2F;
+}
+.team-letter span:nth-child(3n + 2):after {
+  color: #e8fd2f;
+}
+.team-letter span:nth-child(4n + 3):before {
+  color: #E23942;
+}
+.team-letter span:nth-child(4n + 3):after {
+  color: #e26839;
+}
+.team-letter span:nth-child(1):before {
+  -webkit-animation-delay: 0.88706s;
+          animation-delay: 0.88706s;
+}
+.team-letter span:nth-child(1):after {
+  -webkit-animation-delay: 1.32717s;
+          animation-delay: 1.32717s;
+}
+.team-letter span:nth-child(2):before {
+  -webkit-animation-delay: 1.76318s;
+          animation-delay: 1.76318s;
+}
+.team-letter span:nth-child(2):after {
+  -webkit-animation-delay: 2.19375s;
+          animation-delay: 2.19375s;
+}
+.team-letter span:nth-child(3):before {
+  -webkit-animation-delay: 2.61756s;
+          animation-delay: 2.61756s;
+}
+.team-letter span:nth-child(3):after {
+  -webkit-animation-delay: 3.03328s;
+          animation-delay: 3.03328s;
+}
+.team-letter span:nth-child(4):before {
+  -webkit-animation-delay: 3.43965s;
+          animation-delay: 3.43965s;
+}
+.team-letter span:nth-child(4):after {
+  -webkit-animation-delay: 3.8354s;
+          animation-delay: 3.8354s;
+}
+.team-letter span:nth-child(5):before {
+  -webkit-animation-delay: 4.21932s;
+          animation-delay: 4.21932s;
+}
+.team-letter span:nth-child(5):after {
+  -webkit-animation-delay: 4.59022s;
+          animation-delay: 4.59022s;
+}
+.team-letter span:nth-child(6):before {
+  -webkit-animation-delay: 4.94696s;
+          animation-delay: 4.94696s;
+}
+.team-letter span:nth-child(6):after {
+  -webkit-animation-delay: 5.28843s;
+          animation-delay: 5.28843s;
+}
+.team-letter span:nth-child(7):before {
+  -webkit-animation-delay: 5.61358s;
+          animation-delay: 5.61358s;
+}
+.team-letter span:nth-child(7):after {
+  -webkit-animation-delay: 5.92141s;
+          animation-delay: 5.92141s;
+}
+.team-letter span:nth-child(8):before {
+  -webkit-animation-delay: 6.21098s;
+          animation-delay: 6.21098s;
+}
+.team-letter span:nth-child(8):after {
+  -webkit-animation-delay: 6.48137s;
+          animation-delay: 6.48137s;
+}
+.team-letter span:nth-child(9):before {
+  -webkit-animation-delay: 6.73177s;
+          animation-delay: 6.73177s;
+}
+.team-letter span:nth-child(9):after {
+  -webkit-animation-delay: 6.96139s;
+          animation-delay: 6.96139s;
+}
+.team-letter span:before, .team-letter span:after {
+  display: block;
+  content: attr(data-text);
+  -webkit-animation: 0.88889s ease-out both;
+          animation: 0.88889s ease-out both;
+  -webkit-animation-name: inherit;
+          animation-name: inherit;
+  text-shadow: 0 0 1em;
+}
+.team-letter span:before {
+  -webkit-clip-path: polygon(0 0 100% 0, 100% 100%);
+  clip-path: polygon(0 0 100% 0, 100% 100%);
+  position: absolute;
+  -webkit-transform-origin: left center;
+      -ms-transform-origin: left center;
+          transform-origin: left center;
+  color: #4EC0B6;
+}
+.team-letter span:after {
+  -webkit-clip-path: polygon(0 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+  color: #3967CB;
+}
