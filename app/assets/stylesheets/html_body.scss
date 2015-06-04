@@ -6,6 +6,7 @@ html,
 body {
    margin:0;
    height:100%;
+   word-wrap: break-word;
 }
 
 #wrap {
@@ -36,6 +37,7 @@ a:hover {
   background: #efefef;
 }
 
+.panel-white { background-color: white; }
 
 .btn-danger {
     background: $red-pink;
@@ -53,3 +55,8 @@ a:hover {
 
 .nav-tabs { border-bottom: #222, 1px, solid }
 
+.mar-left { margin-left: 20px; }
+.wid-80 { width: 80%; margin: 0 auto;}
+.wid-90 { width: 90%; margin: 0 auto;}
+
+hr { color: black; }
