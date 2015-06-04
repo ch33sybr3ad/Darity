@@ -15,7 +15,7 @@
       e.preventDefault();
       var new_pw = $(this).find('[name="user[new_password]"]').val()
       var new_pw2 = $(this).find('[name="user[confirm_password]"]').val()
-
+      debugger;
       if (!(new_pw === new_pw2)) {
         $(this).find('[name="user[new_password]"]').css("border-color", "red")
         $(this).find('[name="user[confirm_password]"]').css("border-color", "red")
