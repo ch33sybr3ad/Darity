@@ -1,20 +1,30 @@
 <div class="container">
-  <h3>Donation for <%= link_to @charity.name, @charity.url %></h3>
-  <%= bootstrap_form_for @donation, html: {class: "form-inline"} do |f| %>
-    <%= f.text_field :donation_amount %>
-    <%= f.submit "Submit", class: 'btn btn-success' %>
-  <% end %>
-</div>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h3>Donation for <%= link_to @charity.name, @charity.url %></h3>
+          <%= bootstrap_form_for @donation, html: {class: "form-inline"} do |f| %>
+            <%= f.text_field :donation_amount %>
+            <%= f.submit "Submit", class: 'btn btn-success' %>
+          <% end %>
 
-<div class="dare-info">
-  <p>proposed to: <%= link_to @daree.username.capitalize, @daree %></p>
-  <p>Total Pledgers: <%= @dare.donations.count %></p>
-  <% if @dare.price %>
-    <p>$<%= @pledged %> of $<%= @dare.price.to_i %> collected</p>
+          <hr>
 
-    <div class="progress">
-      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:<%= (@pledged / @dare.price)*100 %>%;">
+          <div class="dare-info">
+            <p>dared to: <%= link_to @daree.username.capitalize, @daree %></p>
+            <p>Total Pledgers: <%= @dare.donations.count %></p>
+            <% if @dare.price %>
+              <p>$<%= @pledged %> of $<%= @dare.price.to_i %> collected</p>
+
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:<%= (@pledged / @dare.price)*100 %>%;">
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
-  <% end %>
+  </div>
 </div>

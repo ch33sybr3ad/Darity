@@ -20,10 +20,11 @@
 
   def pay
     @amount = @donation.donation_amount * 100
+    @charity = @donation.dare.charity
   end
 
   def paid
-    @user = User.find(@donation.pledger_id)
+    @user = @donation.user
 
     customer = Stripe::Customer.create(
         :email => params[:stripeEmail],
@@ -42,7 +43,7 @@
       @user.save
     end
     UserMailer.thank_you(@user, charge.amount.to_i/100, @dare.title, @dare.description, @dare.daree.username).deliver_later
-    redirect_to user_dare_path
+    redirect_to user_dare_path(@user, @dare)
 
     rescue Stripe::CardError => e
       flash[:error] = e.message

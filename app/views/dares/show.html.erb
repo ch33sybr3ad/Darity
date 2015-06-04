@@ -1,3 +1,5 @@
+<div class="backed"></div>
+
 <div class="container">
   <div class="row">
 
@@ -15,14 +17,17 @@
     <div class="col-md-5">
       <div class="panel panel-default">
         <div class="panel-body">
-          <div class="btn-group" role="group" aria-label="...">
-            <button type="button" class="btn btn-sm btn-success">Proposed</button>
-            <button type="button" class="btn btn-sm btn-<%= @dare.price ? 'success' : 'default' %>">Accepted</button>
-            <button type="button" class="btn btn-sm btn-<%= @dare.video ? 'success' : 'default' %>">Completed</button>
-          </div>
+          <%= render partial: 'button_group', locals: {dare: @dare} %>
+
 
           <p><%= link_to @proposer.username.capitalize, @proposer, class: 'label label-default' %> dares <%= link_to @daree.username.capitalize, @daree, class: 'label label-default' %></p>
-          <p>Total <%= link_to "pledgers", %> <%= @dare.donations.count %></p>
+          <p><%= @pledgers.count %> contributers total</p>
+
+
+          <p><% @pledgers.each do |user| %>
+                      <span><%= link_to user.username, user %>, </span>
+                    <% end %></p>
+
           <% if @dare.price %>
             <p>$<%= @pledged %> of $<%= @dare.price.to_i %> collected</p>
 
