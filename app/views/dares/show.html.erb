@@ -52,7 +52,11 @@
           <% end %></p>
 
           <% if @dare.price %>
-            <p>$<%= @pledged %> of $<%= @dare.price.to_i %> collected for <%= link_to @charity.name, @charity.url %></p>
+            <p>$<%= @pledged %> of $<%= @dare.price.to_i %>
+              <% if @charity %>
+              collected for <%= link_to @charity.name, @charity.url %>
+              <% end %>
+            </p>
 
             <div class="progress">
               <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:<%= (@pledged / @dare.price)*100 %>%;">
@@ -62,8 +66,8 @@
 
           <% if current_user == @proposer %>
             <% if !@dare.price %>
-              <%t= link_to "edit", edit_user_dare_path(@proposer, @dare), class: "btn btn-default" %>
-              <%= link_to "delete", user_dare_path(@proposer, @dare), method: :delete, class: "btn bn-default" %>
+              <%= link_to "edit", edit_user_dare_path(@proposer, @dare), class: "btn btn-default" %>
+              <%= link_to "delete", user_dare_path(@proposer, @dare), method: :delete, class: "btn btn-default" %>
             <% end %>
             <%= link_to "contribute", new_donation_path(@dare), class: "btn btn-default" %>
           <% elsif current_user == @daree %>

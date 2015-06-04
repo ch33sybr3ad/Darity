@@ -41,6 +41,7 @@ class DaresController < ApplicationController
   end
 
   def edit
+    @user = @dare.proposer
   end
 
   def update
