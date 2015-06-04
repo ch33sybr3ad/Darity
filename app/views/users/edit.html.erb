@@ -5,11 +5,11 @@
     <div class="panel-body wid-90">
       <h1> Account Settings </h1>
 
-      <p>Change your basic account and language settings</p>
+      <p>Change your basic account settings.</p>
 
       <%= bootstrap_form_for @user, layout: :horizontal do |f| %>
 
-      <%= f.email_field :email %>
+      <%= f.email_field :email, required: true %>
 
       <%= f.password_field :current_password %>
 
