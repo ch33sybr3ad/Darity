@@ -176,13 +176,16 @@ ul.social-buttons li a {
   position: relative;
   margin: 0 auto;
   text-align: center;
-  padding-top: 100px;
   padding-bottom: 100px;
   background-color: rgb(247, 247, 247);
 }
 
 .conclusion {
   background-color: rgb(247, 247, 247);
+}
+
+.technology-used, .conclusion, h1.timeline-title {
+  padding-top: 50px;
 }
 
 .floating-nav {
@@ -195,4 +198,9 @@ ul.social-buttons li a {
 
 .about-hidden {
   display: none;
+}
+
+.group_pic {
+  width: 358px;
+  height: 270px;
 }
