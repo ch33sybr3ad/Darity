@@ -8,7 +8,7 @@
         <div class="panel-body">
           <%= render partial: 'button_group', locals: {dare: @dare} %>
           <div class="dare-intro">
-            <h1><%= @dare.title %></h1>
+            <h3><%= @dare.title %></h3>
             <p><%= @dare.description %></p>
           </div>
           <hr>
@@ -82,6 +82,11 @@
           <% else %>
             <%= link_to "contribute", new_donation_path(@dare), class: "btn btn-default" %>
           <% end %>
+
+          <% if current_user %>
+            <%= tweet_button user: current_user, dare: @dare, message: 'Tweet it' %>
+          <% end %>
+
         </div>
       </div>
     </div>
