@@ -18,6 +18,7 @@ body {
 
 .video-container {
   margin-top: -80px;
+  margin-bottom: 50px;
   position: relative;
   z-index: 1;
 }
@@ -47,6 +48,10 @@ body {
   .jumbotron { padding: 4em; }
 }
 
+@media only screen and (max-width: 430px) {
+  .jumbotron { padding: 2em; }
+}
+
 .flowchart {
   color: $red-dark;
   padding-bottom: 20px;
@@ -68,3 +73,10 @@ body {
   .charity { width: 300px; }
 }
 
+.fa-chevron-right,
+.fa-chevron-left {
+  position: relative;
+  top: 300px;
+}
+
+.mar-auto { margin: auto }

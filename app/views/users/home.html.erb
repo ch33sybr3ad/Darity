@@ -1,15 +1,58 @@
 <div class="video-container">
-  <div class="hero-unit hero-wrapper embed-responsive embed-responsive-16by9">
-    <video id="video" class="embed-responsive-item" x-webkit-airplay="allow" preload="" src="https://pdlvimeocdn-a.akamaihd.net/15387/943/376071702.mp4?token2=1433475715_5b93c892dcff613b4a0bd77f984b57c8&amp;aksessionid=1a4931eace0e3e25" poster="" autoplay loop muted></video>
-  </div>
+
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+    </ol>
+
+    <div class="carousel-inner">
+      <div class="item active">
+        <%= image_tag "darity-image-1.png", class: "mar-auto" %>
+<!--         <div class="carousel-caption">
+            <h3>Caption Text</h3>
+        </div> -->
+      </div>
+      <div class="item">
+       <%= image_tag "darity-image-2.png", class: "mar-auto" %>
+<!--         <div class="carousel-caption">
+            <h3>Caption Text</h3>
+        </div> -->
+      </div>
+      <div class="item">
+        <%= image_tag "darity-image-3.png", class: "mar-auto" %>
+<!--         <div class="carousel-caption">
+            <h3>Caption Text</h3>
+        </div> -->
+      </div>
+      <div class="item">
+        <%= image_tag "darity-image-4.png", class: "mar-auto" %>
+<!--         <div class="carousel-caption">
+            <h3>Caption Text</h3>
+        </div> -->
+      </div>
+    </div>
+
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <i class="fa fa-chevron-left"></i>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <i class="fa fa-chevron-right"></i>
+    </a>
+  </div> <!-- Carousel -->
+
+
   <div class="jumbotron text-center">
     <h1>Welcome to Darity</h1>
     <h3>Dares for Charity.</h3><br>
-    <%= current_user ? "" : raw('<a href="/auth/twitter" class="btn btn-tw btn-lg"><i class="fa fa-twitter"></i> Sign Up with Twitter</a>') %>
   </div>
 </div>
 
 <center>
+  <%= current_user ? "" : raw('<a href="/auth/twitter" class="btn btn-tw btn-lg"><i class="fa fa-twitter"></i> Sign Up with Twitter</a>') %>
   <h2>How It Works:</h2>
 </center>
 
