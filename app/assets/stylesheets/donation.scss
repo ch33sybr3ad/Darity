@@ -4,7 +4,6 @@
   margin:1em 0 3em;
   color:#fff;
   background:#c81e2b;
-  /* css3 */
   background:-webkit-gradient(linear, 0 0, 0 100%, from(#f04349), to(#c81e2b));
   background:-moz-linear-gradient(#f04349, #c81e2b);
   background:-o-linear-gradient(#f04349, #c81e2b);
@@ -24,11 +23,9 @@
   border-bottom-width:20px; /* vary this value to change the height of the triangle. must be equal to the corresponding value in :after */
   border-style:solid;
   border-color:transparent #c81e2b;
-  /* reduce the damage in FF3.0 */
   display:block;
   width:0;
 }
-
 
 /* creates the narrower right-angled triangle */
 .triangle-obtuse:after {
@@ -41,7 +38,6 @@
   border-bottom-width:20px; /* vary this value to change the height of the triangle. must be equal to the corresponding value in :before */
   border-style:solid;
   border-color:transparent #fff;
-  /* reduce the damage in FF3.0 */
   display:block;
   width:0;
 }
