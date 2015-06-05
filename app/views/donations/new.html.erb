@@ -5,7 +5,7 @@
     <div class="col-md-10 col-md-offset-1">
       <div class="panel panel-default">
         <div class="panel-body">
-          <h3>Donation for <%= link_to @charity.name, @charity.url %></h3>
+          <h3>Donation for <%= @charity ? link_to(@charity.name, @charity.url) : 'charity' %></h3>
           <%= bootstrap_form_for @donation, layout: :horizontal do |f| %>
             <%= f.text_field :donation_amount, prepend: '$', required: true %>
             <%= f.submit "Submit", class: 'btn btn-success' %>
