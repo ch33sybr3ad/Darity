@@ -1,0 +1,35 @@
+
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+    </ol>
+
+    <div class="carousel-inner">
+      <div class="item active">
+        <%= image_tag "darity-image-1.png", class: "mar-auto" %>
+      </div>
+      <div class="item">
+       <%= image_tag "darity-image-2.png", class: "mar-auto" %>
+        <div class="carousel-caption">
+            <h3>Caption Text</h3>
+        </div>
+      </div>
+      <div class="item">
+        <%= image_tag "darity-image-3.png", class: "mar-auto" %>
+      </div>
+      <div class="item">
+        <%= image_tag "darity-image-4.png", class: "mar-auto" %>
+      </div>
+    </div>
+
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <i class="fa fa-chevron-left"></i>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <i class="fa fa-chevron-right"></i>
+    </a>
+  </div>
