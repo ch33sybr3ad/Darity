@@ -6,7 +6,7 @@
     <div class="col col-md-3">
       <section class="user panel panel-default">
         <div class="panel-body">
-          <%= image_tag @user.image_url, class: 'img-responsive' %>
+          <%= image_tag @user.image_url, class: 'prof' %>
           <h2><%= @user.username.capitalize %></h2>
 
           <% if @user == current_user %>
