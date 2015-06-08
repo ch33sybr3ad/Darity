@@ -64,6 +64,7 @@ all_dares = GenerateDare.all
   dare = Dare.new(
     title: all_dares.shuffle.first.description,
     description: Faker::Lorem.paragraph,
+    price: 10
   )
 
   a.proposed_dares << dare
