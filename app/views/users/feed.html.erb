@@ -1,0 +1,49 @@
+<div class="backed"></div>
+
+<main class="container">
+  <div class="panel panel-default feed-container">
+    <section class="panel-body">
+      <ul class="list-group">
+        <% if @all_dares.empty? %>
+          <p>You're not following anyone yet! Click here to follow some people!</p>
+           <%= link_to 'find people', users_path, class: 'btn btn-default btn-default' %>
+        <% else %>
+          <% @all_dares.each_with_index do |dare, i| %>
+            <% daree = dare.daree; proposer = dare.proposer %>
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="feed-<%= i %>">
+                  <h4 class="panel-title">
+                    <%= link_to proposer.username, proposer %>
+                     dares
+                    <%= link_to daree.username, daree %> to
+                    <%= dare.title %>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-<%= i %>" aria-expanded="true" aria-controls="collapse-<%= i %>">
+                      <i class="fa fa-chevron-down"></i>
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse-<%= i %>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="feed-<%= i %>">
+                  <div class="panel-body">
+                    <%= render partial: 'dares/button_group', locals: {dare: dare} %>
+                    <p><%= dare.description %></p>
+                    <p><%= link_to 'See details', [proposer, dare] %></p>
+                    <% if dare.price %>
+                      <% pledged = dare.pledged %>
+                      <p>$<%= pledged %> of $<%= dare.price.to_i %> collected</p>
+
+                      <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:<%= (pledged / dare.price)*100 %>%;">
+                        </div>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </ul>
+    </section>
+  </div>
+</main>

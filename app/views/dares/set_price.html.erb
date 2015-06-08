@@ -1,0 +1,26 @@
+<div class="backed"></div>
+
+<div class="container">
+  <div class="panel panel-body">
+    <div class="panel-heading">
+      <h1><%= @dare.title %></h1>
+    </div>
+    <div class="panel-body">
+
+      <p><%= @dare.description %></p>
+
+      <p><%= link_to @proposer.username, @proposer %> dares <%= link_to @daree.username, @daree %></p>
+
+      <hr>
+
+      <%= bootstrap_form_for @dare, layout: :horizontal, url: put_price_path(@proposer, @dare) do |f| %>
+        <%= f.number_field :price, prepend: '$', required: true  %>
+        <%= f.select :charity, @charities.map { |char| [char.name, char.name]}, required: true  %>
+        <%= f.submit :submit, class: 'col-md-offset-2 btn btn-danger' %>
+      <% end %>
+
+
+      <p><%= link_to raw('<i class="fa fa-long-arrow-left"></i> ' + "back"),  user_path(@daree), class: 'btn btn-default btn-sm' %></p>
+    </div>
+  </div>
+</div>

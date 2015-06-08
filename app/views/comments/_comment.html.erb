@@ -1,0 +1,22 @@
+<li class="list-group-item">
+  <div class="media">
+    <a class="pull-left" href="#">
+      <img class="media-object" src="<%=comment.author.image_url%>">
+    </a>
+    <div class="media-body">
+      <% author = comment.author %>
+      <h4 class="media-heading"><%= link_to author.username, author, method: :get %></h4>
+        <p><%= comment.body %></p>
+        <span><%=comment.likes_count%></span>
+          <%= link_to upvote_path(comment), class: "btn btn-default btn-sm" do %>
+            <i class="fa fa-thumbs-o-up"></i>
+          <% end %>
+          <%= link_to downvote_path(comment), class: "btn btn-default btn-sm" do %>
+            <i class="fa fa-thumbs-o-down"></i>
+          <% end %>
+      <div class="media pull-right">
+        <%= comment.created_at.strftime("%I:%M%p %m/%d/%y") %>
+      </div>
+    </div>
+  </div>
+</li>

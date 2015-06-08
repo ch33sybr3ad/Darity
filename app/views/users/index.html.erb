@@ -1,0 +1,68 @@
+<div class="backed"></div>
+
+<section class="container">
+  <div class="panel panel-default wid-90">
+    <div class="panel-body wid-90">
+      <h1>Find people to dare</h1>
+      <form class="row">
+        <div class="form-group col-md-3 col-sm-4">
+          <div class="input-group mar-left">
+            <div class="input-group-addon">@</div>
+            <input id="search-bar" type="text" placeholder="find users to dare" class="form-control input-md" value="<%= params[:search] %>">
+          </div>
+        </div>
+      </form>
+
+      <h2>Our Users:</h2>
+      <div class="user-wrap">
+
+        <%= will_paginate %>
+        <ul>
+          <%= render @users %>
+        </ul>
+
+      </div>
+
+      <div style="display: none;" id="invite-twitter">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="panel panel-default panel-white">
+              <div class="panel-body">
+                <h3>Invite <span id="handle-p"></span> on twitter with their first Dare!</h3>
+                <%= bootstrap_form_for @pending_dare do |f| %>
+                <p id="invalid" style="display: none; color: red;">Not a valid twitter handle</p>
+                  <%= f.hidden_field :twitter_handle, id: 'handle-in' %>
+                  <%= f.text_field :title, required: true %>
+                  <%= f.text_area :description, required: true %>
+                  <%= f.submit "Tweet this Dare!", class: 'btn btn-info' %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="panel panel-default panel-white">
+              <div class="panel-body">
+                <h4>Can't think of a Dare? Click the generate button to get the creative juices flowing!</h4>
+
+                <button class="btn btn-default generate" href="#">
+                  Generate a Dare!
+                </button>
+
+                <button class="btn btn-default use-dare" href="#" style="display: none">
+                  Autofill
+                </button>
+
+                <div id="gen-dare" class="well">
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+

@@ -1,0 +1,29 @@
+<div class="charity-img">
+  <img src="https://s-media-cache-ak0.pinimg.com/236x/f7/55/c3/f755c3433cb0243feab178b5ee1a3485.jpg" width="500px" height="500px" text-align="center">
+</div>
+
+<h1 class="username">@<%= @user.username %></h1>
+
+<h2 class="gratitude">Darity thanks you from the bottom of our hearts for your donation</h2>
+
+<br>
+<hr>
+<br>
+
+<h3>Darity absolutely loves the dare you made:</h3>
+<p><%= @title %></p>
+<p><%= @description %></p>
+<blockquote>challenging @<%= @daree %></blockquote>
+
+<br>
+<hr>
+<br>
+
+<p>You have donated $<%= @donation %></p>
+
+<br>
+<hr>
+<br>
+
+<p>Tell your friends and family what you an amazing feat you did to change this world one step at a time!</p>
+<%= link_to "Make It Viral!", "https://twitter.com/intent/tweet?text=I%20%40#{@user.username}%20donated%20%24#{@donation}%20to%20%23Charity%20challenging%20%40#{@daree}%20to%20#{@title}%20%23Darity%20%40TeamDarity" %>

@@ -1,0 +1,24 @@
+<div class="backed"></div>
+
+<div class="container">
+  <div class="panel panel-default wid-90">
+    <div class="panel-body wid-90">
+      <h1> Account Settings </h1>
+
+      <p>Change your basic account settings.</p>
+
+      <%= bootstrap_form_for @user, layout: :horizontal do |f| %>
+
+      <%= f.email_field :email, required: true %>
+
+      <%= f.password_field :current_password %>
+
+      <%= f.password_field :new_password %>
+
+      <%= f.password_field :confirm_password %>
+
+      <%= f.submit "Save Changes", class: 'col-md-offset-2 btn btn-default' %>
+      <% end %>
+    </div>
+  </div>
+</div>

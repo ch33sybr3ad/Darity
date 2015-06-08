@@ -1,0 +1,40 @@
+.user-partial {
+  img {
+    max-width: 30px;
+    padding-right: 8px;
+  }
+  background: -webkit-linear-gradient(white, #eee);
+  background: -o-linear-gradient(white, #eee);
+  background: -moz-linear-gradient(white, #eee);
+  background: linear-gradient(white, #eee);
+}
+
+#gen-dare {
+  margin-top: 20px;
+}
+
+.feed-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.feed-container li {
+  margin-bottom: 15px;
+  background-color: #F7F7F7;
+}
+
+.feed-wrapper {
+  padding: 8px;
+}
+
+.prof { width: 50px; height: 50px; }
+
+
+/*
+body {
+  background: rgb(159, 44, 53);
+  background: rgb(239, 64, 74);
+  background: rgb(178, 50, 59);
+
+}
+*/

@@ -1,0 +1,32 @@
+<div class="backed"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <p class="triangle-obtuse">Thank You!</p>
+
+          <%= image_tag 'colorful_gopher.png', class: 'img-shrink pull-left' %>
+
+
+          <%= form_tag pay_donations_path, class: 'pay-button' do %>
+
+            <article >
+              <label class="amount">
+                <span>Amount: <%=number_to_currency(@amount/100)%></span>
+              </label>
+            </article>
+
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                    data-description="Donation to <%= @charity.name %>"
+                    data-amount= "<%= @amount %>">
+            </script>
+
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
