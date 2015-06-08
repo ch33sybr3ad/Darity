@@ -13,5 +13,5 @@
 !/log/.keep
 /tmp
 /client
+/config/database.yml
 .env
-
