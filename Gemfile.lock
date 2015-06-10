@@ -124,9 +124,6 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-scrollto-rails (1.4.3)
       railties (> 3.1, < 5.0)
-    jquery-turbolinks (2.1.0)
-      railties (>= 3.1.0)
-      turbolinks
     json (1.8.3)
     jwt (1.5.0)
     loofah (2.0.2)
@@ -253,8 +250,6 @@ GEM
     tilt (1.4.1)
     timers (4.0.1)
       hitimes
-    turbolinks (2.5.3)
-      coffee-rails
     twitter-bootstrap-rails (3.2.0)
       actionpack (~> 4.1)
       execjs (~> 2.2)
@@ -305,7 +300,6 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-scrollto-rails
-  jquery-turbolinks
   omniauth-twitter
   pg
   pry
@@ -325,6 +319,3 @@ DEPENDENCIES
   web-console (~> 2.0)
   will_paginate (= 3.0.7)
   youtube_it
-
-BUNDLED WITH
-   1.10.3
