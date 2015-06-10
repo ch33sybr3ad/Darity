@@ -7,7 +7,7 @@
     <div class="col-md-7">
       <div class="panel panel-default">
         <div class="panel-body">
-          <%= bootstrap_form_for [@user, @dare], layout: :horizontal do |f| %>
+          <%= bootstrap_form_for [@user, @dare] do |f| %>
           <legend>new dare</legend>
           <%= f.text_field :title, required: true %>
           <%= f.text_area :description, required: true %>
