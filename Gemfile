@@ -13,14 +13,13 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
-gem 'puma' 
+gem 'puma'
 gem 'omniauth-twitter'
 gem 'httparty'
 gem 'handlebars_assets', '~> 0.4.4'
 gem 'sprockets'
 gem 'will_paginate',            '3.0.7'
 gem 'bootstrap-will_paginate',  '0.0.10'
-gem 'jquery-turbolinks'
 gem "jquery-scrollto-rails"
 gem 'sidekiq'
 

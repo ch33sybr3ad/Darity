@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
 
   def all_dares
     feed = challenged_dares + proposed_dares + pledged_dares
-    feed.sort_by &:created_at
+    feed.sort_by! { |dare| -dare.created_at.to_i }
   end
 
   def self.create_with_omniauth(auth)

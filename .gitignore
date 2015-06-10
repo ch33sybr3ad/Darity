@@ -12,6 +12,6 @@
 /log/development.log
 !/log/.keep
 /tmp
-
+/client
+/config/database.yml
 .env
-

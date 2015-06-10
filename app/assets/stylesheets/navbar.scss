@@ -2,7 +2,7 @@ $red-dark: rgb(159, 44, 53);
 $red-pink: rgb(239, 64, 74);
 $red-light: rgb(178, 50, 59);
 
-
+nav { z-index: 9;}
 .nav-tabs {
   a {
     transition: 1s;
@@ -24,7 +24,7 @@ $red-light: rgb(178, 50, 59);
     min-width: 250px;
     padding: 14px 14px 0;
     overflow:hidden;
-    background-color:rgba(255,255,255,.8);
+    background-color:rgba(255,255,255,.8)
 }
 .navform-style .help-block{
     font-size:12px
@@ -70,16 +70,10 @@ $red-light: rgb(178, 50, 59);
     }
 }
 
-/*.navbar {
-  margin-bottom: 0;
-  .navbar-brand { color: white; }
-  .navbar-nav>li>a { color: white; }
-}*/
-
 .navbar-brand { margin-top: -8px;}
 
 .navbar-default {
-  background-color: rgba(255, 255, 255, 0.8);
+
 /*
   .navbar-nav>.open>a:focus {
     background-color: rgba(239, 64, 74, 0.8);
@@ -91,3 +85,8 @@ $red-light: rgb(178, 50, 59);
   }
 }
 
+ul#login-dp,
+ul#signup-dp,
+ {
+  background-color: rgba(255, 255, 255, 0.8)
+}
