@@ -110,7 +110,7 @@ class User < ActiveRecord::Base
   end
 
   def send_welcome_email
-      UserMailer.welcome_email(self).deliver_later
+    UserMailer.welcome_email(self).deliver_later
   end
 
   def send_activation_email
@@ -119,8 +119,9 @@ class User < ActiveRecord::Base
 
   private
 
-  def create_activation_digest
-    self.activation_token = User.new_token
-    self.activation_digest = User.digest(activation_token)
-  end
+    def create_activation_digest
+      self.activation_token = User.new_token
+      self.activation_digest = User.digest(activation_token)
+    end
+
 end
