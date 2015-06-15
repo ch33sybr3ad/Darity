@@ -1,13 +1,11 @@
 $(document).ready(function() {
   $('.approve').on('click', function(event) {
     event.preventDefault();
-    var dareId = $('.approve').attr('href');
-    var url = "/dares/" + dareId + "/donations/approve";
+    var url = $('.approve').attr('href');
 
     var request = $.ajax({
       url: url,
       method: 'PATCH',
-      data: {id: dareId},
     });
 
     request.done(function(response) {
@@ -25,13 +23,11 @@ $(document).ready(function() {
 
   $('.disapprove').on('click', function(event) {
     event.preventDefault();
-    var dareId = $('.disapprove').attr('href');
-    var url = "/dares/" + dareId + "/donations/disapprove";
+    var url = $('.disapprove').attr('href');
 
     var request = $.ajax({
       url: url,
       method: 'PATCH',
-      data: {id: dareId},
     });
 
     request.done(function(response) {

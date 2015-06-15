@@ -4,16 +4,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user
 
-  def logged_in?
-    !!current_user
+  def check_logged_in!
+    redirect_to new_user_url if !current_user
   end
 
   def login(user)
     session[:user_id] = user.id
   end
 
-  def _404
-    render :'shared/404', layout: false, status: 404
+  def error_page(error_code)
+    render :"shared/#{error_code}", layout: false, status: error_code 
   end
 
   def redirect_tweet(args)
@@ -41,7 +41,7 @@ class ApplicationController < ActionController::Base
         @user = User.find(params[:user_id] || params[:id])
       rescue ActiveRecord::RecordNotFound
         @user = User.new
-        _404
+        error_page(404)
       end
     end
 
@@ -50,7 +50,7 @@ class ApplicationController < ActionController::Base
         @dare = Dare.find(params[:dare_id] || params[:id])
       rescue ActiveRecord::RecordNotFound
         @dare = Dare.new
-        _404
+        error_page(404)
       end
     end
 

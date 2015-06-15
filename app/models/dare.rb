@@ -10,9 +10,20 @@ class Dare < ActiveRecord::Base
 
   validates_presence_of :title, :description, :proposer_id, :daree_id
   validates :price, allow_nil: true, numericality: true
+  # validates :approve, 
+  #           allow_nil: true,
+  #           numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 1 }
 
   def pledged
     donations.inject(0) { |sum, donation| sum + donation.donation_amount }
   end
+
+  def approval_rate
+    approvals = donations.where(approve: 1).count
+    votes = donations.where("approve is not null").count
+    return approvals/votes.to_f
+  end
+
+
 end
 
