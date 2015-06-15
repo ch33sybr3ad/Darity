@@ -1,17 +1,5 @@
 require 'faker'
 
-Charity.delete_all
-Comment.delete_all
-Dare.delete_all
-Donation.delete_all
-GenerateDare.delete_all
-Like.delete_all
-PendingDare.delete_all
-Relationship.delete_all
-User.delete_all
-Video.delete_all
-
-
 users = Array.new(5) do
   User.create!(
     username: Faker::Internet.user_name,
@@ -33,19 +21,12 @@ Dare.create!(
   daree: users[1]
 )
 
-a_e_charities = HTTParty.get('https://www.kimonolabs.com/api/ci5w4v76?apikey=jR0ep0PlzRAYmFSLYW4sScLoay3VFcDE')
-charities_array = a_e_charities["results"]["collection1"]
-charities_array = charities_array.shift(50)
-
-
-charities_array.each do |charity|
-  Charity.create!(
-    name: charity["title"],
-    url: charity["url"],
-    mission: charity["misson"],
-    transparency_score: charity["transparency score"],
-    )
-end
+Charity.create!(
+  name: 'Darity Charity',
+  url: 'teamdarity.herokuapp.com',
+  mission: 'To harness the power of human generosity through dares.',
+  transparency_score: 100,
+)
 
 File.open('./db/dares.csv').each do |line|
   GenerateDare.create!(description: "#{line.chomp}")
