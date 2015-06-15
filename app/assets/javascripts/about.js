@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
   idArray = ['#a-team', '#technology-used', '#timeline', '#conclusion']
-  // idArray[0,1,2,3] 
   aCounter = 0
 
   $('.about-up').on('click', function(e) {

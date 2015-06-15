@@ -21,8 +21,8 @@
         <div class="panel-body">
           <h3><%= @dare.title %></h3>
           <p><%= @dare.description %></p>
-          <p>you dare <%= link_to @dare.daree.username, @dare.daree %></p>
-          <%= link_to raw('<i class="fa fa-long-arrow-left"></i> ' + "back"),  user_dare_path(@dare.proposer, @dare), class: 'btn btn-default btn-sm' %>
+          <p>you dare <%= link_to @daree.username, @daree %></p>
+          <%= link_to raw('<i class="fa fa-long-arrow-left"></i> ' + "back"),  user_dare_path(@user, @dare), class: 'btn btn-default btn-sm' %>
         </div>
       </div>
     </div>

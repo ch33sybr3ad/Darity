@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
       render json: { comment: comment, username: current_user.username,
        image_url: current_user.image_url }.to_json
     else
-      _422
+      error_page(422)
     end
   end
 

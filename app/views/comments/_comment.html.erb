@@ -15,7 +15,7 @@
             <i class="fa fa-thumbs-o-down"></i>
           <% end %>
       <div class="media pull-right">
-        <%= comment.created_at.strftime("%I:%M%p %m/%d/%y") %>
+        Posted <%= time_ago_in_words(comment.created_at) %> ago.
       </div>
     </div>
   </div>

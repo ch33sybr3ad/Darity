@@ -15,7 +15,7 @@
           <div class="dare-video">
 
             <% if @video %>
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @url %>" frameborder="0" allowfullscreen></iframe>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @video.uid %>" frameborder="0" allowfullscreen></iframe>
             <% elsif @dare.price %>
               <%= image_tag 'gopher_accepted.png', class: 'gopher' %>
             <% else %>
@@ -23,12 +23,11 @@
             <% end %>
             <p>
               <% if @pledgers.include?(current_user)  %>
-                <button class="btn btn-default approve" href="<%= @dare.id%>">
+                <button class="btn btn-default approve" href="/dares/<%= @dare.id%>/donations/approve">
                   Approve Dare Vid as Pledger!
                 </button>
 
-                <button class="btn btn-default disapprove" href="<%= @dare.id%>">
-                  <!-- unacceptaaable! -->
+                <button class="btn btn-default disapprove" href="/dares/<%= @dare.id%>/donations/disapprove">
                   Disapprove Dare Vid as Pledger!
                 </button>
               <% end %>
@@ -45,7 +44,6 @@
 
           <p><%= link_to @proposer.username.capitalize, @proposer %> dares <%= link_to @daree.username.capitalize, @daree %></p>
           <p><%= @pledgers.count %> contributers total</p>
-
 
           <p><% @pledgers.uniq.each do |user| %>
             <%= render user %>
@@ -92,12 +90,9 @@
     </div>
   </div>
 
-
-
   <div class="panel panel-default wid-90">
     <div class="panel-body wid-90">
       <h2>Comments</h2>
-
 
       <% if current_user %>
 
@@ -122,14 +117,14 @@
             </a>
             <div class="media-body">
               <h4 class="media-heading">{{username}}</h4>
-                <p>{{comment.body}}</p>
-                <span>{{ comment.likes_count }}</span>
-                  <a href="/comments/{{comment.id}}/upvote" class="btn btn-default btn-sm">
-                    <i class="fa fa-thumbs-o-up"></i>
-                  </a>
-                  <a href="/comments/{{comment.id}}/downvote" class="btn btn-default btn-sm">
-                    <i class="fa fa-thumbs-o-down"></i>
-                  </a>
+              <p>{{comment.body}}</p>
+              <span>{{ comment.likes_count }}</span>
+              <a href="/comments/{{comment.id}}/upvote" class="btn btn-default btn-sm">
+                <i class="fa fa-thumbs-o-up"></i>
+              </a>
+              <a href="/comments/{{comment.id}}/downvote" class="btn btn-default btn-sm">
+                <i class="fa fa-thumbs-o-down"></i>
+              </a>
               <div class="media pull-right">
                 just now
               </div>
@@ -145,6 +140,3 @@
   </div>
 
 </div>
-
-
-

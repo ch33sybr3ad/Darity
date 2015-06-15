@@ -9,6 +9,8 @@ class Comment < ActiveRecord::Base
 
   validates_presence_of :body, :author_id, :dare_id
 
+  default_scope -> { order(created_at: :desc) }
+
   def total_likes
     likes.inject(0) { |sum, like| sum + like.value }
   end

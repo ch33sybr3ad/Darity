@@ -12,12 +12,8 @@ class ApplicationController < ActionController::Base
     session[:user_id] = user.id
   end
 
-  def _404
-    render :'shared/404', layout: false, status: 404
-  end
-
-  def _422
-    render :'shared/404', layout: false, status: 422
+  def error_page(error_code)
+    render :"shared/#{error_code}", layout: false, status: error_code 
   end
 
   def redirect_tweet(args)
@@ -45,7 +41,7 @@ class ApplicationController < ActionController::Base
         @user = User.find(params[:user_id] || params[:id])
       rescue ActiveRecord::RecordNotFound
         @user = User.new
-        _404
+        error_page(404)
       end
     end
 
@@ -54,7 +50,7 @@ class ApplicationController < ActionController::Base
         @dare = Dare.find(params[:dare_id] || params[:id])
       rescue ActiveRecord::RecordNotFound
         @dare = Dare.new
-        _404
+        error_page(404)
       end
     end
 
