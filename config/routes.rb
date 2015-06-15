@@ -4,7 +4,7 @@
   get 'account_activations/edit'
 
   resources :generate_dares
-  resources :charities, only: [:show, :index]
+  resources :charities, only: [:index]
   resources :pending_dares, only: [:show, :create]
 
   resources :users do
