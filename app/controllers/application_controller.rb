@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user
 
-  def logged_in?
-    !!current_user
+  def check_logged_in!
+    redirect_to new_user_url if !current_user
   end
 
   def login(user)
@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
 
   def _404
     render :'shared/404', layout: false, status: 404
+  end
+
+  def _422
+    render :'shared/404', layout: false, status: 422
   end
 
   def redirect_tweet(args)

@@ -9,4 +9,8 @@ class Comment < ActiveRecord::Base
 
   validates_presence_of :body, :author_id, :dare_id
 
+  def total_likes
+    likes.inject(0) { |sum, like| sum + like.value }
+  end
+
 end

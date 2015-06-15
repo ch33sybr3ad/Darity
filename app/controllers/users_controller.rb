@@ -110,33 +110,29 @@ class UsersController < ApplicationController
     @pending_dare = PendingDare.new
   end
 
-
-
   def check
     render (already_a_twitter_handle?(params[:handle]) ? { json: true } : { json: false })
   end
 
   private
 
-  def retreive_all_dares
-    @challenged_dares = @user.challenged_dares
-    @proposed_dares = @user.proposed_dares
-    @pledged_dares = @user.pledged_dares
-  end
+    def retreive_all_dares
+      @challenged_dares = @user.challenged_dares
+      @proposed_dares = @user.proposed_dares
+      @pledged_dares = @user.pledged_dares
+    end
 
-  def user_params
-    params.require(:user).permit(:email, :password, :current_password, :new_password, :confirm_password)
-  end
+    def user_params
+      params.require(:user).permit(:email, :password, :current_password, :new_password, :confirm_password)
+    end
 
+    def signup_params
+      params.require(:user).permit(:username, :email, :password)
+    end
 
-
-  def signup_params
-    params.require(:user).permit(:username, :email, :password)
-  end
-
-  def already_a_twitter_handle?(handle)
-    reply = HTTParty.get("http://twitter.com/#{handle}").parsed_response
-    !(reply =~ /Sorry, that page doesn/)
-  end
+    def already_a_twitter_handle?(handle)
+      reply = HTTParty.get("http://twitter.com/#{handle}").parsed_response
+      !(reply =~ /Sorry, that page doesn/)
+    end
 
 end
