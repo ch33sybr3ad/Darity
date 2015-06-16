@@ -1,7 +1,7 @@
 class DaresController < ApplicationController
   before_action :check_logged_in!, except: :show
   before_action :find_dare, except: [:new, :create]
-  before_action :find_user, only: [:new]
+  before_action :find_user, only: [:new, :create]
 
   def show
     @proposer = @dare.proposer
@@ -28,7 +28,7 @@ class DaresController < ApplicationController
       redirect_to @daree
     else
       flash[:error] = "Invalid Dare"
-      render :new
+      render :new, status: 422
     end
   end
 
@@ -64,13 +64,14 @@ class DaresController < ApplicationController
   end
 
   def approve
-    @donation = @donations.where(pledger_id: current_user.id).first
+    
+    @donation = Donation.where(pledger_id: current_user.id, pledged_dare_id: @dare.id).first
     @donation.update_attributes(approve: 1) if @donation
     render json: @dare
   end
 
   def disapprove
-    @donation = @donations.where(pledger_id: current_user.id).first
+    @donation = Donation.where(pledger_id: current_user.id, pledged_dare_id: @dare.id).first
     @donation.update_attributes(approve: 0) if @donation
     render json: @dare
   end
