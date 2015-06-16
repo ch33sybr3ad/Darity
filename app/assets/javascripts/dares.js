@@ -75,7 +75,6 @@ $(document).ready(function() {
     var current = $(this);
     $.post(current.attr("href")).done(
       function(response){
-        debugger
         this.parent().find('span').text(response.likes_count)
       }.bind(current)).fail(function(error){
         console.log("uh oh error")
