@@ -38,14 +38,13 @@ $(document).ready(function() {
     });
 
     request.fail(function(response){
-      alert("voted against!")
+      alert("failed!")
     })
   })
 });
 
 
 $(document).ready(function() {
-
 
   var source = $('#new-dare-comment').html();
   var template = Handlebars.compile(source);
@@ -74,17 +73,13 @@ $(document).ready(function() {
   $('.comment-list').on('click', 'a', function(event) {
     event.preventDefault();
     var current = $(this);
-    var likeId = current.attr("href").match(/\d+/)[0]
-
-    $.ajax({
-      url: current.attr("href"),
-      method: 'POST',
-      data: { like: { id: likeId } }
-    }).done(function(response){
-      this.parent().find('span').text(response.likes_count)
-    }.bind(current)).fail(function(error){
-      console.log("uh oh error")
-    });
+    $.post(current.attr("href")).done(
+      function(response){
+        this.parent().find('span').text(response.likes_count)
+      }.bind(current)).fail(function(error){
+        console.log("uh oh error")
+      }
+    );
 
   });
 

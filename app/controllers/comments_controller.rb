@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
-  before_action :check_logged_in! 
-  before_action :find_like, only: [:upvote, :downvote]
+  before_action :check_logged_in!
   before_action :find_comment, only: [:upvote, :downvote]
+  before_action :find_like, only: [:upvote, :downvote]
 
   def create
     comment = Comment.new(comment_params)
@@ -32,12 +32,11 @@ class CommentsController < ApplicationController
       params.require(:comment).permit(:body, :author_id, :dare_id)
     end
 
-    def like_params
-      params.require(:like).permit(:id)
-    end
-
     def find_like
-      @like = Like.find_or_create_by(comment_id: like_params["id"] ,user_id: current_user.id)
+      @like = Like.find_or_create_by(
+        comment: @comment,
+        user_id: current_user.id
+      )
     end
 
     def find_comment
