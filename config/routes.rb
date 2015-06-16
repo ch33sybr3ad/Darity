@@ -8,7 +8,7 @@
   resources :pending_dares, only: [:show, :create]
 
   resources :users do
-    resources :dares, except: [:index]
+    resources :dares
     resources :relationships, only: [:create, :destroy, :index]
   end
 
