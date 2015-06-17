@@ -12,21 +12,21 @@ class SessionsController < ApplicationController
     redirect_to root_url, notice: 'Signed out'
   end
 
-  def signup
-    user = User.find_by(email: params[:session][:email])
-    if user && user.authenticate(params[:session][:password])
-      if user.activated?
-        log_in user
-        params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-        redirect_back_or user
-      else
-        message = "Account not activated. Check your email for the activation link."
-        flash[:warning] = message
-        redirect_to root_url
-      end
-    else
-      flash.now[:danger] = 'Invalid email/password combination'
-      render 'new'
-    end
-  end
+  # def signup
+  #   user = User.where(email: params[:session][:email]).first
+  #   if user && user.authenticate(params[:session][:password])
+  #     if user.activated?
+  #       login user
+  #       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+  #       redirect_to user
+  #     else
+  #       message = "Account not activated. Check your email for the activation link."
+  #       flash[:warning] = message
+  #       redirect_to root_url
+  #     end
+  #   else
+  #     flash.now[:danger] = 'Invalid email/password combination'
+  #     render 'new'
+  #   end
+  # end
 end
