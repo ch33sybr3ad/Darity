@@ -82,8 +82,4 @@ class DaresController < ApplicationController
       params.require(:dare).permit(:price, :charity, :title, :description, :daree_id)
     end
 
-    def authorized_user!(user)
-      error_page(401) if user != current_user
-    end
-
 end

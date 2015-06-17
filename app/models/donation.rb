@@ -4,4 +4,5 @@ class Donation < ActiveRecord::Base
 
   validates_presence_of :pledger_id, :pledged_dare_id, :donation_amount
   validates :donation_amount, numericality: true
+
 end
