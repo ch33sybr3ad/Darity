@@ -12,7 +12,7 @@
   end
 
   def create
-    @donation = Donation.create(pledger_id: session[:user_id], pledged_dare_id: params[:dare_id], donation_amount: donation_params['donation_amount'].to_i)
+    @donation = Donation.create(pledger_id: current_user.id, pledged_dare_id: params[:dare_id], donation_amount: donation_params['donation_amount'].to_i)
     redirect_to pay_donations_path(params[:dare_id], @donation.id)
   end
 
@@ -50,6 +50,7 @@
           :currency    => 'usd'
         )
       @donation.completed = true
+      @donation.save
 
       if @user.email == nil && @donation.save && @dare.save
         @user.email = customer.email
