@@ -1,6 +1,7 @@
  class DonationsController < ApplicationController
-  before_action(:find_dare, only: [:new, :paid])
-  before_action(:find_donation, only: [:pay, :paid])
+  before_action :check_logged_in!
+  before_action :find_dare, only: [:new, :paid]
+  before_action :find_donation, only: [:pay, :paid]
 
   def new
     @donation = Donation.new
@@ -8,10 +9,6 @@
     @proposer = @dare.proposer
     @daree = @dare.daree
     @pledged = @dare.donations.inject(0) { |sum, donation| sum + donation.donation_amount }
-
-    if !current_user
-      redirect_to new_user_path, notice: "To contribute create an account!"
-    end
   end
 
   def create
@@ -20,35 +17,15 @@
   end
 
   def pay
+    authorized_user!(@donation.user)
     @amount = @donation.donation_amount * 100
     @charity = @donation.dare.charity
   end
 
   def paid
-    @user = @donation.user
-
-    customer = Stripe::Customer.create(
-        :email => params[:stripeEmail],
-        :card  => params[:stripeToken]
-      )
-    charge = Stripe::Charge.create(
-        :customer    => customer.id,
-        :amount      => @donation.donation_amount * 100,
-        :description => @dare.description,
-        :currency    => 'usd'
-      )
-    @donation.completed = true
-
-    if @user.email == nil && @donation.save && @dare.save
-      @user.email = customer.email
-      @user.save
-    end
-    UserMailer.thank_you(@user, charge.amount.to_i/100, @dare.title, @dare.description, @dare.daree.username).deliver_later
-    redirect_to user_dare_path(@user, @dare)
-
-    rescue Stripe::CardError => e
-      flash[:error] = e.message
-      redirect_to donations_path
+    authorized_user!(@donation.user)
+    @user = current_user
+    stripe_payment
   end
 
   private
@@ -59,6 +36,31 @@
 
     def find_donation
       @donation = Donation.find(params[:id])
+    end
+
+    def stripe_payment
+      customer = Stripe::Customer.create(
+          :email => params[:stripeEmail],
+          :card  => params[:stripeToken]
+        )
+      charge = Stripe::Charge.create(
+          :customer    => customer.id,
+          :amount      => @donation.donation_amount * 100,
+          :description => @dare.description,
+          :currency    => 'usd'
+        )
+      @donation.completed = true
+
+      if @user.email == nil && @donation.save && @dare.save
+        @user.email = customer.email
+        @user.save
+      end
+      UserMailer.thank_you(@user, charge.amount.to_i/100, @dare.title, @dare.description, @dare.daree.username).deliver_later
+      redirect_to user_dare_path(@user, @dare)
+
+      rescue Stripe::CardError => e
+        flash[:error] = e.message
+        redirect_to donations_path
     end
 
 end

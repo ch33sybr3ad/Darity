@@ -4,28 +4,24 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user
 
-  def check_logged_in!
-    redirect_to new_user_url if !current_user
-  end
-
-  def login(user)
-    session[:user_id] = user.id
-  end
-
-  def error_page(error_code)
-    render :"shared/#{error_code}", layout: false, status: error_code 
-  end
-
-  def redirect_tweet(args)
-    begin
-      target = args[:dare].daree.username
-    rescue
-      target = args[:dare].twitter_handle
-    end
-    redirect_to "https://twitter.com/intent/tweet?text=%20#{args[:dare].title.slice(0..60).delete(';')}%20-%20dared%20to%20%40#{target}%20by%20%40#{args[:dare].proposer.username}%20%23Darity&url=https://teamdarity.herokuapp.com"
-  end
-
   private
+
+    def login(user)
+      session[:user_id] = user.id
+    end
+
+    def error_page(error_code)
+      render :"shared/#{error_code}", layout: false, status: error_code 
+    end
+
+    def redirect_tweet(args)
+      begin
+        target = args[:dare].daree.username
+      rescue
+        target = args[:dare].twitter_handle
+      end
+      redirect_to "https://twitter.com/intent/tweet?text=%20#{args[:dare].title.slice(0..60).delete(';')}%20-%20dared%20to%20%40#{target}%20by%20%40#{args[:dare].proposer.username}%20%23Darity&url=https://teamdarity.herokuapp.com"
+    end
 
     def current_user
       begin
@@ -52,6 +48,16 @@ class ApplicationController < ActionController::Base
         @dare = Dare.new
         error_page(404)
       end
+    end
+
+    def check_logged_in!
+      redirect_to new_user_url if !current_user
+    end
+
+    def authorized_user!(user, options = {})
+      flash[:notice] = options[:notice]
+      redirect_to options[:path] if options[:path] && user != current_user
+      error_page(401) if user != current_user
     end
 
 end
