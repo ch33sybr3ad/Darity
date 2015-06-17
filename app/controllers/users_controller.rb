@@ -37,18 +37,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def login
-    @user = User.where(email: user_params["email"]).first
-    if @user && @user.authenticate(user_params["password"]) || !@user.password_digest
-      session[:user_id] = @user.id
-      redirect_to @user, notice: 'Signed In'
-    else
-      @user = User.new(email: user_params["email"])
-      flash[:error] = 'Invalid Info'
-      render :home
-    end
-  end
-
   def edit
   end
 
@@ -120,10 +108,6 @@ class UsersController < ApplicationController
       @challenged_dares = @user.challenged_dares
       @proposed_dares = @user.proposed_dares
       @pledged_dares = @user.pledged_dares
-    end
-
-    def user_params
-      params.require(:user).permit(:email, :password, :current_password, :new_password, :confirm_password)
     end
 
     def signup_params

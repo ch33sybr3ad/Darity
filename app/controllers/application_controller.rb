@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
     end
 
     def error_page(error_code)
-      render :"shared/#{error_code}", layout: false, status: error_code 
+      render :"shared/#{error_code}", layout: false, status: error_code
     end
 
     def redirect_tweet(args)
@@ -58,6 +58,10 @@ class ApplicationController < ActionController::Base
       flash[:notice] = options[:notice]
       redirect_to options[:path] if options[:path] && user != current_user
       error_page(401) if user != current_user
+    end
+
+    def user_params
+      params.require(:user).permit(:email, :password, :current_password, :new_password, :confirm_password)
     end
 
 end

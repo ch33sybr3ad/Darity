@@ -12,6 +12,19 @@ class SessionsController < ApplicationController
     redirect_to root_url, notice: 'Signed out'
   end
 
+  def login
+    @user = User.where(email: user_params["email"]).first
+    if @user && @user.authenticate(user_params["password"]) || !@user.password_digest
+      session[:user_id] = @user.id
+      redirect_to @user, notice: 'Signed In'
+    else
+      @user = User.new(email: user_params["email"])
+      flash[:error] = 'Invalid Info'
+      render :home
+    end
+  end
+
+
   # def signup
   #   user = User.where(email: params[:session][:email]).first
   #   if user && user.authenticate(params[:session][:password])
