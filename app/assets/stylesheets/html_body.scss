@@ -39,6 +39,8 @@ a:hover {
 
 .white-link { color: white; }
 .white-link:hover { color: black; }
+.black-link { color: black; }
+.black-link:hover { color: gray; }
 
 .panel-white { background-color: white; }
 
@@ -63,4 +65,4 @@ a:hover {
 .wid-80 { width: 80%; margin: 0 auto;}
 .wid-90 { width: 90%; margin: 0 auto;}
 
-hr { color: black; }
+img { max-width: 100%; }
