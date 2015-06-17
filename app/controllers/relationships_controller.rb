@@ -8,7 +8,7 @@ class RelationshipsController < ApplicationController
     if relationship.save
       redirect_to user_path(params[:user_id])
     else
-      render html: '<h1>error</h1>', status: 404
+      error_page(422)
     end
   end
 
@@ -20,11 +20,8 @@ class RelationshipsController < ApplicationController
     if relationship.destroy
       redirect_to user_path(params[:user_id])
     else
-      render html: '<h1>error</h1>', status: 404
+      error_page(422)
     end
   end
-
-  def index
-  end
-
+  
 end
