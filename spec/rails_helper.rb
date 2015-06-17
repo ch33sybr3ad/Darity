@@ -57,8 +57,6 @@ RSpec.configure do |config|
     Rake::Task['db:seed'].invoke
   end
 
-  config.expect_with(:rspec) { |c| c.syntax = :should }
-
   config.include Helpers
 
 end
