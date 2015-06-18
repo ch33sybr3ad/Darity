@@ -2,13 +2,13 @@
 
   resources :comments
 
-  resources :generate_dares
-  resources :charities, only: [:index]
+  resources :generate_dares, only: :generate
+  resources :charities, only: :index
   resources :pending_dares, only: [:show, :create]
 
   resources :users do
     resources :dares
-    resources :relationships, only: [:create, :destroy, :index]
+    resources :relationships, only: [:create, :destroy]
   end
 
   resources :account_activations, only: [:edit]
@@ -40,15 +40,12 @@
 
   patch '/dares/:dare_id/donations/disapprove' => "dares#disapprove", as: :disapprove
 
-
   post '/comments/:id/upvote' => 'comments#upvote', as: :upvote
   post '/comments/:id/downvote' => 'comments#downvote', as: :downvote
 
   get 'account_activations/edit'
 
   get '/users/invite/:handle' => "users#new_invite"
-
-
 
   get '/check_handle/:handle' => "users#check", as: :check
 

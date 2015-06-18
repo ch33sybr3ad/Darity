@@ -1,4 +1,5 @@
 class RelationshipsController < ApplicationController
+  before_action :check_logged_in!
 
   def create
     relationship = Relationship.new(
@@ -17,7 +18,7 @@ class RelationshipsController < ApplicationController
       followee_id: params[:user_id],
       follower_id: current_user.id,
     ).first
-    if relationship.destroy
+    if relationship && relationship.destroy
       redirect_to user_path(params[:user_id])
     else
       error_page(422)
