@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action(:find_user, only: [:show, :edit, :update])
+  before_action :check_logged_in!, only: [:update, :feed, :edit]
+  before_action :find_user, only: [:show, :edit, :update]
 
   def show
     @relationship = Relationship.where(followee_id: params[:id], follower_id: current_user.id) if current_user
@@ -15,8 +16,6 @@ class UsersController < ApplicationController
     when 'pledged'
       @pledged_dares = @user.pledged_dares
       render :'dares/pledged', layout: false
-    else
-      retreive_all_dares
     end
   end
 
@@ -51,13 +50,11 @@ class UsersController < ApplicationController
         end
       end
       if @user.errors.empty? && @user.update(email: user_params['email'])
-        flash[:notice] ||= ''
-        flash[:notice] += " Email Changed"
+        flash[:notice] = "Email Changed"
       end
     else
       @user.errors.add(:current_password, "incorrect")
     end
-    p '#' * 50, @user.errors.full_messages, '#' * 50
     render "edit", id: @user
   end
 
@@ -72,8 +69,12 @@ class UsersController < ApplicationController
     end
     respond_to do |format|
       if @user.errors.empty? && @user.save
-        Dare.create(title: GenerateDare.all.shuffle.first.description, description: "Welcome to Darirty. Welcome to Darity. Your first mission is to COMPLETE this dare.", daree_id: @user.id, proposer_id: 1)
-        # Tell the UserMailer to send a welcome email after save
+        Dare.create(
+          title: GenerateDare.all.shuffle.first.description, 
+          description: "Welcome to Darirty. Welcome to Darity. Your first mission is to COMPLETE this dare.", 
+          daree_id: @user.id, 
+          proposer_id: 1
+        )
         session[:user_id] = @user.id
         @user.send_welcome_email
         @user.send_activation_email
@@ -103,12 +104,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-    def retreive_all_dares
-      @challenged_dares = @user.challenged_dares
-      @proposed_dares = @user.proposed_dares
-      @pledged_dares = @user.pledged_dares
-    end
 
     def signup_params
       params.require(:user).permit(:username, :email, :password)
