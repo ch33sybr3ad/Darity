@@ -70,9 +70,9 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.errors.empty? && @user.save
         Dare.create(
-          title: GenerateDare.all.shuffle.first.description, 
-          description: "Welcome to Darirty. Welcome to Darity. Your first mission is to COMPLETE this dare.", 
-          daree_id: @user.id, 
+          title: GenerateDare.all.shuffle.first.description,
+          description: "Welcome to Darirty. Welcome to Darity. Your first mission is to COMPLETE this dare.",
+          daree_id: @user.id,
           proposer_id: 1
         )
         session[:user_id] = @user.id
@@ -89,10 +89,8 @@ class UsersController < ApplicationController
   end
 
   def feed
-    @followees = current_user.followees
-    @all_dares = @followees.flat_map { |followee|
-      followee.all_dares
-    }
+    @followee_ids = current_user.followees.pluck(:id)
+    @dares = Dare.dares_involving(@followee_ids)
   end
 
   def new_invite
