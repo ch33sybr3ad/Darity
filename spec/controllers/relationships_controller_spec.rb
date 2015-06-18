@@ -4,6 +4,7 @@ RSpec.describe RelationshipsController, type: :controller do
 
   render_views
 
+  #not yet complete, went to go take a nap break
   describe '#create' do
     it 'should create a relationship' do
       get :show, { id: 1 }, { user_id: 1 }
