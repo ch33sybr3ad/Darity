@@ -3,7 +3,7 @@ require 'spec_helper'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require 'rake'
-require_relative 'helpers'
+
 Rails.application.load_tasks
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -56,7 +56,5 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
     Rake::Task['db:seed'].invoke
   end
-
-  config.include Helpers
 
 end

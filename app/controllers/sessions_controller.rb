@@ -20,10 +20,9 @@ class SessionsController < ApplicationController
     else
       @user = User.new(email: user_params["email"])
       flash[:error] = 'Invalid Info'
-      render :home
+      render :"users/home"
     end
   end
-
 
   # def signup
   #   user = User.where(email: params[:session][:email]).first
