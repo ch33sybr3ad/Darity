@@ -19,8 +19,8 @@ class Dare < ActiveRecord::Base
   end
 
   def approval_rate
-    p approvals = donations.where(approve: 1).count
-    p votes = donations.where("approve is not null").count
+    approvals = donations.where(approve: 1).count
+    votes = donations.where("approve is not null").count
     return approvals/votes.to_f unless votes == 0 
       0
   end
